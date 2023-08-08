@@ -1,16 +1,46 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    background-image:linear-gradient(to bottom,#0f1616,#ab987a24), url(./bg-1.jpg) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 100%, 100% ;
+    background-attachment:fixed;
+
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.options button{
+    position: relative;
+    background-color: transparent;
+    overflow: hidden;
+    z-index: 1;
+    border-radius: 5px;
+    margin: 0 8px;
+    padding: 0 10;
+    
+}
+.options button::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 200%;
+    right: -50%;
+    top: -200%;
+    transition: all 0.7s ease;
+    z-index: -1;
+
+
+}
+.options button:hover::before{
+    top: 0;
+    right: 0;
+    border-radius: 0;
+
 }
 
-* {
-  box-sizing: border-box;
+.options button:before{
+    background-color: #f6f2f2;
+    
 }
