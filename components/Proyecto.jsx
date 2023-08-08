@@ -9,9 +9,9 @@ function Proyecto({e}) {
         <Image key={e.id} width={400} height={400} src={`/imgProyectos/${e.img}.png`} alt={`imagen de ${e.nombre}`} className=' h-full w-full object-cover group-hover:rotate-3 group-hover:scale-125 transition-transform'/>
         </div>
         <div className=' absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black hover:from-black '>
-        <div className=' absolute inset-0 flex flex-col items-center justify-center px-9 text-center translate-y-[90%] group-hover:translate-y-0 transition-all '>
-            <h1 className=' text-3xl font-bold text-white mb-2'>{e.Nombre}</h1>
-            <p className=' text-lg italic text-white mb-3'>{e.parrafo}</p>
+        <div className=' absolute inset-0 flex flex-col items-center justify-center px-9 text-center translate-y-[130%] group-hover:translate-y-0 transition-all '>
+            <h1 className=' text-2xl md:text-3xl font-bold text-white mb-1 md:mb-2'>{e.Nombre}</h1>
+            <p className=' text-xl lg:text-lg italic text-white mb-2 md:mb-3'>{e.parrafo}</p>
             <div className='flex gap-2 justify-evenly'>
                 <Link href={e.linkGit} target='_blank' className='flex gap-1 items-center rounded-full py-2 px-5 text-lg capitalize text-gray-100 bg-orange-800 hover:bg-orange-900' >
                     {e.git}
