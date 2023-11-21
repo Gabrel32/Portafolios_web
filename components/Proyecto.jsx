@@ -11,8 +11,8 @@ function Proyecto({e}) {
         <div className=' absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black hover:from-black '>
         <div className=' absolute inset-0 flex flex-col items-center justify-center px-9 text-center translate-y-[130%] group-hover:translate-y-0 transition-all '>
             <h1 className=' text-2xl md:text-3xl font-bold text-white mb-1 md:mb-2'>{e.Nombre}</h1>
-            <p className=' text-xl lg:text-lg italic text-white mb-2 md:mb-3'>{e.parrafo}</p>
-            <div className='flex gap-2 justify-evenly'>
+            <p className=' text-base lg:text-lg italic text-white mb-1 md:mb-2'>{e.parrafo}</p>
+            <div className='flex gap-2 justify-evenly mb-1'>
                 <Link href={e.linkGit} target='_blank' className='flex gap-1 items-center rounded-full py-2 px-5 text-lg capitalize text-gray-100 bg-orange-800 hover:bg-orange-900' >
                     {e.git}
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -26,7 +26,14 @@ function Proyecto({e}) {
                     </svg>
                     Sitio
                     </Link>}
+                
             </div>
+            {e.linkBackend?.length && <Link href={e.linkBackend} target='_blank' className='flex rounded-full bg-sky-700 py-2 px-4 text-lg capitalize text-white'>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
+                    </svg>
+                    Backend
+                </Link>}
         </div>
         </div>
 

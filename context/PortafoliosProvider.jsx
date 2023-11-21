@@ -23,15 +23,26 @@ function PortafoliosProvider({children}){
     }
 
     const Proyectos = [
+        // {
+        //     Nombre:"GuitarsLA", 
+        //     id:0,
+        //     git:"gitlab",
+        //     dsp:"", 
+        //     img:"guitarLa",
+        //     link:"https://next-guitarla.vercel.app/",
+        //     linkGit:"https://gitlab.com/Gabrel32/guitarla-next-a.git",
+        //     parrafo:"Es un Proyecto de Next con Paginacion una Base de Datos PosgresSql y un Carrito de Compras"
+        // },
         {
-            Nombre:"GuitarsLA", 
+            Nombre:"MERN-Uptask", 
             id:0,
-            git:"gitlab",
+            git:"github",
             dsp:"", 
-            img:"guitarLa",
-            link:"https://next-guitarla.vercel.app/",
-            linkGit:"https://gitlab.com/Gabrel32/guitarla-next-a.git",
-            parrafo:"Es un Proyecto de Next con Paginacion una Base de Datos PosgresSql y un Carrito de Compras"
+            img:"mernUptask",
+            link:"https://mern-uptask.vercel.app/",
+            linkGit:"https://github.com/Gabrel32/Mern-uptask_frontend.git",
+            linkBackend:"https://github.com/Gabrel32/Mern-uptask_Backend.git",
+            parrafo:"Es un Proyecto Mern stack con base de mongodb, y cambios en tiempo real con socket.io "
         },
         {
             Nombre:"Control Veterinario", 
@@ -131,7 +142,7 @@ function PortafoliosProvider({children}){
       ]
 
     const contacto = [
-        {Nombre:"Linkedin",id:1,link:"https://www.linkedin.com/in/gabriel-alejandro-herandez-rendiles-b4aa09267",img:"linkedin"},
+        {Nombre:"Linkedin",id:1,link:"https://www.linkedin.com/in/gabriel-hernandez-rendiles",img:"linkedin"},
         {Nombre:"Telegram",id:2,link:"https://t.me/Alegabo32",img:"telegram"},
         {Nombre:"Whatsapp",id:3,link:"https://wa.link/lc9cdm",img:"whatsapp"},
         // {Nombre:"Telegram",id:4,link:"",img:"Telegram"},
