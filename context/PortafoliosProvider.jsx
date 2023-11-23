@@ -138,6 +138,10 @@ function PortafoliosProvider({children}){
         {Nombre:"Boostrap",id:8,icon:"bostrap"},
         {Nombre:"React",id:9,icon:"react"},
         {Nombre:"MUI",id:10,icon:"mui"},
+        {Nombre:"MongoDB",id:11,icon:"mongodb"},
+        {Nombre:"Socket.io",id:12,icon:"socket"},
+
+
 
       ]
 
