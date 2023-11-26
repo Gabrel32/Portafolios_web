@@ -13,7 +13,7 @@ export default function Home() {
 
     
           <div className=" text-left m-10 ">
-            <Link target="_blank" download={true} href={"/CV/CV.pdf"} className=" text-xl p-4 text-white ease-in-out duration-300 bg-orange-800 hover:bg-orange-900">Descargar CV</Link>
+            <Link target="_blank" download={true} href={"/CV/cv.pdf"} className=" text-xl p-4 text-white ease-in-out duration-300 bg-orange-800 hover:bg-orange-900">Descargar CV</Link>
           </div>
 
 
