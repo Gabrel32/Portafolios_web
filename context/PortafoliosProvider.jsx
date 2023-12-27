@@ -34,8 +34,18 @@ function PortafoliosProvider({children}){
         //     parrafo:"Es un Proyecto de Next con Paginacion una Base de Datos PosgresSql y un Carrito de Compras"
         // },
         {
-            Nombre:"MERN-Uptask", 
+            Nombre:"Product Hunt", 
             id:0,
+            git:"github",
+            dsp:"", 
+            img:"Product-hunt",
+            link:"https://product-hunt-gsho.vercel.app/",
+            linkGit:"https://github.com/Gabrel32/Product-Hunt.git",
+            parrafo:"es un clon de product hunt con firebase, next y styled components  "
+        },
+        {
+            Nombre:"MERN-Uptask", 
+            id:1,
             git:"github",
             dsp:"", 
             img:"mernUptask",
@@ -46,7 +56,7 @@ function PortafoliosProvider({children}){
         },
         {
             Nombre:"Control Veterinario", 
-            id:1,
+            id:2,
             git:"gitlab",
             dsp:"", 
             img:"controlVeterinario",
@@ -57,7 +67,7 @@ function PortafoliosProvider({children}){
         },
         {
             Nombre:"Create Interattive", 
-            id:2,
+            id:3,
             git:"github",
             dsp:"", 
             img:"CreateInterattive",
@@ -67,7 +77,7 @@ function PortafoliosProvider({children}){
         },
         {
             Nombre:"Manejo de Gastos", 
-            id:3,
+            id:4,
             git:"github",
             dsp:"", 
             img:"ManejoGastos",
@@ -77,7 +87,7 @@ function PortafoliosProvider({children}){
         },
         {
             Nombre:"Bebidas Buscador", 
-            id:4,
+            id:5,
             git:"gitlab",
             dsp:"", 
             img:"BuscadorBebidas",
@@ -87,7 +97,7 @@ function PortafoliosProvider({children}){
         },
         {
             Nombre:"Clima App", 
-            id:5,
+            id:6,
             git:"gitlab",
             dsp:"", 
             img:"appClima",
@@ -97,7 +107,7 @@ function PortafoliosProvider({children}){
         },
         {
             Nombre:"Seguros Autos", 
-            id:6,
+            id:7,
             git:"gitlab",
             dsp:"", 
             img:"AutosSeguros",
@@ -107,7 +117,7 @@ function PortafoliosProvider({children}){
         },
         {
             Nombre:"Buscador Noticias", 
-            id:7,
+            id:8,
             git:"gitlab",
             dsp:"", 
             img:"BuscadorNoticias",
@@ -117,7 +127,7 @@ function PortafoliosProvider({children}){
         },
         {
             Nombre:"Criptos al Instante", 
-            id:8,
+            id:9,
             git:"gitlab",
             dsp:"", 
             img:"CriptosInstante",
