@@ -1,27 +1,25 @@
-import React from 'react'
-import Head from 'next/head'
-import Navegacion from '../components/Navegacion'
-import Image from 'next/image'
+import React from 'react';
+import Head from 'next/head';
+import Navegacion from '../components/Navegacion';
 
-function Layout({children, pagina}) {
-  return (
-    <>
-    <Head>
-        <title>Portafolio - {pagina}</title> 
-        <meta name='description' content='Portafolio wed donde encontraras diverso proyecto e informacion de interes para a quien de pueda interesar'></meta>
-    </Head>
-    <aside className=' items-center p-3 mb-10 options ' style={{backgroundColor:"#0f1626"}}>
-        <div className='grid grid-rows-1 grid-cols-1 md:grid-cols-5 items-center'>
-        <Image width={70} height={80} src={"/img/icon2.png"} alt='icon' className={" rounded-3xl p-2 mx-auto bg-white mb-3"} ></Image>
-        <Navegacion />
+function Layout({ children, pagina }) {
+    return (
+        <div className="flex flex-col min-h-screen">
+            <Head>
+                <title>Portafolio - {pagina}</title>
+                <meta name='description' content='Portafolio web donde encontrarás diversos proyectos e información de interés.' />
+            </Head>
+            <aside className='flex justify-around items-center h-20 bg-CompletColor options'>
+                <Navegacion />
+            </aside>
+            <main className='flex-grow options mt-14'>
+                {children}
+            </main>
+            <footer className="bg-gray-200 text-center p-4">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum odio ullam quibusdam. Quisquam dolore possimus expedita aspernatur, magnam odio deserunt modi adipisci enim quas nesciunt minima facere libero repellat aliquam.
+            </footer>
         </div>
-     
-    </aside>
-    <main className='options'>
-        {children}
-    </main>
-    </>
-  )
+    );
 }
 
-export default Layout
+export default Layout;

@@ -2,16 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: jaro;
+    src: url(../public/fonts/Jaro-Regular-VariableFont_opsz.ttf);
+}
+*{
+    font-family: jaro;
+}
+
 body{
-    background-image:linear-gradient(to bottom,#0f1616,#ab987a24), url(./bg-1.jpg) ;
+    background-image:linear-gradient(to bottom,#111414c0,#ab987a24), url(./bg-1.jpg) ;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 100%, 100% ;
     background-attachment:fixed;
+} 
 
-}
-
-.options button{
+.options button.efect{
     position: relative;
     background-color: transparent;
     overflow: hidden;
@@ -21,7 +28,7 @@ body{
     padding: 0 10;
     
 }
-.options button::before{
+.options button.efect::before{
     content: "";
     position: absolute;
     width: 100%;
@@ -33,14 +40,14 @@ body{
 
 
 }
-.options button:hover::before{
+.options button.efect:hover::before{
     top: 0;
     right: 0;
     border-radius: 0;
-
 }
 
-.options button:before{
+
+.options button.efect:before{
     background-color: #f6f2f2;
     
 }
