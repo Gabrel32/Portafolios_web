@@ -1,68 +1,95 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import Proyecto from './Proyecto';
 
 const Carousel = ({ items }) => {
-    const [currentIndex, setCurrentIndex] = useState(0); // Índice del elemento actual
-    const [sizeWindow, setSizeWindow] = useState(0);
+    const [currentIndex, setCurrentIndex] = useState(1);
+    const [isLoaded, setIsLoaded] = useState(false);
+    const [transition, setTransition] = useState(true);
+    const carouselRef = useRef(null);
 
-    // Establecer el tamaño de la ventana solo una vez al montar
+    // Clonamos elementos para efecto infinito
+    const extendedItems = items ? [
+        { ...items[items.length - 1], id: 'clone-last' },
+        ...items,
+        { ...items[0], id: 'clone-first' }
+    ] : [];
+
     useEffect(() => {
-        if (typeof window !== 'undefined') {
-            setSizeWindow(window.innerWidth);
+        if (items) setIsLoaded(true);
+    }, [items]);
+
+    const handleNavigation = (direction) => {
+        setTransition(true);
+        setCurrentIndex(prev => {
+            if (direction === 'next') {
+                return prev >= extendedItems.length - 1 ? prev : prev + 1;
+            }
+            return prev <= 0 ? prev : prev - 1;
+        });
+    };
+
+    useEffect(() => {
+        // Reset invisible cuando llegamos a los clones
+        if (currentIndex === extendedItems.length - 1) {
+            setTimeout(() => {
+                setTransition(false);
+                setCurrentIndex(1);
+            }, 300);
         }
-    }, []);
+        if (currentIndex === 0) {
+            setTimeout(() => {
+                setTransition(false);
+                setCurrentIndex(extendedItems.length - 2);
+            }, 300);
+        }
+    }, [currentIndex]);
 
-    // Función para avanzar al siguiente elemento
-    const nextSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % items.length);
-    };
-
-    // Función para retroceder al elemento anterior
-    const prevSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex - 1 + items.length) % items.length);
-    };
+    if (!isLoaded) return <div className="loading-spinner">Cargando...</div>;
 
     return (
-        <div className="carousel flex flex-col justify-center items-center gap-10 w-full h-full">
-            <div className="carousel-slide flex flex-row justify-center items-center w-full gap-3">
-                {/* Elemento anterior */}
-                <div className={`carousel-item w-1/4 md:block hidden`}>
-                    {items[(currentIndex - 1 + items.length) % items.length] && sizeWindow > 400 ? (
-                        <div className="rounded-md opacity-50 shadow-sm shadow-slate-300 border pointer-events-none user-select-none">
-                            {items[(currentIndex - 1 + items.length) % items.length]}
-                        </div>
-                    ) : (
-                        <div className="rounded-md invisible">
-                            {/* Contenedor vacío pero visible */}
-                        </div>
-                    )}
-                </div>
-
-                {/* Elemento central */}
-                <div className={`carousel-item rounded-md shadow-sm shadow-slate-300 w-full md:w-2/4`}>
-                    {items[currentIndex]}
-                </div>
-
-                {/* Elemento siguiente */}
-                <div className={`carousel-item w-1/4 md:block hidden`}>
-                    {items[(currentIndex + 1) % items.length] && sizeWindow > 400 ? (
-                        <div className="rounded-md opacity-50 shadow-sm shadow-slate-300 pointer-events-none user-select-none">
-                            {items[(currentIndex + 1) % items.length]}
-                        </div>
-                    ) : (
-                        <div className="p-4 rounded-md invisible">
-                            {/* Contenedor vacío pero visible */}
-                        </div>
-                    )}
-                </div>
+        <div 
+            className="carousel-container max-w-[600px] max-h-[400px] mx-auto overflow-visible relative"
+            ref={carouselRef}
+        >
+            <div 
+                className="flex transition-transform duration-300"
+                style={{ 
+                    transform: `translateX(-${currentIndex * 100}%)`,
+                    transition: transition ? 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)' : 'none'
+                }}
+            >
+                {extendedItems.map((item, index) => (
+                   <div 
+                   key={`${item.id}-${index}`}
+                   className="carousel-item flex-shrink-0 p-4"
+               >
+                   <div className={`
+                       transition-all duration-300 mx-auto h-full
+                       ${
+                           index === currentIndex 
+                               ? 'scale-100 opacity-100' 
+                               : 'scale-90 opacity-50'
+                       }
+                       ${Math.abs(index - currentIndex) === 1 ? 'z-10' : 'z-0'}
+                   `}>
+                       <Proyecto e={item} />
+                   </div>
+               </div>
+                ))}
             </div>
 
-            {/* Controles del carrusel */}
-            <div className='flex justify-around w-48 h-30 items-center gap-5 text-white'>
-                <button onClick={prevSlide} className="w-1/3 h-1/3 rounded-md bg-custom-brown flex items-center justify-center">
-                   anterior
+            <div className="controls flex justify-center gap-4 mt-4">
+                <button 
+                    onClick={() => handleNavigation('prev')}
+                    className="btn_base btn-efecto px-4 py-2 bg-custom-brown text-white rounded"
+                >
+                    Anterior
                 </button>
-                <button onClick={nextSlide} className="w-1/3 h-1/3 rounded-md bg-custom-brown flex items-center justify-center">
-                    siguiente
+                <button 
+                    onClick={() => handleNavigation('next')}
+                    className="btn_base btn-efecto px-4 py-2 bg-custom-brown text-white rounded"
+                >
+                    Siguiente
                 </button>
             </div>
         </div>

@@ -7,14 +7,22 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        klee: ['Klee One', 'sans-serif'],
+      },
       colors: {
-        'custom-brown': '#DC5F00', // Agrega el color personalizado
-        "BackColor":"#EEEEEE",
-        "ActionColor":"#CF0A0A",
-        "ChangeColor":"#3E92A3",
-        "CompletColor":"#363636"
-
-
+        'custom-brown': '#DC5F00',
+        "ActionColor": "#CF0A0A",
+        "ChangeColor": "#3E92A3",
+        "CompletColor": "#363636",
+        'efectHovercolor': '#a95210',
+      },
+      spacing: {
+        '200%': '200%',
+      },
+      zIndex: {
+        '-1': '-1',
+        '10': '10',
       },
     },
   },
