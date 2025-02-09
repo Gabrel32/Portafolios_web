@@ -34,15 +34,6 @@ body{
     @apply scale-95 bg-custom-brown;
   }
   
-
-  .carousel-container {
-    perspective: 1000px;
-  }
-  
-  .carousel-item {
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    transform-style: preserve-3d;
-  }
   
   /* Para mantener las proporciones de las imágenes */
   .proyecto-image {
@@ -56,8 +47,33 @@ body{
   .carousel-item:not(.active) {
     filter: brightness(0.9);
   }
-  .carousel-item {
-    width: 600px;
-    height: 400px;
+
+.carousel-container {
+  perspective: 1000px;
 }
 
+.carousel-container {
+  min-height: 400px; /* Ajustar según necesidad */
+}
+
+.carousel-item {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.controls {
+  z-index: 20;
+}
+@media (max-width: 375px) {
+  .carousel-container {
+      padding-left: 8px;
+      padding-right: 8px;
+  }
+  
+  .carousel-item {
+      margin: 0 4px !important;
+  }
+  
+  .controls {
+      padding: 0 8px;
+  }
+}
