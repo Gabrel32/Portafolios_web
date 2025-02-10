@@ -1,9 +1,31 @@
-import { createContext } from "react";
+import { createContext,useState,useEffect } from "react";
 
 
 const PortafoliosContext = createContext()
 
 function PortafoliosProvider({children}){
+
+    const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setIsDarkMode(savedTheme ? savedTheme === 'dark' : prefersDark);
+  }, []);
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  }, [isDarkMode]);
+    
+  const toggleDarkMode = () => setIsDarkMode(!isDarkMode);
+
+
 
     function comprobarRuta(id,router){
         const background = "#DC5F00"
@@ -138,18 +160,18 @@ function PortafoliosProvider({children}){
     ]
 
     const tecnologias = [
-        {Nombre:"Javascript",id:1,icon:"javascript"},
-        {Nombre:"Css3",id:2,icon:"css"},
-        {Nombre:"Html5",id:3,icon:"html"},
-        {Nombre:"Tailwindcss",id:4,icon:"tailwind"},
-        {Nombre:"Next",id:5,icon:"next"},
-        {Nombre:"Remix",id:6,icon:"remix"},
-        {Nombre:"Astro",id:7,icon:"stro"},  
-        {Nombre:"Boostrap",id:8,icon:"bostrap"},
-        {Nombre:"React",id:9,icon:"react"},
-        {Nombre:"MUI",id:10,icon:"mui"},
-        {Nombre:"MongoDB",id:11,icon:"mongodb"},
-        {Nombre:"Socket.io",id:12,icon:"socket"},
+        {Nombre:"Javascript",id:1,icon:"javascript.svg"},
+        {Nombre:"Css3",id:2,icon:"css.svg"},
+        {Nombre:"Html5",id:3,icon:"html.svg"},
+        {Nombre:"Tailwindcss",id:4,icon:"tailwindcss.svg"},
+        {Nombre:"Next",id:5,icon:"nextjs.svg"},
+        {Nombre:"Remix",id:6,icon:"remix.svg"},
+        {Nombre:"Astro",id:7,icon:"astro.svg"},  
+        {Nombre:"Boostrap",id:8,icon:"bostrap.svg"},
+        {Nombre:"React",id:9,icon:"react.png"},
+        {Nombre:"MUI",id:10,icon:"mui.png"},
+        {Nombre:"MongoDB",id:11,icon:"mongodb.svg"},
+        {Nombre:"Socket.io",id:12,icon:"socket.png"},
 
 
 
@@ -222,7 +244,9 @@ function PortafoliosProvider({children}){
             comprobarRuta,
             Proyectos,
             contacto,
-            buttonNavs
+            buttonNavs,
+            isDarkMode, 
+            toggleDarkMode
            }}
         >
             {children}

@@ -1,37 +1,28 @@
 import ButtonNav from "./ButtonNav";
 import usePortafolios from "../hook/usePortafolios";
-import { useState } from "react"; // Para manejar el estado del menú
+import { useState, useEffect } from "react";
+import DarkModeButton from "./DarkModeButton";
 
 function Navegacion({ className, ...props }) {
   const { buttonNavs } = usePortafolios();
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Función para cerrar el menú cuando se hace clic fuera del modal
+  // Función para cerrar el menú al hacer clic fuera
   const closeMenu = (e) => {
     if (e.target === e.currentTarget) {
       setMenuOpen(false);
     }
   };
 
-  // Función para cerrar el menú manualmente (botón de cerrar)
-  const handleCloseMenu = () => {
-    setMenuOpen(false);
-  };
-
   return (
-    <div
-      className={
-        "rounded-corner-small flex flex-col sm:flex-row gap-5 items-center justify-between sm:justify-center relative overflow-hidden " +
-        className
-      }
-    >
+    <div className={`rounded-corner-small flex flex-col sm:flex-row gap-5 items-center justify-between sm:justify-center relative overflow-hidden ${className}`}>
       {/* Sección del título */}
       <div className="flex flex-row gap-2 sm:gap-5 items-center justify-evenly h-[89px] relative w-full">
-        <div className="text-[#000000] text-center text-[24px] sm:text-[30px] md:text-[40px] leading-none relative w-fit h-[60px] flex items-center">
-          Gabriel{" "}
+        <div className="text-[#000000] dark:text-white text-center text-[24px] sm:text-[30px] md:text-[40px] leading-none relative w-fit h-[60px] flex items-center">
+          Gabriel
         </div>
         <div className="text-[#dc5f00] text-center text-[24px] sm:text-[30px] md:text-[40px] leading-none font-normal relative w-fit h-[60px] flex items-center justify-center">
-          Hernandez{" "}
+          Hernandez
         </div>
 
         {/* Icono de verificación */}
@@ -51,68 +42,76 @@ function Navegacion({ className, ...props }) {
           </svg>
         </div>
 
-        {/* Botón de menú para móvil */}
+        {/* Botones para móvil */}
         <div className="flex flex-row gap-4 items-center justify-between sm:hidden w-full">
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="text-2xl relative z-20 transition-transform transform active:scale-95" // Efecto de clic al presionar
-          >
-            <svg
-              width="40"
-              height="37"
-              viewBox="0 0 40 37"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+          <div className="flex gap-4">
+            <DarkModeButton />
+            
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="text-2xl relative z-20 transition-transform transform active:scale-95 text-black dark:text-white"
             >
-              <path
-                d="M5 18.5H35M5 9.25H35M5 27.75H35"
-                stroke="#1E1E1E"
-                strokeOpacity="0.85"
-                strokeWidth="4"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
+              <svg
+                width="40"
+                height="37"
+                viewBox="0 0 40 37"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5 18.5H35M5 9.25H35M5 27.75H35"
+                  stroke="currentColor"
+                  strokeOpacity="0.85"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* Menú Modal (para móvil) */}
+      {/* Menú Modal para móvil */}
       <div
-        className={`fixed right-0 w-[200px] bg-black bg-opacity-50 z-50 flex items-center justify-center transition-all duration-500 ease-in-out transform rounded-br-lg rounded-bl-lg ${
-          menuOpen ? "top-0" : "top-[-100%]"
+        className={`fixed inset-0 bg-black bg-opacity-50 dark:bg-opacity-70 z-50 transition-opacity ${
+          menuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
-        onClick={closeMenu} // Cerrar cuando se hace clic fuera del menú
+        onClick={closeMenu}
       >
         <div
-          className="flex flex-col items-center justify-center gap-10 w-full shadow-md p-4 rounded-md relative z-60 options"
-          onClick={(e) => e.stopPropagation()} // Evita que el menú se cierre cuando se hace clic dentro
+          className={`absolute right-0 w-[200px] h-full bg-white dark:bg-gray-800 transform transition-transform duration-300 ${
+            menuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
         >
-          {/* Botón de Cerrar */}
-          <button
-            onClick={handleCloseMenu}
-            className=" relative top-0 text-3xl text-white transition-transform transform active:scale-95"
-          >
-            &times; {/* Símbolo de "X" para cerrar */}
-          </button>
-
-          {/* Los botones del menú */}
-          {buttonNavs.map((e) => (
-            <ButtonNav
-              key={e.name}
-              name={e.name}
-              icon={e.icon}
-              directionPath={e?.directionPath}
-            />
-          ))}
+          <div className="flex flex-col items-center justify-center gap-10 h-full p-4">
+            <button
+              onClick={() => setMenuOpen(false)}
+              className="text-3xl text-black dark:text-white absolute top-4 right-4"
+            >
+              &times;
+            </button>
+            {buttonNavs.map((e) => (
+              <ButtonNav
+                key={e.name}
+                name={e.name}
+                icon={e.icon}
+                directionPath={e?.directionPath}
+              />
+            ))}
+            <div className="sm:hidden">
+              <DarkModeButton />
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Vista de escritorio de los botones */}
-      <div className="hidden sm:flex flex-row gap-4 items-center justify-center w-full h-[70px] relative options">
+      {/* Vista de escritorio */}
+      <div className="hidden sm:flex flex-row gap-4 items-center justify-center w-full h-[70px] relative">
         {buttonNavs.map((e) => (
           <ButtonNav key={e.name} name={e.name} icon={e.icon} directionPath={e?.directionPath} />
         ))}
+        <DarkModeButton />
       </div>
     </div>
   );

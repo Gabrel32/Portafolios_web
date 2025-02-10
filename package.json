@@ -9,6 +9,9 @@
   },
   "dependencies": {
     "@fontsource/klee-one": "^5.1.1",
+    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/line-clamp": "^0.4.4",
+    "motion": "^12.4.1",
     "next": "13.4.12",
     "react": "18.2.0",
     "react-dom": "18.2.0"
