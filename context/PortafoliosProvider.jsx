@@ -45,16 +45,16 @@ function PortafoliosProvider({children}){
     }
 
     const Proyectos = [
-        // {
-        //     Nombre:"GuitarsLA", 
-        //     id:0,
-        //     git:"gitlab",
-        //     dsp:"", 
-        //     img:"guitarLa",
-        //     link:"https://next-guitarla.vercel.app/",
-        //     linkGit:"https://gitlab.com/Gabrel32/guitarla-next-a.git",
-        //     parrafo:"Es un Proyecto de Next con Paginacion una Base de Datos PosgresSql y un Carrito de Compras"
-        // },
+        {
+            Nombre:"GuitarsLA", 
+            id:0,
+            git:"gitlab",
+            dsp:"", 
+            img:"guitarLa",
+            link:"https://next-guitarla.vercel.app/",
+            linkGit:"https://gitlab.com/Gabrel32/guitarla-next-a.git",
+            parrafo:"Es un Proyecto de Next con Paginacion una Base de Datos PosgresSql y un Carrito de Compras"
+        },
         {
             Nombre:"Product Hunt", 
             id:0,

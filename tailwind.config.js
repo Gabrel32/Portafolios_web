@@ -26,7 +26,14 @@ module.exports = {
         'gradient-pulse': 'gradient-pulse 12s ease infinite',
         'slideInUp': 'slideInUp 0.6s ease-out',
         'delayedFadeIn': 'delayedFadeIn 1.2s ease-in',
-        'lineExpansion': 'lineExpansion 0.8s cubic-bezier(0.22, 1, 0.36, 1)'
+        'lineExpansion': 'lineExpansion 0.8s cubic-bezier(0.22, 1, 0.36, 1)',
+         // Nueva animación de órbita
+         'orbit-slow': 'orbit 25s linear infinite',
+         'orbit-reverse-slow': 'orbit 30s linear infinite reverse',
+         // Animación de flotar
+         'float': 'float 6s ease-in-out infinite',
+         // Animación de pulso más rápida
+         'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite'
         
       },
       keyframes: {
@@ -62,6 +69,14 @@ module.exports = {
         'lineExpansion': {
           '0%': { transform: 'scaleX(0)', opacity: 0 },
           '100%': { transform: 'scaleX(1)', opacity: 1 }
+        },
+        orbit: {
+          '0%': { transform: 'translate(0, 0) rotate(0deg)' },
+          '100%': { transform: 'translate(300px, 300px) rotate(360deg)' }
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-20px)' }
         }
       },
       spacing: {
