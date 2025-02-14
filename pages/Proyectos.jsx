@@ -6,38 +6,49 @@ import Carousel from '../components/Carrusel';
 function Proyectos() {
   const { Proyectos } = usePortafolios();
 
-  // Componente reutilizable para el encabezado de sección
-  const SectionHeader = ({ title, description }) => (
-    <header className="relative isolate overflow-hidden py-16 px-6 text-center sm:px-8">
-      {/* Fondo con efecto de partículas sutiles */}
-      <div className="absolute inset-0 -z-10 opacity-10 dark:opacity-15">
-        <div className="absolute inset-0 animate-gradient-pulse bg-[size:200%_200%] bg-gradient-to-tr from-custom-brown/30 via-transparent to-efectHovercolor/30" />
-      </div>
-      
-      <div className="mx-auto max-w-2xl lg:max-w-4xl">
-        <h1 className="text-4xl font-light tracking-tight text-custom-brown dark:text-white sm:text-5xl lg:text-6xl animate-fadeIn">
-          {title}
-        </h1>
+  // Componente reutilizable para el encabezado de sección mejorado
+  const SectionHeader = ({ title, description, children }) => (
+    <header className="relative overflow-hidden py-16 px-6 text-center bg-transparent from-white/50 to-transparent dark:from-gray-900/50">
+      <div className="absolute inset-0 z-0 opacity-50 ">
+        {/* Partículas grandes con diferentes animaciones */}
+        <div className="absolute w-64 h-64 bg-custom-brown rounded-full -top-32 -left-32 animate-orbit-slow" />
+        <div className="absolute w-72 h-72 bg-efectHovercolor/30 rounded-full -bottom-48 -right-48 animate-orbit-reverse-slow delay-300" />
         
-        {description && (
-          <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300 animate-fadeIn">
-            {description}
-          </p>
-        )}
+        {/* Partículas medianas */}
+        <div className="absolute w-24 h-24 bg-custom-brown rounded-full top-1/4 left-1/3 animate-float" />
+        <div className="absolute w-28 h-28 bg-efectHovercolor/40 rounded-full top-1/3 right-1/4 animate-float delay-500" />
         
-        {/* Separador decorativo animado */}
-        <div className="mt-8 mx-auto w-48 h-1 bg-gradient-to-r from-custom-brown via-efectHovercolor to-transparent dark:from-blue-400 dark:via-purple-400 rounded-full animate-grow" />
+        {/* Partículas pequeñas */}
+        <div className="absolute w-12 h-12 bg-custom-brown rounded-full top-10 left-20 animate-pulse-fast" />
+        <div className="absolute w-16 h-16 bg-efectHovercolor/30 rounded-full bottom-20 right-32 animate-pulse-fast delay-200" />
       </div>
+      <div className="relative mx-auto max-w-2xl lg:max-w-4xl">
+        <div className="inline-block relative">
+          <h1 className="text-5xl font-light tracking-tight text-custom-brown sm:text-6xl lg:text-7xl transform transition-all duration-500 hover:scale-105">
+            {title}
+          </h1>
+          {/* Línea decorativa */}
+          <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-custom-brown to-transparent dark:via-efectHovercolor" />
+        </div>
+       
+      </div>
+      <div className='relative overflow-hidden mt-20'>
+
+      {children}
+      </div>
+
     </header>
   );
 
   return (
     <Layout pagina="Proyectos">
-      <SectionHeader
-        title="Proyectos"
-      />
+      {/* Contenedor para prevenir scroll horizontal */}
+      <div className="overflow-x-hidden w-full h-full">
+        <SectionHeader title="Proyectos">
+          <Carousel items={Proyectos} />
+        </SectionHeader>
 
-        <Carousel items={Proyectos} />
+      </div>
     </Layout>
   );
 }
