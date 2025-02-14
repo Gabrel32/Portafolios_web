@@ -3,12 +3,16 @@ import Layout from '../layout/Layout'
 import Link from 'next/link'
 import Image from 'next/image'
 import usePortafolios from '../hook/usePortafolios'
+import ContactForm from '../components/ContactForm'
 
 function Contacto() {
   const { contacto } = usePortafolios()
 
   return (
     <Layout pagina={"Contacto"}>
+      <div className='flex flex-col justify-center items-center'>
+      <ContactForm/>
+
       <div className="relative bg-beige-50 dark:bg-completColor w-full max-w-4xl mx-auto rounded-2xl p-8 mb-10 shadow-2xl transition-all duration-500 hover:shadow-3xl overflow-hidden">
         {/* Patrón de fondo decorativo */}
         <div className="absolute inset-0 opacity-10 dark:opacity-5 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMiIgaGVpZ2h0PSIyIiBmaWxsPSIjZGM1ZjAwIi8+PC9zdmc+')]" />
@@ -66,6 +70,8 @@ function Contacto() {
             </Link>
           </p>
         </div>
+      </div>
+      
       </div>
     </Layout>
   )

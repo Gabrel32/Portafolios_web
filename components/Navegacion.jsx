@@ -99,7 +99,7 @@ function Navegacion({ className, ...props }) {
                 directionPath={e?.directionPath}
               />
             ))}
-            <div className="sm:hidden">
+            <div className="hidden md:flex">
               <DarkModeButton />
             </div>
           </div>

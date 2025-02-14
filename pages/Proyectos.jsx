@@ -34,7 +34,7 @@ function Proyectos() {
   return (
     <Layout pagina="Proyectos">
       <SectionHeader
-        title="Nuestros Proyectos"
+        title="Proyectos"
       />
 
         <Carousel items={Proyectos} />
