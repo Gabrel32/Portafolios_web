@@ -168,10 +168,10 @@ function PortafoliosProvider({children}){
         {Nombre:"Remix",id:6,icon:"remix.svg"},
         {Nombre:"Astro",id:7,icon:"astro.svg"},  
         {Nombre:"Boostrap",id:8,icon:"bostrap.svg"},
-        {Nombre:"React",id:9,icon:"react.png"},
-        {Nombre:"MUI",id:10,icon:"mui.png"},
+        {Nombre:"React",id:9,icon:"react.svg"},
+        {Nombre:"MUI",id:10,icon:"mui.svg"},
         {Nombre:"MongoDB",id:11,icon:"mongodb.svg"},
-        {Nombre:"Socket.io",id:12,icon:"socket.png"},
+        {Nombre:"Socket.io",id:12,icon:"socket.svg"},
 
 
 

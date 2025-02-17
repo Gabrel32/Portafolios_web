@@ -47,7 +47,7 @@ function Contacto() {
                   height={60} 
                   src={`/img/${e.img}.png`} 
                   alt={e.Nombre}
-                  className='dark:invert-[0.8] hover:rotate-12 transition-transform duration-300'
+                  className='hover:rotate-12 transition-transform duration-300'
                 />
               </div>
               <span className='text-lg font-medium text-gray-800 dark:text-beige-50 relative'>
