@@ -4,26 +4,31 @@ import { createContext,useState,useEffect } from "react";
 const PortafoliosContext = createContext()
 
 function PortafoliosProvider({children}){
-
     const [isDarkMode, setIsDarkMode] = useState(false);
+  const [currentTheme, setCurrentTheme] = useState('default');
 
+  // Cargar configuración inicial
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme');
+    const savedTheme = localStorage.getItem('theme') || 'default';
+    const savedDarkMode = localStorage.getItem('darkMode') === 'true';
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    setIsDarkMode(savedTheme ? savedTheme === 'dark' : prefersDark);
+    
+    setCurrentTheme(savedTheme);
+    setIsDarkMode(savedDarkMode || prefersDark);
   }, []);
 
+  // Aplicar clases CSS
   useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-    }
-  }, [isDarkMode]);
+    const themeClass = `theme-${currentTheme}`;
+    const darkClass = isDarkMode ? 'dark' : '';
+    document.documentElement.className = `${themeClass} ${darkClass}`;
     
+    localStorage.setItem('theme', currentTheme);
+    localStorage.setItem('darkMode', isDarkMode);
+  }, [currentTheme, isDarkMode]);
+
   const toggleDarkMode = () => setIsDarkMode(!isDarkMode);
+  const changeTheme = (newTheme) => setCurrentTheme(newTheme);
 
 
 
@@ -178,9 +183,9 @@ function PortafoliosProvider({children}){
       ]
 
     const contacto = [
-        {Nombre:"Linkedin",id:1,link:"https://www.linkedin.com/in/gabriel-hernandez-rendiles",img:"linkedin"},
-        {Nombre:"Telegram",id:2,link:"https://t.me/Alegabo32",img:"telegram"},
-        {Nombre:"Whatsapp",id:3,link:"https://wa.link/lc9cdm",img:"whatsapp"},
+        {Nombre:"Linkedin",id:1,link:"https://www.linkedin.com/in/gabriel-hernandez-rendiles",img:"linkedin.svg"},
+        {Nombre:"Telegram",id:2,link:"https://t.me/Alegabo32",img:"telegram.svg"},
+        {Nombre:"Whatsapp",id:3,link:"https://wa.link/lc9cdm",img:"whatsapp.svg"},
         // {Nombre:"Telegram",id:4,link:"",img:"Telegram"},
 
         
@@ -241,12 +246,14 @@ function PortafoliosProvider({children}){
         <PortafoliosContext.Provider
            value={{
             tecnologias,
-            comprobarRuta,
-            Proyectos,
-            contacto,
-            buttonNavs,
-            isDarkMode, 
-            toggleDarkMode
+        comprobarRuta,
+        Proyectos,
+        contacto,
+        buttonNavs,
+        isDarkMode,
+        toggleDarkMode,
+        currentTheme,
+        changeTheme
            }}
         >
             {children}

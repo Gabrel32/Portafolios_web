@@ -13,10 +13,15 @@ module.exports = {
         klee: ['Klee One', 'sans-serif'],
       },
       colors: {
-        'custom-brown': '#DC5F00',
-        'efectHovercolor': '#a95210',
-        "completColor" :"#363636",
-        'beige-50': '#faf8f5'
+        // Mapear a variables CSS manteniendo tus nombres
+        'custom-brown': 'var(--custom-brown)',
+        'efectHovercolor': 'var(--efectHovercolor)',
+        'completColor': 'var(--completColor)',
+        'beige-50': 'var(--beige-50)',
+        // Agregar colores adicionales para los temas
+        'primary': 'var(--primary)',
+        'secondary': 'var(--secondary)',
+        'accent': 'var(--accent)'
       },
       animation: {
         fadeIn: 'fadeIn 0.5s ease-in',
@@ -33,7 +38,10 @@ module.exports = {
          // Animación de flotar
          'float': 'float 6s ease-in-out infinite',
          // Animación de pulso más rápida
-         'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+         'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+         'theme-menu': 'fadeIn 0.3s ease-in, slideInUp 0.3s ease-out',
+        'theme-item': 'delayedFadeIn 0.3s ease-in'
+         
         
       },
       keyframes: {

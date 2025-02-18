@@ -1,32 +1,55 @@
+import { useState, useEffect } from "react";
 import ButtonNav from "./ButtonNav";
 import usePortafolios from "../hook/usePortafolios";
-import { useState, useEffect } from "react";
 import DarkModeButton from "./DarkModeButton";
+import ThemeSwitcher from "./ThemeSwitcher";
 
 function Navegacion({ className, ...props }) {
   const { buttonNavs } = usePortafolios();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
-  // Función para cerrar el menú al hacer clic fuera
+  // Animación después del montaje
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  // Cerrar menú al hacer clic fuera
   const closeMenu = (e) => {
     if (e.target === e.currentTarget) {
       setMenuOpen(false);
     }
   };
 
+  // Cerrar menú al cambiar de ruta
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [buttonNavs]);
+
   return (
-    <div className={`rounded-corner-small flex flex-col sm:flex-row gap-5 items-center justify-between sm:justify-center relative overflow-hidden ${className}`}>
+    <div
+      className={`rounded-corner-small flex flex-col sm:flex-row gap-5 items-center justify-between sm:justify-center relative overflow-hidden ${className}`}
+      {...props}
+    >
       {/* Sección del título */}
       <div className="flex flex-row gap-2 sm:gap-5 items-center justify-evenly h-[89px] relative w-full">
-        <div className="text-[#000000] dark:text-white text-center text-[24px] sm:text-[30px] md:text-[40px] leading-none relative w-fit h-[60px] flex items-center">
+        <div
+          className={`text-[#000000] dark:text-beige-50 text-center text-[24px] sm:text-[30px] md:text-[40px] leading-none relative w-fit h-[60px] flex items-center ${
+            isMounted ? "animate-fadeIn" : ""
+          }`}
+        >
           Gabriel
         </div>
-        <div className="text-[#dc5f00] text-center text-[24px] sm:text-[30px] md:text-[40px] leading-none font-normal relative w-fit h-[60px] flex items-center justify-center">
+        <div
+          className={`text-custom-brown text-center text-[24px] sm:text-[30px] md:text-[40px] leading-none font-normal relative w-fit h-[60px] flex items-center justify-center ${
+            isMounted ? "animate-fadeIn" : ""
+          }`}
+        >
           Hernandez
         </div>
 
         {/* Icono de verificación */}
-        <div className="w-[25px] h-[25px]">
+        <div className="w-[25px] h-[25px] animate-pulse-fast">
           <svg
             width="25"
             height="25"
@@ -45,11 +68,13 @@ function Navegacion({ className, ...props }) {
         {/* Botones para móvil */}
         <div className="flex flex-row gap-4 items-center justify-between sm:hidden w-full">
           <div className="flex gap-4">
+            <ThemeSwitcher />
             <DarkModeButton />
-            
+
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="text-2xl relative z-20 transition-transform transform active:scale-95 text-black dark:text-white"
+              className="text-2xl relative z-20 transition-transform transform active:scale-95 text-black dark:text-beige-50"
+              aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
             >
               <svg
                 width="40"
@@ -57,6 +82,7 @@ function Navegacion({ className, ...props }) {
                 viewBox="0 0 40 37"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                className={`transition-transform duration-300 ${menuOpen ? 'rotate-90' : ''}`}
               >
                 <path
                   d="M5 18.5H35M5 9.25H35M5 27.75H35"
@@ -73,44 +99,57 @@ function Navegacion({ className, ...props }) {
       </div>
 
       {/* Menú Modal para móvil */}
-      <div
-        className={`fixed inset-0 bg-black bg-opacity-50 dark:bg-opacity-70 z-50 transition-opacity ${
-          menuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
-        }`}
-        onClick={closeMenu}
-      >
+      {menuOpen && (
         <div
-          className={`absolute right-0 w-[200px] h-full bg-white dark:bg-gray-800 transform transition-transform duration-300 ${
-            menuOpen ? "translate-x-0" : "translate-x-full"
-          }`}
+          className="fixed inset-0 bg-black bg-opacity-50 dark:bg-opacity-70 z-[9999] transition-opacity"
+          onClick={closeMenu}
         >
-          <div className="flex flex-col items-center justify-center gap-10 h-full p-4">
-            <button
-              onClick={() => setMenuOpen(false)}
-              className="text-3xl text-black dark:text-white absolute top-4 right-4"
-            >
-              &times;
-            </button>
-            {buttonNavs.map((e) => (
-              <ButtonNav
-                key={e.name}
-                name={e.name}
-                icon={e.icon}
-                directionPath={e?.directionPath}
-              />
-            ))}
-            <div className="hidden md:flex">
-              <DarkModeButton />
+          <div
+            className="absolute right-0 w-[200px] h-full bg-beige-50 dark:bg-completColor shadow-lg transform transition-transform duration-300 ease-in-out"
+            style={{
+              transform: menuOpen ? "translateX(0)" : "translateX(100%)",
+            }}
+          >
+            <div className="flex flex-col items-center justify-center gap-10 h-full p-4">
+              <button
+                onClick={() => setMenuOpen(false)}
+                className="text-3xl text-completColor dark:text-beige-50 absolute top-4 right-4 hover:scale-110 transition-transform"
+                aria-label="Cerrar menú"
+              >
+                &times;
+              </button>
+              {buttonNavs.map((e, index) => (
+                <ButtonNav
+                  key={e.name}
+                  name={e.name}
+                  icon={e.icon}
+                  directionPath={e?.directionPath}
+                  onClick={() => setMenuOpen(false)}
+                  className={`animate-fadeIn`}
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                />
+              ))}
+              <div className="flex flex-col gap-4 w-full px-4 justify-center items-center">
+                <ThemeSwitcher />
+                <DarkModeButton />
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
 
       {/* Vista de escritorio */}
       <div className="hidden sm:flex flex-row gap-4 items-center justify-center w-full h-[70px] relative">
         {buttonNavs.map((e) => (
-          <ButtonNav key={e.name} name={e.name} icon={e.icon} directionPath={e?.directionPath} />
+          <ButtonNav
+            key={e.name}
+            name={e.name}
+            icon={e.icon}
+            directionPath={e?.directionPath}
+            className="animate-fadeInUp"
+          />
         ))}
+        <ThemeSwitcher />
         <DarkModeButton />
       </div>
     </div>

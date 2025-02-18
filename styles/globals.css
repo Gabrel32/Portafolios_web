@@ -2,6 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
+:root, .theme-default {
+  --custom-brown: #DC5F00;
+  --efectHovercolor: #a95210;
+  --completColor: #363636;
+  --beige-50: #faf8f5;
+  --primary: #DC5F00;
+  --secondary: #a95210;
+  --accent: #4A90E2;
+}
+
+.theme-default.dark {
+  --custom-brown: #BB86FC;
+  --efectHovercolor: #3700B3;
+  --completColor: #E0E0E0;
+  --beige-50: #121212;
+  --primary: #BB86FC;
+  --secondary: #3700B3;
+  --accent: #03DAC6;
+}
+
+/* Tema Bosque */
+.theme-forest {
+  --custom-brown: #2D5A27;
+  --efectHovercolor: #4F7942;
+  --completColor: #2C2C2C;
+  --beige-50: #F0F4EC;
+  --primary: #2D5A27;
+  --secondary: #4F7942;
+  --accent: #88AB8E;
+}
+
+.theme-forest.dark {
+  --custom-brown: #88AB8E;
+  --efectHovercolor: #4F7942;
+  --completColor: #E0E0E0;
+  --beige-50: #1A2F1D;
+  --primary: #88AB8E;
+  --secondary: #4F7942;
+  --accent: #BB86FC;
+}
+
+/* Tema Océano */
+.theme-ocean {
+  --custom-brown: #1A5F7A;
+  --efectHovercolor: #159895;
+  --completColor: #2C3333;
+  --beige-50: #F3F8FF;
+  --primary: #1A5F7A;
+  --secondary: #159895;
+  --accent: #57C5B6;
+}
+
+.theme-ocean.dark {
+  --custom-brown: #57C5B6;
+  --efectHovercolor: #159895;
+  --completColor: #E0E0E0;
+  --beige-50: #0A2E38;
+  --primary: #57C5B6;
+  --secondary: #159895;
+  --accent: #BB86FC;
+}
+
 *{
     font-family: "Klee One", sans-serif;}
 
@@ -18,7 +80,7 @@ html {
 
 /* Define la base del botón */
 .btn-base {
-    @apply rounded-bl-lg bg-[#DC5F00] font-light text-white text-left text-sm sm:text-base md:text-lg lg:text-xl leading-none relative  shadow-lg;
+    @apply rounded-bl-lg bg-[--custom-brown] font-light text-white text-left text-sm sm:text-base md:text-lg lg:text-xl leading-none relative  shadow-lg;
   }
   
   /* Define el efecto hover y active */
