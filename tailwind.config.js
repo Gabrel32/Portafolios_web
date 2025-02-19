@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: "class", 
-
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./layout/**/*.{js,ts,jsx,tsx}",
@@ -18,10 +17,10 @@ module.exports = {
         'efectHovercolor': 'var(--efectHovercolor)',
         'completColor': 'var(--completColor)',
         'beige-50': 'var(--beige-50)',
-        // Agregar colores adicionales para los temas
         'primary': 'var(--primary)',
         'secondary': 'var(--secondary)',
-        'accent': 'var(--accent)'
+        'accent': 'var(--accent)',
+        'highlight': 'var(--highlight)', // Nuevo color agregado
       },
       animation: {
         fadeIn: 'fadeIn 0.5s ease-in',
@@ -32,17 +31,15 @@ module.exports = {
         'slideInUp': 'slideInUp 0.6s ease-out',
         'delayedFadeIn': 'delayedFadeIn 1.2s ease-in',
         'lineExpansion': 'lineExpansion 0.8s cubic-bezier(0.22, 1, 0.36, 1)',
-         // Nueva animación de órbita
-         'orbit-slow': 'orbit 25s linear infinite',
-         'orbit-reverse-slow': 'orbit 30s linear infinite reverse',
-         // Animación de flotar
-         'float': 'float 6s ease-in-out infinite',
-         // Animación de pulso más rápida
-         'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-         'theme-menu': 'fadeIn 0.3s ease-in, slideInUp 0.3s ease-out',
+        // Nueva animación de órbita
+        'orbit-slow': 'orbit 25s linear infinite',
+        'orbit-reverse-slow': 'orbit 30s linear infinite reverse',
+        // Animación de flotar
+        'float': 'float 6s ease-in-out infinite',
+        // Animación de pulso más rápida
+        'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'theme-menu': 'fadeIn 0.3s ease-in, slideInUp 0.3s ease-out',
         'theme-item': 'delayedFadeIn 0.3s ease-in'
-         
-        
       },
       keyframes: {
         fadeIn: {
@@ -95,7 +92,6 @@ module.exports = {
         '10': '10',
       },
     },
-    
   },
   plugins: [],
-}
+};

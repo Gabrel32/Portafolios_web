@@ -4,64 +4,102 @@
 
 :root, .theme-default {
   --custom-brown: #DC5F00;
-  --efectHovercolor: #a95210;
-  --completColor: #363636;
-  --beige-50: #faf8f5;
+  --efectHovercolor: #C15507; /* Más saturado */
+  --completColor: #F5EDE6;    /* Beige más claro */
+  --beige-50: #FFFCF9;        /* Blanco más puro */
   --primary: #DC5F00;
-  --secondary: #a95210;
-  --accent: #4A90E2;
+  --secondary: #AE4D10;       /* Terracota oscuro */
+  --accent: #FF6B6B;          /* Nuevo: Coral vibrante */
+  --highlight: #FFD93D;       /* Nuevo: Amarillo dorado */
 }
 
 .theme-default.dark {
-  --custom-brown: #BB86FC;
-  --efectHovercolor: #3700B3;
-  --completColor: #E0E0E0;
-  --beige-50: #121212;
-  --primary: #BB86FC;
-  --secondary: #3700B3;
-  --accent: #03DAC6;
+  --custom-brown: #DC5F00;    /* Naranja más brillante */
+  --efectHovercolor: #E56D2C;
+  --completColor: #2D2D2D;    /* Gris oscuro */
+  --beige-50: #1A1A1A;        /* Fondo oscuro profundo */
+  --accent: #2D2D2D;          /* Coral suavizado */
+  --highlight: #FFE082;       /* Amarillo suave */
 }
 
-/* Tema Bosque */
+/* Tema Bosque Mejorado */
 .theme-forest {
-  --custom-brown: #2D5A27;
-  --efectHovercolor: #4F7942;
-  --completColor: #2C2C2C;
-  --beige-50: #F0F4EC;
-  --primary: #2D5A27;
-  --secondary: #4F7942;
-  --accent: #88AB8E;
+  --custom-brown: #3A7D44;    /* Verde más vibrante */
+  --efectHovercolor: #285430; /* Verde bosque oscuro */
+  --completColor: #E8F5E9;    /* Verde muy claro */
+  --beige-50: #F1F8E9;        /* Beige verdoso */
+  --primary: #2E7D32;         /* Verde esmeralda */
+  --secondary: #689F38;       /* Verde lima */
+  --accent: #689F38;          /* Nuevo: Naranja brillante */
+  --highlight: #AED581;       /* Nuevo: Verde menta */
 }
 
 .theme-forest.dark {
-  --custom-brown: #88AB8E;
-  --efectHovercolor: #4F7942;
-  --completColor: #E0E0E0;
-  --beige-50: #1A2F1D;
-  --primary: #88AB8E;
-  --secondary: #4F7942;
-  --accent: #BB86FC;
+  --custom-brown: #3A7D44;    /* Verde claro */
+  --efectHovercolor: #4CAF50;
+  --completColor: #37474F;    /* Gris azulado */
+  --beige-50: #1B3022;        /* Verde oscuro profundo */
+  --accent: #689F38;          /* Naranja suavizado */
+  --highlight: #C5E1A5;       /* Verde menta claro */
 }
 
-/* Tema Océano */
+/* Tema Océano Mejorado */
 .theme-ocean {
-  --custom-brown: #1A5F7A;
-  --efectHovercolor: #159895;
-  --completColor: #2C3333;
-  --beige-50: #F3F8FF;
-  --primary: #1A5F7A;
-  --secondary: #159895;
-  --accent: #57C5B6;
+  --custom-brown: #1462a1f1;    /* Azul vibrante */
+  --efectHovercolor: #1976D2; /* Azul marino */
+  --completColor: #E3F2FD;    /* Azul muy claro */
+  --beige-50: #E1F5FE;        /* Blanco azulado */
+  --primary: #1565C0;         /* Azul profundo */
+  --secondary: #1f94a3;       /* Turquesa */
+  --accent: #1f94a3;          /* Nuevo: Rojo coral */
+  --highlight: #FFD740;       /* Nuevo: Amarillo sol */
 }
 
 .theme-ocean.dark {
-  --custom-brown: #57C5B6;
-  --efectHovercolor: #159895;
-  --completColor: #E0E0E0;
-  --beige-50: #0A2E38;
-  --primary: #57C5B6;
-  --secondary: #159895;
-  --accent: #BB86FC;
+  --custom-brown: #1462a1f1;    /* Azul claro */
+  --efectHovercolor: #42A5F5;
+  --completColor: #1462a1f1;    /* Azul oscuro intenso */
+  --beige-50: #021B3D;        /* Azul noche */
+  --accent: #1f94a3;          /* Coral suave */
+  --highlight: #FFF176;       /* Amarillo claro */
+}
+/* tema desierto atardecer */
+.theme-desert {
+  --custom-brown: #8B572A;    /* Arena natural */
+  --efectHovercolor: #A67B5B; /* Marrón oscuro */
+  --completColor: #FFF8E1;    /* Beige claro */
+  --beige-50: #FFF3CD;        /* Crema suave */
+  --primary: #964B00;         /* Tierra profunda */
+  --secondary: #a38b2b;       /* Naranja brillante */
+  --accent: #a38b2b;          /* Amarillo dorado */
+  --highlight: #FFEB3B;       /* Amarillo vibrante */
+}
+.theme-desert.dark {
+  --custom-brown: #8B572A;    /* Marrón cálido oscuro */
+  --efectHovercolor: #654321; /* Chocolate profundo */
+  --completColor: #3E2723;    /* Marrón muy oscuro */
+  --beige-50: #2F221C;        /* Fondo oscuro terroso */
+  --accent: #a38b2b;          /* Naranja suavizado */
+  --highlight: #FFD180;       /* Amarillo atardecer */
+}
+/* tema cielo atardecer */
+.theme-sunset {
+  --custom-brown: #8b4740;    /* Rosa pastel */
+  --efectHovercolor: #be3f3f; /* Rosa más intenso */
+  --completColor: #FFF0F5;    /* Lavanda claro */
+  --beige-50: #FFE4E1;        /* Rosa muy claro */
+  --primary: #FF4500;         /* Naranja atardecer */
+  --secondary: #FF7F50;       /* Coral suave */
+  --accent: #FFD700;          /* Oro brillante */
+  --highlight: #FFA07A;       /* Salmón claro */
+}
+.theme-sunset.dark {
+  --custom-brown: #8b4740;    /* Rosa anaranjado */
+  --efectHovercolor: #be3f3f; /* Rojo tomate */
+  --completColor: #2C3E50;    /* Azul noche */
+  --beige-50: #1E272C;        /* Negro azulado */
+  --accent: #FFC300;          /* Dorado vibrante */
+  --highlight: #FFA726;       /* Naranja atardecer oscuro */
 }
 
 *{

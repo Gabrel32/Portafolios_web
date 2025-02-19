@@ -28,13 +28,21 @@ function Navegacion({ className, ...props }) {
 
   return (
     <div
+<<<<<<< Updated upstream
       className={`rounded-corner-small flex flex-col sm:flex-row gap-5 items-center justify-between sm:justify-center relative overflow-hidden ${className}`}
+=======
+      className={`rounded-corner-small flex flex-col sm:flex-row gap-5 items-center justify-between sm:justify-center relative ${className}`}
+>>>>>>> Stashed changes
       {...props}
     >
       {/* Sección del título */}
       <div className="flex flex-row gap-2 sm:gap-5 items-center justify-evenly h-[89px] relative w-full">
         <div
+<<<<<<< Updated upstream
           className={`text-[#000000] dark:text-beige-50 text-center text-[24px] sm:text-[30px] md:text-[40px] leading-none relative w-fit h-[60px] flex items-center ${
+=======
+          className={`text-[#000000] dark:text-[#fff] text-center text-[24px] sm:text-[30px] md:text-[40px] leading-none relative w-fit h-[60px] flex items-center ${
+>>>>>>> Stashed changes
             isMounted ? "animate-fadeIn" : ""
           }`}
         >
@@ -65,6 +73,7 @@ function Navegacion({ className, ...props }) {
           </svg>
         </div>
 
+<<<<<<< Updated upstream
         {/* Botones para móvil */}
         <div className="flex flex-row gap-4 items-center justify-between sm:hidden w-full">
           <div className="flex gap-4">
@@ -96,16 +105,55 @@ function Navegacion({ className, ...props }) {
             </button>
           </div>
         </div>
+=======
+       {/* Botones para móvil */}
+<div className="flex flex-row gap-4 items-center justify-between sm:hidden w-full">
+  <div className="flex gap-4">
+    {/* Eliminamos los botones de tema de aquí */}
+    <button
+      onClick={() => setMenuOpen(!menuOpen)}
+      className="text-2xl relative z-20 transition-transform transform active:scale-95 text-black dark:text-beige-50"
+      aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
+    >
+      <svg
+        width="40"
+        height="37"
+        viewBox="0 0 40 37"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className={`transition-transform duration-300 ${menuOpen ? 'rotate-90' : ''}`}
+      >
+        <path
+          d="M5 18.5H35M5 9.25H35M5 27.75H35"
+          stroke="currentColor"
+          strokeOpacity="0.85"
+          strokeWidth="4"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+>>>>>>> Stashed changes
       </div>
 
       {/* Menú Modal para móvil */}
       {menuOpen && (
         <div
+<<<<<<< Updated upstream
           className="fixed inset-0 bg-black bg-opacity-50 dark:bg-opacity-70 z-[9999] transition-opacity"
           onClick={closeMenu}
         >
           <div
             className="absolute right-0 w-[200px] h-full bg-beige-50 dark:bg-completColor shadow-lg transform transition-transform duration-300 ease-in-out"
+=======
+          className="fixed inset-0 bg-opacity-50 dark:bg-opacity-70 z-[9999] transition-opacity"
+          onClick={closeMenu}
+        >
+          <div
+            className="absolute right-0 w-[200px] h-full bg-beige-50 dark:bg-beige-50 shadow-lg transform transition-transform duration-300 ease-in-out"
+>>>>>>> Stashed changes
             style={{
               transform: menuOpen ? "translateX(0)" : "translateX(100%)",
             }}
@@ -113,7 +161,11 @@ function Navegacion({ className, ...props }) {
             <div className="flex flex-col items-center justify-center gap-10 h-full p-4">
               <button
                 onClick={() => setMenuOpen(false)}
+<<<<<<< Updated upstream
                 className="text-3xl text-completColor dark:text-beige-50 absolute top-4 right-4 hover:scale-110 transition-transform"
+=======
+                className="text-3xl text-custom-brown absolute top-4 right-4 hover:scale-110 transition-transform"
+>>>>>>> Stashed changes
                 aria-label="Cerrar menú"
               >
                 &times;

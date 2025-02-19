@@ -8,23 +8,23 @@ const DarkModeButton = () => {
       onClick={toggleDarkMode}
       className={`relative w-14 h-8 rounded-full transition-colors duration-300 ${
         isDarkMode
-          ? 'bg-completColor border-beige-50/20'
-          : 'bg-beige-50 border-custom-brown/20'
+          ? 'bg-[transparent] border-[var(--completColor)]'
+          : 'bg-[var(--beige-50)] border-[var(--custom-brown)]'
       } border`}
       aria-label={`Cambiar a modo ${isDarkMode ? 'claro' : 'oscuro'}`}
     >
       <div
         className={`absolute top-1 w-6 h-6 rounded-full ${
           isDarkMode
-            ? 'bg-beige-50 left-7'
-            : 'bg-custom-brown left-1'
+            ? 'bg-[var(--accent)] left-7'
+            : 'bg-[var(--secondary)] left-1'
         } shadow-lg transition-all duration-300 flex items-center justify-center`}
       >
         {isDarkMode ? (
           // Ícono de luna con animación de rotación
           <svg
             viewBox="0 0 24 24"
-            className="w-4 h-4 text-completColor animate-rotate"
+            className="w-4 h-4 text-[#f5f5f5] animate-rotate"
             fill="none"
             stroke="currentColor"
             strokeWidth="1.5"
@@ -37,7 +37,7 @@ const DarkModeButton = () => {
           // Ícono de sol con animación de rotación
           <svg
             viewBox="0 0 24 24"
-            className="w-4 h-4 text-beige-50 animate-rotate"
+            className="w-4 h-4 text-[var(--completColor)] animate-rotate"
             fill="none"
             stroke="currentColor"
             strokeWidth="1.5"
@@ -49,13 +49,11 @@ const DarkModeButton = () => {
           </svg>
         )}
       </div>
-
       <style jsx global>{`
         @keyframes rotate {
           0% { transform: rotate(0deg); }
           100% { transform: rotate(360deg); }
         }
-
         .animate-rotate {
           animation: rotate 10s linear infinite;
           transform-origin: center;
