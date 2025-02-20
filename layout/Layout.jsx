@@ -3,17 +3,20 @@ import Head from 'next/head';
 import Navegacion from '../components/Navegacion';
 
 function Layout({ children, pagina }) {
+  // Asegurarse de que `pagina` sea una cadena de texto
+  const pageTitle = typeof pagina === 'string' ? pagina : 'Página'; // Fallback en caso de que `pagina` no sea una cadena
+
   return (
     <div suppressHydrationWarning className="flex flex-col min-h-screen dark:bg-darkBackground bg-lightBackground">
       {/* SEO y Metadatos */}
       <Head>
-        <title>{pagina} - Portafolio</title>
-        <meta name="description" content={`Portafolio web: ${pagina}. Descubre proyectos e información relevante.`} />
+        <title>{`${pageTitle} - Portafolio`}</title> {/* Concatenar con el nombre del sitio */}
+        <meta name="description" content={`Portafolio web: ${pageTitle}. Descubre proyectos e información relevante.`} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="UTF-8" />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Gabriel Hernandez" />
-        <meta property="og:title" content={`${pagina} - Portafolio`} />
+        <meta property="og:title" content={`${pageTitle} - Portafolio`} />
         <meta property="og:description" content="Portafolio web donde encontrarás diversos proyectos e información de interés." />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/images/og-image.jpg" /> {/* Asegúrate de tener una imagen OG */}

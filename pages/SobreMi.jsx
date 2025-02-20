@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Layout from '../layout/Layout';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -6,24 +6,36 @@ import usePortafolios from '../hook/usePortafolios';
 
 function SobreMi() {
   const { tecnologias } = usePortafolios();
+  const [customBrown, setCustomBrown] = useState('#DC5F00'); // Valor predeterminado
+
+  useEffect(() => {
+    // Este código solo se ejecutará en el cliente
+    if (typeof window !== 'undefined') {
+      const customBrownColor = getComputedStyle(document.documentElement)
+        .getPropertyValue('--custom-brown')
+        .trim();
+      setCustomBrown(customBrownColor);
+    }
+  }, []);
+
   return (
     <Layout pagina={"Sobre Mi"}>
       <div className="relative bg-transparent w-full max-w-6xl mx-auto rounded-2xl p-8 mb-10 transition-all duration-500 shadow-2xl shadow-black dark:shadow-white hover:shadow-3xl overflow-hidden">
         {/* Efecto de fondo decorativo */}
         <div
           className="absolute inset-0 opacity-10 dark:opacity-5 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMiIgaGVpZ2h0PSIyIiBmaWxsPSIjZGM1ZjAwIi8+PC9zdmc+')]"
-          style={{ backgroundImage: `url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMiIgaGVpZ2h0PSIyIiBmaWxsPSIj${encodeURIComponent(
-            getComputedStyle(document.documentElement).getPropertyValue('--custom-brown').trim().replace('#', '')
-          )}"Lz48L3N2Zz4=")` }}
+          style={{
+            backgroundImage: `url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMiIgaGVpZ2h0PSIyIiBmaWxsPSIj${encodeURIComponent(
+              customBrown.replace('#', '')
+            )}"Lz48L3N2Zz4=")`,
+          }}
         />
-
         {/* Título principal */}
         <h3
           className='text-5xl lg:text-6xl font-bold mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-[var(--custom-brown)] to-[var(--efectHovercolor)] animate-fadeIn'
         >
           Sobre Mi
         </h3>
-
         {/* Sección de tecnologías */}
         <section className="mb-10 relative z-10">
           <h4 className="text-2xl font-semibold text-gray-800 dark:text-beige-50 mb-6 animate-slideRight">
@@ -32,7 +44,6 @@ function SobreMi() {
             </span>
             <span className="ml-2 border-b-2 border-[var(--custom-brown)] inline-block pb-1">Manejadas</span>
           </h4>
-
           {/* Lista de tecnologías */}
           <ul className='mt-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
             {tecnologias.map((e, index) => (
@@ -58,7 +69,6 @@ function SobreMi() {
             ))}
           </ul>
         </section>
-
         {/* Sección de texto adicional */}
         <section className="relative z-10">
           <p className='text-xl text-gray-700 dark:text-beige-50 leading-relaxed text-center animate-fadeInUp'>
