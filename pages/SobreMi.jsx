@@ -62,7 +62,7 @@ function SobreMi() {
                     className='hover:rotate-12 transition-transform duration-300'
                   />
                 </div>
-                <span className='text-lg font-medium text-gray-800 dark:text-[#f5f5f5] relative'>
+                <span className='text-lg font-medium text-gray-800 dark:text-[#f5f5f5c4] relative'>
                   {e.Nombre}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--custom-brown)] transition-all duration-300 group-hover:w-full"></span>
                 </span>

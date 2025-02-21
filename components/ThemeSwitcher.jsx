@@ -19,21 +19,13 @@ const ThemeSwitcher = () => {
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-center w-28 h-10 rounded-lg gap-2
+        className="btn-base btn-efecto flex items-center justify-center flex-row text-custom-brown w-10 h-10 rounded-lg gap-2
         text-sm font-medium text-foreground hover:bg-background/20 transition-all
         backdrop-blur-sm group"
         aria-label="Selector de temas"
       >
-        <span>Temas</span>
-        <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          className="w-5 h-5 transition-colors duration-200"
-          viewBox="0 0 24 24"
-        >
-          <path 
-            fill={currentThemeColor}
-            d="M18 12v1.5c1.11 0 2.08.6 2.6 1.5H18v3h1.17c-.3.6-.8 1.08-1.4 1.39V21H5v-2.11c-.6-.31-1.1-.79-1.4-1.39H5v-3H2.4c.52-.9 1.49-1.5 2.6-1.5V12H1v6h22v-6h-5zm-7-4H8V4h3v4zm5 0h-3V4h3v4z"
-          />
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" strokeWidth={0.5} stroke="currentColor" className="w-[20px] h-[20px]">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9.53 16.122a3 3 0 0 0-5.78 1.128 2.25 2.25 0 0 1-2.4 2.245 4.5 4.5 0 0 0 8.4-2.245c0-.399-.078-.78-.22-1.128Zm0 0a15.998 15.998 0 0 0 3.388-1.62m-5.043-.025a15.994 15.994 0 0 1 1.622-3.395m3.42 3.42a15.995 15.995 0 0 0 4.764-4.648l3.876-5.814a1.151 1.151 0 0 0-1.597-1.597L14.146 6.32a15.996 15.996 0 0 0-4.649 4.763m3.42 3.42a6.776 6.776 0 0 0-3.42-3.42" />
         </svg>
       </button>
 
@@ -53,7 +45,7 @@ const ThemeSwitcher = () => {
               className={`w-full text-sm p-2 rounded-md flex items-center
                 transition-colors duration-100 ${
                   currentTheme === theme.id 
-                    ? 'bg-primary text-primary-foreground' 
+                    ? 'bg-primary text-[#f5f5f5]' 
                     : 'hover:bg-subtle/30'
                 }`}
             >

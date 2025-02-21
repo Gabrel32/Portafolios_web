@@ -4,49 +4,68 @@ import { createContext,useState,useEffect } from "react";
 const PortafoliosContext = createContext()
 
 function PortafoliosProvider({children}){
-    const [isDarkMode, setIsDarkMode] = useState(false);
-  const [currentTheme, setCurrentTheme] = useState('default');
-
-  // Cargar configuración inicial
-  useEffect(() => {
-    const savedTheme = localStorage.getItem('theme') || 'default';
-    const savedDarkMode = localStorage.getItem('darkMode') === 'true';
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     
-    setCurrentTheme(savedTheme);
-    setIsDarkMode(savedDarkMode || prefersDark);
-  }, []);
+    const [isReady, setIsReady] = useState(false)
+    const [isDarkMode, setIsDarkMode] = useState(false)
+    const [currentTheme, setCurrentTheme] = useState('default')
+  
+    // Cargar configuración desde localStorage
+    useEffect(() => {
+      if (typeof window === 'undefined') return
+  
+      const savedTheme = localStorage.getItem('theme') || 'default'
+      const savedDarkMode = localStorage.getItem('darkMode') === 'true'
+  
+      // Sincronizar estado inicial
+      setCurrentTheme(savedTheme)
+      setIsDarkMode(savedDarkMode)
+      setIsReady(true)
+  
+      // Forzar actualización del DOM
+      const applyStyles = () => {
+        const themeClass = `theme-${savedTheme}`
+        const darkClass = savedDarkMode ? 'dark' : ''
+        document.documentElement.className = `${themeClass} ${darkClass}`
+      }
+      
+      // Ejecutar inmediatamente y en evento load
+      applyStyles()
+      window.addEventListener('load', applyStyles)
+      
+      return () => window.removeEventListener('load', applyStyles)
+    }, [])
+  
+    // Efecto para cambios posteriores
+    useEffect(() => {
+      if (!isReady || typeof window === 'undefined') return
+      
+      const themeClass = `theme-${currentTheme}`
+      const darkClass = isDarkMode ? 'dark' : ''
+      document.documentElement.className = `${themeClass} ${darkClass}`
+      
+      localStorage.setItem('theme', currentTheme)
+      localStorage.setItem('darkMode', isDarkMode.toString())
+    }, [currentTheme, isDarkMode, isReady])
 
-  // Aplicar clases CSS
-  useEffect(() => {
-    const themeClass = `theme-${currentTheme}`;
-    const darkClass = isDarkMode ? 'dark' : '';
-    document.documentElement.className = `${themeClass} ${darkClass}`;
+
+
+  
+
+
+
+    function comprobarRuta(id, router) {
+        // Definir un mapa de rutas basado en IDs
+        const rutaMap = {
+            1: "/",
+            2: "/Contacto",
+            3: "/SobreMi",
+            4: "/Proyectos",
+        };
     
-    localStorage.setItem('theme', currentTheme);
-    localStorage.setItem('darkMode', isDarkMode);
-  }, [currentTheme, isDarkMode]);
-
-  const toggleDarkMode = () => setIsDarkMode(!isDarkMode);
-  const changeTheme = (newTheme) => setCurrentTheme(newTheme);
-
-
-
-    function comprobarRuta(id,router){
-        const background = "#DC5F00"
-
-        if(id == 1 && router.pathname == "/"){
-            return background
-        } else if(id == 2 && router.pathname == "/Contacto"){
-            return background
-        }else if(id == 3 && router.pathname == "/SobreMi"){
-            return background
-        }else if(id == 4 && router.pathname == "/Proyectos"){
-            return background
-        }else{
-            return "none"
-        }
-
+        // Verificar si el ID coincide con la ruta actual
+        console.log(rutaMap[id]);
+        
+        return rutaMap[id] == router.pathname;
     }
 
     const Proyectos = [
@@ -251,9 +270,10 @@ function PortafoliosProvider({children}){
         contacto,
         buttonNavs,
         isDarkMode,
-        toggleDarkMode,
         currentTheme,
-        changeTheme
+        toggleDarkMode: () => setIsDarkMode(prev => !prev),
+        changeTheme: (newTheme) => setCurrentTheme(newTheme),
+        isReady
            }}
         >
             {children}

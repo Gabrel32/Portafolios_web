@@ -1,26 +1,30 @@
 import usePortafolios from "../hook/usePortafolios";
 import { useRouter } from "next/router";
-function ButtonNav({
-  name = "",          // Nombre del botón
-  id,                 // Identificador único del botón
-  style = {},         // Estilos personalizados para el botón
-  icon = {},          // Icono que se pasa como SVG o componente React
-  directionPath = "/",// Ruta a la que se dirige el botón
-}) {
-  const { comprobarRuta } = usePortafolios();
-  const router = useRouter();
 
-  // Si el botón está activo, cambia el fondo
-  const backgroundColor = comprobarRuta(id, router);
+function ButtonNav({
+  name = "", // Nombre del botón
+  id, // Identificador único del botón
+  style = {}, // Estilos personalizados para el botón
+  icon = {}, // Icono que se pasa como SVG o componente React
+  directionPath = "/", // Ruta a la que se dirige el botón
+}) {
+  const { comprobarRuta, isDarkMode } = usePortafolios(); // Asegúrate de que `isDarkMode` esté disponible
+  const router = useRouter();
   
+
+  // Determinar si el botón está activo
+  const isActive = comprobarRuta(id, router);
+
+  // Clase dinámica basada en si el botón está activo o no
+  const buttonClass = isActive
+    ? "before:bg-transparent" // Sin capa oscura si está activo
+    : "before:bg-black before:opacity-50"; // Capa oscura semi-transparente si no está activo
 
   return (
     <button
-      style={{ backgroundColor:backgroundColor }}
-      id={id}
-      onClick={() => router.push(directionPath)}  // Redirecciona a la ruta
+      onClick={() => router.push(directionPath)} // Redirecciona a la ruta
       type="button"
-      className={` flex items-center justify-center btn-base btn-efecto w-[120px] lg:w-[140px] h-[40px] rounded-lg gap-2 font-light ${style.button ?? ""}`}
+      className={`relative flex items-center justify-center btn-base btn-efecto w-[120px] lg:w-[140px] h-[40px] rounded-lg gap-2 font-light bg-[var(--primary-color)] text-[var(--text-color)] before:absolute before:inset-0 before:rounded-lg before:transition-opacity ${buttonClass} ${style.button ?? ""}`}
     >
       {name}
       {icon.src && (

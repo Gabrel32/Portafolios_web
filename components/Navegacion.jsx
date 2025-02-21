@@ -71,7 +71,7 @@ function Navegacion({ className, ...props }) {
     {/* Eliminamos los botones de tema de aquí */}
     <button
       onClick={() => setMenuOpen(!menuOpen)}
-      className="text-2xl relative z-20 transition-transform transform active:scale-95 text-black dark:text-beige-50"
+      className="text-2xl relative z-20 transition-transform transform active:scale-95 text-custom-brown dark:text-beige-50"
       aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
     >
       <svg

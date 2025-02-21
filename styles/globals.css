@@ -52,7 +52,7 @@
   --primary: #1565C0;         /* Azul profundo */
   --secondary: #1f94a3;       /* Turquesa */
   --accent: #1f94a3;          /* Nuevo: Rojo coral */
-  --highlight: #FFD740;       /* Nuevo: Amarillo sol */
+  --highlight: #ffd64094;       /* Nuevo: Amarillo sol */
 }
 
 .theme-ocean.dark {
@@ -61,7 +61,7 @@
   --completColor: #1462a1f1;    /* Azul oscuro intenso */
   --beige-50: #021B3D;        /* Azul noche */
   --accent: #1f94a3;          /* Coral suave */
-  --highlight: #FFF176;       /* Amarillo claro */
+  --highlight: #1b4d92;       /* Amarillo claro */
 }
 /* tema desierto atardecer */
 .theme-desert {
@@ -101,6 +101,8 @@
   --accent: #FFC300;          /* Dorado vibrante */
   --highlight: #FFA726;       /* Naranja atardecer oscuro */
 }
+
+
 
 *{
     font-family: "Klee One", sans-serif;}
