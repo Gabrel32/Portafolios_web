@@ -65,50 +65,46 @@ function Navegacion({ className, ...props }) {
           </svg>
         </div>
 
-       {/* Botones para móvil */}
-<div className="flex flex-row gap-4 items-center justify-between sm:hidden w-full">
-  <div className="flex gap-4">
-    {/* Eliminamos los botones de tema de aquí */}
-    <button
-      onClick={() => setMenuOpen(!menuOpen)}
-      className="text-2xl relative z-20 transition-transform transform active:scale-95 text-custom-brown dark:text-beige-50"
-      aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
-    >
-      <svg
-        width="40"
-        height="37"
-        viewBox="0 0 40 37"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className={`transition-transform duration-300 ${menuOpen ? 'rotate-90' : ''}`}
-      >
-        <path
-          d="M5 18.5H35M5 9.25H35M5 27.75H35"
-          stroke="currentColor"
-          strokeOpacity="0.85"
-          strokeWidth="4"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    </button>
-  </div>
-</div>
+        {/* Botones para móvil */}
+        <div className="flex flex-row gap-4 items-center justify-between sm:hidden w-full">
+          <div className="flex gap-4">
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="text-2xl relative z-20 transition-transform transform active:scale-95 text-custom-brown"
+              aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
+            >
+              <svg
+                width="40"
+                height="37"
+                viewBox="0 0 40 37"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className={`transition-transform duration-300 ${menuOpen ? 'rotate-90' : ''}`}
+              >
+                <path
+                  d="M5 18.5H35M5 9.25H35M5 27.75H35"
+                  stroke="currentColor"
+                  strokeOpacity="0.85"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
 
       {/* Menú Modal para móvil */}
       {menuOpen && (
         <div
-          className="fixed inset-0 bg-opacity-50 dark:bg-opacity-70 z-[9999] transition-opacity"
+          className="fixed inset-0 bg-black/50 dark:bg-black/70 backdrop-blur-sm z-[9999] transition-opacity animate-fadeIn"
           onClick={closeMenu}
         >
           <div
-            className="absolute right-0 w-[200px] h-full bg-beige-50 dark:bg-beige-50 shadow-lg transform transition-transform duration-300 ease-in-out"
-            style={{
-              transform: menuOpen ? "translateX(0)" : "translateX(100%)",
-            }}
+            className="absolute right-0 w-[200px] h-fit rounded-md bg-beige-50 dark:bg-completColor shadow-lg transform transition-transform duration-300 ease-in-out animate-slideInUp"
           >
-            <div className="flex flex-col items-center justify-center gap-10 h-full p-4">
+            <div className="flex flex-col items-center justify-center gap-6 h-full p-6 mt-10">
               <button
                 onClick={() => setMenuOpen(false)}
                 className="text-3xl text-custom-brown absolute top-4 right-4 hover:scale-110 transition-transform"
@@ -123,11 +119,11 @@ function Navegacion({ className, ...props }) {
                   icon={e.icon}
                   directionPath={e?.directionPath}
                   onClick={() => setMenuOpen(false)}
-                  className={`animate-fadeIn`}
+                  className="w-full text-lg py-3 px-4 hover:bg-custom-brown/10 rounded-lg transition-colors"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 />
               ))}
-              <div className="flex flex-col gap-4 w-full px-4 justify-center items-center">
+              <div className="flex flex-col gap-4 w-full px-4 justify-center items-center mt-4">
                 <ThemeSwitcher />
                 <DarkModeButton />
               </div>

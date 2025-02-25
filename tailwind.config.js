@@ -187,7 +187,12 @@ module.exports = {
       transformOrigin: {
         'top-left-1': '10% 10%',
         'bottom-right-1': '90% 90%'
-      }
+      },
+      boxShadow: {
+        'custom-light': '0px 4px 6px rgba(0, 0, 0, 0.05), 0px 1px 3px rgba(0, 0, 0, 0.03)',
+        'custom-dark': '1px 4px 6px rgba(255, 255, 255, 0.1), 0px 1px 3px rgba(255, 255, 255, 0.06)',
+        'custom-neon': '0px 0px 20px 10px rgba(0, 255, 255, 0.3)'
+      },
     },
   },
   plugins: [],

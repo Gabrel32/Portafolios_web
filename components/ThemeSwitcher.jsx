@@ -19,8 +19,8 @@ const ThemeSwitcher = () => {
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="btn-base btn-efecto flex items-center justify-center flex-row text-custom-brown w-10 h-10 rounded-lg gap-2
-        text-sm font-medium text-foreground hover:bg-background/20 transition-all
+        className="btn-base btn-efecto  flex items-center justify-center flex-row text-custom-brown w-10 h-10 rounded-lg gap-2
+        text-sm font-medium text-foreground hover:bg-completColor transition-all
         backdrop-blur-sm group"
         aria-label="Selector de temas"
       >
@@ -31,7 +31,7 @@ const ThemeSwitcher = () => {
 
       <div
         className={`absolute right-0 mt-2 w-44 rounded-lg shadow-xl z-[9999]
-          bg-background/95 backdrop-blur-lg transition-[opacity,transform] duration-150
+          bg-completColor backdrop-blur-lg transition-[opacity,transform] duration-150
           ${isOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}
       >
         <div className="p-2 space-y-1">

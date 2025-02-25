@@ -7,7 +7,7 @@
   --efectHovercolor: #C15507; /* Más saturado */
   --completColor: #F5EDE6;    /* Beige más claro */
   --beige-50: #FFFCF9;        /* Blanco más puro */
-  --primary: #DC5F00;
+  --primary: #dc5f00d4;
   --secondary: #AE4D10;       /* Terracota oscuro */
   --accent: #FF6B6B;          /* Nuevo: Coral vibrante */
   --highlight: #FFD93D;       /* Nuevo: Amarillo dorado */
@@ -16,10 +16,10 @@
 .theme-default.dark {
   --custom-brown: #DC5F00;    /* Naranja más brillante */
   --efectHovercolor: #E56D2C;
-  --completColor: #2D2D2D;    /* Gris oscuro */
+  --completColor: #2d2d2d8e;    /* Gris oscuro */
   --beige-50: #1A1A1A;        /* Fondo oscuro profundo */
-  --accent: #2D2D2D;          /* Coral suavizado */
-  --highlight: #FFE082;       /* Amarillo suave */
+  --accent: #b75825;          /* Coral suavizado */
+  --highlight: #ffe082c6;       /* Amarillo suave */
 }
 
 /* Tema Bosque Mejorado */
@@ -58,7 +58,7 @@
 .theme-ocean.dark {
   --custom-brown: #1462a1f1;    /* Azul claro */
   --efectHovercolor: #42A5F5;
-  --completColor: #1462a1f1;    /* Azul oscuro intenso */
+  --completColor: #073c67;    /* Azul oscuro intenso */
   --beige-50: #021B3D;        /* Azul noche */
   --accent: #1f94a3;          /* Coral suave */
   --highlight: #1b4d92;       /* Amarillo claro */
@@ -88,17 +88,17 @@
   --efectHovercolor: #be3f3f; /* Rosa más intenso */
   --completColor: #FFF0F5;    /* Lavanda claro */
   --beige-50: #FFE4E1;        /* Rosa muy claro */
-  --primary: #FF4500;         /* Naranja atardecer */
+  --primary: #c04514;         /* Naranja atardecer */
   --secondary: #FF7F50;       /* Coral suave */
-  --accent: #FFD700;          /* Oro brillante */
+  --accent: #ff7f5049;          /* Oro brillante */
   --highlight: #FFA07A;       /* Salmón claro */
 }
 .theme-sunset.dark {
   --custom-brown: #8b4740;    /* Rosa anaranjado */
   --efectHovercolor: #be3f3f; /* Rojo tomate */
-  --completColor: #2C3E50;    /* Azul noche */
+  --completColor: #3a1818;    /* Azul noche */
   --beige-50: #1E272C;        /* Negro azulado */
-  --accent: #FFC300;          /* Dorado vibrante */
+  --accent: #9b2a13;          /* Dorado vibrante */
   --highlight: #FFA726;       /* Naranja atardecer oscuro */
 }
 

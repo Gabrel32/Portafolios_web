@@ -13,12 +13,12 @@ function ButtonNav({
   
 
   // Determinar si el botón está activo
-  const isActive = comprobarRuta(id, router);
+  const isActive = comprobarRuta(directionPath, router);  
 
   // Clase dinámica basada en si el botón está activo o no
   const buttonClass = isActive
-    ? "before:bg-transparent" // Sin capa oscura si está activo
-    : "before:bg-black before:opacity-50"; // Capa oscura semi-transparente si no está activo
+    ? "before:bg-black before:opacity-50" 
+    : "before:bg-transparent"; 
 
   return (
     <button

@@ -6,44 +6,53 @@ function Proyecto({ e }) {
     const { Nombre, nombre, img, parrafo, linkGit, link, git, id } = e;
 
     return (
-        <div className='group relative items-center justify-center overflow-hidden cursor-pointer rounded-lg hover:shadow-xl transition-shadow duration-300 shadow-lg'>
-            {/* Contenedor de imagen con aspecto ratio consistente */}
-            <div className='w-full aspect-video relative'>
+        <div className='group relative overflow-hidden rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-500 ease-out'>
+            {/* Contenedor de imagen con mejor rendimiento */}
+            <div className='w-full aspect-video relative overflow-hidden'>
                 <Image
                     key={id}
                     fill
                     src={`/imgProyectos/${img}.png`}
                     alt={`Imagen del proyecto ${nombre}`}
-                    className='object-cover transform transition-transform duration-500 group-hover:scale-105'
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    quality={80}
+                    className='object-cover transition-transform duration-700 ease-out group-hover:scale-110'
+                    sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 30vw"
+                    quality={85}
                     placeholder='blur'
                     blurDataURL={`data:image/svg+xml;base64,${btoa(
-                        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect width="100%" height="100%" fill="#e5e7eb"/></svg>`
+                        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect width="100%" height="100%" fill="#1a202c"/></svg>`
                     )}`}
                     loading='lazy'
                 />
             </div>
             
-            {/* Overlay con efectos mejorados */}
-            <div className='absolute inset-0 bg-gradient-to-b from-transparent via-transparent/60 to-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-500'>
-                <div className='absolute inset-0 flex flex-col items-center justify-center px-4 text-center translate-y-[20%] group-hover:translate-y-0 transition-transform duration-500 ease-out'>
-                    <h1 className='text-xl md:text-2xl font-bold text-white mb-2 drop-shadow-lg'>{Nombre}</h1>
-                    <p className='text-sm md:text-base text-gray-200 opacity-0 group-hover:opacity-100 transition-opacity delay-100 duration-300 max-w-md'>
+            {/* Overlay con mejor contraste y legibilidad */}
+            <div className='absolute inset-0 p-6 flex flex-col justify-end bg-gradient-to-t from-black/90 via-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500'>
+                <div className='transform transition-transform duration-700 ease-[cubic-bezier(0.19,1,0.22,1)] translate-y-8 group-hover:translate-y-0'>
+                    <h1 className='text-2xl lg:text-3xl font-bold text-custom-brown mb-3 drop-shadow-2xl'>
+                        {Nombre}
+                    </h1>
+                    <p className='text-base lg:text-lg text-custom-brown/90 font-medium mb-6 line-clamp-3 leading-relaxed transition-all duration-500'>
                         {parrafo}
                     </p>
                     
-                    {/* Botones con diseño responsive */}
-                    <div className='flex flex-wrap gap-3 mt-4 w-full justify-center'>
+                    {/* Botones con interacción mejorada */}
+                    <div className='flex flex-col sm:flex-row gap-3 justify-start'>
                         {linkGit && (
                             <Link
                                 href={linkGit}
                                 target='_blank'
                                 rel='noopener noreferrer'
-                                className='flex items-center gap-2 px-4 py-2 bg-orange-700 hover:bg-orange-800 text-white rounded-full transition-colors duration-300 text-sm md:text-base'
+                                className='flex items-center gap-2 px-5 py-2.5 bg-custom-brown text-white rounded-xl hover:bg-custom-brown/95 transition-all duration-300 hover:scale-[1.02] active:scale-95 shadow-lg hover:shadow-xl'
                             >
-                                <span>{git}</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                                <span className='text-sm lg:text-base font-semibold'>{git}</span>
+                                <svg 
+                                    xmlns="http://www.w3.org/2000/svg" 
+                                    fill="none" 
+                                    viewBox="0 0 24 24" 
+                                    strokeWidth={2}
+                                    stroke="currentColor" 
+                                    className='w-5 h-5 flex-shrink-0'
+                                >
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
                                 </svg>
                             </Link>
@@ -53,11 +62,18 @@ function Proyecto({ e }) {
                                 href={link}
                                 target='_blank'
                                 rel='noopener noreferrer'
-                                className='flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-900 text-white rounded-full transition-colors duration-300 text-sm md:text-base'
+                                className='flex items-center gap-2 px-5 py-2.5 bg-gray-800 text-white rounded-xl hover:bg-gray-700 transition-all duration-300 hover:scale-[1.02] active:scale-95 shadow-lg hover:shadow-xl'
                             >
-                                <span>Sitio</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605 .42-3.113 1.157-4.418" />
+                                <span className='text-sm lg:text-base font-semibold'>Visitar</span>
+                                <svg 
+                                    xmlns="http://www.w3.org/2000/svg" 
+                                    fill="none" 
+                                    viewBox="0 0 24 24" 
+                                    strokeWidth={2}
+                                    stroke="currentColor" 
+                                    className='w-5 h-5 flex-shrink-0'
+                                >
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
                                 </svg>
                             </Link>
                         )}

@@ -53,19 +53,8 @@ function PortafoliosProvider({children}){
 
 
 
-    function comprobarRuta(id, router) {
-        // Definir un mapa de rutas basado en IDs
-        const rutaMap = {
-            1: "/",
-            2: "/Contacto",
-            3: "/SobreMi",
-            4: "/Proyectos",
-        };
-    
-        // Verificar si el ID coincide con la ruta actual
-        console.log(rutaMap[id]);
-        
-        return rutaMap[id] == router.pathname;
+    function comprobarRuta(route, router) {
+        return route == router.pathname;
     }
 
     const Proyectos = [

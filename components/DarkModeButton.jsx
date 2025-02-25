@@ -9,11 +9,7 @@ const DarkModeButton = () => {
   return (
     <button
       onClick={toggleDarkMode}
-      className={`relative w-14 h-8 rounded-full transition-colors duration-300 ${
-        isDarkMode
-          ? 'bg-[transparent] border-[var(--completColor)]'
-          : 'bg-[var(--beige-50)] border-[var(--custom-brown)]'
-      } border`}
+      className={`relative w-14 h-8 rounded-full transition-colors duration-300 'bg-beige-50 border-custom-brown border`}
       aria-label={`Cambiar a modo ${isDarkMode ? 'claro' : 'oscuro'}`}
     >
       <div

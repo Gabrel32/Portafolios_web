@@ -34,7 +34,7 @@ function Layout({ children, pagina }) {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-100 dark:bg-gray-800 text-center py-6 mt-auto">
+      <footer className="bg-gray-100 dark:bg-transparent text-center py-6 mt-auto">
         <p className="text-sm text-gray-600 dark:text-gray-400">
           © {new Date().getFullYear()} Gabriel Hernandez. Todos los derechos reservados.
         </p>

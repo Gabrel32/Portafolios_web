@@ -157,8 +157,18 @@ export default function ContactForm() {
 
   return (
     <>
-      {/* Los NotificationModal se mantienen iguales */}
+     <NotificationModal
+      isOpen={success || !!error} // Se abre si hay éxito o error
+      message={success ? "¡Mensaje enviado con éxito! pronto me pondre en" : error}
+      onClose={() => {
+        setSuccess(false);
+        setError("");
+      }}
+    type={success ? "success" : "error"}
+    />
       
+     
+
       <form onSubmit={handleSubmit} className="mt-12 space-y-6 animate-fadeInUp">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-2 relative">
@@ -196,7 +206,7 @@ export default function ContactForm() {
               onChange={handleChange}
               placeholder="Tu correo"
               className={`w-full px-4 py-3 bg-beige-50 dark:bg-completColor border ${
-                errors.from_email ? "border-red-500" : "border-custom-brown/20"
+                errors.from_email ? "border-red-500" : "border-custom-brown"
               } rounded-lg focus:outline-none focus:border-custom-brown transition-all placeholder-gray-400 dark:placeholder-beige-100/50 dark:text-beige-50`}
               disabled={loading}
             />
@@ -216,8 +226,8 @@ export default function ContactForm() {
             id="message"
             name="message"
             value={formData.message}
-            className={`w-full px-4 py-3 h-32 bg-beige-50 dark:bg-completColor border ${
-              errors.message ? "border-red-500" : "border-custom-brown/20"
+            className={`w-full px-4 py-3 h-32 bg-beige-50 dark:bg-completColor border dark:text-white ${
+              errors.message ? "border-red-500" : "border-custom-brown"
             } rounded-lg resize-none cursor-default focus:outline-none focus:border-custom-brown transition-all scrollbar-thin scrollbar-thumb-custom-brown/20 scrollbar-track-beige-50/50 dark:scrollbar-track-completColor/50 placeholder-gray-400 dark:text-beige-50`}
             disabled={loading}
             readOnly
@@ -257,7 +267,7 @@ export default function ContactForm() {
                     className={`px-4 py-3 cursor-pointer text-sm ${
                       formData.message === msg
                         ? "bg-custom-brown/10 text-custom-brown dark:bg-gray-700 dark:text-beige-50"
-                        : "text-custom-brown hover:bg-custom-brown/10 dark:text-beige-50 dark:hover:bg-gray-700"
+                        : "text-custom-brown dark:text-beige-50 dark:hover:bg-gray-700"
                     } transition-colors`}
                   >
                     {msg}

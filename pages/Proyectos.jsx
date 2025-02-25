@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '../layout/Layout';
 import usePortafolios from '../hook/usePortafolios';
 import Carousel from '../components/Carrusel';
+import BackBurble from '../components/BackBurble';
 
 function Proyectos() {
   const { Proyectos } = usePortafolios();
@@ -24,7 +25,7 @@ function Proyectos() {
       </div>
       <div className="relative mx-auto max-w-2xl lg:max-w-4xl">
         <div className="inline-block relative">
-          <h1 className="text-5xl font-light tracking-tight text-custom-brown sm:text-6xl lg:text-7xl transform transition-all duration-500 hover:scale-105">
+          <h1 className="text-5xl font-bold tracking-tight text-custom-brown sm:text-6xl lg:text-7xl transform transition-all duration-500 hover:scale-105">
             {title}
           </h1>
           {/* Línea decorativa */}
@@ -43,12 +44,20 @@ function Proyectos() {
   return (
     <Layout pagina="Proyectos">
       {/* Contenedor para prevenir scroll horizontal */}
-      <div className="overflow-x-hidden w-full h-full">
-        <SectionHeader title="Proyectos">
-          <Carousel items={Proyectos} />
-        </SectionHeader>
 
-      </div>
+      <BackBurble
+        title="Proyectos"
+        // description="Explora nuestras características únicas."
+        particleDensity={20}
+        bubbleColors={['bg-custom-brown', 'bg-custom-brown/20']}
+        center={true}
+        showLine={true}
+        variant="wide"
+        >
+          <Carousel items={Proyectos} />
+      </BackBurble>
+        
+
     </Layout>
   );
 }

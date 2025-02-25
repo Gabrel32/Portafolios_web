@@ -88,7 +88,7 @@ const Carousel = ({ items }) => {
 
      return (
         <div 
-            className="carousel-container w-full max-w-[700px] lg:max-w-[1300px] mx-auto px-4"
+            className="carousel-container w-full max-w-[700px] lg:max-w-[1300px] mx-auto py-10 pr-4"
             ref={containerRef}
         >
             <div 

@@ -4,15 +4,23 @@ import Link from "next/link";
 import Image from "next/image";
 import usePortafolios from "../hook/usePortafolios";
 import ContactForm from "../components/ContactForm";
+import BackBurble from "../components/BackBurble";
 
 function Contacto() {
   const { contacto } = usePortafolios();
 
   return (
     <Layout pagina={"Contacto"}>
+      <BackBurble
+        particleDensity={20}
+        bubbleColors={['bg-custom-brown', 'bg-custom-brown/20']}
+        center={true}
+        showLine={true}
+        variant="wide"
+        >
       <div className="flex flex-col md:flex-row items-center justify-center px-4 py-8 md:px-8 lg:px-16 space-y-8 md:space-y-0 md:space-x-10">
         {/* Formulario de Contacto */}
-        <div className="max-w-3xl w-full bg-white dark:bg-completColor rounded-2xl p-8 shadow-2xl transition-all duration-500 hover:shadow-3xl relative z-10">
+        <div className="max-w-3xl w-full bg-completColor rounded-2xl p-8 transition-all duration-500 hover:shadow-3xl relative z-10">
           <h3 className="text-2xl font-bold text-center mb-6 bg-clip-text text-transparent bg-gradient-to-r from-custom-brown to-efectHovercolor">
             Envíame un mensaje
           </h3>
@@ -81,6 +89,7 @@ function Contacto() {
           </div>
         </div>
       </div>
+      </BackBurble>
     </Layout>
   );
 }

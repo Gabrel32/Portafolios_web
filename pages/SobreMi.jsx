@@ -5,6 +5,7 @@ import Layout from '../layout/Layout';
 import Image from 'next/image';
 import Link from 'next/link';
 import usePortafolios from '../hook/usePortafolios';
+import BackBurble from '../components/BackBurble';
 
 function SobreMi() {
   const { tecnologias } = usePortafolios();
@@ -24,7 +25,16 @@ function SobreMi() {
 
   return (
     <Layout pagina={"Sobre Mi"}>
-      <div className="relative bg-transparent w-full max-w-6xl mx-auto rounded-2xl p-8 mb-10 transition-all duration-500 shadow-2xl shadow-black dark:shadow-white hover:shadow-3xl overflow-hidden">
+      <BackBurble
+        title="Sobre mi"
+        description="Tecnologías Manejadas"
+        particleDensity={20}
+        bubbleColors={['bg-custom-brown', 'bg-custom-brown/20']}
+        center={true}
+        showLine={true}
+        variant="wide"
+        >
+<div className="relative bg-transparent w-full max-w-6xl mx-auto rounded-2xl p-8 mb-10 transition-all duration-500 hover:shadow-3xl overflow-hidden">
         <div
           className="absolute inset-0 opacity-10 dark:opacity-5"
           style={{
@@ -34,23 +44,21 @@ function SobreMi() {
           }}
         />
         
-        <h3 className='text-5xl lg:text-6xl font-bold mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-[var(--custom-brown)] to-[var(--efectHovercolor)] animate-fadeIn'>
-          Sobre Mi
-        </h3>
+       
 
         <section className="mb-10 relative z-10">
-          <h4 className="text-2xl font-semibold text-gray-800 dark:text-beige-50 mb-6 animate-slideRight">
+          {/* <h4 className="text-2xl font-semibold text-gray-800 dark:text-beige-50 mb-6 animate-slideRight">
             <span className="bg-gradient-to-r from-[var(--custom-brown)] to-[var(--efectHovercolor)] text-transparent bg-clip-text">
               Tecnologías
             </span>
             <span className="ml-2 border-b-2 border-[var(--custom-brown)] inline-block pb-1">Manejadas</span>
-          </h4>
+          </h4> */}
           
           <ul className='mt-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
             {tecnologias.map((e, index) => (
               <li
                 key={e.id}
-                className={`flex flex-col items-center p-6 bg-transparent rounded-2xl shadow-lg hover:shadow-xl dark:shadow-[#f5f5f56e] transition-all duration-300 hover:-translate-y-2 animate-cardPop`}
+                className={`flex flex-col items-center p-6 bg-transparent rounded-2xl hover:shadow-xl hover:shadow-zinc-800 shadow-zinc-500  dark:shadow-custom-brown  shadow-custom-dark transition-all duration-300 hover:-translate-y-2 animate-cardPop`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className='p-3 dark:bg-[#f5f5f5e0] bg-transparent rounded-full mb-4 transition-transform duration-300 hover:scale-110'>
@@ -72,7 +80,7 @@ function SobreMi() {
         </section>
 
         <section className="relative z-10">
-          <p className='text-xl text-gray-700 dark:text-beige-50 leading-relaxed text-center animate-fadeInUp'>
+          <p className='text-xl text-gray-600 dark:text-highlight leading-relaxed text-center animate-fadeInUp'>
             También he trabajado con{' '}
             <Link
               target='_blank'
@@ -103,7 +111,9 @@ function SobreMi() {
             , entre otros.
           </p>
         </section>
-      </div>
+      </div>      
+      </BackBurble>
+      
     </Layout>
   );
 }
