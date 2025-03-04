@@ -1,94 +1,132 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Layout from "../layout/Layout";
 import Link from "next/link";
 import Image from "next/image";
 import usePortafolios from "../hook/usePortafolios";
 import ContactForm from "../components/ContactForm";
 import BackBurble from "../components/BackBurble";
+import NotificationModal from "../components/NotificationModal";
 
 function Contacto() {
-  const { contacto } = usePortafolios();
+  const { contacto, t } = usePortafolios();
+
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleCloseModal = () => {
+    setSuccess(false);
+    setError("");
+  };
+
+  useEffect(() => {
+    if (success || error) {
+      const timer = setTimeout(() => {
+        setSuccess(false);
+        setError("");
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [success, error]);
 
   return (
-    <Layout pagina={"Contacto"}>
+    <Layout pagina={t("header.nav.contact")}>
       <BackBurble
         particleDensity={20}
-        bubbleColors={['bg-custom-brown', 'bg-custom-brown/20']}
+        bubbleColors={["bg-custom-brown", "bg-efectHovercolor"]}
         center={true}
-        showLine={true}
+        showLine={false}
         variant="wide"
-        >
-      <div className="flex flex-col md:flex-row items-center justify-center px-4 py-8 md:px-8 lg:px-16 space-y-8 md:space-y-0 md:space-x-10">
-        {/* Formulario de Contacto */}
-        <div className="max-w-3xl w-full bg-completColor rounded-2xl p-8 transition-all duration-500 hover:shadow-3xl relative z-10">
-          <h3 className="text-2xl font-bold text-center mb-6 bg-clip-text text-transparent bg-gradient-to-r from-custom-brown to-efectHovercolor">
-            Envíame un mensaje
-          </h3>
-          <ContactForm />
-        </div>
+      >
+       <NotificationModal
+        isOpen={success || !!error}
+        type={success ? "success" : "error"}
+        message={success ? t("contactForm.successMessage") : error}
+        onClose={handleCloseModal}
+        successTitle={t("contactForm.successTitle")}
+        successDescription={t("contactForm.successDescription")}
+        errorTitle={t("contactForm.errorTitle")}
+        errorDescription={t("contactForm.errorDescription")}
+      />
 
-        {/* Sección de Contacto */}
-        <div className="max-w-4xl w-full bg-beige-50 dark:bg-completColor rounded-2xl p-8 mb-10 shadow-2xl transition-all duration-500 hover:shadow-3xl overflow-hidden relative">
-          {/* Patrón de fondo decorativo */}
-          <div
-            className="absolute inset-0 opacity-10 dark:opacity-5 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMiIgaGVpZ2h0PSIyIiBmaWxsPSIjZGM1ZjAwIi8+PC9zdmc=')]"
-          />
-          <h2 className="text-3xl lg:text-5xl font-bold text-center mb-6 bg-clip-text text-transparent bg-gradient-to-r from-custom-brown to-efectHovercolor animate-fadeIn">
-            Contáctame
-          </h2>
-          <div className="space-y-6">
-            {/* Dirección de correo electrónico */}
-            <div className="text-center">
-              <a
-                href="mailto:Alegabo70@gmail.com"
-                className="text-xl font-semibold text-custom-brown hover:text-efectHovercolor transition-colors duration-300"
-              >
-                Alegabo70@gmail.com
-              </a>
+        <section className="relative min-h-screen flex items-center py-16 px-6 md:px-12">
+          <div className="absolute inset-0 z-0 overflow-hidden">
+            <div className="absolute inset-0" />
+            <div className="absolute inset-0 mix-blend-overlay" />
+          </div>
+
+          <div className="relative z-10 container mx-auto flex flex-col md:flex-row items-center justify-center space-y-12 md:space-y-0 md:space-x-10">
+            <div className="max-w-3xl w-full backdrop-blur rounded-3xl p-6 md:p-8 lg:p-12 border border-custom-brown shadow-2xl shadow-custom-brown hover:shadow-custom-brown transition-all duration-700">
+              <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight mb-6 text-center text-custom-brown relative">
+                {t("contact.formTitle")}
+                <span className="absolute -inset-2 rounded-full blur-xl -z-10 animate-pulse-slow bg-custom-brown/20" />
+              </h3>
+              <ContactForm setSuccess={setSuccess} setError={setError} />
             </div>
 
-            {/* Redes sociales */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {contacto.map((e, index) => (
-                <Link
-                  target="_blank"
-                  href={e.link}
-                  key={e.id}
-                  className={`group flex flex-col items-center p-4 bg-white dark:bg-completColor rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-cardPop`}
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <div className="p-3 bg-gradient-to-br from-custom-brown/10 to-efectHovercolor/10 rounded-full mb-3 transition-transform duration-300 group-hover:scale-110">
-                    <Image
-                      width={60}
-                      height={60}
-                      src={`/img/${e.img}`}
-                      alt={e.Nombre}
-                      className="hover:rotate-12 transition-transform duration-300"
-                    />
-                  </div>
-                  <span className="text-lg font-medium text-gray-800 dark:text-beige-50 relative">
-                    {e.Nombre}
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-custom-brown transition-all duration-300 group-hover:w-full"></span>
-                  </span>
-                </Link>
-              ))}
-            </div>
+            <div className="max-w-4xl w-full backdrop-blur-xl rounded-3xl p-6 md:p-8 lg:p-12 border border-custom-brown shadow-2xl shadow-custom-brown hover:shadow-custom-brown transition-all duration-700">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight mb-6 text-center text-custom-brown relative">
+                {t("contact.title")}
+                <span className="absolute -inset-2 rounded-full blur-xl -z-10 animate-pulse-slow bg-custom-brown/20" />
+              </h2>
+              <div className="space-y-6">
+                <div className="text-center">
+                  <a
+                    href="mailto:Alegabo70@gmail.com"
+                    className="text-lg md:text-xl lg:text-2xl font-semibold text-custom-brown hover:text-efectHovercolor transition-all duration-300 dark:text-beige-50 dark:hover:text-efectHovercolor"
+                  >
+                    Alegabo70@gmail.com
+                  </a>
+                </div>
 
-            {/* Enlace a LinkedIn */}
-            <div className="text-center animate-fadeInUp">
-              <p className="text-gray-600 dark:text-beige-100">
-                O envíame un mensaje directo a través de{" "}
-                <Link
-                  href="https://linkedin.com/in/tuperfil"
-                  className="text-custom-brown hover:text-efectHovercolor dark:text-beige-50 dark:hover:text-efectHovercolor font-semibold transition-colors duration-300"
-                >
-                  LinkedIn
-                </Link>
-              </p>
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+                  {contacto.map((e) => (
+                    <Link
+                      target="_blank"
+                      href={e.link}
+                      key={e.id}
+                      className="group flex flex-col items-center p-3 md:p-4 backdrop-blur-xl rounded-2xl border border-custom-brown shadow-xl shadow-custom-brown hover:shadow-custom-brown transition-all duration-500 hover:-translate-y-1"
+                    >
+                      <div className="p-2 md:p-3 rounded-full mb-2 md:mb-3 transition-transform duration-300 group-hover:scale-105">
+                        <Image
+                          width={40}
+                          height={40}
+                          src={`/img/${e.img}`}
+                          alt={e.Nombre}
+                          className="object-contain transition-transform duration-300 group-hover:rotate-6"
+                        />
+                      </div>
+                      <span className="text-sm md:text-base font-medium text-custom-brown dark:text-beige-50 relative text-center">
+                        {e.Nombre}
+                        <span className="absolute -bottom-1 left-0 right-0 mx-auto w-0 h-0.5 bg-custom-brown transition-all duration-300 group-hover:w-3/4" />
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+
+                <div className="text-center">
+                  <p className="text-base md:text-lg text-custom-brown dark:text-beige-50 leading-relaxed">
+                    {t("contact.linkedinText")}{" "}
+                    <Link
+                      href="https://linkedin.com/in/tuperfil"
+                      className="font-semibold text-custom-brown hover:text-efectHovercolor dark:text-beige-50 dark:hover:text-efectHovercolor transition-all duration-300"
+                    >
+                      LinkedIn
+                    </Link>
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
+
+          <div className="absolute inset-0 z-0 pointer-events-none">
+            {[...Array(3)].map((_, i) => (
+              <div
+                key={i}
+                className={`absolute ${i === 0 ? "top-10 left-0 w-72 h-72" : i === 1 ? "bottom-20 right-0 w-96 h-96" : "top-1/2 left-1/3 w-56 h-56"} rounded-full blur-3xl animate-float bg-custom-brown/20 dark:bg-beige-50/20`}
+              />
+            ))}
+          </div>
+        </section>
       </BackBurble>
     </Layout>
   );

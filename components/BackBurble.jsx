@@ -11,9 +11,9 @@ const BackBurble = ({
   variant = 'default',
 }) => {
   const containerRef = useRef(null);
+  const bubbleRefs = useRef([]); // Array to store references to all bubbles
   const [containerSize, setContainerSize] = useState({ width: 0, height: 0 });
 
-  // Optimización: usar useCallback para la función de actualización de tamaño
   const updateSize = useCallback(() => {
     if (containerRef.current) {
       const { clientWidth, clientHeight } = containerRef.current;
@@ -27,12 +27,31 @@ const BackBurble = ({
     return () => window.removeEventListener('resize', updateSize);
   }, [updateSize]);
 
-  // Optimización: usar useMemo para partículas
+  const pushAllBubbles = useCallback(() => {
+    bubbleRefs.current.forEach((bubble) => {
+      if (bubble) {
+        const pushDistance = 50;
+        const angle = Math.random() * 2 * Math.PI;
+        const translateX = Math.cos(angle) * pushDistance;
+        const translateY = Math.sin(angle) * pushDistance;
+
+        bubble.style.transition = 'transform 0.3s ease-out';
+        bubble.style.transform = `translate(${translateX}px, ${translateY}px)`;
+
+        setTimeout(() => {
+          bubble.style.transition = 'transform 0.5s ease-in';
+          bubble.style.transform = 'translate(0, 0)';
+        }, 300);
+      }
+    });
+  }, []);
+
   const particles = useMemo(() => {
     const generateParticles = (count, sizeRange, animationTypes) => {
       if (!containerSize.width || !containerSize.height) return [];
-      
+
       const particles = [];
+      bubbleRefs.current = []; // Reset refs array
       const gridSize = Math.ceil(Math.sqrt(count));
       const stepX = containerSize.width / gridSize;
       const stepY = containerSize.height / gridSize;
@@ -46,8 +65,10 @@ const BackBurble = ({
         particles.push(
           <div
             key={`particle-${i}`}
+            ref={(el) => (bubbleRefs.current[i] = el)} // Store reference to each bubble
+            onClick={pushAllBubbles} // Click handler back on individual bubbles
             className={`absolute rounded-full ${bubbleColors[i % bubbleColors.length]} 
-              animate-${animation} opacity-[0.15] dark:opacity-[0.15]`}
+              animate-${animation} opacity-[0.15] dark:opacity-[0.15] cursor-pointer select-none`}
             style={{
               width: `${size}px`,
               height: `${size}px`,
@@ -66,7 +87,7 @@ const BackBurble = ({
       [40, 120],
       ['float', 'pulse-fast', 'orbit-slow', 'orbit-reverse-slow']
     );
-  }, [containerSize, particleDensity, bubbleColors]);
+  }, [containerSize, particleDensity, bubbleColors, pushAllBubbles]);
 
   return (
     <div
@@ -79,11 +100,11 @@ const BackBurble = ({
       </div>
 
       {/* Contenido principal */}
-      <div className={`relative w-full flex flex-col h-full ${
+      <div className={`relative w-full flex flex-col h-full items-center justify-center ${
         variant === 'wide' ? 'max-w-7xl' : 'max-w-4xl'
       } mx-auto px-4`}>
         {title && (
-          <div className={`inline-block relative ${center ? 'mx-auto' : ''}`}>
+          <div className={`inline-block relative ${center ? 'text-center' : ''}`}>
             <h1 className={`text-4xl md:text-5xl font-bold tracking-tight text-custom-brown
               ${variant === 'bold' ? 'lg:text-7xl' : 'lg:text-6xl'}`}>
               {title}
@@ -101,13 +122,13 @@ const BackBurble = ({
 
         {description && (
           <p className={`mt-4 text-xl md:text-2xl text-primary dark:text-completColor 
-            ${center ? 'mx-auto max-w-3xl' : 'max-w-2xl'}`}>
+            ${center ? 'text-center mx-auto max-w-3xl' : 'max-w-2xl'}`}>
             {description}
           </p>
         )}
 
         {children && (
-          <div className="relative mt-8 w-full">
+          <div className={`relative mt-8 w-full ${center ? 'flex justify-center' : ''}`}>
             {children}
           </div>
         )}

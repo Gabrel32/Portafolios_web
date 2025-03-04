@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --whiteSnow: #f5f5f5e2;
+  --success-color: #28a745; /* Verde de éxito */
+  --error-color: #dc3545;   /* Rojo de error */
+  --warning-color: #ffc107; /* Amarillo de advertencia */
+}
 :root, .theme-default {
   --custom-brown: #DC5F00;
   --efectHovercolor: #C15507; /* Más saturado */
@@ -10,7 +16,7 @@
   --primary: #dc5f00d4;
   --secondary: #AE4D10;       /* Terracota oscuro */
   --accent: #FF6B6B;          /* Nuevo: Coral vibrante */
-  --highlight: #FFD93D;       /* Nuevo: Amarillo dorado */
+  --highlight: #FFD93D;  
 }
 
 .theme-default.dark {
@@ -20,6 +26,7 @@
   --beige-50: #1A1A1A;        /* Fondo oscuro profundo */
   --accent: #b75825;          /* Coral suavizado */
   --highlight: #ffe082c6;       /* Amarillo suave */
+
 }
 
 /* Tema Bosque Mejorado */
@@ -32,12 +39,13 @@
   --secondary: #689F38;       /* Verde lima */
   --accent: #689F38;          /* Nuevo: Naranja brillante */
   --highlight: #AED581;       /* Nuevo: Verde menta */
+  
 }
 
 .theme-forest.dark {
   --custom-brown: #3A7D44;    /* Verde claro */
   --efectHovercolor: #4CAF50;
-  --completColor: #37474F;    /* Gris azulado */
+  --completColor: #303a27;    /* Gris azulado */
   --beige-50: #1B3022;        /* Verde oscuro profundo */
   --accent: #689F38;          /* Naranja suavizado */
   --highlight: #C5E1A5;       /* Verde menta claro */
@@ -58,7 +66,7 @@
 .theme-ocean.dark {
   --custom-brown: #1462a1f1;    /* Azul claro */
   --efectHovercolor: #42A5F5;
-  --completColor: #073c67;    /* Azul oscuro intenso */
+  --completColor: #0f2c45;    /* Azul oscuro intenso */
   --beige-50: #021B3D;        /* Azul noche */
   --accent: #1f94a3;          /* Coral suave */
   --highlight: #1b4d92;       /* Amarillo claro */
@@ -88,7 +96,7 @@
   --efectHovercolor: #be3f3f; /* Rosa más intenso */
   --completColor: #FFF0F5;    /* Lavanda claro */
   --beige-50: #FFE4E1;        /* Rosa muy claro */
-  --primary: #c04514;         /* Naranja atardecer */
+  --primary: #953434;         /* Naranja atardecer */
   --secondary: #FF7F50;       /* Coral suave */
   --accent: #ff7f5049;          /* Oro brillante */
   --highlight: #FFA07A;       /* Salmón claro */
@@ -120,7 +128,7 @@ html {
 
 /* Define la base del botón */
 .btn-base {
-    @apply rounded-bl-lg bg-[--custom-brown] font-light text-white text-left text-sm sm:text-base md:text-lg lg:text-xl leading-none relative  shadow-lg;
+    @apply rounded-bl-lg bg-[--custom-brown] font-light text-white text-left text-sm sm:text-base md:text-lg leading-none relative shadow-lg;
   }
   
   /* Define el efecto hover y active */

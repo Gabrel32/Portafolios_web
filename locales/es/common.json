@@ -1,0 +1,170 @@
+{
+  "header": {
+    "title": "Mi Portafolio",
+    "nav": {
+      "home": "Inicio",
+      "projects": "Proyectos",
+      "about": "Tecnologías",
+      "contact": "Contacto"
+    }
+  },
+  "home": {
+    "title1": "Desarrollo",
+    "title2": "Web",
+    "subtitle": "Gabriel Hernández",
+    "description": "Especializado en crear soluciones web innovadoras y escalables, combinando diseño moderno con tecnología de vanguardia para ofrecer experiencias de usuario excepcionales.",
+    "downloadCV": "Descargar CV"
+  },
+  "projectsSection": {
+    "title": "Mis Proyectos",
+    "description": "Aquí puedes ver algunos de mis proyectos destacados",
+    "viewDetails": "Ver Detalles",
+    "technologiesUsed": "Tecnologías Usadas",
+    "visitProject": "Visitar Proyecto",
+    "viewCode": "Ver Código"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "description": "Tecnologías Manejadas",
+    "alsoWorkedWith": "También he trabajado con",
+    "orms": "ORMs",
+    "like": "como",
+    "andOthers": ", entre otros."
+  },
+  "contact": {
+    "title": "Contáctame",
+    "formTitle": "Envíame un mensaje",
+    "linkedinText": "O envíame un mensaje directo a través de"
+  },
+  "contactForm": {
+    "messages": {
+      "success": {
+        "title": "¡Éxito!",
+        "description": "Tu mensaje ha sido enviado correctamente. ¡Pronto recibirás una respuesta para discutir tus ideas o proyectos!"
+      },
+      "error": {
+        "title": "¡Error!",
+        "description": "No pudimos enviar tu mensaje en este momento. Por favor, revisa tu conexión o intenta de nuevo en unos minutos."
+      }
+    },
+    "labels": {
+      "name": "Nombre",
+      "email": "Correo",
+      "message": "Mensaje"
+    },
+    "placeholders": {
+      "name": "Tu nombre",
+      "email": "Tu correo"
+    },
+    "errors": {
+      "nameRequired": "Por favor, ingresa tu nombre",
+      "emailRequired": "Por favor, ingresa tu correo electrónico",
+      "invalidEmail": "Por favor, ingresa un correo válido",
+      "messageRequired": "Por favor, selecciona un mensaje",
+      "sendError": "Error al enviar el mensaje. Inténtalo de nuevo.",
+      "connectionError": "Error de conexión. Verifica tu conexión a internet."
+    },
+    "selectMessage": "Seleccionar mensaje",
+    "sending": "Enviando...",
+    "sendMessage": "Enviar Mensaje",
+    "successMessage": "¡Mensaje enviado con éxito! Pronto me pondré en contacto.",
+    "predefinedMessages": [
+      "Hola, quisiera más información sobre tus servicios.",
+      "Estoy interesado en trabajar contigo. ¿Podemos hablar?",
+      "Tengo una pregunta sobre un proyecto que me gustaría discutir.",
+      "Me encantaría colaborar contigo en un proyecto futuro.",
+      "¿Podrías ayudarme con una consulta técnica?",
+      "Quisiera cotizar un servicio personalizado.",
+      "¿Tienes disponibilidad para nuevas oportunidades?",
+      "Necesito asesoría profesional en un tema específico.",
+      "¿Ofreces servicios de consultoría?",
+      "Me gustaría programar una reunión virtual.",
+      "¿Tienes referencias de trabajos anteriores?",
+      "Quisiera conocer más sobre tu experiencia laboral.",
+      "¿Podrías compartir ejemplos de proyectos similares?",
+      "Estoy evaluando opciones para mi empresa, ¿podemos conversar?",
+      "¿Cuál es tu tarifa por hora de trabajo?"
+    ]
+  },
+  "projectsPage": {
+    "title": {
+      "first": "Mis",
+      "second": "Proyectos"
+    },
+    "loading": "Cargando proyectos...",
+    "empty": "No hay proyectos disponibles."
+  },
+  "projects": {
+    "guitars-la": {
+      "name": "GuitarrasLA",
+      "description": "Plataforma de comercio electrónico desarrollada con Next.js, con paginación avanzada, integración con PostgreSQL y un carrito de compras funcional."
+    },
+    "product-hunt": {
+      "name": "Clon de Product Hunt",
+      "description": "Réplica en tiempo real de Product Hunt, construida con Firebase para autenticación y almacenamiento, Next.js para SSR y Styled Components para la interfaz."
+    },
+    "mern-uptask": {
+      "name": "MERN-Uptask",
+      "description": "Aplicación de gestión de tareas en tiempo real usando el stack MERN (MongoDB, Express, React, Node.js) y Socket.io para actualizaciones instantáneas."
+    },
+    "veterinary-control": {
+      "name": "Control Veterinario",
+      "description": "Sistema de gestión de citas veterinarias desarrollado con React y TailwindCSS para optimizar operaciones clínicas."
+    },
+    "create-interactive": {
+      "name": "Crear Interactivo",
+      "description": "Aplicación CRUD offline-first que utiliza IndexDB para almacenamiento local y una experiencia de usuario fluida sin conexión."
+    },
+    "expense-manager": {
+      "name": "Gestor de Gastos",
+      "description": "Herramienta de finanzas personales construida con React y localStorage para gestionar presupuestos de manera efectiva."
+    },
+    "drink-finder": {
+      "name": "Buscador de Bebidas",
+      "description": "Aplicación de descubrimiento de cócteles que se integra con una API externa y utiliza React Context para la gestión del estado."
+    },
+    "weather-app": {
+      "name": "App del Clima",
+      "description": "Panel meteorológico en tiempo real desarrollado con React Context y TailwindCSS para pronósticos globales precisos."
+    },
+    "car-insurance": {
+      "name": "Calculadora de Seguros",
+      "description": "Calculadora dinámica de primas de seguro de autos construida con React Context y TailwindCSS."
+    },
+    "news-finder": {
+      "name": "Buscador de Noticias",
+      "description": "Agregador de noticias multi-categoría que utiliza React Context para la gestión del estado y Material-UI para la interfaz."
+    },
+    "instant-cryptos": {
+      "name": "Criptos al Instante",
+      "description": "Plataforma de seguimiento de criptomonedas en tiempo real con conversor de divisas y herramientas avanzadas de análisis."
+    }
+  },
+  "project": {
+    "buttonST": "sitio"
+  },
+  "layout": {
+    "siteTitle": "Portafolio",
+    "siteDescription": "Portafolio web con diversos proyectos e información de interés.",
+    "defaultPageTitle": "Página",
+    "footerRights": "Todos los derechos reservados."
+  },
+  "languageSwitcher": {
+    "spanish": "Español",
+    "english": "Inglés",
+    "portuguese": "Portugués",
+    "mandarin": "Mandarín",
+    "russian": "Ruso",
+    "german": "Alemán"
+  },
+  "themeSwitcher": {
+    "ariaLabel": "Selector de temas",
+    "themes": {
+      "default": "Clásico",
+      "forest": "Bosque",
+      "ocean": "Océano",
+      "desert": "Desierto",
+      "sunset": "Atardecer"
+    }
+  }
+}

@@ -8,25 +8,23 @@ import BackBurble from "../components/BackBurble";
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = ({ className, ...props }) => {
-  const { isDarkMode } = usePortafolios();
+  const { isDarkMode, t } = usePortafolios();
   const [isMounted, setIsMounted] = useState(false);
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
   const contentRef = useRef(null);
   const buttonRef = useRef(null);
+  const buttonContainerRef = useRef(null);
   const decorativesRef = useRef([]);
-  const animationRef = useRef(null); // Referencia para almacenar la animación
 
-  // Animación inicial del título
   useLayoutEffect(() => {
     if (titleRef.current) {
-      gsap.from(titleRef.current, {
-        duration: 1.8,
+      gsap.from(titleRef.current.children, {
+        duration: 1.5,
         opacity: 0,
-        y: 100,
-        rotationX: -10,
+        y: 80,
+        stagger: 0.2,
         ease: "power4.out",
-        immediateRender: false
       });
     }
   }, []);
@@ -34,34 +32,35 @@ const Home = ({ className, ...props }) => {
   useEffect(() => {
     setIsMounted(true);
     return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-      if (animationRef.current) animationRef.current.kill();
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
 
-  // Efecto magnético optimizado
   const setupMagneticEffect = useCallback(() => {
-    if (!buttonRef.current) return;
+    if (!buttonRef.current || !buttonContainerRef.current) return;
 
     const button = buttonRef.current;
+    const container = buttonContainerRef.current;
     let isActive = true;
 
     const magneticEffect = (e) => {
       if (!isActive) return;
-      
-      const rect = button.getBoundingClientRect();
-      const x = (e.clientX - rect.left - rect.width / 2) * 0.1;
-      const y = (e.clientY - rect.top - rect.height / 2) * 0.1;
-      
-      if (animationRef.current) animationRef.current.kill();
-      
-      animationRef.current = gsap.to(button, {
-        x: gsap.utils.clamp(-15, 15, x),
-        y: gsap.utils.clamp(-15, 15, y),
-        scale: 1.03,
-        duration: 0.15,
-        ease: "power1.out",
-        overwrite: "auto"
+
+      const buttonRect = button.getBoundingClientRect();
+      const containerRect = container.getBoundingClientRect();
+
+      const x = e.clientX - (buttonRect.left + buttonRect.width / 2);
+      const y = e.clientY - (buttonRect.top + buttonRect.height / 2);
+
+      const maxX = (containerRect.width - buttonRect.width) / 2;
+      const maxY = (containerRect.height - buttonRect.height) / 2;
+
+      gsap.to(button, {
+        x: gsap.utils.clamp(-maxX, maxX, x * 0.2),
+        y: gsap.utils.clamp(-maxY, maxY, y * 0.2),
+        scale: 1.05,
+        duration: 0.2,
+        ease: "power2.out",
       });
     };
 
@@ -70,40 +69,34 @@ const Home = ({ className, ...props }) => {
         x: 0,
         y: 0,
         scale: 1,
-        duration: 0.15,
-        ease: "power1.out",
-        overwrite: "auto"
+        duration: 0.2,
+        ease: "power2.out",
       });
     };
 
-    button.addEventListener("mousemove", magneticEffect);
-    button.addEventListener("mouseleave", resetPosition);
+    container.addEventListener("mousemove", magneticEffect);
+    container.addEventListener("mouseleave", resetPosition);
 
     return () => {
       isActive = false;
-      button.removeEventListener("mousemove", magneticEffect);
-      button.removeEventListener("mouseleave", resetPosition);
-      gsap.set(button, { x: 0, y: 0, scale: 1 });
+      container.removeEventListener("mousemove", magneticEffect);
+      container.removeEventListener("mouseleave", resetPosition);
     };
   }, []);
 
-  // Animaciones secundarias
   useEffect(() => {
     if (!isMounted) return;
 
     const animations = [];
-    
+
     if (subtitleRef.current) {
       animations.push(
         gsap.from(subtitleRef.current, {
           duration: 1.2,
           opacity: 0,
-          y: 40,
-          ease: "elastic.out(1, 0.4)",
-          scrollTrigger: {
-            trigger: subtitleRef.current,
-            start: "top 90%"
-          }
+          y: 30,
+          ease: "power3.out",
+          scrollTrigger: { trigger: subtitleRef.current, start: "top 85%" },
         })
       );
     }
@@ -111,107 +104,88 @@ const Home = ({ className, ...props }) => {
     if (contentRef.current) {
       animations.push(
         gsap.from(contentRef.current.children, {
-          duration: 1,
+          duration: 1.2,
           opacity: 0,
-          y: 50,
-          stagger: 0.25,
+          y: 40,
+          stagger: 0.15,
           ease: "power3.out",
-          scrollTrigger: {
-            trigger: contentRef.current,
-            start: "top 85%"
-          }
+          scrollTrigger: { trigger: contentRef.current, start: "top 80%" },
         })
       );
     }
 
-    decorativesRef.current = decorativesRef.current.filter(Boolean);
     decorativesRef.current.forEach((el, index) => {
       animations.push(
         gsap.from(el, {
-          duration: 2.5,
+          duration: 2,
           opacity: 0,
-          scale: 0.8,
-          y: 50,
-          rotate: index % 2 === 0 ? 10 : -10,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: el,
-            start: "top 90%"
-          }
+          scale: 0.5,
+          y: 60,
+          ease: "elastic.out(1, 0.5)",
+          scrollTrigger: { trigger: el, start: "top 90%" },
         })
       );
     });
 
     setupMagneticEffect();
-    return () => animations.forEach(anim => anim?.kill());
+    return () => animations.forEach((anim) => anim?.kill());
   }, [isMounted, setupMagneticEffect]);
 
   if (!isMounted) return null;
 
   return (
-    <Layout pagina="Home">
+    <Layout pagina={t('header.nav.home')}>
       <BackBurble
         particleDensity={20}
-        bubbleColors={['bg-custom-brown', 'bg-efectHovercolor']} // Solo clases definidas
+        bubbleColors={["bg-custom-brown", "bg-efectHovercolor"]}
         center={true}
-        showLine={true}
+        showLine={false}
         variant="wide"
       >
-        <div className={`relative py-10 flex items-center overflow-hidden ${className}`}>
-          <div className="absolute inset-0 z-0 opacity-30 dark:opacity-20 animate-gradient-flow">
-            <div className="absolute inset-0 bg-noise opacity-20 mix-blend-soft-light" />
+        <section className={`relative min-h-screen flex items-center ${className}`}>
+          <div className="absolute inset-0 z-0 overflow-hidden">
+            <div className="absolute inset-0" />
+            <div className="absolute inset-0 mix-blend-overlay" />
           </div>
 
-          <div 
-            className="relative z-10 w-full max-w-6xl md:px-8"
-            onContextMenu={(e) => e.preventDefault()}
-          >
-            <div 
+          <div className="relative z-10 container mx-auto px-6 md:px-12">
+            <div
               ref={contentRef}
-              className="backdrop-blur-lg rounded-[4rem] md:rounded-[5rem] p-8 md:p-12 lg:p-16 shadow-md border-4 border-custom-brown/70 backdrop-blur-md shadow-custom-brown/50 transition-all duration-500 hover:backdrop-blur-xl hover:shadow-custom-brown/80 hover:border-custom-brown/90"
+              className="backdrop-blur rounded-3xl p-8 md:p-12 lg:p-16 border border-custom-brown shadow-2xl shadow-custom-brown hover:shadow-custom-brown transition-all duration-700"
             >
-              <div className="relative group mb-5" ref={titleRef}>
-                <div className="absolute -inset-4 bg-transparent rounded-3xl transform rotate-3 scale-95 group-hover:rotate-0 transition-all duration-700 opacity-75 group-hover:opacity-100 mix-blend-multiply" />
-                <h1 className="text-5xl md:text-6xl lg:text-7xl relative">
-                  <span className="block text-left text-custom-brown -mb-2 px-2 font-bold bg-clip-text bg-gradient-to-r from-[var(--custom-brown)] to-[var(--accent)] neon-text">
-                    Desarrollo
-                  </span>
-                  <span className="block text-[var(--beige-50)] bg-[var(--custom-brown)] py-2 px-4 rounded-2xl mt-3 w-fit relative overflow-hidden transition-all duration-300 hover:scale-[1.02]">
-                    <span className="relative right-3 z-10">Web</span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-custom-brown dark:via-white via-zinc-800 to-transparent opacity-40 animate-shine" />
-                  </span>
-                </h1>
-              </div>
+              <h1
+                ref={titleRef}
+                className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight mb-8"
+              >
+                <span className="block font-bold text-custom-brown">
+                {t('home.title1')}
+                </span>
+                <span className="inline-block text-whiteSnow mt-2 relative">
+                {t('home.title2')}
+                  <span className="absolute -inset-2 bg-custom-brown rounded-[20px] -z-10 animate-pulse-slow" />
+                </span>
+              </h1>
 
-              <div className="ml-8 md:ml-12 border-l-4 border-custom-brown pl-6 md:pl-8 space-y-8">
-                <div className="flex items-start gap-4">
-                  <div className="w-3 h-3 bg-[var(--custom-brown)] rounded-full mt-2 shrink-0 animate-pulse-fast" />
-                  <div className="overflow-hidden">
-                    <p
-                      className="text-2xl md:text-3xl text-[var(--custom-brown)] font-medium mb-2"
-                      ref={subtitleRef}
+              <div className="space-y-6 max-w-2xl">
+                <p
+                  ref={subtitleRef}
+                  className="text-2xl md:text-3xl font-semibold text-custom-brown dark:text-primary"
+                >
+                  {t('home.subtitle')}
+                </p>
+                <p className="text-lg md:text-xl text-custom-brown dark:text-whiteSnow leading-relaxed">
+                  {t('home.description')}
+                </p>
+
+                <div ref={buttonContainerRef} className="relative inline-block">
+                  <button
+                    ref={buttonRef}
+                    className="relative px-8 py-4 bg-custom-brown text-whiteSnow rounded-full font-medium transition-all duration-300 hover:bg-efectHovercolor focus:outline-none focus:ring-2 focus:ring-custom-brown"
+                    aria-label={t('home.downloadCV')}                 
                     >
-                      Gabriel Hernández
-                    </p>
-                    <p className="text-lg md:text-xl text-[var(--custom-brown)] dark:text-[var(--beige-50)] max-w-2xl leading-relaxed">
-                      Especializado en crear soluciones web innovadoras y escalables,
-                      combinando diseño moderno con tecnología de vanguardia para
-                      ofrecer experiencias de usuario excepcionales.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="ml-4" ref={buttonRef}>
-                  <button 
-                    className="absolute inset-0 bg-gradient-to-r from-custom-brown via-custom-brown to-transparent opacity-40 animate-shine"
-                    aria-label="Descargar currículum vitae"
-                    type="button"
-                    onMouseDown={(e) => {
-                      e.preventDefault();
-                      e.stopPropagation();
-                    }}
-                  >
-                    <span className="relative z-10">Descargar CV</span>
+                    <span className="relative z-10">
+                    {t('home.downloadCV')}                    
+                    </span>
                   </button>
                 </div>
               </div>
@@ -220,15 +194,14 @@ const Home = ({ className, ...props }) => {
 
           <div className="absolute inset-0 z-0 pointer-events-none">
             {[...Array(3)].map((_, i) => (
-             // En los elementos decorativos
-              <div 
+              <div
                 key={i}
-                ref={el => decorativesRef.current[i] = el}
-                className={`absolute ${i === 0 ? 'top-1/4 -left-20 w-64 h-64 animate-float' : i === 1 ? 'bottom-1/3 -right-40 w-96 h-96 animate-float-delayed' : 'top-1/3 right-20 w-48 h-48 animate-float-slow'} bg-custom-brown dark:bg-beige-50 rounded-full blur-xl`}
+                ref={(el) => (decorativesRef.current[i] = el)}
+                className={`absolute ${i === 0 ? "top-10 left-0 w-72 h-72" : i === 1 ? "bottom-20 right-0 w-96 h-96" : "top-1/2 left-1/3 w-56 h-56"}  rounded-full blur-3xl animate-float`}
               />
             ))}
           </div>
-        </div>
+        </section>
       </BackBurble>
     </Layout>
   );

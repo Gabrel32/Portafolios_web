@@ -1,0 +1,164 @@
+{
+  "header": {
+    "title": "我的作品集",
+    "nav": {
+      "home": "首页",
+      "projects": "项目",
+      "about": "关于我",
+      "contact": "联系"
+    }
+  },
+  "home": {
+    "title1": "网页",
+    "title2": "开发",
+    "subtitle": "Gabriel Hernández",
+    "description": "专注于打造创新、可扩展的网页解决方案，融合现代设计与尖端技术，提供卓越的用户体验。",
+    "downloadCV": "下载简历"
+  },
+  "projectsSection": {
+    "title": "我的项目",
+    "description": "这里展示了我的部分作品",
+    "viewDetails": "查看详情",
+    "technologiesUsed": "使用技术",
+    "visitProject": "访问项目",
+    "viewCode": "查看代码"
+  },
+  "about": {
+    "title": "关于我",
+    "description": "我擅长的技术",
+    "alsoWorkedWith": "还接触过",
+    "orms": "ORM",
+    "like": "如",
+    "andOthers": "等"
+  },
+  "contact": {
+    "title": "联系我",
+    "formTitle": "给我留言",
+    "linkedinText": "或通过 LinkedIn 直接联系我"
+  },
+  "contactForm": {
+    "successTitle": "成功！",
+    "successDescription": "您的消息已成功发送。我会尽快回复，探讨您的想法或项目！",
+    "errorTitle": "错误！",
+    "errorDescription": "消息发送失败。请检查网络或稍后再试。",
+    "labels": {
+      "name": "姓名",
+      "email": "电子邮件",
+      "message": "消息"
+    },
+    "placeholders": {
+      "name": "您的姓名",
+      "email": "您的邮箱"
+    },
+    "errors": {
+      "nameRequired": "请输入姓名",
+      "emailRequired": "请输入邮箱",
+      "invalidEmail": "请输入有效邮箱",
+      "messageRequired": "请选择消息",
+      "sendError": "发送失败，请重试",
+      "connectionError": "网络错误，请检查连接"
+    },
+    "selectMessage": "选择消息",
+    "sending": "发送中...",
+    "sendMessage": "发送",
+    "successMessage": "消息已发送！我会尽快联系您。",
+    "predefinedMessages": [
+      "您好，我想了解更多您的服务。",
+      "我有兴趣合作，能聊聊吗？",
+      "有个项目问题想讨论。",
+      "期待与您合作未来项目。",
+      "能帮我解决技术难题吗？",
+      "我想定制服务报价。",
+      "您有空接新项目吗？",
+      "需要您对某主题的专业建议。",
+      "您提供咨询服务吗？",
+      "我想安排一场虚拟会议。",
+      "有之前工作的参考案例吗？",
+      "想了解更多您的工作经验。",
+      "能分享类似项目案例吗？",
+      "我在为公司寻找方案，能谈谈吗？",
+      "您的时薪是多少？"
+    ]
+  },
+  "projectsPage": {
+    "title": {
+      "first": "我的",
+      "second": "项目"
+    },
+    "loading": "加载项目中...",
+    "empty": "暂无项目"
+  },
+  "projects": {
+    "guitars-la": {
+      "name": "吉他LA",
+      "description": "基于 Next.js 的电商平台，集成高级分页、PostgreSQL 数据库和动态购物车，优化用户体验。"
+    },
+    "product-hunt": {
+      "name": "Product Hunt 克隆",
+      "description": "使用 Firebase 实现身份验证和数据存储，Next.js 提供服务器端渲染，Styled Components 打造现代界面。"
+    },
+    "mern-uptask": {
+      "name": "MERN-Uptask",
+      "description": "基于 MERN 堆栈（MongoDB、Express、React、Node.js）和 Socket.io 的实时任务管理应用，支持即时更新和协作。"
+    },
+    "veterinary-control": {
+      "name": "兽医管理系统",
+      "description": "使用 React 和 TailwindCSS 开发的兽医预约系统，优化临床操作和预约效率。"
+    },
+    "create-interactive": {
+      "name": "创建交互",
+      "description": "基于 IndexDB 的离线优先 CRUD 应用，确保无网状态下也能提供流畅体验。"
+    },
+    "expense-manager": {
+      "name": "费用管理",
+      "description": "使用 React 和 localStorage 开发的财务跟踪工具，支持预算管理和直观操作。"
+    },
+    "drink-finder": {
+      "name": "饮品查找",
+      "description": "集成外部 API 的鸡尾酒搜索应用，采用 React Context 管理状态，Bootstrap 实现响应式设计。"
+    },
+    "weather-app": {
+      "name": "天气应用",
+      "description": "基于 React Context 和 TailwindCSS 的实时天气面板，提供精准全球预报，界面简洁。"
+    },
+    "car-insurance": {
+      "name": "车险计算器",
+      "description": "使用 React Context 和 TailwindCSS 的动态车险费用计算工具，实时分析提供精确估算。"
+    },
+    "news-finder": {
+      "name": "新闻查找",
+      "description": "基于 React Context 和 Material-UI 的多类别新闻聚合器，现代且响应式。"
+    },
+    "instant-cryptos": {
+      "name": "即时加密货币",
+      "description": "实时加密货币跟踪平台，集成货币转换和市场分析工具，适合各类用户。"
+    }
+  },
+  "project": {
+    "buttonST": "访问网站"
+  },
+  "layout": {
+    "siteTitle": "作品集",
+    "siteDescription": "我的网页作品集，展示项目与实用信息",
+    "defaultPageTitle": "页面",
+    "footerRights": "保留所有权利"
+  },
+  "languageSwitcher": {
+    "spanish": "西班牙语",
+    "english": "英语",
+    "portuguese": "葡萄牙语",
+    "mandarin": "中文",
+    "russian": "俄语",
+    "german": "德语"
+  },
+  "themeSwitcher": {
+    "ariaLabel": "主题切换",
+    "themes": {
+      "default": "经典",
+      "forest": "森林",
+      "ocean": "海洋",
+      "desert": "沙漠",
+      "sunset": "日落"
+    }
+  }
+}

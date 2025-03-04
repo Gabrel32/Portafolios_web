@@ -1,6 +1,15 @@
 import { useEffect } from "react";
 
-const NotificationModal = ({ isOpen, type, message, onClose }) => {
+const NotificationModal = ({
+  isOpen,
+  type,
+  message, // Mensaje principal recibido desde el componente padre
+  onClose,
+  successTitle = "¡Éxito!", // Título por defecto para éxito
+  successDescription, // Descripción adicional opcional para éxito
+  errorTitle = "¡Error!", // Título por defecto para error
+  errorDescription, // Descripción adicional opcional para error
+}) => {
   // Cerrar el modal al presionar la tecla "Escape"
   useEffect(() => {
     const handleEscape = (e) => {
@@ -21,9 +30,15 @@ const NotificationModal = ({ isOpen, type, message, onClose }) => {
   // Si no está abierto, no renderizar nada
   if (!isOpen) return null;
 
+  // Determinar el título y la descripción según el tipo
+  const title = type === "success" ? successTitle : errorTitle;
+  const description = type === "success" 
+    ? (successDescription ? `${message} ${successDescription}` : message) 
+    : (errorDescription ? `${message} ${errorDescription}` : message);
+
   return (
     <div
-      className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4 animate-fadeIn"
+      className="fixed inset-0 z-[1000] bg-black/50 flex items-center justify-center p-4 animate-fadeIn"
       onClick={onClose} // Cerrar al hacer clic fuera del modal
     >
       <div
@@ -35,7 +50,7 @@ const NotificationModal = ({ isOpen, type, message, onClose }) => {
           className="absolute top-4 right-4 text-custom-brown hover:text-efectHovercolor transition-colors text-2xl font-bold"
           aria-label="Cerrar modal"
         >
-          &times;
+          ×
         </button>
 
         <div className="text-center space-y-4 animate-fadeInUp">
@@ -82,13 +97,11 @@ const NotificationModal = ({ isOpen, type, message, onClose }) => {
               type === "success" ? "text-custom-brown" : "text-red-500"
             } animate-textShimmer`}
           >
-            {type === "success"
-              ? "¡Mensaje Enviado correctamente! Pronto me pondré en contacto con usted."
-              : "¡Error!"}
+            {title}
           </h3>
 
-          <p className="text-completColor dark:text-beige-50/90 leading-relaxed animate-fadeInUp">
-            {message}
+          <p className="text-custom-brown leading-relaxed animate-fadeInUp">
+            {description}
           </p>
         </div>
       </div>

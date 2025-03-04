@@ -2,14 +2,19 @@ import React from 'react';
 
 const Spinner = () => {
   return (
-    <div className="flex items-center justify-center">
-      {/* Contenedor relativo para posicionar el anillo y su "recorte" */}
-      <div className="relative">
-        {/* Círculo exterior con degradado y animación de giro */}
-        <div className="w-16 h-16 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 animate-spin" />
-        {/* Círculo interior para simular un recorte y dejar visible solo el anillo */}
-        <div className="absolute inset-1 rounded-full bg-gray-900" />
+    <div className="flex flex-col items-center justify-center min-h-[300px] space-y-4">
+      {/* Contenedor del anillo */}
+      <div className="relative w-16 h-16 sm:w-20 sm:h-20">
+        {/* Anillo giratorio */}
+        <div
+          className="absolute inset-0 rounded-full border-4 border-t-custom-brown border-l-primary border-b-accent border-r-transparent animate-spin"
+          style={{ animationDuration: '1s' }}
+        />
+        {/* Fondo interior */}
+        <div className="absolute inset-1 rounded-full bg-whiteSnow dark:bg-completColor" />
       </div>
+      {/* Texto opcional */}
+      <p className="text-lg font-medium text-custom-brown animate-pulse">Cargando proyectos...</p>
     </div>
   );
 };

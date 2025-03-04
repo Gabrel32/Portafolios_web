@@ -24,7 +24,7 @@ function ButtonNav({
     <button
       onClick={() => router.push(directionPath)} // Redirecciona a la ruta
       type="button"
-      className={`relative flex items-center justify-center btn-base btn-efecto w-[120px] lg:w-[140px] h-[40px] rounded-lg gap-2 font-light bg-[var(--primary-color)] text-[var(--text-color)] before:absolute before:inset-0 before:rounded-lg before:transition-opacity ${buttonClass} ${style.button ?? ""}`}
+      className={`relative flex items-center justify-center btn-base btn-efecto w-[120px] lg:w-[140px] h-[40px] rounded-lg gap-1 font-light before:absolute before:inset-0 before:rounded-lg before:transition-opacity ${buttonClass} ${style.button ?? ""}`}
     >
       {name}
       {icon.src && (

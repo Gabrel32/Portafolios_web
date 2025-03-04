@@ -1,22 +1,22 @@
-"use client"; // Añade esto al inicio para forzar renderizado en cliente
+"use client";
 
-import React, { useEffect, useState } from 'react';
-import Layout from '../layout/Layout';
-import Image from 'next/image';
-import Link from 'next/link';
-import usePortafolios from '../hook/usePortafolios';
-import BackBurble from '../components/BackBurble';
+import React, { useEffect, useState } from "react";
+import Layout from "../layout/Layout";
+import Image from "next/image";
+import Link from "next/link";
+import usePortafolios from "../hook/usePortafolios";
+import BackBurble from "../components/BackBurble";
 
 function SobreMi() {
-  const { tecnologias } = usePortafolios();
-  const [customBrown, setCustomBrown] = useState('#DC5F00');
+  const { tecnologias, t } = usePortafolios();
+  const [customBrown, setCustomBrown] = useState("#DC5F00");
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
     setCustomBrown(
       getComputedStyle(document.documentElement)
-        .getPropertyValue('--custom-brown')
+        .getPropertyValue("--custom-brown")
         .trim()
     );
   }, []);
@@ -24,96 +24,100 @@ function SobreMi() {
   if (!isMounted) return null;
 
   return (
-    <Layout pagina={"Sobre Mi"}>
+    <Layout pagina={t("header.nav.about")}>
       <BackBurble
-        title="Sobre mi"
-        description="Tecnologías Manejadas"
         particleDensity={20}
-        bubbleColors={['bg-custom-brown', 'bg-custom-brown/20']}
+        bubbleColors={["bg-custom-brown", "bg-efectHovercolor"]}
         center={true}
-        showLine={true}
+        showLine={false}
         variant="wide"
-        >
-<div className="relative bg-transparent w-full max-w-6xl mx-auto rounded-2xl p-8 mb-10 transition-all duration-500 hover:shadow-3xl overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-10 dark:opacity-5"
-          style={{
-            backgroundImage: `url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMiIgaGVpZ2h0PSIyIiBmaWxsPSIj${encodeURIComponent(
-              customBrown.replace('#', '')
-            )}"Lz48L3N2Zz4=")`,
-          }}
-        />
-        
-       
+      >
+        <section className="relative min-h-screen flex items-center py-4 px-6 md:px-12">
+          {/* Background Effects */}
+          <div className="absolute inset-0 z-0 overflow-hidden">
+            <div className="absolute inset-0" />
+            <div className="absolute inset-0 mix-blend-overlay" />
+          </div>
 
-        <section className="mb-10 relative z-10">
-          {/* <h4 className="text-2xl font-semibold text-gray-800 dark:text-beige-50 mb-6 animate-slideRight">
-            <span className="bg-gradient-to-r from-[var(--custom-brown)] to-[var(--efectHovercolor)] text-transparent bg-clip-text">
-              Tecnologías
-            </span>
-            <span className="ml-2 border-b-2 border-[var(--custom-brown)] inline-block pb-1">Manejadas</span>
-          </h4> */}
-          
-          <ul className='mt-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
-            {tecnologias.map((e, index) => (
-              <li
-                key={e.id}
-                className={`flex flex-col items-center p-6 bg-transparent rounded-2xl hover:shadow-xl hover:shadow-zinc-800 shadow-zinc-500  dark:shadow-custom-brown  shadow-custom-dark transition-all duration-300 hover:-translate-y-2 animate-cardPop`}
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className='p-3 dark:bg-[#f5f5f5e0] bg-transparent rounded-full mb-4 transition-transform duration-300 hover:scale-110'>
-                  <Image
-                    width={60}
-                    height={60}
-                    src={`/img/${e.icon}`}
-                    alt={e.Nombre}
-                    className='hover:rotate-12 transition-transform duration-300'
-                  />
-                </div>
-                <span className='text-lg font-medium text-gray-800 dark:text-[#f5f5f5c4] relative'>
-                  {e.Nombre}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--custom-brown)] transition-all duration-300 group-hover:w-full"></span>
-                </span>
-              </li>
-            ))}
-          </ul>
-        </section>
+          {/* Main Content */}
+          <div className="relative z-10 container mx-auto max-w-6xl w-full backdrop-blur-xl rounded-3xl p-3 md:p-4 lg:p-8 border border-custom-brown shadow-2xl shadow-custom-brown hover:shadow-custom-brown transition-all duration-700">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight mb-6 text-center text-custom-brown dark:text-whiteSnow relative">
+              {t("about.title")}
+              <span className="absolute -inset-2 rounded-full blur-xl -z-10 animate-pulse-slow " />
+            </h2>
+            <p className="text-base md:text-lg text-custom-brown dark:text-whiteSnow leading-relaxed text-center mb-10">
+              {t("about.description")}
+            </p>
 
-        <section className="relative z-10">
-          <p className='text-xl text-gray-600 dark:text-highlight leading-relaxed text-center animate-fadeInUp'>
-            También he trabajado con{' '}
-            <Link
-              target='_blank'
-              className='relative text-[var(--custom-brown)] hover:text-[var(--efectHovercolor)] dark:text-beige-50 dark:hover:text-[var(--efectHovercolor)] transition-colors duration-300 font-semibold group'
-              href="https://www.prisma.io"
-            >
-              <span className="relative">
-                ORMs
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--efectHovercolor)] transition-all duration-300 group-hover:w-full"></span>
-              </span>
-            </Link>{' '}
-            como{' '}
-            {['Prisma', 'Strapi', 'Sequelize'].map((tech, i) => (
-              <React.Fragment key={tech}>
-                <Link
-                  target='_blank'
-                  className="relative text-[var(--custom-brown)] hover:text-[var(--efectHovercolor)] dark:text-beige-50 dark:hover:text-[var(--efectHovercolor)] font-semibold group"
-                  href={`https://www.${tech.toLowerCase()}.io`}
+            {/* Technologies */}
+            <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+              {tecnologias.map((e, index) => (
+                <li
+                  key={e.id}
+                  className="group flex flex-col items-center p-3 md:p-4 backdrop-blur-xl rounded-2xl border border-custom-brown shadow-md shadow-secondary hover:shadow-custom-brown transition-all duration-500 hover:-translate-y-1 animate-cardPop  "
+                  style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <span className="relative">
-                    {tech}
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--efectHovercolor)] transition-all duration-300 group-hover:w-full"></span>
+                  <div className=" dark:text-whiteSnow p-2 md:p-3 rounded-full mb-2 md:mb-3 transition-transform duration-300 group-hover:scale-105">
+                    <Image
+                      width={40}
+                      height={40}
+                      src={`/img/${e.icon}`}
+                      alt={e.Nombre}
+                      className="object-contain transition-transform duration-300 group-hover:rotate-6"
+                    />
+                  </div>
+                  <span className="text-sm md:text-base font-medium text-custom-brown dark:text-whiteSnow relative text-center">
+                    {e.Nombre}
+                    <span className="absolute -bottom-1 left-0 right-0 mx-auto w-0 h-0.5 bg-custom-brown transition-all duration-300 group-hover:w-3/4" />
                   </span>
-                </Link>
-                {i < 2 ? ', ' : ''}
-              </React.Fragment>
+                </li>
+              ))}
+            </ul>
+
+            {/* Additional Text */}
+            <p className="text-base md:text-lg text-custom-brown dark:text-whiteSnow leading-relaxed text-center mt-10">
+              {t("about.alsoWorkedWith")}{" "}
+              <Link
+                target="_blank"
+                className="font-semibold text-custom-brown hover:text-efectHovercolor dark:text-whiteSnow dark:hover:text-efectHovercolor transition-all duration-300 relative group"
+                href="https://www.prisma.io"
+              >
+                <span>
+                  {t("about.orms")}
+                  <span className="absolute -bottom-1 left-0 right-0 mx-auto w-0 h-0.5 bg-custom-brown transition-all duration-300 group-hover:w-3/4" />
+                </span>
+              </Link>{" "}
+              {t("about.like")}{" "}
+              {["Prisma", "Strapi", "Sequelize"].map((tech, i) => (
+                <React.Fragment key={tech}>
+                  <Link
+                    target="_blank"
+                    className="font-semibold text-custom-brown hover:text-efectHovercolor dark:text-whiteSnow dark:hover:text-efectHovercolor transition-all duration-300 relative group"
+                    href={`https://www.${tech.toLowerCase()}.io`}
+                  >
+                    <span>
+                      {tech}
+                      <span className="absolute -bottom-1 left-0 right-0 mx-auto w-0 h-0.5 bg-custom-brown transition-all duration-300 group-hover:w-3/4" />
+                    </span>
+                  </Link>
+                  {i < 2 ? ", " : ""}
+                </React.Fragment>
+              ))}
+              {t("about.andOthers")}
+            </p>
+          </div>
+
+          {/* Decorative Elements */}
+          <div className="absolute inset-0 z-0 pointer-events-none">
+            {[...Array(3)].map((_, i) => (
+              <div
+                key={i}
+                className={`absolute ${i === 0 ? "top-10 left-0 w-72 h-72" : i === 1 ? "bottom-20 right-0 w-96 h-96" : "top-1/2 left-1/3 w-56 h-56"} rounded-full blur-3xl animate-float bg-custom-brown/20 dark:bg-beige-50/20`}
+              />
             ))}
-            , entre otros.
-          </p>
+          </div>
         </section>
-      </div>      
       </BackBurble>
-      
     </Layout>
   );
 }

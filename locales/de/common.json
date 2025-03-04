@@ -1,0 +1,164 @@
+{
+    "header": {
+      "title": "Mein Portfolio",
+      "nav": {
+        "home": "Startseite",
+        "projects": "Projekte",
+        "about": "Über mich",
+        "contact": "Kontakt"
+      }
+    },
+    "home": {
+    "title1": "Webentwicklung",
+    "title2": "Entwicklung",
+      "subtitle": "Gabriel Hernández",
+      "description": "Spezialisiert auf die Erstellung innovativer und skalierbarer Web-Lösungen, die modernes Design mit modernster Technologie kombinieren, um außergewöhnliche Benutzererlebnisse zu bieten.",
+      "downloadCV": "Lebenslauf herunterladen"
+    },
+    "projectsSection": {
+      "title": "Meine Projekte",
+      "description": "Hier können Sie einige meiner herausragenden Projekte sehen",
+      "viewDetails": "Details anzeigen",
+      "technologiesUsed": "Verwendete Technologien",
+      "visitProject": "Projekt besuchen",
+      "viewCode": "Code anzeigen"
+    },
+    "about": {
+      "title": "Über mich",
+      "description": "Technologien, mit denen ich arbeite",
+      "alsoWorkedWith": "Ich habe auch gearbeitet mit",
+      "orms": "ORMs",
+      "like": "wie",
+      "andOthers": ", unter anderem."
+    },
+    "contact": {
+      "title": "Kontaktieren Sie mich",
+      "formTitle": "Senden Sie mir eine Nachricht",
+      "linkedinText": "Oder senden Sie mir eine direkte Nachricht über"
+    },
+    "contactForm": {
+      "successTitle": "Erfolg!",
+  "successDescription": "Ihre Nachricht wurde erfolgreich gesendet. Ich melde mich bald bei Ihnen, um Ihre Ideen oder Projekte zu besprechen!",
+  "errorTitle": "Fehler!",
+  "errorDescription": "Ihre Nachricht konnte momentan nicht gesendet werden. Bitte überprüfen Sie Ihre Verbindung oder versuchen Sie es in ein paar Minuten erneut.",
+      "labels": {
+        "name": "Name",
+        "email": "E-Mail",
+        "message": "Nachricht"
+      },
+      "placeholders": {
+        "name": "Ihr Name",
+        "email": "Ihre E-Mail"
+      },
+      "errors": {
+        "nameRequired": "Bitte geben Sie Ihren Namen ein",
+        "emailRequired": "Bitte geben Sie Ihre E-Mail-Adresse ein",
+        "invalidEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+        "messageRequired": "Bitte wählen Sie eine Nachricht aus",
+        "sendError": "Fehler beim Senden der Nachricht. Bitte versuchen Sie es erneut.",
+        "connectionError": "Verbindungsfehler. Bitte überprüfen Sie Ihre Internetverbindung."
+      },
+      "selectMessage": "Nachricht auswählen",
+      "sending": "Wird gesendet...",
+      "sendMessage": "Nachricht senden",
+      "successMessage": "Nachricht erfolgreich gesendet! Ich werde mich bald bei Ihnen melden.",
+      "predefinedMessages": [
+        "Hallo, ich möchte mehr Informationen über Ihre Dienstleistungen erhalten.",
+        "Ich bin daran interessiert, mit Ihnen zusammenzuarbeiten. Können wir uns unterhalten?",
+        "Ich habe eine Frage zu einem Projekt, das ich besprechen möchte.",
+        "Ich würde gerne in einem zukünftigen Projekt mit Ihnen zusammenarbeiten.",
+        "Könnten Sie mir bei einer technischen Frage helfen?",
+        "Ich möchte ein Angebot für einen individuellen Service erhalten.",
+        "Sind Sie für neue Möglichkeiten verfügbar?",
+        "Ich benötige professionellen Rat zu einem bestimmten Thema.",
+        "Bieten Sie Beratungsdienstleistungen an?",
+        "Ich möchte ein virtuelles Meeting vereinbaren.",
+        "Haben Sie Referenzen aus früheren Arbeiten?",
+        "Ich möchte mehr über Ihre Berufserfahrung erfahren.",
+        "Könnten Sie Beispiele für ähnliche Projekte teilen?",
+        "Ich prüfe Optionen für mein Unternehmen, können wir uns unterhalten?",
+        "Wie hoch ist Ihr Stundensatz?"
+      ]
+    },
+    "projectsPage": {
+      "title": {
+        "first": "Meine",
+        "second": "Projekte"
+      },
+      "loading": "Projekte werden geladen...",
+      "empty": "Keine Projekte verfügbar."
+    },
+    "projects": {
+      "guitars-la": {
+        "name": "GuitarsLA",
+        "description": "Eine vollständige E-Commerce-Plattform, die mit Next.js erstellt wurde und erweiterte Paginierung, nahtlose PostgreSQL-Datenbankintegration und ein dynamisches Warenkorbsystem für ein verbessertes Benutzererlebnis bietet."
+      },
+      "product-hunt": {
+        "name": "Product Hunt Klon",
+        "description": "Eine Echtzeit-Replik von Product Hunt, die Firebase für Authentifizierung und Datenspeicherung, Next.js für serverseitiges Rendering und Styled Components für eine moderne Benutzeroberfläche nutzt."
+      },
+      "mern-uptask": {
+        "name": "MERN-Uptask",
+        "description": "Eine Echtzeit-Aufgabenmanagement-Anwendung, die den MERN-Stack (MongoDB, Express, React, Node.js) und Socket.io für sofortige Aktualisierungen und kollaborative Funktionen verwendet."
+      },
+      "veterinary-control": {
+        "name": "Veterinärkontrolle",
+        "description": "Ein umfassendes Terminmanagementsystem für Tierärzte, das mit React und TailwindCSS entwickelt wurde, um die Klinikabläufe zu optimieren und die Planungseffizienz zu verbessern."
+      },
+      "create-interactive": {
+        "name": "Interaktiv erstellen",
+        "description": "Eine Offline-First-CRUD-Anwendung, die IndexDB für eine robuste lokale Datenspeicherung nutzt und ein reibungsloses Benutzererlebnis auch ohne Internetverbindung gewährleistet."
+      },
+      "expense-manager": {
+        "name": "Ausgabenmanager",
+        "description": "Ein Tool zur Verwaltung persönlicher Finanzen, das mit React und localStorage erstellt wurde und es Benutzern ermöglicht, Budgets effektiv mit persistenter Datenspeicherung und intuitiven Steuerelementen zu verwalten."
+      },
+      "drink-finder": {
+        "name": "Getränkefinder",
+        "description": "Eine Cocktail-Entdeckungs-App, die mit einer externen API integriert ist, React Context für die Zustandsverwaltung verwendet und ein responsives Design mit Bootstrap bietet."
+      },
+      "weather-app": {
+        "name": "Wetter-App",
+        "description": "Ein Echtzeit-Wetter-Dashboard, das mit React Context und TailwindCSS entwickelt wurde und genaue und aktuelle Wettervorhersagen weltweit in einer benutzerfreundlichen Oberfläche bietet."
+      },
+      "car-insurance": {
+        "name": "Autoversicherungsrechner",
+        "description": "Ein dynamischer Autoversicherungsprämienrechner, der mit React Context und TailwindCSS erstellt wurde und eine Echtzeitanalyse verschiedener Faktoren für genaue Versicherungsschätzungen bietet."
+      },
+      "news-finder": {
+        "name": "Nachrichtenfinder",
+        "description": "Ein Nachrichtenaggregator für mehrere Kategorien, der React Context für die Zustandsverwaltung und Material-UI für eine moderne, responsive und visuell ansprechende Benutzeroberfläche verwendet."
+      },
+      "instant-cryptos": {
+        "name": "Sofortige Kryptowährungen",
+        "description": "Eine Echtzeit-Kryptowährungs-Tracking-Plattform mit integriertem Währungsumrechner und fortschrittlichen Marktanalysetools, die sowohl für Gelegenheitsnutzer als auch für ernsthafte Anleger entwickelt wurde."
+      }
+    },
+    "project": {
+      "buttonST": "Website"
+    },
+    "layout": {
+      "siteTitle": "Portfolio",
+      "siteDescription": "Web-Portfolio, in dem Sie verschiedene Projekte und nützliche Informationen finden",
+      "defaultPageTitle": "Seite",
+      "footerRights": "Alle Rechte vorbehalten."
+    },
+    "languageSwitcher": {
+      "spanish": "Spanisch",
+      "english": "Englisch",
+      "portuguese": "Portugiesisch",
+      "mandarin": "Chinesisch",
+      "russian": "Russisch",
+      "german": "Deutsch"
+    },
+    "themeSwitcher": {
+      "ariaLabel": "Themenwechsel",
+      "themes": {
+        "default": "Klassisch",
+        "forest": "Wald",
+        "ocean": "Ozean",
+        "desert": "Wüste",
+        "sunset": "Sonnenuntergang"
+      }
+    }
+  }
