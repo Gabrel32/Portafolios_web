@@ -1,0 +1,40 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="300.000000pt" height="300.000000pt" viewBox="0 0 225.000000 225.000000"
+ preserveAspectRatio="xMidYMid meet">
+
+<defs>
+  <!-- Degradado morado a azul -->
+  <linearGradient id="playwrightGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" style="stop-color:#d84e4a;stop-opacity:1" /> <!-- Morado -->
+    <stop offset="100%" style="stop-color:#138f26;stop-opacity:1" /> <!-- Azul -->
+  </linearGradient>
+</defs>
+
+<g transform="translate(0.000000,225.000000) scale(0.100000,-0.100000)">
+  <!-- Primera maraca (izquierda) -->
+  <path d="M959 1857 c-6 -13 -20 -27 -32 -32 -16 -7 -34 -41 -63 -115 l-42
+  -105 -54 -27 c-144 -72 -347 -102 -517 -78 l-89 13 -25 -27 c-21 -22 -25 -35
+  -21 -64 60 -449 281 -786 537 -821 31 -4 87 -4 124 1 l66 9 26 -33 c119 -154
+  341 -237 533 -197 78 16 188 73 249 130 l54 50 -52 -36 c-28 -20 -80 -48 -115
+  -63 -56 -23 -76 -26 -180 -27 -64 0 -120 4 -124 8 -7 7 19 124 62 283 4 17 -1
+  22 -34 32 -54 17 -154 84 -187 128 -15 19 -25 38 -22 40 3 3 126 -28 274 -70
+  l268 -75 32 22 c18 12 33 25 33 28 0 3 -69 25 -152 49 -84 23 -154 43 -156 45
+  -2 2 36 152 83 335 47 183 85 333 83 334 -2 2 -39 15 -83 30 -120 42 -240 108
+  -339 186 -48 38 -97 70 -107 70 -11 0 -24 -10 -30 -23z m184 -521 c52 -21 130
+  -121 80 -101 -10 3 -67 20 -128 37 -141 39 -146 41 -109 61 36 20 114 21 157
+  3z m-553 -76 c0 -6 -7 -26 -15 -46 -15 -37 -62 -64 -110 -64 -26 0 -99 32
+  -109 48 -3 5 45 23 107 39 133 37 127 36 127 23z m152 -315 c1 -25 2 -53 2
+  -62 1 -13 -21 -23 -92 -44 l-94 -27 7 26 c12 48 47 93 94 123 67 42 81 39 83
+  -16z"
+  fill="url(#playwrightGradient)" stroke="none"/> <!-- Aplica el degradado -->
+
+  <!-- Segunda maraca (derecha) -->
+  <path d="M1620 1233 c-20 -8 -92 -65 -88 -69 2 -2 23 3 46 11 73 26 167 -11
+  214 -83 19 -28 36 -41 59 -46 18 -3 34 -5 35 -3 7 6 -16 73 -35 103 -36 58
+  -86 88 -155 91 -33 1 -68 0 -76 -4z"
+  fill="url(#playwrightGradient)" stroke="none"/> <!-- Aplica el degradado -->
+</g>
+
+</svg>
