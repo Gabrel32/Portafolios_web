@@ -142,7 +142,7 @@ const Home = ({ className, ...props }) => {
         showLine={false}
         variant="wide"
       >
-        <section className={`relative min-h-screen flex items-center ${className}`}>
+        <section className={`relative flex items-center ${className}`}>
           <div className="absolute inset-0 z-0 overflow-hidden">
             <div className="absolute inset-0" />
             <div className="absolute inset-0 mix-blend-overlay" />

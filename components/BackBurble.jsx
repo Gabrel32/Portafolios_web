@@ -92,7 +92,7 @@ const BackBurble = ({
   return (
     <div
       ref={containerRef}
-      className="relative overflow-hidden w-full min-h-[50vh] py-16 bg-transparent dark:from-gray-900/50"
+      className="relative overflow-hidden w-full min-h-screen py-16 px-5 bg-transparent dark:from-gray-900/50"
     >
       {/* Fondo de partículas */}
       <div className="absolute inset-0 z-0 w-full h-full">

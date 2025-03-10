@@ -161,9 +161,9 @@ export default function ContactForm({ setSuccess, setError }) {
             value={formData.from_name}
             onChange={handleChange}
             placeholder={t("contactForm.placeholders.name")}
-            className={`w-full px-4 py-3 bg-beige-50 dark:bg-completColor border ${
+            className={`w-full px-4 py-3 bg-transparent border ${
               errors.from_name ? "border-red-500" : "border-custom-brown"
-            } rounded-lg focus:outline-none focus:border-custom-brown transition-all placeholder-gray-400 dark:placeholder-beige-100/50 dark:text-beige-50`}
+            } rounded-lg focus:outline-none focus:border-custom-brown transition-all placeholder-colorLetters dark:text-whiteSnow`}
             disabled={loading}
           />
           <div className="absolute -bottom-5 h-5">
@@ -184,9 +184,9 @@ export default function ContactForm({ setSuccess, setError }) {
             value={formData.from_email}
             onChange={handleChange}
             placeholder={t("contactForm.placeholders.email")}
-            className={`w-full px-4 py-3 bg-beige-50 dark:bg-completColor border ${
+            className={`w-full px-4 py-3 bg-transparent border ${
               errors.from_email ? "border-red-500" : "border-custom-brown"
-            } rounded-lg focus:outline-none focus:border-custom-brown transition-all placeholder-gray-400 dark:placeholder-beige-100/50 dark:text-beige-50`}
+            } rounded-lg focus:outline-none focus:border-custom-brown transition-all placeholder-colorLetters dark:text-whiteSnow`}
             disabled={loading}
           />
           <div className="absolute -bottom-5 h-5">
@@ -205,7 +205,7 @@ export default function ContactForm({ setSuccess, setError }) {
           id="message"
           name="message"
           value={formData.message}
-          className={`w-full px-4 py-3 h-32 bg-beige-50 dark:bg-completColor border dark:text-white ${
+          className={`w-full px-4 py-3 h-32 bg-transparent border dark:text-whiteSnow ${
             errors.message ? "border-red-500" : "border-custom-brown"
           } rounded-lg resize-none cursor-default focus:outline-none focus:border-custom-brown transition-all scrollbar-thin scrollbar-thumb-custom-brown/20 scrollbar-track-beige-50/50 dark:scrollbar-track-completColor/50 placeholder-gray-400 dark:text-beige-50`}
           disabled={loading}
@@ -217,44 +217,44 @@ export default function ContactForm({ setSuccess, setError }) {
           )}
         </div>
 
-        <div className="relative mt-8">
-          <button
-            type="button"
-            onClick={() => setShowMessages(!showMessages)}
-            className="px-4 py-2 bg-custom-brown text-beige-50 rounded-lg text-sm font-medium hover:bg-opacity-90 transition-colors flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-custom-brown focus:ring-offset-2"
-          >
-            {t("contactForm.selectMessage")}
-            <svg
-              className={`w-4 h-4 transform transition-transform ${showMessages ? "rotate-180" : ""}`}
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </button>
+        <div className="relative mt-8 z-[9999]">
+  <button
+    type="button"
+    onClick={() => setShowMessages(!showMessages)}
+    className="px-4 py-2 bg-custom-brown text-beige-50 rounded-lg text-sm font-medium hover:bg-opacity-90 transition-colors flex items-center gap-2 focus:ring-custom-brown focus:ring-offset-2"
+  >
+    {t("contactForm.selectMessage")}
+    <svg
+      className={`w-4 h-4 transform transition-transform ${showMessages ? "rotate-180" : ""}`}
+      viewBox="0 0 20 20"
+      fill="currentColor"
+    >
+      <path
+        fillRule="evenodd"
+        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+        clipRule="evenodd"
+      />
+    </svg>
+  </button>
 
-          {showMessages && (
-            <div className="absolute z-10 mt-2 w-full bg-beige-50 dark:bg-completColor border border-custom-brown/20 rounded-lg shadow-lg max-h-60 overflow-y-auto">
-              {predefinedMessages.map((msg, index) => (
-                <div
-                  key={index}
-                  onClick={() => handlePredefinedMessage(msg)}
-                  className={`px-4 py-3 cursor-pointer text-sm ${
-                    formData.message === msg
-                      ? "bg-custom-brown/10 text-custom-brown dark:bg-gray-700 dark:text-beige-50"
-                      : "text-custom-brown dark:text-beige-50 dark:hover:bg-gray-700"
-                  } transition-colors`}
-                >
-                  {msg}
-                </div>
-              ))}
-            </div>
-          )}
+  {showMessages && (
+    <div className="absolute z-[9999] mt-2 w-full bg-beige-50 dark:bg-completColor border border-custom-brown rounded-lg shadow-lg max-h-60 overflow-y-auto left-0 min-w-[300px] transform translate-y-2">
+      {predefinedMessages.map((msg, index) => (
+        <div
+          key={index}
+          onClick={() => handlePredefinedMessage(msg)}
+          className={`px-4 py-3 cursor-pointer text-sm ${
+            formData.message === msg
+              ? "bg-completColor hover:bg-secondary"
+              : "text-colorLetters hover:bg-secondary"
+          } transition-colors`}
+        >
+          {msg}
         </div>
+      ))}
+    </div>
+  )}
+</div>
       </div>
 
       <div className="flex justify-end">
@@ -263,7 +263,7 @@ export default function ContactForm({ setSuccess, setError }) {
           disabled={loading}
           className="px-8 py-3 bg-gradient-to-r from-custom-brown to-efectHovercolor text-beige-50 rounded-lg font-bold hover:opacity-90 transition-opacity duration-300 disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden group focus:outline-none focus:ring-2 focus:ring-custom-brown focus:ring-offset-2"
         >
-          <span className="relative z-10 flex items-center gap-2">
+          <span className="relative z-1 flex items-center gap-2">
             {loading && (
               <svg
                 className="w-4 h-4 animate-spin text-beige-50"

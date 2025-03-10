@@ -20,7 +20,7 @@ module.exports = {
         'primary': 'var(--primary)',
         'secondary': 'var(--secondary)',
         'accent': 'var(--accent)',
-        'highlight': 'var(--highlight)',
+        'colorLetters': 'var(--colorLetters)',
       },
       animation: {
         // Animaciones existentes (se mantienen)

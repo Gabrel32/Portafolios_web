@@ -16,16 +16,18 @@
   --primary: #dc5f00d4;
   --secondary: #AE4D10;       /* Terracota oscuro */
   --accent: #FF6B6B;          /* Nuevo: Coral vibrante */
-  --highlight: #FFD93D;  
+  --colorLetters: #df4605c6;       /* Amarillo suave */
+
 }
 
 .theme-default.dark {
   --custom-brown: #DC5F00;    /* Naranja más brillante */
-  --efectHovercolor: #E56D2C;
-  --completColor: #2d2d2d8e;    /* Gris oscuro */
+  --efectHovercolor: #d25a1a;
+  --primary: #ce6414;
+  --completColor: #2d2828;    /* Gris oscuro */
   --beige-50: #1A1A1A;        /* Fondo oscuro profundo */
-  --accent: #b75825;          /* Coral suavizado */
-  --highlight: #ffe082c6;       /* Amarillo suave */
+  --accent: #c35012;          /* Coral suavizado */
+  --colorLetters: #ffc2a8c6;       /* Amarillo suave */
 
 }
 

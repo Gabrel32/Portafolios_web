@@ -3,7 +3,7 @@ import Proyecto from './Proyecto';
 import Spinner from './Spinner';
 
 const Carousel = ({ items }) => {
-  const [currentIndex, setCurrentIndex] = useState(2);
+  const [currentIndex, setCurrentIndex] = useState(2); // Índice inicial ajustado
   const [isLoaded, setIsLoaded] = useState(false);
   const [transition, setTransition] = useState(true);
   const [itemDimensions, setItemDimensions] = useState({ width: 300, margin: 8 });
@@ -13,9 +13,11 @@ const Carousel = ({ items }) => {
 
   const extendedItems = items
     ? [
-        { ...items[items.length - 1], id: 'clone-last' },
+        { ...items[items.length - 2], id: 'clone-second-last' }, // Clon del penúltimo
+        { ...items[items.length - 1], id: 'clone-last' }, // Clon del último
         ...items,
-        { ...items[0], id: 'clone-first' },
+        { ...items[0], id: 'clone-first' }, // Clon del primero
+        { ...items[1], id: 'clone-second' }, // Clon del segundo
       ]
     : [];
 
@@ -34,8 +36,8 @@ const Carousel = ({ items }) => {
         const containerPadding = parseInt(containerStyle.paddingLeft) + parseInt(containerStyle.paddingRight);
 
         setItemDimensions({
-          width: isMobile ? 280 : 500,
-          margin: isMobile ? parseInt(itemStyle.marginLeft) + parseInt(itemStyle.marginRight) : 32,
+          width: isMobile ? 380 : 500,
+          margin: isMobile ? parseInt(itemStyle.marginLeft) + parseInt(itemStyle.marginRight) : 60, // Aumentar margen
           containerPadding: containerPadding,
         });
       }
@@ -57,16 +59,16 @@ const Carousel = ({ items }) => {
 
   // Reinicio suave del carrusel
   useEffect(() => {
-    if (currentIndex === extendedItems.length - 1) {
+    if (currentIndex === extendedItems.length - 2) {
       setTimeout(() => {
         setTransition(false);
-        setCurrentIndex(1);
+        setCurrentIndex(2);
       }, 300);
     }
-    if (currentIndex === 0) {
+    if (currentIndex === 1) {
       setTimeout(() => {
         setTransition(false);
-        setCurrentIndex(extendedItems.length - 2);
+        setCurrentIndex(extendedItems.length - 3);
       }, 300);
     }
   }, [currentIndex]);
@@ -85,8 +87,8 @@ const Carousel = ({ items }) => {
 
   return (
     <div className="carousel-container w-full max-w-[1300px] mx-auto py-10" ref={containerRef}>
-      <div className="item-name-container text-center mb-6 transition-opacity duration-300">
-        <h2 className="text-3xl font-bold text-custom-brown">
+      <div className="item-name-container text-center mb-10 transition-opacity duration-300">
+        <h2 className="text-3xl font-bold text-colorLetters">
           {extendedItems[currentIndex]?.Nombre}
         </h2>
       </div>
@@ -99,47 +101,55 @@ const Carousel = ({ items }) => {
           transition: transition ? 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)' : 'none',
         }}
       >
-        {extendedItems.map((item, index) => (
-          <div
-            key={`${item.id}-${index}`}
-            ref={index === 1 ? itemRef : null}
-            className="carousel-item flex-shrink-0 mx-2 lg:mx-4"
-            style={{
-              width: `${itemDimensions.width}px`,
-              margin: `0 ${itemDimensions.margin / 2}px`,
-            }}
-          >
+        {extendedItems.map((item, index) => {
+          const isCenter = index === currentIndex;
+          const isLeft = index === currentIndex - 1 || index === currentIndex - 2;
+          const isRight = index === currentIndex + 1 || index === currentIndex + 2;
+
+          return (
             <div
-              className={`transition-all duration-300 mx-auto h-full ${
-                index === currentIndex
-                  ? 'scale-100 opacity-100 shadow-2xl'
-                  : 'scale-90 opacity-50 shadow-lg'
-              } bg-white rounded-xl overflow-hidden transform transition-transform duration-300 hover:shadow-2xl hover:-translate-y-2 cursor-pointer`}
+              key={`${item.id}-${index}`}
+              ref={index === 2 ? itemRef : null} // Referencia al elemento central
+              className="carousel-item flex-shrink-0 mx-2 lg:mx-6" // Aumentar margen
+              style={{
+                width: `${itemDimensions.width}px`,
+                margin: `0 ${itemDimensions.margin / 2}px`,
+              }}
             >
-              <Proyecto e={item} />
+              <div
+                className={`transition-all duration-300 relative mx-5 h-full ${
+                  isCenter
+                    ? 'scale-110 opacity-100 shadow-2xl' // Elemento central más grande
+                    : isLeft || isRight
+                    ? 'scale-90 opacity-75 shadow-lg' // Elementos secundarios más pequeños
+                    : 'scale-75 opacity-50 shadow-md' // Elementos más alejados
+                } rounded-xl transform transition-transform duration-300 hover:-translate-y-2 cursor-pointer `}
+              >
+                <Proyecto e={item} />
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       <div className="mt-8 space-y-6">
         <div className="controls flex justify-center gap-4 w-full">
           <button
             onClick={() => handleNavigation('prev')}
-            className="btn_base btn-efecto px-6 py-3 bg-custom-brown text-white rounded-full shadow-lg hover:bg-custom-brown-dark hover:shadow-xl transition-all duration-300"
+            className="btn_base btn-efecto px-6 py-3 bg-custom-brown text-whiteSnow rounded-full shadow-lg hover:bg-custom-brown-dark hover:shadow-xl transition-all duration-300"
           >
             ← Anterior
           </button>
           <button
             onClick={() => handleNavigation('next')}
-            className="btn_base btn-efecto px-6 py-3 bg-custom-brown text-white rounded-full shadow-lg hover:bg-custom-brown-dark hover:shadow-xl transition-all duration-300"
+            className="btn_base btn-efecto px-6 py-3 bg-custom-brown text-whiteSnow rounded-full shadow-lg hover:bg-custom-brown-dark hover:shadow-xl transition-all duration-300"
           >
             Siguiente →
           </button>
         </div>
 
         <div className="description-container text-center transition-opacity duration-300">
-          <p className="text-lg text-custom-brown max-w-2xl mx-auto px-4">
+          <p className="text-lg text-colorLetters max-w-2xl mx-auto px-4 font-bold">
             {extendedItems[currentIndex]?.parrafo}
           </p>
         </div>

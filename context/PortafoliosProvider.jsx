@@ -116,21 +116,21 @@ function PortafoliosProvider({children}){
           id: "guitars-la",
           git: "gitlab",
           img: "guitarLa",
-          link: "https://next-guitarla.vercel.app/",
+        //   link: "https://next-guitarla.vercel.app/",
           linkGit: "https://gitlab.com/Gabrel32/guitarla-next-a.git"
       },
       {
           id: "product-hunt",
           git: "github",
           img: "Product-hunt",
-          link: "https://product-hunt-gsho.vercel.app/",
+        //   link: "https://product-hunt-gsho.vercel.app/",
           linkGit: "https://github.com/Gabrel32/Product-Hunt.git"
       },
       {
           id: "mern-uptask",
           git: "github",
           img: "mernUptask",
-          link: "https://mern-uptask.vercel.app/",
+        //   link: "https://mern-uptask.vercel.app/",
           linkGit: "https://github.com/Gabrel32/Mern-uptask_frontend.git",
           linkBackend: "https://github.com/Gabrel32/Mern-uptask_Backend.git"
       },
@@ -141,13 +141,13 @@ function PortafoliosProvider({children}){
           link: "https://controlveterinario.netlify.app/",
           linkGit: "https://github.com/Gabrel32/citasPacienteVeterinaria.git"
       },
-      {
-          id: "create-interactive",
-          git: "github",
-          img: "CreateInterattive",
-          link: "https://proyect-indexdb.netlify.app/",
-          linkGit: "https://github.com/Gabrel32/proyecto-CRUD-indexDB.git"
-      },
+    //   {
+    //       id: "create-interactive",
+    //       git: "github",
+    //       img: "CreateInterattive",
+    //       link: "https://proyect-indexdb.netlify.app/",
+    //       linkGit: "https://github.com/Gabrel32/proyecto-CRUD-indexDB.git"
+    //   },
       {
           id: "expense-manager",
           git: "github",
@@ -217,13 +217,14 @@ function PortafoliosProvider({children}){
         {Nombre:"Playwright",id:13,icon:"playwright.svg"},
         {Nombre:"Jsxgraph",id:14,icon:"jsxgraph.svg"},
         {Nombre:"Jasmine",id:14,icon:"jasmine.svg"},
-
         {Nombre:"Astro",id:7,icon:"astro.svg"},  
         {Nombre:"Boostrap",id:8,icon:"bostrap.svg"},
         {Nombre:"React",id:9,icon:"react.svg"},
         {Nombre:"MUI",id:10,icon:"mui.svg"},
         {Nombre:"MongoDB",id:11,icon:"mongodb.svg"},
         {Nombre:"Socket.io",id:12,icon:"socket.svg"},
+        {Nombre:"Docker, Docker compose",id:12,icon:"docker.svg"},
+
 
 
 

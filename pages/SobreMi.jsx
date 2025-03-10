@@ -9,19 +9,19 @@ import BackBurble from "../components/BackBurble";
 
 function SobreMi() {
   const { tecnologias, t } = usePortafolios();
-  const [customBrown, setCustomBrown] = useState("#DC5F00");
-  const [isMounted, setIsMounted] = useState(false);
+  // // const [customBrown, setCustomBrown] = useState("#DC5F00");
+  // // const [isMounted, setIsMounted] = useState(false);
 
-  useEffect(() => {
-    setIsMounted(true);
-    setCustomBrown(
-      getComputedStyle(document.documentElement)
-        .getPropertyValue("--custom-brown")
-        .trim()
-    );
-  }, []);
+  // // useEffect(() => {
+  // //   setIsMounted(true);
+  // //   setCustomBrown(
+  // //     getComputedStyle(document.documentElement)
+  // //       .getPropertyValue("--custom-brown")
+  // //       .trim()
+  // //   );
+  // // }, []);
 
-  if (!isMounted) return null;
+  // if (!isMounted) return null;
 
   return (
     <Layout pagina={t("header.nav.about")}>
@@ -41,23 +41,23 @@ function SobreMi() {
 
           {/* Main Content */}
           <div className="relative z-10 container mx-auto max-w-6xl w-full backdrop-blur-xl rounded-3xl p-3 md:p-4 lg:p-8 border border-custom-brown shadow-2xl shadow-custom-brown hover:shadow-custom-brown transition-all duration-700">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight mb-6 text-center text-custom-brown dark:text-whiteSnow relative">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight mb-6 text-center text-custom-brown relative">
               {t("about.title")}
               <span className="absolute -inset-2 rounded-full blur-xl -z-10 animate-pulse-slow " />
             </h2>
-            <p className="text-base md:text-lg text-custom-brown dark:text-whiteSnow leading-relaxed text-center mb-10">
+            <p className="text-base md:text-lg text-colorLetters font-bold leading-relaxed text-center mb-10">
               {t("about.description")}
             </p>
 
             {/* Technologies */}
-            <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+            <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 bg-">
               {tecnologias.map((e, index) => (
                 <li
-                  key={e.id}
+                  key={`${e.id}_${index}`}
                   className="group flex flex-col items-center p-3 md:p-4 backdrop-blur-xl rounded-2xl border border-custom-brown shadow-md shadow-secondary hover:shadow-custom-brown transition-all duration-500 hover:-translate-y-1 animate-cardPop  "
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <div className=" dark:text-whiteSnow p-2 md:p-3 rounded-full mb-2 md:mb-3 transition-transform duration-300 group-hover:scale-105">
+                  <div className=" dark:text-whiteSnow bg-whiteSnow p-2 md:p-3 rounded-full mb-2 md:mb-3 transition-transform duration-300 group-hover:scale-105">
                     <Image
                       width={40}
                       height={40}
@@ -66,7 +66,7 @@ function SobreMi() {
                       className="object-contain transition-transform duration-300 group-hover:rotate-6"
                     />
                   </div>
-                  <span className="text-sm md:text-base font-medium text-custom-brown dark:text-whiteSnow relative text-center">
+                  <span className="text-sm md:text-base font-bold text-colorLetters relative text-center">
                     {e.Nombre}
                     <span className="absolute -bottom-1 left-0 right-0 mx-auto w-0 h-0.5 bg-custom-brown transition-all duration-300 group-hover:w-3/4" />
                   </span>

@@ -7,20 +7,16 @@ import Carousel from '../components/Carrusel';
 const Proyectos = ({ className, ...props }) => {
   const { t, Proyectos } = usePortafolios();
 
-  useEffect(() => {
-    console.log("Proyectos desde usePortafolios:", Proyectos);
-  }, [Proyectos]);
-
   return (
     <Layout pagina={t('header.nav.projects')}>
       <BackBurble
-        particleDensity={10}
+        particleDensity={20}
         bubbleColors={['bg-custom-brown', 'bg-secundary']}
         center={true}
         showLine={false}
         variant="wide"
       >
-        <section className={`relative min-h-[90vh] w-full flex flex-col items-center justify-center ${className ?? ""}`}>
+        <section className={`relative min-h-[70vh] w-full flex flex-col items-center justify-center ${className ?? ""}`}>
           <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-custom-brown mb-8">
               <span className="text-custom-brown relative">
