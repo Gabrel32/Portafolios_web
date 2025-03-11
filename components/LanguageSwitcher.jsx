@@ -13,7 +13,7 @@ const LanguageSwitcher = () => {
     { id: "en", name: "English", short: "EN" },
     { id: "pt", name: "Português", short: "PT" }, // Portugués
     { id: "zh", name: "中文", short: "ZH" }, // Mandarín
-    { id: "ru", name: "Русский", short: "RU" }, // Ruso
+    // { id: "ru", name: "Русский", short: "RU" }, // Ruso
     { id: "de", name: "Deutsch", short: "DE" }, // Alemán
   ];
 

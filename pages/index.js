@@ -160,7 +160,7 @@ const Home = ({ className, ...props }) => {
                 <span className="block font-bold text-custom-brown">
                 {t('home.title1')}
                 </span>
-                <span className="inline-block text-whiteSnow mt-2 relative">
+                <span className="inline-block text-whiteSnow dark:text-colorLetters mt-2 relative">
                 {t('home.title2')}
                   <span className="absolute -inset-2 bg-custom-brown rounded-[20px] -z-10 animate-pulse-slow" />
                 </span>
@@ -173,7 +173,7 @@ const Home = ({ className, ...props }) => {
                 >
                   {t('home.subtitle')}
                 </p>
-                <p className="text-lg md:text-xl text-custom-brown dark:text-whiteSnow leading-relaxed">
+                <p className="text-lg md:text-xl text-custom-brown dark:text-colorLetters leading-relaxed">
                   {t('home.description')}
                 </p>
 

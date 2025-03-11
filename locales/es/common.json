@@ -4,7 +4,7 @@
     "nav": {
       "home": "Inicio",
       "projects": "Proyectos",
-      "about": "Tecnologías",
+      "about": "Habilidades",
       "contact": "Contacto"
     }
   },
@@ -25,7 +25,7 @@
   },
   "about": {
     "title": "Sobre mí",
-    "description": "Tecnologías Manejadas",
+    "description": "Tecnologías con las que trabajo",
     "alsoWorkedWith": "También he trabajado con",
     "orms": "ORMs",
     "like": "como",
@@ -37,16 +37,10 @@
     "linkedinText": "O envíame un mensaje directo a través de"
   },
   "contactForm": {
-    "messages": {
-      "success": {
-        "title": "¡Éxito!",
-        "description": "Tu mensaje ha sido enviado correctamente. ¡Pronto recibirás una respuesta para discutir tus ideas o proyectos!"
-      },
-      "error": {
-        "title": "¡Error!",
-        "description": "No pudimos enviar tu mensaje en este momento. Por favor, revisa tu conexión o intenta de nuevo en unos minutos."
-      }
-    },
+    "successTitle": "¡Éxito!",
+    "successDescription": "Tu mensaje ha sido enviado correctamente. ¡Pronto me pondré en contacto contigo para discutir tus ideas o proyectos!",
+    "errorTitle": "¡Error!",
+    "errorDescription": "No pudimos enviar tu mensaje en este momento. Por favor, revisa tu conexión o intenta de nuevo en unos minutos.",
     "labels": {
       "name": "Nombre",
       "email": "Correo",
@@ -67,7 +61,7 @@
     "selectMessage": "Seleccionar mensaje",
     "sending": "Enviando...",
     "sendMessage": "Enviar Mensaje",
-    "successMessage": "¡Mensaje enviado con éxito! Pronto me pondré en contacto.",
+    "successMessage": "¡Mensaje enviado con éxito!",
     "predefinedMessages": [
       "Hola, quisiera más información sobre tus servicios.",
       "Estoy interesado en trabajar contigo. ¿Podemos hablar?",
@@ -97,47 +91,47 @@
   "projects": {
     "guitars-la": {
       "name": "GuitarrasLA",
-      "description": "Plataforma de comercio electrónico desarrollada con Next.js, con paginación avanzada, integración con PostgreSQL y un carrito de compras funcional."
+      "description": "Plataforma de comercio electrónico completamente funcional construida con Next.js, que ofrece paginación avanzada, integración fluida con PostgreSQL y un sistema dinámico de carrito de compras para una experiencia de usuario mejorada."
     },
     "product-hunt": {
       "name": "Clon de Product Hunt",
-      "description": "Réplica en tiempo real de Product Hunt, construida con Firebase para autenticación y almacenamiento, Next.js para SSR y Styled Components para la interfaz."
+      "description": "Réplica en tiempo real de Product Hunt que utiliza Firebase para autenticación y almacenamiento de datos, Next.js para renderizado del lado del servidor y Styled Components para una interfaz moderna y elegante."
     },
     "mern-uptask": {
       "name": "MERN-Uptask",
-      "description": "Aplicación de gestión de tareas en tiempo real usando el stack MERN (MongoDB, Express, React, Node.js) y Socket.io para actualizaciones instantáneas."
+      "description": "Aplicación de gestión de tareas en tiempo real que emplea el stack MERN (MongoDB, Express, React, Node.js) y Socket.io para actualizaciones instantáneas y funcionalidades colaborativas."
     },
     "veterinary-control": {
       "name": "Control Veterinario",
-      "description": "Sistema de gestión de citas veterinarias desarrollado con React y TailwindCSS para optimizar operaciones clínicas."
+      "description": "Sistema integral de gestión de citas veterinarias desarrollado con React y TailwindCSS, diseñado para optimizar las operaciones clínicas y mejorar la eficiencia en la programación."
     },
     "create-interactive": {
       "name": "Crear Interactivo",
-      "description": "Aplicación CRUD offline-first que utiliza IndexDB para almacenamiento local y una experiencia de usuario fluida sin conexión."
+      "description": "Aplicación CRUD con prioridad offline que utiliza IndexDB para un almacenamiento local robusto, asegurando una experiencia de usuario fluida e ininterrumpida incluso sin conexión a internet."
     },
     "expense-manager": {
       "name": "Gestor de Gastos",
-      "description": "Herramienta de finanzas personales construida con React y localStorage para gestionar presupuestos de manera efectiva."
+      "description": "Herramienta de seguimiento de finanzas personales construida con React y localStorage, que permite a los usuarios gestionar presupuestos de manera efectiva con almacenamiento persistente y controles intuitivos."
     },
     "drink-finder": {
       "name": "Buscador de Bebidas",
-      "description": "Aplicación de descubrimiento de cócteles que se integra con una API externa y utiliza React Context para la gestión del estado."
+      "description": "Aplicación de descubrimiento de cócteles que se integra con una API externa, utiliza React Context para una gestión eficiente del estado y cuenta con un diseño responsivo impulsado por Bootstrap."
     },
     "weather-app": {
       "name": "App del Clima",
-      "description": "Panel meteorológico en tiempo real desarrollado con React Context y TailwindCSS para pronósticos globales precisos."
+      "description": "Panel meteorológico en tiempo real desarrollado con React Context y TailwindCSS, que proporciona pronósticos globales precisos y actualizados en una interfaz limpia y amigable para el usuario."
     },
     "car-insurance": {
       "name": "Calculadora de Seguros",
-      "description": "Calculadora dinámica de primas de seguro de autos construida con React Context y TailwindCSS."
+      "description": "Calculadora dinámica de primas de seguro de autos construida con React Context y TailwindCSS, que ofrece análisis en tiempo real de diversos factores para proporcionar estimaciones precisas de seguros."
     },
     "news-finder": {
       "name": "Buscador de Noticias",
-      "description": "Agregador de noticias multi-categoría que utiliza React Context para la gestión del estado y Material-UI para la interfaz."
+      "description": "Agregador de noticias multi-categoría que utiliza React Context para la gestión del estado y Material-UI para una interfaz moderna, responsiva y visualmente atractiva."
     },
     "instant-cryptos": {
       "name": "Criptos al Instante",
-      "description": "Plataforma de seguimiento de criptomonedas en tiempo real con conversor de divisas y herramientas avanzadas de análisis."
+      "description": "Plataforma de seguimiento de criptomonedas en tiempo real con un conversor de divisas integrado y herramientas avanzadas de análisis de mercado, diseñada tanto para usuarios casuales como para inversores serios."
     }
   },
   "project": {
@@ -145,17 +139,13 @@
   },
   "layout": {
     "siteTitle": "Portafolio",
-    "siteDescription": "Portafolio web con diversos proyectos e información de interés.",
+    "siteDescription": "Portafolio web donde encontrarás diversos proyectos e información relevante.",
     "defaultPageTitle": "Página",
     "footerRights": "Todos los derechos reservados."
   },
   "languageSwitcher": {
     "spanish": "Español",
-    "english": "Inglés",
-    "portuguese": "Portugués",
-    "mandarin": "Mandarín",
-    "russian": "Ruso",
-    "german": "Alemán"
+    "english": "Inglés"
   },
   "themeSwitcher": {
     "ariaLabel": "Selector de temas",

@@ -40,7 +40,7 @@
   --primary: #2E7D32;         /* Verde esmeralda */
   --secondary: #689F38;       /* Verde lima */
   --accent: #689F38;          /* Nuevo: Naranja brillante */
-  --highlight: #AED581;       /* Nuevo: Verde menta */
+  --colorLetters: #819e68;    
   
 }
 
@@ -50,7 +50,7 @@
   --completColor: #303a27;    /* Gris azulado */
   --beige-50: #1B3022;        /* Verde oscuro profundo */
   --accent: #689F38;          /* Naranja suavizado */
-  --highlight: #C5E1A5;       /* Verde menta claro */
+  --colorLetters: #386f07;    
 }
 
 /* Tema Océano Mejorado */
@@ -62,7 +62,7 @@
   --primary: #1565C0;         /* Azul profundo */
   --secondary: #1f94a3;       /* Turquesa */
   --accent: #1f94a3;          /* Nuevo: Rojo coral */
-  --highlight: #ffd64094;       /* Nuevo: Amarillo sol */
+  --colorLetters: #268491;    
 }
 
 .theme-ocean.dark {
@@ -71,7 +71,7 @@
   --completColor: #0f2c45;    /* Azul oscuro intenso */
   --beige-50: #021B3D;        /* Azul noche */
   --accent: #1f94a3;          /* Coral suave */
-  --highlight: #1b4d92;       /* Amarillo claro */
+  --colorLetters: #14d4ee;    
 }
 /* tema desierto atardecer */
 .theme-desert {
@@ -82,7 +82,7 @@
   --primary: #964B00;         /* Tierra profunda */
   --secondary: #a38b2b;       /* Naranja brillante */
   --accent: #a38b2b;          /* Amarillo dorado */
-  --highlight: #FFEB3B;       /* Amarillo vibrante */
+  --colorLetters: #a38d34;    
 }
 .theme-desert.dark {
   --custom-brown: #8B572A;    /* Marrón cálido oscuro */
@@ -90,7 +90,7 @@
   --completColor: #3E2723;    /* Marrón muy oscuro */
   --beige-50: #2F221C;        /* Fondo oscuro terroso */
   --accent: #a38b2b;          /* Naranja suavizado */
-  --highlight: #FFD180;       /* Amarillo atardecer */
+  --colorLetters: #bd9d1e;    
 }
 /* tema cielo atardecer */
 .theme-sunset {
@@ -101,7 +101,7 @@
   --primary: #953434;         /* Naranja atardecer */
   --secondary: #FF7F50;       /* Coral suave */
   --accent: #ff7f5049;          /* Oro brillante */
-  --highlight: #FFA07A;       /* Salmón claro */
+  --colorLetters: #b24923;    
 }
 .theme-sunset.dark {
   --custom-brown: #8b4740;    /* Rosa anaranjado */
@@ -109,7 +109,7 @@
   --completColor: #3a1818;    /* Azul noche */
   --beige-50: #1E272C;        /* Negro azulado */
   --accent: #9b2a13;          /* Dorado vibrante */
-  --highlight: #FFA726;       /* Naranja atardecer oscuro */
+  --colorLetters: #924428;    
 }
 
 
@@ -251,4 +251,11 @@ html {
   animation: fadeIn 0.8s ease-out forwards;
 }
 
-/* animacioin  de proyectos */
+
+.menu {
+  display: block; /* Ensure it’s visible by default */
+}
+
+.animate-menu-slide-reverse {
+  display: block; /* Keep it visible during the closing animation */
+}

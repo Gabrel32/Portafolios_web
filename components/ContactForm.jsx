@@ -205,9 +205,9 @@ export default function ContactForm({ setSuccess, setError }) {
           id="message"
           name="message"
           value={formData.message}
-          className={`w-full px-4 py-3 h-32 bg-transparent border dark:text-whiteSnow ${
+          className={`w-full px-4 py-3 h-32 bg-transparent border text-colorLetters  ${
             errors.message ? "border-red-500" : "border-custom-brown"
-          } rounded-lg resize-none cursor-default focus:outline-none focus:border-custom-brown transition-all scrollbar-thin scrollbar-thumb-custom-brown/20 scrollbar-track-beige-50/50 dark:scrollbar-track-completColor/50 placeholder-gray-400 dark:text-beige-50`}
+          } rounded-lg resize-none cursor-default focus:outline-none focus:border-custom-brown transition-all scrollbar-thin scrollbar-thumb-custom-brown scrollbar-track-colorLetters dark:scrollbar-track-completColor placeholder-gray-400`}
           disabled={loading}
           readOnly
         />
@@ -221,7 +221,7 @@ export default function ContactForm({ setSuccess, setError }) {
   <button
     type="button"
     onClick={() => setShowMessages(!showMessages)}
-    className="px-4 py-2 bg-custom-brown text-beige-50 rounded-lg text-sm font-medium hover:bg-opacity-90 transition-colors flex items-center gap-2 focus:ring-custom-brown focus:ring-offset-2"
+    className="px-4 py-2 bg-custom-brown text-whiteSnow rounded-lg text-sm font-medium hover:bg-opacity-90 transition-colors flex items-center gap-2 focus:ring-custom-brown focus:ring-offset-2"
   >
     {t("contactForm.selectMessage")}
     <svg
@@ -246,7 +246,7 @@ export default function ContactForm({ setSuccess, setError }) {
           className={`px-4 py-3 cursor-pointer text-sm ${
             formData.message === msg
               ? "bg-completColor hover:bg-secondary"
-              : "text-colorLetters hover:bg-secondary"
+              : "text-colorLetters hover:bg-secondary hover:text-whiteSnow"
           } transition-colors`}
         >
           {msg}
@@ -261,12 +261,12 @@ export default function ContactForm({ setSuccess, setError }) {
         <button
           type="submit"
           disabled={loading}
-          className="px-8 py-3 bg-gradient-to-r from-custom-brown to-efectHovercolor text-beige-50 rounded-lg font-bold hover:opacity-90 transition-opacity duration-300 disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden group focus:outline-none focus:ring-2 focus:ring-custom-brown focus:ring-offset-2"
+          className="px-8 py-3 bg-gradient-to-r from-custom-brown to-efectHovercolor text-whiteSnow rounded-lg hover:opacity-90 transition-opacity duration-300 disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden group focus:outline-none focus:ring-2 focus:ring-custom-brown focus:ring-offset-2"
         >
           <span className="relative z-1 flex items-center gap-2">
             {loading && (
               <svg
-                className="w-4 h-4 animate-spin text-beige-50"
+                className="w-4 h-4 animate-spin text-whiteSnow"
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"

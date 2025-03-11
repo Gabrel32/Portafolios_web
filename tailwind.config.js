@@ -23,13 +23,13 @@ module.exports = {
         'colorLetters': 'var(--colorLetters)',
       },
       animation: {
-        // Animaciones existentes (se mantienen)
+        // Fixed: Removed duplicate 'menu-slide'
         'menu-slide': 'menuSlide 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-        "menu-slide-reverse": "menuSlideReverse 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
-        fadeIn: 'fadeIn 0.5s ease-in',
-        slideRight: 'slideRight 0.6s ease-out',
-        cardPop: 'cardPop 0.4s ease-out',
-        fadeInUp: 'fadeInUp 0.5s ease-out',
+        'menu-slide-reverse': 'menuSlideReverse 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards', // Added 'forwards'
+        'fadeIn': 'fadeIn 0.5s ease-in',
+        'slideRight': 'slideRight 0.6s ease-out',
+        'cardPop': 'cardPop 0.4s ease-out',
+        'fadeInUp': 'fadeInUp 0.5s ease-out',
         'gradient-pulse': 'gradient-pulse 12s ease infinite',
         'slideInUp': 'slideInUp 0.6s ease-out',
         'delayedFadeIn': 'delayedFadeIn 1.2s ease-in',
@@ -42,7 +42,6 @@ module.exports = {
         'theme-item': 'delayedFadeIn 0.3s ease-in',
         'split-float': 'splitFloat 1s ease-out forwards',
         'pulse-slow': 'pulseSlow 3s ease-in-out infinite',
-        // Nuevas animaciones agregadas
         '3d-float': 'float3d 8s ease-in-out infinite',
         'holographic-shine': 'holographicShine 5s linear infinite',
         'particle-sparkle': 'particleSparkle 2s infinite',
@@ -52,10 +51,16 @@ module.exports = {
         'dynamic-orbit': 'dynamicOrbit 25s linear infinite',
         'soft-bounce': 'softBounce 2s infinite',
         'card-pop': 'cardPop 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55)',
-        'menu-slide': 'menuSlide 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
       },
       keyframes: {
-        // Keyframes existentes (se mantienen)
+        menuSlide: {
+          "0%": { transform: "translateY(20px)", opacity: "0", clipPath: "inset(0 0 100% 0)" },
+          "100%": { transform: "translateY(0)", opacity: "1", clipPath: "inset(0 0 0 0)" },
+        },
+        menuSlideReverse: {
+          "0%": { transform: "translateY(0)", opacity: "1", clipPath: "inset(0 0 0 0)" },
+          "100%": { transform: "translateY(20px)", opacity: "0", clipPath: "inset(0 0 100% 0)" },
+        },
         fadeIn: {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' }
@@ -97,8 +102,6 @@ module.exports = {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-20px)' }
         },
-
-        // Nuevos keyframes agregados
         float3d: {
           '0%, 100%': { 
             transform: 'translateY(0) rotateX(0deg) rotateY(0deg)',
@@ -164,14 +167,6 @@ module.exports = {
             transform: 'translateY(-25%)',
             animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)'
           }
-        },
-        menuSlide: {
-          "0%": { transform: "translateY(20px)", opacity: "0", clipPath: "inset(0 0 100% 0)" },
-          "100%": { transform: "translateY(0)", opacity: "1", clipPath: "inset(0 0 0 0)" },
-        },
-        menuSlideReverse: {
-          "0%": { transform: "translateY(0)", opacity: "1", clipPath: "inset(0 0 0 0)" },
-          "100%": { transform: "translateY(20px)", opacity: "0", clipPath: "inset(0 0 100% 0)" },
         }
       },
       spacing: {
@@ -192,14 +187,6 @@ module.exports = {
         'custom-light': '0px 4px 6px rgba(0, 0, 0, 0.05), 0px 1px 3px rgba(0, 0, 0, 0.03)',
         'custom-dark': '1px 4px 6px rgba(255, 255, 255, 0.1), 0px 1px 3px rgba(255, 255, 255, 0.06)',
         'custom-neon': '0px 0px 20px 10px rgba(0, 255, 255, 0.3)'
-      },
-      splitFloat: {
-        '0%': { transform: 'translate(0, 0) scale(1)', opacity: 1 },
-        '100%': { transform: 'translate(var(--tw-translate-x), var(--tw-translate-y)) scale(0.5)', opacity: 0 }
-      },
-      pulseSlow: {
-        '0%, 100%': { transform: 'scale(1)' },
-        '50%': { transform: 'scale(1.05)' }
       }
     },
   },
