@@ -86,7 +86,7 @@
     },
     "projects": {
       "guitars-la": {
-        "name": "GuitarrasLA",
+        "name": "GuitarLA",
         "description": "Uma plataforma de comércio eletrônico desenvolvida com Next.js, que inclui paginação avançada, integração com banco de dados PostgreSQL e um carrinho de compras totalmente funcional para uma experiência de usuário otimizada."
       },
       "product-hunt": {

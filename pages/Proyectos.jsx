@@ -16,7 +16,7 @@ const Proyectos = ({ className, ...props }) => {
         showLine={false}
         variant="wide"
       >
-        <section className={`relative min-h-[70vh] w-full flex flex-col items-center justify-center ${className ?? ""}`}>
+        <section className={`relative w-full flex flex-col items-center justify-center ${className ?? ""}`}>
           <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-custom-brown mb-8">
               <span className="text-custom-brown relative">

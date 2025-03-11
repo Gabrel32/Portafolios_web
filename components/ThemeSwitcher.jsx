@@ -80,7 +80,7 @@ const ThemeSwitcher = () => {
             if (!isOpen) setIsAnimating(false); // Reset animation state after closing
           }}
         >
-          <div className="p-2 space-y-1">
+          <div className="p-3 space-y-1">
             {themes.map((theme) => (
               <button
                 key={theme.id}
@@ -89,10 +89,10 @@ const ThemeSwitcher = () => {
                   handleClose();
                 }}
                 className={`w-full text-sm p-2 rounded-md flex items-center
-                  transition-colors duration-100 ${
+                  transition-colors duration-100 font-semibold ${
                     currentTheme === theme.id
                       ? "bg-primary text-[#f5f5f5]"
-                      : "hover:bg-subtle"
+                      : "text-colorLetters dark:text-whiteSnow hover:bg-custom-brown hover:text-whiteSnow"
                   }`}
               >
                 <div className={`w-4 h-4 rounded-full mr-3 ${theme.colorClass}`} />

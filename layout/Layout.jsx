@@ -23,6 +23,7 @@ function Layout({ children, pagina }) {
         <meta property="og:description" content={t("layout.siteDescription")} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/images/og-image.jpg" /> {/* Asegúrate de tener una imagen OG */}
+        
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

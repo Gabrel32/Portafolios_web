@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../layout/Layout";
-import Link from "next/link";
 import Image from "next/image";
 import usePortafolios from "../hook/usePortafolios";
 import ContactForm from "../components/ContactForm";

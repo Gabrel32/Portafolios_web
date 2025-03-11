@@ -37,7 +37,7 @@ function Navegacion({ className, ...props }) {
         {/* Título e ícono de menú móvil */}
         <div className="flex flex-row items-center gap-3 w-full sm:w-auto">
           {/* Título */}
-          <div className="flex flex-row gap-2 sm:gap-5 items-center">
+          <div className="flex flex-row gap-2 items-center">
             <div
               className={`text-[#000000] dark:text-[#fff] text-center sm:text-left text-[24px] sm:text-[30px] md:text-[40px] leading-none w-fit flex items-center ${
                 isMounted ? "animate-fadeIn" : ""
@@ -96,7 +96,7 @@ function Navegacion({ className, ...props }) {
         </div>
 
         {/* Vista de escritorio */}
-        <div className="hidden sm:flex flex-row gap-4 items-center justify-end">
+        <div className="hidden sm:flex flex-row gap-2 items-center justify-end">
           {buttonNavs.map((e) => (
             <ButtonNav
               key={e.name}
@@ -106,7 +106,7 @@ function Navegacion({ className, ...props }) {
               className="animate-fadeInUp text-lg hover:text-custom-brown transition-colors"
             />
           ))}
-          <div className="flex flex-row gap-4 items-center">
+          <div className="flex flex-row gap-2 items-center">
             <ThemeSwitcher />
             <LanguageSwitcher />
             <DarkModeButton />

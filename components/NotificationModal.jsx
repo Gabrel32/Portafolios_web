@@ -42,7 +42,7 @@ const NotificationModal = ({
       onClick={onClose} // Cerrar al hacer clic fuera del modal
     >
       <div
-        className="bg-beige-50 dark:bg-completColor rounded-xl p-8 max-w-md w-full shadow-xl relative border-2 border-custom-brown/20 animate-cardPop"
+        className="bg-beige-50 dark:bg-completColor rounded-xl p-8 max-w-md w-full shadow-xl relative border-2 border-custom-brown animate-cardPop"
         onClick={(e) => e.stopPropagation()} // Evitar que el clic dentro del modal lo cierre
       >
         <button
@@ -57,13 +57,13 @@ const NotificationModal = ({
           <div
             className={`inline-flex items-center justify-center w-16 h-16 rounded-full ${
               type === "success"
-                ? "bg-custom-brown/10 animate-softBounce"
+                ? "bg-custom-brown animate-softBounce"
                 : "bg-red-100 dark:bg-red-900/20 animate-pulse-fast"
             }`}
           >
             {type === "success" ? (
               <svg
-                className="w-8 h-8 text-custom-brown"
+                className="w-8 h-8 text-whiteSnow"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -94,13 +94,13 @@ const NotificationModal = ({
 
           <h3
             className={`text-2xl font-bold ${
-              type === "success" ? "text-custom-brown" : "text-red-500"
+              type === "success" ? "text-colorLetters" : "text-red-500"
             } animate-textShimmer`}
           >
             {title}
           </h3>
 
-          <p className="text-custom-brown leading-relaxed animate-fadeInUp">
+          <p className="text-colorLetters leading-relaxed animate-fadeInUp">
             {description}
           </p>
         </div>

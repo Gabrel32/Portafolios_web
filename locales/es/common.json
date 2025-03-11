@@ -4,7 +4,7 @@
     "nav": {
       "home": "Inicio",
       "projects": "Proyectos",
-      "about": "Habilidades",
+      "about": "tecnologias",
       "contact": "Contacto"
     }
   },
@@ -90,7 +90,7 @@
   },
   "projects": {
     "guitars-la": {
-      "name": "GuitarrasLA",
+      "name": "GuitarLA",
       "description": "Plataforma de comercio electrónico completamente funcional construida con Next.js, que ofrece paginación avanzada, integración fluida con PostgreSQL y un sistema dinámico de carrito de compras para una experiencia de usuario mejorada."
     },
     "product-hunt": {

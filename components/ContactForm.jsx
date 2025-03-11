@@ -221,7 +221,7 @@ export default function ContactForm({ setSuccess, setError }) {
   <button
     type="button"
     onClick={() => setShowMessages(!showMessages)}
-    className="px-4 py-2 bg-custom-brown text-whiteSnow rounded-lg text-sm font-medium hover:bg-opacity-90 transition-colors flex items-center gap-2 focus:ring-custom-brown focus:ring-offset-2"
+    className=" btn-efecto font-bold px-4 py-2 bg-custom-brown text-whiteSnow rounded-lg text-sm hover:bg-opacity-90 transition-colors flex items-center gap-2 focus:ring-custom-brown focus:ring-offset-2"
   >
     {t("contactForm.selectMessage")}
     <svg
@@ -261,7 +261,7 @@ export default function ContactForm({ setSuccess, setError }) {
         <button
           type="submit"
           disabled={loading}
-          className="px-8 py-3 bg-gradient-to-r from-custom-brown to-efectHovercolor text-whiteSnow rounded-lg hover:opacity-90 transition-opacity duration-300 disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden group focus:outline-none focus:ring-2 focus:ring-custom-brown focus:ring-offset-2"
+          className="btn-efecto font-bold px-8 py-3 bg-gradient-to-r from-custom-brown to-efectHovercolor text-whiteSnow rounded-lg hover:opacity-90 transition-opacity duration-300 disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden group focus:outline-none focus:ring-2 focus:ring-custom-brown focus:ring-offset-2"
         >
           <span className="relative z-1 flex items-center gap-2">
             {loading && (

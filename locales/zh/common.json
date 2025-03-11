@@ -90,7 +90,7 @@
   },
   "projects": {
     "guitars-la": {
-      "name": "吉他LA",
+      "name": "GuitarLA",
       "description": "基于 Next.js 的电商平台，集成高级分页、PostgreSQL 数据库和动态购物车，优化用户体验。"
     },
     "product-hunt": {

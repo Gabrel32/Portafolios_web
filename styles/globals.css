@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   --whiteSnow: #f5f5f5e2;
   --success-color: #28a745; /* Verde de éxito */
@@ -55,7 +56,7 @@
 
 /* Tema Océano Mejorado */
 .theme-ocean {
-  --custom-brown: #1462a1f1;    /* Azul vibrante */
+  --custom-brown: #1a7ccdf1;    /* Azul vibrante */
   --efectHovercolor: #1976D2; /* Azul marino */
   --completColor: #E3F2FD;    /* Azul muy claro */
   --beige-50: #E1F5FE;        /* Blanco azulado */
@@ -66,12 +67,12 @@
 }
 
 .theme-ocean.dark {
-  --custom-brown: #1462a1f1;    /* Azul claro */
+  --custom-brown: #107bcdf1;    /* Azul claro */
   --efectHovercolor: #42A5F5;
-  --completColor: #0f2c45;    /* Azul oscuro intenso */
+  --completColor: #081a2a;    /* Azul oscuro intenso */
   --beige-50: #021B3D;        /* Azul noche */
   --accent: #1f94a3;          /* Coral suave */
-  --colorLetters: #14d4ee;    
+  --colorLetters: #97cbde;    
 }
 /* tema desierto atardecer */
 .theme-desert {
@@ -82,21 +83,21 @@
   --primary: #964B00;         /* Tierra profunda */
   --secondary: #a38b2b;       /* Naranja brillante */
   --accent: #a38b2b;          /* Amarillo dorado */
-  --colorLetters: #a38d34;    
+  --colorLetters: #493320;    
 }
 .theme-desert.dark {
-  --custom-brown: #8B572A;    /* Marrón cálido oscuro */
+  --custom-brown: #a36128;    /* Marrón cálido oscuro */
   --efectHovercolor: #654321; /* Chocolate profundo */
   --completColor: #3E2723;    /* Marrón muy oscuro */
   --beige-50: #2F221C;        /* Fondo oscuro terroso */
   --accent: #a38b2b;          /* Naranja suavizado */
-  --colorLetters: #bd9d1e;    
+  --colorLetters: #e59855;    
 }
 /* tema cielo atardecer */
 .theme-sunset {
   --custom-brown: #8b4740;    /* Rosa pastel */
   --efectHovercolor: #be3f3f; /* Rosa más intenso */
-  --completColor: #FFF0F5;    /* Lavanda claro */
+  --completColor: #f9d9e4;    /* Lavanda claro */
   --beige-50: #FFE4E1;        /* Rosa muy claro */
   --primary: #953434;         /* Naranja atardecer */
   --secondary: #FF7F50;       /* Coral suave */

@@ -90,7 +90,7 @@
     },
     "projects": {
     "guitars-la": {
-        "name": "GuitarsLA",
+        "name": "GuitarLA",
         "description": "A fully-featured e-commerce platform built with Next.js, offering advanced pagination, seamless PostgreSQL database integration, and a dynamic shopping cart system for an enhanced user experience."
     },
     "product-hunt": {
