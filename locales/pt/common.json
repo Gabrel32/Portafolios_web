@@ -17,7 +17,7 @@
     "aboutTitle": "Sobre mim",
     "contactButton": "Contato",
     "ctaTitle": "Pronto para colaborar?",
-    "aboutDescription": "Sou um desenvolvedor frontend apaixonado por transformar ideias complexas em experiências digitais atraentes e funcionais. Com mais de 2 anos de experiência profissional, trabalhei com profissionais em projetos inovadores, como um livro interativo de matemática, e colaborei em aplicações web dinâmicas usando React, Node.js e tecnologias modernas. Minha abordagem combina criatividade, precisão técnica e um toque matemático, criando interfaces que não apenas parecem boas, mas também resolvem problemas reais."
+    "aboutDescription": "Sou um desenvolvedor frontend apaixonado por transformar ideias complexas em experiências digitais atraentes e funcionais. Com mais de dois anos de experiência profissional, colaborei com equipes em projetos inovadores, como um livro interativo de matemática, e participei do desenvolvimento de aplicativos web dinâmicos usando React, Node.js e outras tecnologias modernas. Minha abordagem combina criatividade, precisão técnica e um toque matemático para criar interfaces que não apenas se destacam visualmente, mas também resolvem problemas reais."
   },
   "projectsSection": {
     "title": "Meus Projetos",
@@ -36,7 +36,7 @@
     "andOthers": ", entre outros."
   },
   "contact": {
-    "title": "Fale comigo",
+    "title": "Contate-me",
     "formTitle": "Envie-me uma mensagem",
     "linkedinText": "Ou envie-me uma mensagem direta através de"
   },
@@ -69,12 +69,12 @@
     "predefinedMessages": [
       "Olá, gostaria de mais informações sobre seus serviços.",
       "Estou interessado em trabalhar com você. Podemos conversar?",
-      "Tenho uma pergunta sobre um projeto que gostaria de discutir.",
-      "Adoraria colaborar com você em um projeto futuro.",
-      "Você poderia me ajudar com uma dúvida técnica?",
-      "Gostaria de orçar um serviço personalizado.",
+      "Tenho uma dúvida sobre um projeto que gostaria de discutir.",
+      "Gostaria de colaborar com você em um projeto futuro.",
+      "Você poderia me ajudar com uma questão técnica?",
+      "Quero solicitar um orçamento para um serviço personalizado.",
       "Você está disponível para novas oportunidades?",
-      "Preciso de consultoria profissional sobre um tema específico.",
+      "Preciso de aconselhamento profissional sobre um tema específico.",
       "Você oferece serviços de consultoria?",
       "Gostaria de agendar uma reunião virtual.",
       "Você tem referências de trabalhos anteriores?",
@@ -95,55 +95,59 @@
   "projects": {
     "guitars-la": {
       "name": "GuitarLA",
-      "description": "Plataforma de comércio eletrônico totalmente funcional construída com Next.js, oferecendo paginação avançada, integração fluida com PostgreSQL e um sistema dinâmico de carrinho de compras para uma experiência de usuário aprimorada."
+      "description": "Uma plataforma de comércio eletrônico totalmente funcional construída com Next.js, oferecendo paginação avançada, integração fluida com PostgreSQL e um sistema dinâmico de carrinho de compras para uma experiência de usuário aprimorada."
     },
     "product-hunt": {
       "name": "Clone do Product Hunt",
-      "description": "Réplica em tempo real do Product Hunt que utiliza Firebase para autenticação e armazenamento de dados, Next.js para renderização no lado do servidor e Styled Components para uma interface moderna e elegante."
+      "description": "Uma réplica em tempo real do Product Hunt que utiliza Firebase para autenticação e armazenamento de dados, Next.js para renderização do lado do servidor e Styled Components para uma interface moderna e elegante."
     },
     "mern-uptask": {
       "name": "MERN-Uptask",
-      "description": "Aplicação de gestão de tarefas em tempo real que utiliza o stack MERN (MongoDB, Express, React, Node.js) e Socket.io para atualizações instantâneas e funcionalidades colaborativas."
+      "description": "Um aplicativo de gerenciamento de tarefas em tempo real que utiliza a pilha MERN (MongoDB, Express, React, Node.js) e Socket.io para atualizações instantâneas e funcionalidades colaborativas."
     },
     "veterinary-control": {
       "name": "Controle Veterinário",
-      "description": "Sistema abrangente de gestão de consultas veterinárias desenvolvido com React e TailwindCSS, projetado para otimizar operações clínicas e melhorar a eficiência na programação."
+      "description": "Um sistema abrangente de gerenciamento de consultas veterinárias desenvolvido com React e TailwindCSS, projetado para otimizar operações clínicas e melhorar a eficiência no agendamento."
     },
     "create-interactive": {
       "name": "Criar Interativo",
-      "description": "Aplicação CRUD com prioridade offline que utiliza IndexDB para armazenamento local robusto, garantindo uma experiência de usuário fluida e ininterrupta mesmo sem conexão à internet."
+      "description": "Um aplicativo CRUD com prioridade offline que utiliza IndexedDB para armazenamento local robusto, garantindo uma experiência de usuário fluida e ininterrupta mesmo sem conexão com a internet."
     },
     "expense-manager": {
-      "name": "Gestor de Despesas",
-      "description": "Ferramenta de acompanhamento de finanças pessoais construída com React e localStorage, permitindo aos usuários gerenciar orçamentos de forma eficaz com armazenamento persistente e controles intuitivos."
+      "name": "Gerenciador de Despesas",
+      "description": "Uma ferramenta de rastreamento de finanças pessoais construída com React e localStorage, permitindo que os usuários gerenciem orçamentos de forma eficaz com armazenamento persistente e controles intuitivos."
     },
     "drink-finder": {
       "name": "Buscador de Bebidas",
-      "description": "Aplicação de descoberta de coquetéis que se integra a uma API externa, utiliza React Context para uma gestão eficiente de estado e possui um design responsivo impulsionado pelo Bootstrap."
+      "description": "Um aplicativo de descoberta de coquetéis integrado a uma API externa, utilizando React Context para gerenciamento eficiente de estado e um design responsivo impulsionado por Bootstrap."
     },
     "weather-app": {
       "name": "App do Clima",
-      "description": "Painel meteorológico em tempo real desenvolvido com React Context e TailwindCSS, fornecendo previsões globais precisas e atualizadas em uma interface limpa e amigável ao usuário."
+      "description": "Um painel meteorológico em tempo real desenvolvido com React Context e TailwindCSS, fornecendo previsões globais precisas e atualizadas em uma interface limpa e amigável."
     },
     "car-insurance": {
       "name": "Calculadora de Seguros",
-      "description": "Calculadora dinâmica de prêmios de seguro de automóveis construída com React Context e TailwindCSS, oferecendo análise em tempo real de diversos fatores para fornecer estimativas precisas de seguros."
+      "description": "Uma calculadora dinâmica de prêmios de seguro de automóveis construída com React Context e TailwindCSS, oferecendo análise em tempo real de diversos fatores para fornecer estimativas precisas de seguros."
     },
     "news-finder": {
       "name": "Buscador de Notícias",
-      "description": "Agregador de notícias multicategoria que utiliza React Context para gestão de estado e Material-UI para uma interface moderna, responsiva e visualmente atraente."
+      "description": "Um agregador de notícias de múltiplas categorias que utiliza React Context para gerenciamento de estado e Material-UI para uma interface moderna, responsiva e visualmente atraente."
     },
     "instant-cryptos": {
-      "name": "Criptos Instantâneos",
-      "description": "Plataforma de rastreamento de criptomoedas em tempo real com um conversor de moedas integrado e ferramentas avançadas de análise de mercado, projetada tanto para usuários casuais quanto para investidores sérios."
+      "name": "Criptos Instantâneas",
+      "description": "Uma plataforma de rastreamento de criptomoedas em tempo real com um conversor de moedas integrado e ferramentas avançadas de análise de mercado, projetada tanto para usuários casuais quanto para investidores sérios."
+    },
+    "vaccine-manager": {
+      "name": "Gestor de Vacinas",
+      "description": "Um aplicativo abrangente para a gestão de vacinas em gado, desenvolvido com React, Express e MongoDB. Permite o registro de usuários, a gestão detalhada de informações sobre vacinas, a criação de guias para transportadores e a geração de declarações de gado vacinado, tudo disponível para download em formato PDF. Utilizando React Router para uma navegação fluida e eficiente, oferece uma solução robusta e amigável para o controle e acompanhamento do processo de vacinação."
     }
   },
   "project": {
-    "buttonST": "Site"
+    "buttonST": "site"
   },
   "layout": {
     "siteTitle": "Portfólio",
-    "siteDescription": "Portfólio web onde você encontrará diversos projetos e informações relevantes.",
+    "siteDescription": "Um portfólio web onde você encontrará diversos projetos e informações relevantes.",
     "defaultPageTitle": "Página",
     "footerRights": "Todos os direitos reservados."
   },
@@ -158,7 +162,7 @@
       "forest": "Floresta",
       "ocean": "Oceano",
       "desert": "Deserto",
-      "sunset": "Pôr do sol"
+      "sunset": "Pôr do Sol"
     }
   }
 }

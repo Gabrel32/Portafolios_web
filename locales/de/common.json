@@ -4,24 +4,24 @@
     "nav": {
       "home": "Startseite",
       "projects": "Projekte",
-      "about": "Fähigkeiten",
+      "about": "Technologien",
       "contact": "Kontakt"
     }
   },
   "home": {
-    "title1": "Webentwicklung",
+    "title1": "Web",
     "title2": "Entwicklung",
     "subtitle": "Gabriel Hernández",
-    "description": "Spezialisiert auf die Entwicklung innovativer und skalierbarer Web-Lösungen, die modernes Design mit Spitzentechnologie kombinieren, um außergewöhnliche Benutzererfahrungen zu bieten.",
+    "description": "Spezialisiert auf die Entwicklung innovativer und skalierbarer Web-Lösungen, die modernes Design mit Spitzentechnologie kombinieren, um außergewöhnliche Nutzererfahrungen zu bieten.",
     "downloadCV": "Lebenslauf herunterladen",
     "aboutTitle": "Über mich",
     "contactButton": "Kontakt",
     "ctaTitle": "Bereit zur Zusammenarbeit?",
-    "aboutDescription": "Ich bin ein Frontend-Entwickler, der leidenschaftlich daran arbeitet, komplexe Ideen in ansprechende und funktionale digitale Erlebnisse zu verwandeln. Mit über 2 Jahren beruflicher Erfahrung habe ich mit Fachleuten an innovativen Projekten wie einem interaktiven Mathematikbuch gearbeitet und an dynamischen Webanwendungen mit React, Node.js und modernen Technologien mitgewirkt. Mein Ansatz vereint Kreativität, technische Präzision und einen Hauch von Mathematik, um Schnittstellen zu schaffen, die nicht nur gut aussehen, sondern auch echte Probleme lösen."
+    "aboutDescription": "Ich bin ein leidenschaftlicher Frontend-Entwickler, der komplexe Ideen in ansprechende und funktionale digitale Erlebnisse verwandelt. Mit über zwei Jahren Berufserfahrung habe ich mit Teams an innovativen Projekten wie einem interaktiven Mathematikbuch zusammengearbeitet und an der Entwicklung dynamischer Webanwendungen mit React, Node.js und anderen modernen Technologien mitgewirkt. Mein Ansatz vereint Kreativität, technische Präzision und einen mathematischen Ansatz, um Benutzeroberflächen zu gestalten, die nicht nur visuell hervorstechen, sondern auch praktische Lösungen für reale Probleme bieten."
   },
   "projectsSection": {
     "title": "Meine Projekte",
-    "description": "Hier können Sie einige meiner herausragenden Projekte sehen",
+    "description": "Hier kannst du einige meiner herausragenden Projekte sehen",
     "viewDetails": "Details anzeigen",
     "technologiesUsed": "Verwendete Technologien",
     "visitProject": "Projekt besuchen",
@@ -36,52 +36,52 @@
     "andOthers": ", unter anderem, gearbeitet."
   },
   "contact": {
-    "title": "Kontaktieren Sie mich",
-    "formTitle": "Schicken Sie mir eine Nachricht",
-    "linkedinText": "Oder senden Sie mir eine direkte Nachricht über"
+    "title": "Kontaktiere mich",
+    "formTitle": "Sende mir eine Nachricht",
+    "linkedinText": "Oder sende mir eine direkte Nachricht über"
   },
   "contactForm": {
     "successTitle": "Erfolg!",
-    "successDescription": "Ihre Nachricht wurde erfolgreich gesendet. Ich werde mich bald mit Ihnen in Verbindung setzen, um Ihre Ideen oder Projekte zu besprechen!",
+    "successDescription": "Deine Nachricht wurde erfolgreich gesendet. Ich werde mich bald mit dir in Verbindung setzen, um deine Ideen oder Projekte zu besprechen!",
     "errorTitle": "Fehler!",
-    "errorDescription": "Wir konnten Ihre Nachricht derzeit nicht senden. Bitte überprüfen Sie Ihre Verbindung oder versuchen Sie es in ein paar Minuten erneut.",
+    "errorDescription": "Wir konnten deine Nachricht momentan nicht senden. Bitte überprüfe deine Verbindung oder versuche es in ein paar Minuten erneut.",
     "labels": {
       "name": "Name",
       "email": "E-Mail",
       "message": "Nachricht"
     },
     "placeholders": {
-      "name": "Ihr Name",
-      "email": "Ihre E-Mail"
+      "name": "Dein Name",
+      "email": "Deine E-Mail"
     },
     "errors": {
-      "nameRequired": "Bitte geben Sie Ihren Namen ein",
-      "emailRequired": "Bitte geben Sie Ihre E-Mail-Adresse ein",
-      "invalidEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
-      "messageRequired": "Bitte wählen Sie eine Nachricht aus",
-      "sendError": "Fehler beim Senden der Nachricht. Versuchen Sie es erneut.",
-      "connectionError": "Verbindungsfehler. Überprüfen Sie Ihre Internetverbindung."
+      "nameRequired": "Bitte gib deinen Namen ein",
+      "emailRequired": "Bitte gib deine E-Mail-Adresse ein",
+      "invalidEmail": "Bitte gib eine gültige E-Mail-Adresse ein",
+      "messageRequired": "Bitte wähle eine Nachricht aus",
+      "sendError": "Fehler beim Senden der Nachricht. Bitte versuche es erneut.",
+      "connectionError": "Verbindungsfehler. Überprüfe deine Internetverbindung."
     },
     "selectMessage": "Nachricht auswählen",
     "sending": "Wird gesendet...",
     "sendMessage": "Nachricht senden",
     "successMessage": "Nachricht erfolgreich gesendet!",
     "predefinedMessages": [
-      "Hallo, ich möchte mehr Informationen über Ihre Dienstleistungen.",
-      "Ich bin daran interessiert, mit Ihnen zusammenzuarbeiten. Können wir sprechen?",
+      "Hallo, ich möchte mehr Informationen über deine Dienstleistungen.",
+      "Ich bin daran interessiert, mit dir zusammenzuarbeiten. Können wir sprechen?",
       "Ich habe eine Frage zu einem Projekt, das ich besprechen möchte.",
-      "Ich würde gerne mit Ihnen an einem zukünftigen Projekt zusammenarbeiten.",
-      "Könnten Sie mir bei einer technischen Frage helfen?",
-      "Ich möchte ein Angebot für einen maßgeschneiderten Service erhalten.",
-      "Sind Sie für neue Möglichkeiten verfügbar?",
-      "Ich benötige professionelle Beratung zu einem bestimmten Thema.",
-      "Bieten Sie Beratungsdienste an?",
-      "Ich möchte ein virtuelles Treffen vereinbaren.",
-      "Haben Sie Referenzen von früheren Arbeiten?",
-      "Ich möchte mehr über Ihre Berufserfahrung erfahren.",
-      "Könnten Sie Beispiele für ähnliche Projekte teilen?",
-      "Ich prüfe Optionen für mein Unternehmen, können wir sprechen?",
-      "Wie hoch ist Ihr Stundensatz?"
+      "Ich würde gerne mit dir an einem zukünftigen Projekt zusammenarbeiten.",
+      "Könntest du mir bei einer technischen Frage helfen?",
+      "Ich möchte ein Angebot für einen maßgeschneiderten Service anfordern.",
+      "Bist du für neue Möglichkeiten verfügbar?",
+      "Ich brauche professionelle Beratung zu einem bestimmten Thema.",
+      "Bietest du Beratungsdienste an?",
+      "Ich würde gerne ein virtuelles Treffen vereinbaren.",
+      "Hast du Referenzen von früheren Arbeiten?",
+      "Ich möchte mehr über deine Berufserfahrung erfahren.",
+      "Könntest du Beispiele für ähnliche Projekte teilen?",
+      "Ich evaluiere Optionen für mein Unternehmen – können wir uns unterhalten?",
+      "Wie hoch ist dein Stundensatz?"
     ]
   },
   "projectsPage": {
@@ -95,27 +95,27 @@
   "projects": {
     "guitars-la": {
       "name": "GuitarLA",
-      "description": "Eine voll funktionsfähige E-Commerce-Plattform, entwickelt mit Next.js, die fortschrittliche Paginierung, nahtlose PostgreSQL-Datenbankintegration und ein dynamisches Warenkorbsystem für ein verbessertes Benutzererlebnis bietet."
+      "description": "Eine voll funktionsfähige E-Commerce-Plattform, entwickelt mit Next.js, die erweiterte Pagination, nahtlose PostgreSQL-Integration und ein dynamisches Warenkorbsystem für eine verbesserte Nutzererfahrung bietet."
     },
     "product-hunt": {
       "name": "Product Hunt Klon",
-      "description": "Eine Echtzeit-Replik von Product Hunt, die Firebase für Authentifizierung und Datenspeicherung nutzt, Next.js für serverseitiges Rendering und Styled Components für eine elegante, moderne Benutzeroberfläche."
+      "description": "Eine Echtzeit-Replik von Product Hunt, die Firebase für Authentifizierung und Datenspeicherung, Next.js für serverseitiges Rendering und Styled Components für eine moderne, elegante Benutzeroberfläche nutzt."
     },
     "mern-uptask": {
       "name": "MERN-Uptask",
-      "description": "Eine Echtzeit-Aufgabenverwaltungsanwendung, die den MERN-Stack (MongoDB, Express, React, Node.js) und Socket.io für sofortige Aufgabenaktualisierungen und kollaborative Funktionen verwendet."
+      "description": "Eine Echtzeit-Aufgabenverwaltungsanwendung, die den MERN-Stack (MongoDB, Express, React, Node.js) und Socket.io für sofortige Updates und kollaborative Funktionen verwendet."
     },
     "veterinary-control": {
       "name": "Veterinärkontrolle",
-      "description": "Ein umfassendes Terminverwaltungssystem für Tierkliniken, entwickelt mit React und TailwindCSS, um Klinikabläufe zu optimieren und die Planungseffizienz zu verbessern."
+      "description": "Ein umfassendes System zur Verwaltung von Tierarztterminen, entwickelt mit React und TailwindCSS, um klinische Abläufe zu optimieren und die Effizienz bei der Terminplanung zu steigern."
     },
     "create-interactive": {
-      "name": "Interaktiv Erstellen",
-      "description": "Eine Offline-First CRUD-Anwendung, die IndexDB für robuste lokale Datenspeicherung nutzt und ein reibungsloses, unterbrechungsfreies Benutzererlebnis auch ohne Internetverbindung gewährleistet."
+      "name": "Create Interactive",
+      "description": "Eine Offline-First-CRUD-Anwendung, die IndexedDB für robuste lokale Speicherung nutzt und eine nahtlose, unterbrechungsfreie Nutzererfahrung auch ohne Internetverbindung gewährleistet."
     },
     "expense-manager": {
       "name": "Ausgabenmanager",
-      "description": "Ein persönliches Finanzverfolgungstool, entwickelt mit React und localStorage, das Benutzern ermöglicht, Budgets effektiv mit persistentem Datenspeicher und intuitiven Steuerungen zu verwalten."
+      "description": "Ein Tool zur Verfolgung persönlicher Finanzen, entwickelt mit React und localStorage, das Nutzern ermöglicht, Budgets effektiv mit persistentem Speicher und intuitiven Steuerungen zu verwalten."
     },
     "drink-finder": {
       "name": "Getränkefinder",
@@ -123,27 +123,31 @@
     },
     "weather-app": {
       "name": "Wetter-App",
-      "description": "Ein Echtzeit-Wetter-Dashboard, entwickelt mit React Context und TailwindCSS, das präzise und aktuelle globale Wettervorhersagen in einer klaren, benutzerfreundlichen Oberfläche bietet."
+      "description": "Ein Echtzeit-Wetter-Dashboard, entwickelt mit React Context und TailwindCSS, das präzise globale Vorhersagen in einer klaren, benutzerfreundlichen Oberfläche liefert."
     },
     "car-insurance": {
       "name": "Autoversicherungsrechner",
-      "description": "Ein dynamischer Autoversicherungsprämienrechner, entwickelt mit React Context und TailwindCSS, der eine Echtzeit-Analyse verschiedener Faktoren bietet, um genaue Versicherungsschätzungen zu liefern."
+      "description": "Ein dynamischer Rechner für Autoversicherungsprämien, entwickelt mit React Context und TailwindCSS, der Echtzeitanalysen verschiedener Faktoren für präzise Versicherungsschätzungen bietet."
     },
     "news-finder": {
       "name": "Nachrichtenfinder",
-      "description": "Ein Nachrichtenaggregator mit mehreren Kategorien, der React Context für das Zustandsmanagement und Material-UI für eine moderne, responsive und visuell ansprechende Benutzeroberfläche nutzt."
+      "description": "Ein Nachrichtenaggregator für mehrere Kategorien, der React Context für das Zustandsmanagement und Material-UI für eine moderne, responsive und visuell ansprechende Oberfläche nutzt."
     },
     "instant-cryptos": {
-      "name": "Instant Cryptos",
-      "description": "Eine Echtzeit-Kryptowährungsverfolgungsplattform mit integriertem Währungsrechner und fortschrittlichen Marktanalysetools, entwickelt für Gelegenheitsnutzer und ernsthafte Investoren."
+      "name": "Sofort-Kryptos",
+      "description": "Eine Echtzeit-Plattform zur Verfolgung von Kryptowährungen mit integriertem Währungsrechner und fortschrittlichen Marktanalysetools, entwickelt für Gelegenheitsnutzer und ernsthafte Investoren."
+    },
+    "vaccine-manager": {
+      "name": "Impfstoffmanager für Rinder",
+      "description": "Eine umfassende Anwendung zur Verwaltung von Rinderimpfungen, entwickelt mit React, Express und MongoDB. Sie ermöglicht die Registrierung von Nutzern, die detaillierte Verwaltung von Impfstoffinformationen, die Erstellung von Transportführern und die Generierung von Erklärungen über geimpfte Rinder, die alle im PDF-Format heruntergeladen werden können. Mit React Router für eine reibungslose und effiziente Navigation bietet sie eine robuste und benutzerfreundliche Lösung zur Überwachung und Steuerung des Impfprozesses."
     }
   },
   "project": {
-    "buttonST": "Seite"
+    "buttonST": "Website"
   },
   "layout": {
     "siteTitle": "Portfolio",
-    "siteDescription": "Webportfolio, in dem Sie verschiedene Projekte und relevante Informationen finden.",
+    "siteDescription": "Ein Web-Portfolio, das verschiedene Projekte und relevante Informationen präsentiert.",
     "defaultPageTitle": "Seite",
     "footerRights": "Alle Rechte vorbehalten."
   },
@@ -152,7 +156,7 @@
     "english": "Englisch"
   },
   "themeSwitcher": {
-    "ariaLabel": "Themenwähler",
+    "ariaLabel": "Themenauswahl",
     "themes": {
       "default": "Klassisch",
       "forest": "Wald",

@@ -17,8 +17,7 @@
     "aboutTitle": "Sobre mí",
     "contactButton":"Contacto",
     "ctaTitle":"¿Listo para colaborar?",
-    "aboutDescription":"Soy un desarrollador frontend apasionado por transformar ideas complejas en experiencias digitales atractivas y funcionales. Con más de 2 años de experiencia profesional, he trabajo con profesionales en proyectos innovadores como un libro interactivo de matemáticas y colaborado en aplicaciones web dinámicas usando React, Node.js y tecnologías modernas. Mi enfoque combina creatividad, precisión técnica y un toque matemático, creando interfaces que no solo se ven bien, sino que también resuelven problemas reales."
-  },
+    "aboutDescription": "Soy un desarrollador frontend apasionado por convertir ideas complejas en experiencias digitales atractivas y funcionales. Con más de dos años de experiencia profesional, he colaborado con equipos en proyectos innovadores, como un libro interactivo de matemáticas, y he participado en el desarrollo de aplicaciones web dinámicas utilizando React, Node.js y otras tecnologías modernas. Mi enfoque integra creatividad, precisión técnica y un toque matemático para diseñar interfaces que no solo destacan visualmente, sino que también ofrecen soluciones prácticas a problemas reales."},
   "projectsSection": {
     "title": "Mis Proyectos",
     "description": "Aquí puedes ver algunos de mis proyectos destacados",
@@ -136,6 +135,10 @@
     "instant-cryptos": {
       "name": "Criptos al Instante",
       "description": "Plataforma de seguimiento de criptomonedas en tiempo real con un conversor de divisas integrado y herramientas avanzadas de análisis de mercado, diseñada tanto para usuarios casuales como para inversores serios."
+    },
+    "vaccine-manager": {
+      "name": "Gestor de Vacunas",
+    "description": "Una aplicación integral para la gestión de vacunas en ganado, desarrollada con React, Express y MongoDB. Permite registrar usuarios, gestionar información detallada sobre vacunas, crear guías para transportistas y generar declaraciones de reses vacunadas, con la opción de descargar todos los documentos en formato PDF. Utiliza React Router para una navegación fluida y eficiente, ofreciendo una solución robusta y fácil de usar para el control y seguimiento del proceso de vacunación."
     }
   },
   "project": {

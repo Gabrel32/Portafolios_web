@@ -197,7 +197,7 @@ const Home = ({ className = "", ...props }) => {
             {/* Hero Section */}
             <div
               ref={contentRef}
-              className="backdrop-blur-xl rounded-3xl p-8 md:p-12 lg:p-16 border border-custom-brown shadow-2xl shadow-custom-brown/30 hover:shadow-custom-brown/50 transition-all duration-700"
+              className="backdrop-blur-xl rounded-3xl p-8 md:p-12 lg:p-16 border border-custom-brown shadow-2xl shadow-custom-brown hover:shadow-custom-brown transition-all duration-700"
             >
               <h1
                 ref={titleRef}
@@ -210,7 +210,7 @@ const Home = ({ className = "", ...props }) => {
                 </span>
               </h1>
 
-              <div className="space-y-6 max-w-2xl">
+              <div className="flex flex-col space-y-6 max-w-2xl">
                 <p
                   ref={subtitleRef}
                   className="text-2xl md:text-3xl font-semibold text-custom-brown dark:text-primary"
@@ -224,7 +224,7 @@ const Home = ({ className = "", ...props }) => {
                 <div ref={buttonContainerRef} className="relative inline-block w-40 h-16">
                   <button
                     ref={buttonRef}
-                    className="absolute px-8 py-4 bg-custom-brown text-whiteSnow rounded-full font-medium transition-all duration-300 hover:bg-efectHovercolor focus:outline-none focus:ring-2 focus:ring-custom-brown hover:scale-110"
+                    className="absolute px-8 py-4 bg-custom-brown text-whiteSnow rounded-full font-bold transition-all duration-300 hover:bg-efectHovercolor focus:outline-none focus:ring-2 focus:ring-custom-brown hover:scale-110"
                     aria-label={t("home.downloadCV")}
                   >
                     <span className="relative z-10">{t("home.downloadCV")}</span>

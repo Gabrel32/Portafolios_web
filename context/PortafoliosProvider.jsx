@@ -189,7 +189,14 @@ function PortafoliosProvider({children}){
           img: "CriptosInstante",
           link: "https://criptos-instante.netlify.app",
           linkGit: "https://gitlab.com/Gabrel32/criptosinstante.git"
-      }
+      },
+      {
+        id: "vaccine-manager",
+        git: "github",
+        img: "project_insai",
+        linkGit: "https://github.com/Gabrel32/project_insai.git"
+      },
+
   ]);
 
   // Efecto para cargar traducciones

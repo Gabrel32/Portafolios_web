@@ -9,19 +9,19 @@
     }
   },
   "home": {
-    "title1": "开发",
-    "title2": "网页",
+    "title1": "网站",
+    "title2": "开发",
     "subtitle": "加布里埃尔·埃尔南德斯",
-    "description": "专注于创建创新且可扩展的网页解决方案，结合现代设计与尖端技术，为用户提供卓越的体验。",
+    "description": "专注于创建创新且可扩展的网页解决方案，将现代设计与尖端技术相结合，为用户提供卓越的体验。",
     "downloadCV": "下载简历",
     "aboutTitle": "关于我",
     "contactButton": "联系",
     "ctaTitle": "准备好合作了吗？",
-    "aboutDescription": "我是一名前端开发人员，热衷于将复杂的想法转化为吸引人且实用的数字体验。拥有超过2年的专业经验，我曾与专业人士合作完成创新项目，如互动数学书籍，并使用React、Node.js和现代技术参与动态网页应用的开发。我的方法结合了创造力、技术精确性和数学思维，打造出不仅外观精美还能解决实际问题的界面。"
+    "aboutDescription": "我是一名充满激情的前端开发者，致力于将复杂的想法转化为吸引人且实用的数字化体验。我拥有超过两年的专业经验，曾与团队合作开发创新项目，例如一本交互式数学书，并参与使用 React、Node.js 等现代技术开发动态网页应用程序。我的方法融合了创造力、技术精度和数学思维，设计出不仅外观出色而且能解决实际问题的用户界面。"
   },
   "projectsSection": {
     "title": "我的项目",
-    "description": "在这里你可以查看我的一些突出项目",
+    "description": "在这里你可以查看我的一些亮点项目",
     "viewDetails": "查看详情",
     "technologiesUsed": "使用的技术",
     "visitProject": "访问项目",
@@ -30,10 +30,10 @@
   "about": {
     "title": "关于我",
     "description": "我使用的技术",
-    "alsoWorkedWith": "我也使用过",
+    "alsoWorkedWith": "我也曾使用过",
     "orms": "对象关系映射（ORMs）",
     "like": "如",
-    "andOthers": "，等等。"
+    "andOthers": "等其他技术。"
   },
   "contact": {
     "title": "联系我",
@@ -42,46 +42,46 @@
   },
   "contactForm": {
     "successTitle": "成功！",
-    "successDescription": "您的消息已成功发送。我会尽快与您联系，讨论您的想法或项目！",
+    "successDescription": "你的消息已成功发送。我会尽快与你联系，讨论你的想法或项目！",
     "errorTitle": "错误！",
-    "errorDescription": "我们目前无法发送您的消息。请检查您的网络连接或几分钟后再试。",
+    "errorDescription": "我们目前无法发送你的消息。请检查你的网络连接或几分钟后再试。",
     "labels": {
       "name": "姓名",
-      "email": "电子邮件",
+      "email": "邮箱",
       "message": "消息"
     },
     "placeholders": {
-      "name": "您的姓名",
-      "email": "您的电子邮件"
+      "name": "你的姓名",
+      "email": "你的邮箱"
     },
     "errors": {
-      "nameRequired": "请输入您的姓名",
-      "emailRequired": "请输入您的电子邮件",
-      "invalidEmail": "请输入有效的电子邮件",
+      "nameRequired": "请输入你的姓名",
+      "emailRequired": "请输入你的邮箱",
+      "invalidEmail": "请输入有效的邮箱地址",
       "messageRequired": "请选择一条消息",
       "sendError": "发送消息时出错。请重试。",
-      "connectionError": "连接错误。请检查您的网络连接。"
+      "connectionError": "连接错误。请检查你的网络连接。"
     },
     "selectMessage": "选择消息",
     "sending": "发送中...",
     "sendMessage": "发送消息",
     "successMessage": "消息发送成功！",
     "predefinedMessages": [
-      "您好，我想了解更多关于您服务的信息。",
-      "我有兴趣与您合作。我们可以聊聊吗？",
-      "我有一个关于项目的疑问想讨论。",
-      "我很想与您在未来的项目上合作。",
-      "您能帮我解决一个技术问题吗？",
-      "我想为定制服务获取报价。",
-      "您有空接受新的机会吗？",
-      "我需要关于某个特定主题的专业建议。",
-      "您提供咨询服务吗？",
-      "我想安排一次虚拟会议。",
-      "您有以前工作的参考吗？",
-      "我想了解更多关于您工作经验的信息。",
-      "您能分享类似项目的例子吗？",
-      "我在为我的公司评估选项，我们可以谈谈吗？",
-      "您的每小时收费是多少？"
+      "你好，我想了解更多关于你服务的信息。",
+      "我有兴趣与你合作。我们可以聊聊吗？",
+      "我有一个关于项目的疑问，想和你讨论。",
+      "我希望与你合作未来的项目。",
+      "你能帮我解决一个技术问题吗？",
+      "我想请求一个定制服务的报价。",
+      "你有空接受新的机会吗？",
+      "我需要某个特定主题的专业建议。",
+      "你提供咨询服务吗？",
+      "我想安排一次线上会议。",
+      "你有之前工作的推荐信吗？",
+      "我想了解更多关于你工作经验的信息。",
+      "你能分享类似项目的示例吗？",
+      "我在为公司评估选项，我们可以谈谈吗？",
+      "你的小时工资是多少？"
     ]
   },
   "projectsPage": {
@@ -89,53 +89,57 @@
       "first": "我的",
       "second": "项目"
     },
-    "loading": "加载项目中...",
+    "loading": "正在加载项目...",
     "empty": "暂无可用项目。"
   },
   "projects": {
     "guitars-la": {
       "name": "GuitarLA",
-      "description": "使用Next.js构建的功能齐全的电子商务平台，提供高级分页功能，与PostgreSQL数据库无缝集成，以及动态购物车系统，提升用户体验。"
+      "description": "一个功能齐全的电子商务平台，使用 Next.js 构建，具备高级分页功能、与 PostgreSQL 无缝集成以及动态购物车系统，为用户提供更好的体验。"
     },
     "product-hunt": {
-      "name": "Product Hunt克隆",
-      "description": "实时复制Product Hunt，利用Firebase进行身份验证和数据存储，Next.js进行服务器端渲染，Styled Components打造现代优雅的用户界面。"
+      "name": "Product Hunt 克隆",
+      "description": "一个实时 Product Hunt 复制品，使用 Firebase 进行身份验证和数据存储，Next.js 进行服务器端渲染，Styled Components 打造现代优雅的界面。"
     },
     "mern-uptask": {
       "name": "MERN-Uptask",
-      "description": "实时任务管理应用，使用MERN技术栈（MongoDB、Express、React、Node.js）和Socket.io实现即时任务更新和协作功能。"
+      "description": "一个实时任务管理应用程序，使用 MERN 技术栈（MongoDB、Express、React、Node.js）和 Socket.io 实现即时更新和协作功能。"
     },
     "veterinary-control": {
       "name": "兽医控制",
-      "description": "使用React和TailwindCSS开发的全面兽医预约管理系统，旨在优化诊所运营并提高日程安排效率。"
+      "description": "一个全面的兽医预约管理系统，使用 React 和 TailwindCSS 开发，旨在优化诊所运营并提高预约效率。"
     },
     "create-interactive": {
-      "name": "创建互动",
-      "description": "优先离线的CRUD应用，利用IndexDB进行强大的本地数据存储，确保即使无网络连接也能提供流畅无中断的用户体验。"
+      "name": "创建交互",
+      "description": "一个优先离线的 CRUD 应用程序，使用 IndexedDB 进行强大的本地存储，确保即使没有网络也能提供流畅无中断的用户体验。"
     },
     "expense-manager": {
       "name": "费用管理器",
-      "description": "使用React和localStorage构建的个人财务跟踪工具，让用户通过持久化存储和直观控制有效管理预算。"
+      "description": "一个个人财务跟踪工具，使用 React 和 localStorage 构建，让用户能够通过持久存储和直观控制有效管理预算。"
     },
     "drink-finder": {
       "name": "饮品查找器",
-      "description": "与外部API集成的鸡尾酒发现应用，使用React Context高效管理状态，并通过Bootstrap提供响应式设计。"
+      "description": "一个鸡尾酒发现应用程序，与外部 API 集成，使用 React Context 进行高效状态管理，并采用 Bootstrap 实现响应式设计。"
     },
     "weather-app": {
       "name": "天气应用",
-      "description": "使用React Context和TailwindCSS开发的实时天气仪表板，提供准确且最新的全球天气预报，界面简洁且用户友好。"
+      "description": "一个实时天气仪表板，使用 React Context 和 TailwindCSS 开发，提供全球精准预测，界面简洁且用户友好。"
     },
     "car-insurance": {
       "name": "汽车保险计算器",
-      "description": "使用React Context和TailwindCSS构建的动态汽车保险费用计算器，提供实时分析多种因素以给出精确的保险估算。"
+      "description": "一个动态汽车保险费计算器，使用 React Context 和 TailwindCSS 构建，实时分析多种因素以提供精确的保险估算。"
     },
     "news-finder": {
       "name": "新闻查找器",
-      "description": "多类别新闻聚合器，使用React Context进行状态管理，Material-UI打造现代、响应式且视觉吸引力的用户界面。"
+      "description": "一个多类别新闻聚合器，使用 React Context 进行状态管理，Material-UI 打造现代、响应式且视觉吸引力的界面。"
     },
     "instant-cryptos": {
       "name": "即时加密货币",
-      "description": "实时加密货币跟踪平台，集成货币转换器和高级市场分析工具，适合休闲用户和严肃投资者。"
+      "description": "一个实时加密货币跟踪平台，集成货币转换器和高级市场分析工具，适合休闲用户和严肃投资者使用。"
+    },
+    "vaccine-manager": {
+      "name": "牛只疫苗管理器",
+      "description": "一款使用 React、Express 和 MongoDB 开发的牛只疫苗综合管理应用程序。它支持用户注册、疫苗信息的详细管理、运输指南的创建以及已接种疫苗牛只声明的生成，所有文件均可下载为 PDF 格式。利用 React Router 实现流畅高效的导航，为疫苗过程的跟踪和管理提供了一个强大且用户友好的解决方案。"
     }
   },
   "project": {
@@ -143,7 +147,7 @@
   },
   "layout": {
     "siteTitle": "作品集",
-    "siteDescription": "网页作品集，您可以在这里找到各种项目和相关信息。",
+    "siteDescription": "一个展示各种项目和相关信息的网页作品集。",
     "defaultPageTitle": "页面",
     "footerRights": "版权所有。"
   },

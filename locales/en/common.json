@@ -4,7 +4,7 @@
     "nav": {
       "home": "Home",
       "projects": "Projects",
-      "about": "Skills",
+      "about": "Technologies",
       "contact": "Contact"
     }
   },
@@ -17,11 +17,11 @@
     "aboutTitle": "About Me",
     "contactButton": "Contact",
     "ctaTitle": "Ready to collaborate?",
-    "aboutDescription": "I am a passionate frontend developer dedicated to transforming complex ideas into attractive and functional digital experiences. With over 2 years of professional experience, I have worked on innovative projects such as an interactive mathematics book and collaborated on dynamic web applications using React, Node.js, and modern technologies. My approach combines creativity, technical precision, and a touch of mathematics, creating interfaces that not only look great but also solve real-world problems."
+    "aboutDescription": "I’m a frontend developer passionate about turning complex ideas into engaging and functional digital experiences. With over two years of professional experience, I’ve collaborated with teams on innovative projects, such as an interactive math book, and contributed to the development of dynamic web applications using React, Node.js, and other modern technologies. My approach blends creativity, technical precision, and a mathematical touch to design interfaces that not only stand out visually but also provide practical solutions to real-world problems."
   },
   "projectsSection": {
     "title": "My Projects",
-    "description": "Here you can see some of my featured projects",
+    "description": "Here you can explore some of my featured projects",
     "viewDetails": "View Details",
     "technologiesUsed": "Technologies Used",
     "visitProject": "Visit Project",
@@ -29,22 +29,22 @@
   },
   "about": {
     "title": "About Me",
-    "description": "Technologies I Work With",
-    "alsoWorkedWith": "I've also worked with",
+    "description": "Technologies I work with",
+    "alsoWorkedWith": "I’ve also worked with",
     "orms": "ORMs",
-    "like": "like",
+    "like": "such as",
     "andOthers": ", among others."
   },
   "contact": {
     "title": "Contact Me",
-    "formTitle": "Send me a message",
+    "formTitle": "Send Me a Message",
     "linkedinText": "Or send me a direct message via"
   },
   "contactForm": {
     "successTitle": "Success!",
     "successDescription": "Your message has been sent successfully. I’ll get back to you soon to discuss your ideas or projects!",
     "errorTitle": "Error!",
-    "errorDescription": "We couldn’t send your message right now. Please check your connection or try again in a few minutes.",
+    "errorDescription": "We couldn’t send your message at this time. Please check your connection or try again in a few minutes.",
     "labels": {
       "name": "Name",
       "email": "Email",
@@ -59,29 +59,29 @@
       "emailRequired": "Please enter your email",
       "invalidEmail": "Please enter a valid email",
       "messageRequired": "Please select a message",
-      "sendError": "Error sending message. Please try again.",
-      "connectionError": "Connection error. Please check your internet connection."
+      "sendError": "Error sending the message. Please try again.",
+      "connectionError": "Connection error. Check your internet connection."
     },
     "selectMessage": "Select message",
     "sending": "Sending...",
     "sendMessage": "Send Message",
     "successMessage": "Message sent successfully!",
     "predefinedMessages": [
-      "Hello, I would like more information about your services.",
-      "I'm interested in working with you. Can we talk?",
-      "I have a question about a project I'd like to discuss.",
-      "I would love to collaborate with you on a future project.",
-      "Could you help me with a technical query?",
-      "I would like to get a quote for a custom service.",
+      "Hi, I’d like more information about your services.",
+      "I’m interested in working with you. Can we talk?",
+      "I have a question about a project I’d like to discuss.",
+      "I’d love to collaborate with you on a future project.",
+      "Could you help me with a technical question?",
+      "I’d like to request a quote for a custom service.",
       "Are you available for new opportunities?",
       "I need professional advice on a specific topic.",
       "Do you offer consulting services?",
-      "I would like to schedule a virtual meeting.",
-      "Do you have references from previous work?",
-      "I would like to know more about your work experience.",
+      "I’d like to schedule a virtual meeting.",
+      "Do you have references from past work?",
+      "I’d like to learn more about your work experience.",
       "Could you share examples of similar projects?",
-      "I'm evaluating options for my company, can we talk?",
-      "What is your hourly rate?"
+      "I’m evaluating options for my company—can we chat?",
+      "What’s your hourly rate?"
     ]
   },
   "projectsPage": {
@@ -95,47 +95,51 @@
   "projects": {
     "guitars-la": {
       "name": "GuitarLA",
-      "description": "A fully-featured e-commerce platform built with Next.js, offering advanced pagination, seamless PostgreSQL database integration, and a dynamic shopping cart system for an enhanced user experience."
+      "description": "A fully functional e-commerce platform built with Next.js, featuring advanced pagination, seamless PostgreSQL integration, and a dynamic shopping cart system for an enhanced user experience."
     },
     "product-hunt": {
       "name": "Product Hunt Clone",
-      "description": "A real-time Product Hunt replica leveraging Firebase for authentication and data storage, Next.js for server-side rendering, and Styled Components for a sleek, modern user interface."
+      "description": "A real-time Product Hunt replica using Firebase for authentication and data storage, Next.js for server-side rendering, and Styled Components for a modern, sleek interface."
     },
     "mern-uptask": {
       "name": "MERN-Uptask",
-      "description": "A real-time task management application utilizing the MERN stack (MongoDB, Express, React, Node.js) and Socket.io for instant task updates and collaborative functionality."
+      "description": "A real-time task management application leveraging the MERN stack (MongoDB, Express, React, Node.js) and Socket.io for instant updates and collaborative features."
     },
     "veterinary-control": {
       "name": "Veterinary Control",
-      "description": "A comprehensive veterinary appointment management system developed with React and TailwindCSS, designed to streamline clinic operations and improve scheduling efficiency."
+      "description": "A comprehensive veterinary appointment management system built with React and TailwindCSS, designed to streamline clinic operations and improve scheduling efficiency."
     },
     "create-interactive": {
       "name": "Create Interactive",
-      "description": "An offline-first CRUD application powered by IndexDB for robust local data storage, ensuring a smooth and uninterrupted user experience even without an internet connection."
+      "description": "An offline-first CRUD application using IndexedDB for robust local storage, ensuring a seamless and uninterrupted user experience even without an internet connection."
     },
     "expense-manager": {
       "name": "Expense Manager",
-      "description": "A personal finance tracking tool built with React and localStorage, enabling users to manage budgets effectively with persistent data storage and intuitive controls."
+      "description": "A personal finance tracking tool built with React and localStorage, enabling users to manage budgets effectively with persistent storage and intuitive controls."
     },
     "drink-finder": {
       "name": "Drink Finder",
-      "description": "A cocktail discovery app that integrates with an external API, uses React Context for efficient state management, and features a responsive design powered by Bootstrap."
+      "description": "A cocktail discovery app integrated with an external API, utilizing React Context for efficient state management and a responsive design powered by Bootstrap."
     },
     "weather-app": {
       "name": "Weather App",
-      "description": "A real-time weather dashboard developed with React Context and TailwindCSS, providing accurate and up-to-date global weather forecasts in a clean, user-friendly interface."
+      "description": "A real-time weather dashboard developed with React Context and TailwindCSS, delivering accurate global forecasts in a clean, user-friendly interface."
     },
     "car-insurance": {
       "name": "Car Insurance Calculator",
-      "description": "A dynamic car insurance premium calculator built with React Context and TailwindCSS, offering real-time analysis of various factors to provide accurate insurance estimates."
+      "description": "A dynamic car insurance premium calculator built with React Context and TailwindCSS, offering real-time analysis of various factors for precise insurance estimates."
     },
     "news-finder": {
       "name": "News Finder",
-      "description": "A multi-category news aggregator featuring React Context for state management and Material-UI for a modern, responsive, and visually appealing user interface."
+      "description": "A multi-category news aggregator using React Context for state management and Material-UI for a modern, responsive, and visually appealing interface."
     },
     "instant-cryptos": {
       "name": "Instant Cryptos",
       "description": "A real-time cryptocurrency tracking platform with an integrated currency converter and advanced market analysis tools, designed for both casual users and serious investors."
+    },
+    "vaccine-manager": {
+      "name": "Cattle Vaccine Manager",
+      "description": "A comprehensive application for managing cattle vaccinations, built with React, Express, and MongoDB. It allows user registration, detailed vaccine information management, the creation of transporter guides, and the generation of vaccinated cattle declarations, all downloadable in PDF format. Leveraging React Router for smooth and efficient navigation, it provides a robust and user-friendly solution for tracking and controlling the vaccination process."
     }
   },
   "project": {
@@ -143,7 +147,7 @@
   },
   "layout": {
     "siteTitle": "Portfolio",
-    "siteDescription": "Web portfolio where you'll find various projects and relevant information.",
+    "siteDescription": "A web portfolio showcasing various projects and relevant information.",
     "defaultPageTitle": "Page",
     "footerRights": "All rights reserved."
   },
@@ -152,7 +156,7 @@
     "english": "English"
   },
   "themeSwitcher": {
-    "ariaLabel": "Theme Switcher",
+    "ariaLabel": "Theme selector",
     "themes": {
       "default": "Classic",
       "forest": "Forest",
