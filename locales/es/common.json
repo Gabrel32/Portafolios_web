@@ -13,7 +13,11 @@
     "title2": "Web",
     "subtitle": "Gabriel Hernández",
     "description": "Especializado en crear soluciones web innovadoras y escalables, combinando diseño moderno con tecnología de vanguardia para ofrecer experiencias de usuario excepcionales.",
-    "downloadCV": "Descargar CV"
+    "downloadCV": "Descargar CV",
+    "aboutTitle": "Sobre mí",
+    "contactButton":"Contacto",
+    "ctaTitle":"¿Listo para colaborar?",
+    "aboutDescription":"Soy un desarrollador frontend apasionado por transformar ideas complejas en experiencias digitales atractivas y funcionales. Con más de 2 años de experiencia profesional, he trabajo con profesionales en proyectos innovadores como un libro interactivo de matemáticas y colaborado en aplicaciones web dinámicas usando React, Node.js y tecnologías modernas. Mi enfoque combina creatividad, precisión técnica y un toque matemático, creando interfaces que no solo se ven bien, sino que también resuelven problemas reales."
   },
   "projectsSection": {
     "title": "Mis Proyectos",

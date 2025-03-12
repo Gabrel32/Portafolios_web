@@ -1,160 +1,164 @@
 {
-    "header": {
-      "title": "Meu Portfólio",
-      "nav": {
-        "home": "Início",
-        "projects": "Projetos",
-        "about": "Tecnologias",
-        "contact": "Contato"
-      }
+  "header": {
+    "title": "Meu Portfólio",
+    "nav": {
+      "home": "Início",
+      "projects": "Projetos",
+      "about": "Tecnologias",
+      "contact": "Contato"
+    }
+  },
+  "home": {
+    "title1": "Desenvolvimento",
+    "title2": "Web",
+    "subtitle": "Gabriel Hernández",
+    "description": "Especializado em criar soluções web inovadoras e escaláveis, combinando design moderno com tecnologia de ponta para oferecer experiências de usuário excepcionais.",
+    "downloadCV": "Baixar CV",
+    "aboutTitle": "Sobre mim",
+    "contactButton": "Contato",
+    "ctaTitle": "Pronto para colaborar?",
+    "aboutDescription": "Sou um desenvolvedor frontend apaixonado por transformar ideias complexas em experiências digitais atraentes e funcionais. Com mais de 2 anos de experiência profissional, trabalhei com profissionais em projetos inovadores, como um livro interativo de matemática, e colaborei em aplicações web dinâmicas usando React, Node.js e tecnologias modernas. Minha abordagem combina criatividade, precisão técnica e um toque matemático, criando interfaces que não apenas parecem boas, mas também resolvem problemas reais."
+  },
+  "projectsSection": {
+    "title": "Meus Projetos",
+    "description": "Aqui você pode ver alguns dos meus projetos em destaque",
+    "viewDetails": "Ver Detalhes",
+    "technologiesUsed": "Tecnologias Utilizadas",
+    "visitProject": "Visitar Projeto",
+    "viewCode": "Ver Código"
+  },
+  "about": {
+    "title": "Sobre mim",
+    "description": "Tecnologias com as quais trabalho",
+    "alsoWorkedWith": "Também trabalhei com",
+    "orms": "ORMs",
+    "like": "como",
+    "andOthers": ", entre outros."
+  },
+  "contact": {
+    "title": "Fale comigo",
+    "formTitle": "Envie-me uma mensagem",
+    "linkedinText": "Ou envie-me uma mensagem direta através de"
+  },
+  "contactForm": {
+    "successTitle": "Sucesso!",
+    "successDescription": "Sua mensagem foi enviada com sucesso. Entrarei em contato em breve para discutir suas ideias ou projetos!",
+    "errorTitle": "Erro!",
+    "errorDescription": "Não conseguimos enviar sua mensagem no momento. Por favor, verifique sua conexão ou tente novamente em alguns minutos.",
+    "labels": {
+      "name": "Nome",
+      "email": "E-mail",
+      "message": "Mensagem"
     },
-    "home": {
-      "title1": "Desenvolvimento",
-      "title2": "Web",
-      "subtitle": "Gabriel Hernández",
-      "description": "Especializado em criar soluções web inovadoras e escaláveis, combinando design moderno com tecnologia de ponta para oferecer experiências de usuário excepcionais.",
-      "downloadCV": "Baixar CV"
+    "placeholders": {
+      "name": "Seu nome",
+      "email": "Seu e-mail"
     },
-    "projectsSection": {
-      "title": "Meus Projetos",
-      "description": "Aqui você pode ver alguns dos meus projetos destacados",
-      "viewDetails": "Ver Detalhes",
-      "technologiesUsed": "Tecnologias Utilizadas",
-      "visitProject": "Visitar Projeto",
-      "viewCode": "Ver Código"
+    "errors": {
+      "nameRequired": "Por favor, insira seu nome",
+      "emailRequired": "Por favor, insira seu e-mail",
+      "invalidEmail": "Por favor, insira um e-mail válido",
+      "messageRequired": "Por favor, selecione uma mensagem",
+      "sendError": "Erro ao enviar a mensagem. Tente novamente.",
+      "connectionError": "Erro de conexão. Verifique sua conexão com a internet."
     },
-    "about": {
-      "title": "Sobre Mim",
-      "description": "Tecnologias Utilizadas",
-      "alsoWorkedWith": "Também trabalhei com",
-      "orms": "ORMs",
-      "like": "como",
-      "andOthers": ", entre outros."
+    "selectMessage": "Selecionar mensagem",
+    "sending": "Enviando...",
+    "sendMessage": "Enviar Mensagem",
+    "successMessage": "Mensagem enviada com sucesso!",
+    "predefinedMessages": [
+      "Olá, gostaria de mais informações sobre seus serviços.",
+      "Estou interessado em trabalhar com você. Podemos conversar?",
+      "Tenho uma pergunta sobre um projeto que gostaria de discutir.",
+      "Adoraria colaborar com você em um projeto futuro.",
+      "Você poderia me ajudar com uma dúvida técnica?",
+      "Gostaria de orçar um serviço personalizado.",
+      "Você está disponível para novas oportunidades?",
+      "Preciso de consultoria profissional sobre um tema específico.",
+      "Você oferece serviços de consultoria?",
+      "Gostaria de agendar uma reunião virtual.",
+      "Você tem referências de trabalhos anteriores?",
+      "Quero saber mais sobre sua experiência profissional.",
+      "Poderia compartilhar exemplos de projetos similares?",
+      "Estou avaliando opções para minha empresa, podemos conversar?",
+      "Qual é sua tarifa por hora de trabalho?"
+    ]
+  },
+  "projectsPage": {
+    "title": {
+      "first": "Meus",
+      "second": "Projetos"
     },
-    "contact": {
-      "title": "Contate-me",
-      "formTitle": "Envie-me uma mensagem",
-      "linkedinText": "Ou envie-me uma mensagem direta através do"
+    "loading": "Carregando projetos...",
+    "empty": "Nenhum projeto disponível."
+  },
+  "projects": {
+    "guitars-la": {
+      "name": "GuitarLA",
+      "description": "Plataforma de comércio eletrônico totalmente funcional construída com Next.js, oferecendo paginação avançada, integração fluida com PostgreSQL e um sistema dinâmico de carrinho de compras para uma experiência de usuário aprimorada."
     },
-    "contactForm": {
-      "labels": {
-        "name": "Nome",
-        "email": "E-mail",
-        "message": "Mensagem"
-      },
-      "placeholders": {
-        "name": "Seu nome",
-        "email": "Seu e-mail"
-      },
-      "errors": {
-        "nameRequired": "Por favor, insira seu nome",
-        "emailRequired": "Por favor, insira seu e-mail",
-        "invalidEmail": "Por favor, insira um e-mail válido",
-        "messageRequired": "Por favor, selecione uma mensagem",
-        "sendError": "Erro ao enviar a mensagem. Tente novamente.",
-        "connectionError": "Erro de conexão. Verifique sua conexão com a internet."
-      },
-      "selectMessage": "Selecionar mensagem",
-      "sending": "Enviando...",
-      "sendMessage": "Enviar Mensagem",
-      "successMessage": "Mensagem enviada com sucesso! Entrarei em contato em breve.",
-      "predefinedMessages": [
-        "Olá, gostaria de mais informações sobre seus serviços.",
-        "Estou interessado em trabalhar com você. Podemos conversar?",
-        "Tenho uma pergunta sobre um projeto que gostaria de discutir.",
-        "Adoraria colaborar com você em um projeto futuro.",
-        "Você poderia me ajudar com uma consulta técnica?",
-        "Gostaria de cotar um serviço personalizado.",
-        "Você tem disponibilidade para novas oportunidades?",
-        "Preciso de assessoria profissional em um tema específico.",
-        "Você oferece serviços de consultoria?",
-        "Gostaria de agendar uma reunião virtual.",
-        "Você tem referências de trabalhos anteriores?",
-        "Gostaria de saber mais sobre sua experiência profissional.",
-        "Você poderia compartilhar exemplos de projetos semelhantes?",
-        "Estou avaliando opções para minha empresa, podemos conversar?",
-        "Qual é sua taxa por hora de trabalho?"
-      ]
+    "product-hunt": {
+      "name": "Clone do Product Hunt",
+      "description": "Réplica em tempo real do Product Hunt que utiliza Firebase para autenticação e armazenamento de dados, Next.js para renderização no lado do servidor e Styled Components para uma interface moderna e elegante."
     },
-    "projectsPage": {
-      "title": {
-        "first": "Meus",
-        "second": "Projetos"
-      },
-      "loading": "Carregando projetos...",
-      "empty": "Nenhum projeto disponível."
+    "mern-uptask": {
+      "name": "MERN-Uptask",
+      "description": "Aplicação de gestão de tarefas em tempo real que utiliza o stack MERN (MongoDB, Express, React, Node.js) e Socket.io para atualizações instantâneas e funcionalidades colaborativas."
     },
-    "projects": {
-      "guitars-la": {
-        "name": "GuitarLA",
-        "description": "Uma plataforma de comércio eletrônico desenvolvida com Next.js, que inclui paginação avançada, integração com banco de dados PostgreSQL e um carrinho de compras totalmente funcional para uma experiência de usuário otimizada."
-      },
-      "product-hunt": {
-        "name": "Clone do Product Hunt",
-        "description": "Uma réplica em tempo real do Product Hunt, construída com Firebase para autenticação e armazenamento de dados, Next.js para renderização do lado do servidor e Styled Components para uma interface moderna e atraente."
-      },
-      "mern-uptask": {
-        "name": "MERN-Uptask",
-        "description": "Um aplicativo de gerenciamento de tarefas em tempo real que utiliza o stack MERN (MongoDB, Express, React, Node.js) e Socket.io para atualizações instantâneas e funcionalidades colaborativas."
-      },
-      "veterinary-control": {
-        "name": "Controle Veterinário",
-        "description": "Um sistema integral de gestão de consultas veterinárias desenvolvido com React e TailwindCSS, projetado para otimizar as operações clínicas e melhorar a eficiência no agendamento de consultas."
-      },
-      "create-interactive": {
-        "name": "Criar Interativo",
-        "description": "Um aplicativo CRUD com funcionalidade offline-first, que utiliza IndexDB para armazenamento local de dados, garantindo uma experiência de usuário fluida mesmo sem conexão à internet."
-      },
-      "expense-manager": {
-        "name": "Gerenciador de Despesas",
-        "description": "Uma ferramenta de acompanhamento de finanças pessoais construída com React e localStorage, que permite aos usuários gerenciar seus orçamentos de forma eficaz com armazenamento persistente e controles intuitivos."
-      },
-      "drink-finder": {
-        "name": "Encontrador de Drinks",
-        "description": "Um aplicativo de descoberta de coquetéis que se integra a uma API externa, utiliza React Context para gerenciamento de estado e conta com um design responsivo graças ao Bootstrap."
-      },
-      "weather-app": {
-        "name": "App do Clima",
-        "description": "Um painel meteorológico em tempo real desenvolvido com React Context e TailwindCSS, que fornece previsões globais precisas e atualizadas em uma interface limpa e fácil de usar."
-      },
-      "car-insurance": {
-        "name": "Calculadora de Seguros",
-        "description": "Uma calculadora dinâmica de prêmios de seguro de automóveis construída com React Context e TailwindCSS, que analisa diversos fatores em tempo real para oferecer estimativas precisas."
-      },
-      "news-finder": {
-        "name": "Buscador de Notícias",
-        "description": "Um agregador de notícias multi-categoria que utiliza React Context para gerenciamento de estado e Material-UI para uma interface moderna, responsiva e visualmente atraente."
-      },
-      "instant-cryptos": {
-        "name": "Criptomoedas Instantâneas",
-        "description": "Uma plataforma de acompanhamento de criptomoedas em tempo real com um conversor de moedas integrado e ferramentas avançadas de análise de mercado, projetada tanto para usuários casuais quanto para investidores sérios."
-      }
+    "veterinary-control": {
+      "name": "Controle Veterinário",
+      "description": "Sistema abrangente de gestão de consultas veterinárias desenvolvido com React e TailwindCSS, projetado para otimizar operações clínicas e melhorar a eficiência na programação."
     },
-    "project": {
-        "buttonST": "Site"
+    "create-interactive": {
+      "name": "Criar Interativo",
+      "description": "Aplicação CRUD com prioridade offline que utiliza IndexDB para armazenamento local robusto, garantindo uma experiência de usuário fluida e ininterrupta mesmo sem conexão à internet."
     },
-    "layout": {
-      "siteTitle": "Portfólio",
-      "siteDescription": "Portfólio web onde você encontrará diversos projetos e informações de interesse",
-      "defaultPageTitle": "Página",
-      "footerRights": "Todos os direitos reservados."
+    "expense-manager": {
+      "name": "Gestor de Despesas",
+      "description": "Ferramenta de acompanhamento de finanças pessoais construída com React e localStorage, permitindo aos usuários gerenciar orçamentos de forma eficaz com armazenamento persistente e controles intuitivos."
     },
-    "languageSwitcher": {
-      "spanish": "Espanhol",
-      "english": "Inglês",
-      "portuguese": "Português",
-      "mandarin": "Mandarim",
-      "russian": "Russo",
-      "german": "Alemão"
+    "drink-finder": {
+      "name": "Buscador de Bebidas",
+      "description": "Aplicação de descoberta de coquetéis que se integra a uma API externa, utiliza React Context para uma gestão eficiente de estado e possui um design responsivo impulsionado pelo Bootstrap."
     },
-    "themeSwitcher": {
-      "ariaLabel": "Seletor de temas",
-      "themes": {
-        "default": "Clássico",
-        "forest": "Floresta",
-        "ocean": "Oceano",
-        "desert": "Deserto",
-        "sunset": "Pôr do Sol"
-      }
+    "weather-app": {
+      "name": "App do Clima",
+      "description": "Painel meteorológico em tempo real desenvolvido com React Context e TailwindCSS, fornecendo previsões globais precisas e atualizadas em uma interface limpa e amigável ao usuário."
+    },
+    "car-insurance": {
+      "name": "Calculadora de Seguros",
+      "description": "Calculadora dinâmica de prêmios de seguro de automóveis construída com React Context e TailwindCSS, oferecendo análise em tempo real de diversos fatores para fornecer estimativas precisas de seguros."
+    },
+    "news-finder": {
+      "name": "Buscador de Notícias",
+      "description": "Agregador de notícias multicategoria que utiliza React Context para gestão de estado e Material-UI para uma interface moderna, responsiva e visualmente atraente."
+    },
+    "instant-cryptos": {
+      "name": "Criptos Instantâneos",
+      "description": "Plataforma de rastreamento de criptomoedas em tempo real com um conversor de moedas integrado e ferramentas avançadas de análise de mercado, projetada tanto para usuários casuais quanto para investidores sérios."
+    }
+  },
+  "project": {
+    "buttonST": "Site"
+  },
+  "layout": {
+    "siteTitle": "Portfólio",
+    "siteDescription": "Portfólio web onde você encontrará diversos projetos e informações relevantes.",
+    "defaultPageTitle": "Página",
+    "footerRights": "Todos os direitos reservados."
+  },
+  "languageSwitcher": {
+    "spanish": "Espanhol",
+    "english": "Inglês"
+  },
+  "themeSwitcher": {
+    "ariaLabel": "Seletor de temas",
+    "themes": {
+      "default": "Clássico",
+      "forest": "Floresta",
+      "ocean": "Oceano",
+      "desert": "Deserto",
+      "sunset": "Pôr do sol"
     }
   }
+}

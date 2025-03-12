@@ -36,7 +36,7 @@ const Carousel = ({ items }) => {
         const containerPadding = parseInt(containerStyle.paddingLeft) + parseInt(containerStyle.paddingRight);
 
         setItemDimensions({
-          width: isMobile ? 380 : 500,
+          width: isMobile ? 350 : 500,
           margin: isMobile ? parseInt(itemStyle.marginLeft) + parseInt(itemStyle.marginRight) : 60, // Aumentar margen
           containerPadding: containerPadding,
         });

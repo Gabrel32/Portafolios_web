@@ -78,7 +78,7 @@ function Contacto() {
                   </a>
                 </div>
 
-                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 ">
                   {contacto.map((e) => (
                     <a  // Cambiado Link por a para enlaces externos
                       key={e.id}
@@ -87,7 +87,7 @@ function Contacto() {
                       rel="noopener noreferrer"
                       className="group flex flex-col items-center p-3 md:p-4 backdrop-blur-xl rounded-2xl border border-custom-brown shadow-xl shadow-custom-brown hover:shadow-custom-brown transition-all duration-500 hover:-translate-y-1"
                     >
-                      <div className="p-2 md:p-3 rounded-full mb-2 md:mb-3 transition-transform duration-300 group-hover:scale-105">
+                      <div className="p-2 md:p-3 mb-2 md:mb-3 transition-transform duration-300 group-hover:scale-105 rounded-full bg-whiteSnow">
                         <Image
                           width={40}
                           height={40}

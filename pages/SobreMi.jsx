@@ -9,20 +9,6 @@ import BackBurble from "../components/BackBurble";
 
 function SobreMi() {
   const { tecnologias, t } = usePortafolios();
-  // // const [customBrown, setCustomBrown] = useState("#DC5F00");
-  // // const [isMounted, setIsMounted] = useState(false);
-
-  // // useEffect(() => {
-  // //   setIsMounted(true);
-  // //   setCustomBrown(
-  // //     getComputedStyle(document.documentElement)
-  // //       .getPropertyValue("--custom-brown")
-  // //       .trim()
-  // //   );
-  // // }, []);
-
-  // if (!isMounted) return null;
-
   return (
     <Layout pagina={t("header.nav.about")}>
       <BackBurble
@@ -32,15 +18,10 @@ function SobreMi() {
         showLine={false}
         variant="wide"
       >
-        <section className="relative min-h-screen flex items-center py-4 px-6 md:px-12">
-          {/* Background Effects */}
-          <div className="absolute inset-0 z-0 overflow-hidden">
-            <div className="absolute inset-0" />
-            <div className="absolute inset-0 mix-blend-overlay" />
-          </div>
+        <section className="relative flex items-center py-4 px-6 md:px-12">
 
           {/* Main Content */}
-          <div className="relative z-10 container mx-auto max-w-6xl w-full backdrop-blur-xl rounded-3xl p-3 md:p-4 lg:p-8 border border-custom-brown shadow-2xl shadow-custom-brown hover:shadow-custom-brown transition-all duration-700">
+          <div className="relative z-10 min-w-[280px] max-w-xl md:max-w-6xl w-full backdrop-blur-xl rounded-3xl p-3 md:p-4 lg:p-8 border border-custom-brown shadow-2xl shadow-custom-brown hover:shadow-custom-brown transition-all duration-700">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight mb-6 text-center text-custom-brown relative">
               {t("about.title")}
               <span className="absolute -inset-2 rounded-full blur-xl -z-10 animate-pulse-slow " />
@@ -50,7 +31,7 @@ function SobreMi() {
             </p>
 
             {/* Technologies */}
-            <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 bg-">
+            <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 ">
               {tecnologias.map((e, index) => (
                 <li
                   key={`${e.id}_${index}`}
@@ -107,15 +88,6 @@ function SobreMi() {
             </p>
           </div>
 
-          {/* Decorative Elements
-          <div className="absolute inset-0 z-0 pointer-events-none">
-            {[...Array(3)].map((_, i) => (
-              <div
-                key={i}
-                className={`absolute ${i === 0 ? "top-10 left-0 w-72 h-72" : i === 1 ? "bottom-20 right-0 w-96 h-96" : "top-1/2 left-1/3 w-56 h-56"} rounded-full blur-3xl animate-float bg-custom-brown/20 dark:bg-beige-50/20`}
-              />
-            ))}
-          </div> */}
         </section>
       </BackBurble>
     </Layout>

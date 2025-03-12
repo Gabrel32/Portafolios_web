@@ -65,7 +65,7 @@ const Proyecto = React.memo(({ e, index }) => {
       className="relative group rounded-lg overflow-hidden bg-glass hover:bg-glass-hover transition-all duration-300 hover:shadow-xl hover:shadow-primary"
       style={{ animation: `fadeInUp 0.5s ease-out ${index * 0.1}s both` }}
     >
-      <div className="relative h-60 overflow-hidden rounded-lg">
+      <div className="relative h-52 overflow-hidden rounded-lg">
         <Image
           src={`/imgProyectos/${img}.png`}
           alt={`Proyecto ${id}`}

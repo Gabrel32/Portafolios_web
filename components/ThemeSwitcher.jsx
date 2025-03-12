@@ -89,7 +89,7 @@ const ThemeSwitcher = () => {
                   handleClose();
                 }}
                 className={`w-full text-sm p-2 rounded-md flex items-center
-                  transition-colors duration-100 font-semibold ${
+                  transition-colors duration-100 font-normal ${
                     currentTheme === theme.id
                       ? "bg-primary text-[#f5f5f5]"
                       : "text-colorLetters dark:text-whiteSnow hover:bg-custom-brown hover:text-whiteSnow"

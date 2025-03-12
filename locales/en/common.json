@@ -1,161 +1,164 @@
 {
-    "header": {
-      "title": "My Portfolio",
-      "nav": {
-        "home": "Home",
-        "projects": "Projects",
-        "about": "Skills",
-        "contact": "Contact"
-      }
-    },
-    "home": {
-      "title1": "Web",
-      "title2": "Development",
-      "subtitle": "Gabriel Hernández",
-      "description": "Specialized in creating innovative and scalable web solutions, combining modern design with cutting-edge technology to deliver exceptional user experiences.",
-      "downloadCV": "Download CV"
-    },
-    "projectsSection": {
-      "title": "My Projects",
-      "description": "Here you can see some of my featured projects",
-      "viewDetails": "View Details",
-      "technologiesUsed": "Technologies Used",
-      "visitProject": "Visit Project",
-      "viewCode": "View Code"
-    },
-    "about": {
-      "title": "About Me",
-      "description": "Technologies I Work With",
-      "alsoWorkedWith": "I've also worked with",
-      "orms": "ORMs",
-      "like": "like",
-      "andOthers": ", among others."
-    },
-    "contact": {
-      "title": "Contact Me",
-      "formTitle": "Send me a message",
-      "linkedinText": "Or send me a direct message via"
-    },
-    "contactForm": {   
+  "header": {
+    "title": "My Portfolio",
+    "nav": {
+      "home": "Home",
+      "projects": "Projects",
+      "about": "Skills",
+      "contact": "Contact"
+    }
+  },
+  "home": {
+    "title1": "Web",
+    "title2": "Development",
+    "subtitle": "Gabriel Hernández",
+    "description": "Specialized in creating innovative and scalable web solutions, combining modern design with cutting-edge technology to deliver exceptional user experiences.",
+    "downloadCV": "Download CV",
+    "aboutTitle": "About Me",
+    "contactButton": "Contact",
+    "ctaTitle": "Ready to collaborate?",
+    "aboutDescription": "I am a passionate frontend developer dedicated to transforming complex ideas into attractive and functional digital experiences. With over 2 years of professional experience, I have worked on innovative projects such as an interactive mathematics book and collaborated on dynamic web applications using React, Node.js, and modern technologies. My approach combines creativity, technical precision, and a touch of mathematics, creating interfaces that not only look great but also solve real-world problems."
+  },
+  "projectsSection": {
+    "title": "My Projects",
+    "description": "Here you can see some of my featured projects",
+    "viewDetails": "View Details",
+    "technologiesUsed": "Technologies Used",
+    "visitProject": "Visit Project",
+    "viewCode": "View Code"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "Technologies I Work With",
+    "alsoWorkedWith": "I've also worked with",
+    "orms": "ORMs",
+    "like": "like",
+    "andOthers": ", among others."
+  },
+  "contact": {
+    "title": "Contact Me",
+    "formTitle": "Send me a message",
+    "linkedinText": "Or send me a direct message via"
+  },
+  "contactForm": {
     "successTitle": "Success!",
     "successDescription": "Your message has been sent successfully. I’ll get back to you soon to discuss your ideas or projects!",
     "errorTitle": "Error!",
     "errorDescription": "We couldn’t send your message right now. Please check your connection or try again in a few minutes.",
-      "labels": {
-        "name": "Name",
-        "email": "Email",
-        "message": "Message"
-      },
-      "placeholders": {
-        "name": "Your name",
-        "email": "Your email"
-      },
-      "errors": {
-        "nameRequired": "Please enter your name",
-        "emailRequired": "Please enter your email",
-        "invalidEmail": "Please enter a valid email",
-        "messageRequired": "Please select a message",
-        "sendError": "Error sending message. Please try again.",
-        "connectionError": "Connection error. Please check your internet connection."
-      },
-      "selectMessage": "Select message",
-      "sending": "Sending...",
-      "sendMessage": "Send Message",
-      "successMessage": "Message sent successfully! I'll get back to you soon.",
-      "predefinedMessages": [
-        "Hello, I would like more information about your services.",
-        "I'm interested in working with you. Can we talk?",
-        "I have a question about a project I'd like to discuss.",
-        "I would love to collaborate with you on a future project.",
-        "Could you help me with a technical query?",
-        "I would like to get a quote for a custom service.",
-        "Are you available for new opportunities?",
-        "I need professional advice on a specific topic.",
-        "Do you offer consulting services?",
-        "I would like to schedule a virtual meeting.",
-        "Do you have references from previous work?",
-        "I would like to know more about your work experience.",
-        "Could you share examples of similar projects?",
-        "I'm evaluating options for my company, can we talk?",
-        "What is your hourly rate?"
-      ]
+    "labels": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message"
     },
-    "projectsPage": {
+    "placeholders": {
+      "name": "Your name",
+      "email": "Your email"
+    },
+    "errors": {
+      "nameRequired": "Please enter your name",
+      "emailRequired": "Please enter your email",
+      "invalidEmail": "Please enter a valid email",
+      "messageRequired": "Please select a message",
+      "sendError": "Error sending message. Please try again.",
+      "connectionError": "Connection error. Please check your internet connection."
+    },
+    "selectMessage": "Select message",
+    "sending": "Sending...",
+    "sendMessage": "Send Message",
+    "successMessage": "Message sent successfully!",
+    "predefinedMessages": [
+      "Hello, I would like more information about your services.",
+      "I'm interested in working with you. Can we talk?",
+      "I have a question about a project I'd like to discuss.",
+      "I would love to collaborate with you on a future project.",
+      "Could you help me with a technical query?",
+      "I would like to get a quote for a custom service.",
+      "Are you available for new opportunities?",
+      "I need professional advice on a specific topic.",
+      "Do you offer consulting services?",
+      "I would like to schedule a virtual meeting.",
+      "Do you have references from previous work?",
+      "I would like to know more about your work experience.",
+      "Could you share examples of similar projects?",
+      "I'm evaluating options for my company, can we talk?",
+      "What is your hourly rate?"
+    ]
+  },
+  "projectsPage": {
     "title": {
       "first": "My",
       "second": "Projects"
     },
     "loading": "Loading projects...",
     "empty": "No projects available."
-    },
-    "projects": {
+  },
+  "projects": {
     "guitars-la": {
-        "name": "GuitarLA",
-        "description": "A fully-featured e-commerce platform built with Next.js, offering advanced pagination, seamless PostgreSQL database integration, and a dynamic shopping cart system for an enhanced user experience."
+      "name": "GuitarLA",
+      "description": "A fully-featured e-commerce platform built with Next.js, offering advanced pagination, seamless PostgreSQL database integration, and a dynamic shopping cart system for an enhanced user experience."
     },
     "product-hunt": {
-        "name": "Product Hunt Clone",
-        "description": "A real-time Product Hunt replica leveraging Firebase for authentication and data storage, Next.js for server-side rendering, and Styled Components for a sleek, modern user interface."
+      "name": "Product Hunt Clone",
+      "description": "A real-time Product Hunt replica leveraging Firebase for authentication and data storage, Next.js for server-side rendering, and Styled Components for a sleek, modern user interface."
     },
     "mern-uptask": {
-        "name": "MERN-Uptask",
-        "description": "A real-time task management application utilizing the MERN stack (MongoDB, Express, React, Node.js) and Socket.io for instant task updates and collaborative functionality."
+      "name": "MERN-Uptask",
+      "description": "A real-time task management application utilizing the MERN stack (MongoDB, Express, React, Node.js) and Socket.io for instant task updates and collaborative functionality."
     },
     "veterinary-control": {
-        "name": "Veterinary Control",
-        "description": "A comprehensive veterinary appointment management system developed with React and TailwindCSS, designed to streamline clinic operations and improve scheduling efficiency."
+      "name": "Veterinary Control",
+      "description": "A comprehensive veterinary appointment management system developed with React and TailwindCSS, designed to streamline clinic operations and improve scheduling efficiency."
     },
     "create-interactive": {
-        "name": "Create Interactive",
-        "description": "An offline-first CRUD application powered by IndexDB for robust local data storage, ensuring a smooth and uninterrupted user experience even without an internet connection."
+      "name": "Create Interactive",
+      "description": "An offline-first CRUD application powered by IndexDB for robust local data storage, ensuring a smooth and uninterrupted user experience even without an internet connection."
     },
     "expense-manager": {
-        "name": "Expense Manager",
-        "description": "A personal finance tracking tool built with React and localStorage, enabling users to manage budgets effectively with persistent data storage and intuitive controls."
+      "name": "Expense Manager",
+      "description": "A personal finance tracking tool built with React and localStorage, enabling users to manage budgets effectively with persistent data storage and intuitive controls."
     },
     "drink-finder": {
-        "name": "Drink Finder",
-        "description": "A cocktail discovery app that integrates with an external API, uses React Context for efficient state management, and features a responsive design powered by Bootstrap."
+      "name": "Drink Finder",
+      "description": "A cocktail discovery app that integrates with an external API, uses React Context for efficient state management, and features a responsive design powered by Bootstrap."
     },
     "weather-app": {
-        "name": "Weather App",
-        "description": "A real-time weather dashboard developed with React Context and TailwindCSS, providing accurate and up-to-date global weather forecasts in a clean, user-friendly interface."
+      "name": "Weather App",
+      "description": "A real-time weather dashboard developed with React Context and TailwindCSS, providing accurate and up-to-date global weather forecasts in a clean, user-friendly interface."
     },
     "car-insurance": {
-        "name": "Car Insurance Calculator",
-        "description": "A dynamic car insurance premium calculator built with React Context and TailwindCSS, offering real-time analysis of various factors to provide accurate insurance estimates."
+      "name": "Car Insurance Calculator",
+      "description": "A dynamic car insurance premium calculator built with React Context and TailwindCSS, offering real-time analysis of various factors to provide accurate insurance estimates."
     },
     "news-finder": {
-        "name": "News Finder",
-        "description": "A multi-category news aggregator featuring React Context for state management and Material-UI for a modern, responsive, and visually appealing user interface."
+      "name": "News Finder",
+      "description": "A multi-category news aggregator featuring React Context for state management and Material-UI for a modern, responsive, and visually appealing user interface."
     },
     "instant-cryptos": {
-        "name": "Instant Cryptos",
-        "description": "A real-time cryptocurrency tracking platform with an integrated currency converter and advanced market analysis tools, designed for both casual users and serious investors."
+      "name": "Instant Cryptos",
+      "description": "A real-time cryptocurrency tracking platform with an integrated currency converter and advanced market analysis tools, designed for both casual users and serious investors."
     }
-    },
-    "project":{
-      "buttonST":"site"
-    },
-    "layout": {
-      "siteTitle": "Portfolio",
-      "siteDescription": "Web portfolio where you'll find various projects and relevant information",
-      "defaultPageTitle": "Page",
-      "footerRights": "All rights reserved."
-    },
-    "languageSwitcher": {
-      "spanish": "Spanish",
-      "english": "English"
-    },
-    "themeSwitcher": {
-        "ariaLabel": "Theme Switcher",
-        "themes": {
-            "default": "Classic",
-            "forest": "Forest",
-            "ocean": "Ocean",
-            "desert": "Desert",
-            "sunset": "Sunset"
-        }
-        
+  },
+  "project": {
+    "buttonST": "site"
+  },
+  "layout": {
+    "siteTitle": "Portfolio",
+    "siteDescription": "Web portfolio where you'll find various projects and relevant information.",
+    "defaultPageTitle": "Page",
+    "footerRights": "All rights reserved."
+  },
+  "languageSwitcher": {
+    "spanish": "Spanish",
+    "english": "English"
+  },
+  "themeSwitcher": {
+    "ariaLabel": "Theme Switcher",
+    "themes": {
+      "default": "Classic",
+      "forest": "Forest",
+      "ocean": "Ocean",
+      "desert": "Desert",
+      "sunset": "Sunset"
     }
   }
+}

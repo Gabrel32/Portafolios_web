@@ -233,28 +233,27 @@ const Home = ({ className = "", ...props }) => {
               </div>
             </div>
 
-            {/* About Section */}
+                         {/* About Section */}
             <div
               ref={aboutRef}
               className="mt-16 backdrop-blur-xl rounded-3xl p-8 md:p-12 lg:p-16 border border-custom-brown shadow-2xl shadow-custom-brown transition-all duration-700"
             >
               <h2 className="text-4xl md:text-5xl font-bold text-custom-brown mb-6">
-                {t("home.aboutTitle", "Sobre mí")}
+                {t("home.aboutTitle")}
               </h2>
               <div className="flex flex-col md:flex-row items-center gap-8">
                 <div className="md:w-1/3">
                   <img
-                    src="/path/to/your-photo.jpg"
+                    src="/path/to/your-photo.jpg" // Reemplaza con la ruta real de tu foto
                     alt={t("home.aboutAlt", "Foto de perfil")}
                     className="rounded-full w-48 h-48 object-cover border-4 border-custom-brown"
                     loading="lazy"
                   />
                 </div>
                 <div className="md:w-2/3">
-                  <p className="text-lg md:text-xl text-custom-brown/90 dark:text-colorLetters leading-relaxed">
+                  <p className="text-lg md:text-xl text-custom-brown dark:text-colorLetters leading-relaxed">
                     {t(
-                      "home.aboutDescription",
-                      "Aquí puedes colocar una breve descripción de quién eres, tu experiencia y lo que te apasiona en el desarrollo."
+                      "home.aboutDescription"
                     )}
                   </p>
                 </div>
@@ -264,19 +263,14 @@ const Home = ({ className = "", ...props }) => {
             {/* CTA Section */}
             <div className="mt-16 text-center">
               <h2 className="text-4xl md:text-5xl font-bold text-custom-brown mb-4">
-                {t("home.ctaTitle", "¿Listo para colaborar?")}
+                {t("home.ctaTitle")}
               </h2>
-              <p className="text-lg md:text-xl text-custom-brown dark:text-colorLetters mb-6 max-w-2xl mx-auto">
-                {t(
-                  "home.ctaDescription",
-                  "Contáctame para comenzar un nuevo proyecto juntos o para conocer más detalles."
-                )}
-              </p>
+              
               <button
                 onClick={()=>router.push("/Contacto")}
                 className="inline-block px-8 py-4 bg-custom-brown text-whiteSnow rounded-full font-medium transition-all duration-300 hover:bg-efectHovercolor focus:outline-none focus:ring-2 focus:ring-custom-brown hover:scale-110"
               >
-                {t("home.contactButton", "Contacto")}
+                {t("home.contactButton")}
               </button>
             </div>
           </div>

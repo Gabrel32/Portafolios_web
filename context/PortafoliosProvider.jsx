@@ -35,8 +35,8 @@ const resources = {
   .use(initReactI18next)
   .init({
     resources,
-    lng: 'es', // idioma por defecto
-    fallbackLng: 'es',
+    lng: 'en', // idioma por defecto
+    fallbackLng: 'en',
     interpolation: {
       escapeValue: false
     }
@@ -96,7 +96,7 @@ function PortafoliosProvider({children}){
      useEffect(() => {
         if (typeof window === 'undefined') return;
         
-        const savedLang = localStorage.getItem('language') || 'es';
+        const savedLang = localStorage.getItem('language') || 'en';
         setCurrentLanguage(savedLang);
         i18n.changeLanguage(savedLang);
       }, []);

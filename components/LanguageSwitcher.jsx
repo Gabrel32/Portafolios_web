@@ -48,7 +48,7 @@ const LanguageSwitcher = () => {
   };
 
   // Obtener el código corto del idioma actual
-  const currentLanguageShort = languages.find((lang) => lang.id === currentLanguage)?.short || "ES";
+  const currentLanguageShort = languages.find((lang) => lang.id === currentLanguage)?.short || "en";
 
   return (
     <div className="relative" ref={menuRef}>
@@ -108,7 +108,7 @@ const LanguageSwitcher = () => {
               >
                 <div className="flex items-center gap-2">
                   <span className="text-lg">{lang.flag}</span> {/* Bandera */}
-                  <span className="font-semibold">{lang.name}</span> {/* Nombre del idioma */}
+                  <span className="font-normal">{lang.name}</span> {/* Nombre del idioma */}
                 </div>
                 {currentLanguage === lang.id && (
                   <svg
