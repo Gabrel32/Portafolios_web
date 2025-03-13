@@ -113,6 +113,12 @@ function PortafoliosProvider({children}){
 
     const [Proyectos, setProyectos] = useState([
       {
+        id: "vaccine-manager",
+        git: "github",
+        img: "project_insai",
+        linkGit: "https://github.com/Gabrel32/project_insai.git"
+      },
+      {
           id: "guitars-la",
           git: "gitlab",
           img: "guitarLa",
@@ -190,12 +196,7 @@ function PortafoliosProvider({children}){
           link: "https://criptos-instante.netlify.app",
           linkGit: "https://gitlab.com/Gabrel32/criptosinstante.git"
       },
-      {
-        id: "vaccine-manager",
-        git: "github",
-        img: "project_insai",
-        linkGit: "https://github.com/Gabrel32/project_insai.git"
-      },
+      
 
   ]);
 

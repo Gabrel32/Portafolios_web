@@ -7,10 +7,21 @@ import Carousel from '../components/Carrusel';
 const Proyectos = ({ className, ...props }) => {
   const { t, Proyectos } = usePortafolios();
 
+  // Optimización: Memoizar el contenido del carrusel
+  const carouselContent = React.useMemo(() => {
+    if (Proyectos === undefined) {
+      return <p className="text-custom-brown text-lg">{t('projectsPage.loading')}</p>;
+    } else if (Proyectos && Proyectos.length > 0) {
+      return <Carousel items={Proyectos} />;
+    } else {
+      return <p className="text-custom-brown text-lg">{t('projectsPage.empty')}</p>;
+    }
+  }, [Proyectos, t]);
+
   return (
     <Layout pagina={t('header.nav.projects')}>
       <BackBurble
-        particleDensity={20}
+        particleDensity={10} // Reducir densidad de partículas
         bubbleColors={['bg-custom-brown', 'bg-secundary']}
         center={true}
         showLine={false}
@@ -26,23 +37,14 @@ const Proyectos = ({ className, ...props }) => {
             </h1>
 
             <div className="w-full max-w-4xl mx-auto mt-8">
-              {Proyectos === undefined ? (
-                <p className="text-custom-brown text-lg">{t('projectsPage.loading')}</p>
-              ) : Proyectos && Proyectos.length > 0 ? (
-                <Carousel items={Proyectos} />
-              ) : (
-                <p className="text-custom-brown text-lg">{t('projectsPage.empty')}</p>
-              )}
+              {carouselContent}
             </div>
           </div>
 
+          {/* Optimización: Simplificar el fondo animado */}
           <div className="absolute inset-0 z-0 pointer-events-none">
-            {[...Array(2)].map((_, i) => (
-              <div
-                key={i}
-                className={`absolute ${i === 0 ? "top-10 left-20 w-40 h-40" : "bottom-10 right-20 w-56 h-56"} rounded-full blur-3xl opacity-30 bg-custom-brown`}
-              />
-            ))}
+            <div className="absolute top-10 left-20 w-40 h-40 rounded-full blur-3xl opacity-30 bg-custom-brown" />
+            <div className="absolute bottom-10 right-20 w-56 h-56 rounded-full blur-3xl opacity-30 bg-custom-brown" />
           </div>
         </section>
       </BackBurble>

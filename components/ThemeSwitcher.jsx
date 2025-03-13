@@ -50,9 +50,10 @@ const ThemeSwitcher = () => {
 
   return (
     <div className="relative" ref={menuRef}>
+      {/* Botón principal */}
       <button
         onClick={() => (isOpen || isAnimating ? handleClose() : handleOpen())}
-        className="relative flex items-center justify-center btn-base btn-efecto rounded-lg gap-2 font-light bg-primary text-[#f5f5f5] py-[10px] px-2"
+        className="relative flex items-center justify-center px-1 md:px-3 py-2 rounded-lg gap-2 transition-all duration-200 ease-out hover:scale-105 active:scale-95 text-colorLetters hover:text-custom-brown dark:text-whiteSnow dark:hover:text-custom-brown"
         aria-label={t("themeSwitcher.ariaLabel")}
       >
         <svg
@@ -61,7 +62,7 @@ const ThemeSwitcher = () => {
           viewBox="0 0 24 24"
           strokeWidth={0.5}
           stroke="currentColor"
-          className="w-[20px] h-[20px]"
+          className="w-5 h-5"
         >
           <path
             strokeLinecap="round"
@@ -71,9 +72,10 @@ const ThemeSwitcher = () => {
         </svg>
       </button>
 
+      {/* Menú de temas */}
       {(isOpen || isAnimating) && (
         <div
-          className={`absolute right-0 mt-2 w-44 rounded-lg shadow-xl z-[9999]
+          className={`absolute right-0 mt-2 w-36 rounded-lg shadow-xl z-[9999]
             bg-completColor backdrop-blur-lg
             ${isAnimating && isOpen ? "animate-menu-slide" : "animate-menu-slide-reverse"}`}
           onAnimationEnd={() => {
@@ -89,10 +91,10 @@ const ThemeSwitcher = () => {
                   handleClose();
                 }}
                 className={`w-full text-sm p-2 rounded-md flex items-center
-                  transition-colors duration-100 font-normal ${
+                  transition-all duration-200 ease-out hover:scale-105 active:scale-95 ${
                     currentTheme === theme.id
-                      ? "bg-primary text-[#f5f5f5]"
-                      : "text-colorLetters dark:text-whiteSnow hover:bg-custom-brown hover:text-whiteSnow"
+                      ? "text-custom-brown font-semibold border-b-2 border-custom-brown"
+                      : "text-colorLetters hover:text-custom-brown dark:text-whiteSnow dark:hover:text-custom-brown"
                   }`}
               >
                 <div className={`w-4 h-4 rounded-full mr-3 ${theme.colorClass}`} />

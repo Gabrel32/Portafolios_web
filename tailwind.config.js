@@ -24,8 +24,8 @@ module.exports = {
       },
       animation: {
         // Fixed: Removed duplicate 'menu-slide'
-        'menu-slide': 'menuSlide 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-        'menu-slide-reverse': 'menuSlideReverse 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards', // Added 'forwards'
+        'menu-slide': 'menuSlide 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+        'menu-slide-reverse': 'menuSlideReverse 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards',
         'fadeIn': 'fadeIn 0.5s ease-in',
         'slideRight': 'slideRight 0.6s ease-out',
         'cardPop': 'cardPop 0.4s ease-out',
@@ -54,12 +54,12 @@ module.exports = {
       },
       keyframes: {
         menuSlide: {
-          "0%": { transform: "translateY(20px)", opacity: "0", clipPath: "inset(0 0 100% 0)" },
-          "100%": { transform: "translateY(0)", opacity: "1", clipPath: "inset(0 0 0 0)" },
+          "0%": { opacity: "0", transform: "translateY(-10px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
         },
         menuSlideReverse: {
-          "0%": { transform: "translateY(0)", opacity: "1", clipPath: "inset(0 0 0 0)" },
-          "100%": { transform: "translateY(20px)", opacity: "0", clipPath: "inset(0 0 100% 0)" },
+          "0%": { opacity: "1", transform: "translateY(0)" },
+          "100%": { opacity: "0", transform: "translateY(10px)" },
         },
         fadeIn: {
           '0%': { opacity: '0' },

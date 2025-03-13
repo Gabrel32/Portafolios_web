@@ -1,12 +1,10 @@
-// Código modificado para hacer la interfaz más atractiva
 import Layout from "../layout/Layout";
 import usePortafolios from "../hook/usePortafolios";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { useEffect, useRef, useState, useLayoutEffect, useCallback } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import BackBurble from "../components/BackBurble";
 import { useRouter } from "next/router";
-
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,9 +19,12 @@ const Home = ({ className = "", ...props }) => {
   const decorativesRef = useRef([]);
   const aboutRef = useRef(null);
   const projectsRef = useRef(null);
-  const router = useRouter()
+  const router = useRouter();
 
-  useLayoutEffect(() => {
+  // Reemplazar useLayoutEffect con un efecto condicional
+  useEffect(() => {
+    if (typeof window === "undefined") return; // No ejecutar en el servidor
+
     if (!titleRef.current) return;
 
     const ctx = gsap.context(() => {
@@ -68,10 +69,10 @@ const Home = ({ className = "", ...props }) => {
       const maxY = (containerRect.height - buttonRect.height) / 2;
 
       gsap.to(button, {
-        x: gsap.utils.clamp(-maxX, maxX, x * 0.3), // Cambié la escala de movimiento
+        x: gsap.utils.clamp(-maxX, maxX, x * 0.3),
         y: gsap.utils.clamp(-maxY, maxY, y * 0.3),
-        scale: 1.1, // Cambié el nivel de zoom
-        duration: 0.3, // Más fluido
+        scale: 1.1,
+        duration: 0.3,
         ease: "power2.out",
       });
     };
@@ -182,7 +183,7 @@ const Home = ({ className = "", ...props }) => {
   return (
     <Layout pagina={t("header.nav.home")}>
       <BackBurble
-        particleDensity={30}
+        particleDensity={20}
         bubbleColors={["bg-custom-brown", "bg-efectHovercolor"]}
         center={true}
         showLine={false}
@@ -233,7 +234,7 @@ const Home = ({ className = "", ...props }) => {
               </div>
             </div>
 
-                         {/* About Section */}
+            {/* About Section */}
             <div
               ref={aboutRef}
               className="mt-16 backdrop-blur-xl rounded-3xl p-8 md:p-12 lg:p-16 border border-custom-brown shadow-2xl shadow-custom-brown transition-all duration-700"
@@ -252,9 +253,7 @@ const Home = ({ className = "", ...props }) => {
                 </div>
                 <div className="md:w-2/3">
                   <p className="text-lg md:text-xl text-custom-brown dark:text-colorLetters leading-relaxed">
-                    {t(
-                      "home.aboutDescription"
-                    )}
+                    {t("home.aboutDescription")}
                   </p>
                 </div>
               </div>
@@ -265,9 +264,8 @@ const Home = ({ className = "", ...props }) => {
               <h2 className="text-4xl md:text-5xl font-bold text-custom-brown mb-4">
                 {t("home.ctaTitle")}
               </h2>
-              
               <button
-                onClick={()=>router.push("/Contacto")}
+                onClick={() => router.push("/Contacto")}
                 className="inline-block px-8 py-4 bg-custom-brown text-whiteSnow rounded-full font-medium transition-all duration-300 hover:bg-efectHovercolor focus:outline-none focus:ring-2 focus:ring-custom-brown hover:scale-110"
               >
                 {t("home.contactButton")}

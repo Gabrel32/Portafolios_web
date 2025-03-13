@@ -10,21 +10,20 @@ function ButtonNav({
 }) {
   const { comprobarRuta, isDarkMode } = usePortafolios(); // Asegúrate de que `isDarkMode` esté disponible
   const router = useRouter();
-  
 
   // Determinar si el botón está activo
-  const isActive = comprobarRuta(directionPath, router);  
+  const isActive = comprobarRuta(directionPath, router);
 
   // Clase dinámica basada en si el botón está activo o no
   const buttonClass = isActive
-    ? "before:bg-black before:opacity-50" 
-    : "before:bg-transparent"; 
+    ? "text-custom-brown font-semibold border-b-2 border-custom-brown scale-100" // Estilo activo
+    : "text-colorLetters hover:text-custom-brown dark:text-whiteSnow dark:hover:text-custom-brown"; // Estilo inactivo
 
   return (
     <button
       onClick={() => router.push(directionPath)} // Redirecciona a la ruta
       type="button"
-      className={`relative flex items-center justify-center btn-base btn-efecto w-[120px] lg:w-[140px] h-[40px] rounded-lg gap-1 font-light before:absolute before:inset-0 before:rounded-lg before:transition-opacity ${buttonClass} ${style.button ?? ""}`}
+      className={`flex text-center items-center justify-center px-4 py-2 rounded-lg gap-1 transition-all duration-200 ease-out hover:scale-105 active:scale-95 ${buttonClass} ${style.button ?? ""}`}
     >
       {name}
       {icon.src && (
@@ -32,7 +31,7 @@ function ButtonNav({
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
           fill="currentColor"
-          className="w-5 h-5 fill-current"
+          className="w-5 h-4 transition-transform duration-200 ease-out hover:scale-110"
           dangerouslySetInnerHTML={{ __html: icon.src }}
         />
       )}

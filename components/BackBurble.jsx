@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, useCallback, useMemo } from 'react';
+import React, { useRef, useState, useCallback, useMemo, useEffect } from 'react';
 
 const BackBurble = ({
   title,
@@ -11,9 +11,9 @@ const BackBurble = ({
   variant = 'default',
 }) => {
   const containerRef = useRef(null);
-  const bubbleRefs = useRef([]); // Array to store references to all bubbles
   const [containerSize, setContainerSize] = useState({ width: 0, height: 0 });
 
+  // Actualizar el tamaño del contenedor
   const updateSize = useCallback(() => {
     if (containerRef.current) {
       const { clientWidth, clientHeight } = containerRef.current;
@@ -21,73 +21,45 @@ const BackBurble = ({
     }
   }, []);
 
+  // Efecto para manejar el redimensionamiento
   useEffect(() => {
     updateSize();
     window.addEventListener('resize', updateSize);
     return () => window.removeEventListener('resize', updateSize);
   }, [updateSize]);
 
-  const pushAllBubbles = useCallback(() => {
-    bubbleRefs.current.forEach((bubble) => {
-      if (bubble) {
-        const pushDistance = 50;
-        const angle = Math.random() * 2 * Math.PI;
-        const translateX = Math.cos(angle) * pushDistance;
-        const translateY = Math.sin(angle) * pushDistance;
-
-        bubble.style.transition = 'transform 0.3s ease-out';
-        bubble.style.transform = `translate(${translateX}px, ${translateY}px)`;
-
-        setTimeout(() => {
-          bubble.style.transition = 'transform 0.5s ease-in';
-          bubble.style.transform = 'translate(0, 0)';
-        }, 300);
-      }
-    });
-  }, []);
-
+  // Generar partículas de manera eficiente
   const particles = useMemo(() => {
-    const generateParticles = (count, sizeRange, animationTypes) => {
-      if (!containerSize.width || !containerSize.height) return [];
+    if (!containerSize.width || !containerSize.height) return [];
 
-      const particles = [];
-      bubbleRefs.current = []; // Reset refs array
-      const gridSize = Math.ceil(Math.sqrt(count));
-      const stepX = containerSize.width / gridSize;
-      const stepY = containerSize.height / gridSize;
+    const particles = [];
+    const gridSize = Math.ceil(Math.sqrt(particleDensity));
+    const stepX = containerSize.width / gridSize;
+    const stepY = containerSize.height / gridSize;
 
-      for (let i = 0; i < count; i++) {
-        const row = Math.floor(i / gridSize);
-        const col = i % gridSize;
-        const size = Math.floor(Math.random() * (sizeRange[1] - sizeRange[0])) + sizeRange[0];
-        const animation = animationTypes[Math.floor(Math.random() * animationTypes.length)];
+    for (let i = 0; i < particleDensity; i++) {
+      const row = Math.floor(i / gridSize);
+      const col = i % gridSize;
+      const size = 40 + Math.random() * 80; // Tamaño entre 40 y 120px
+      const animation = ['float', 'pulse-fast', 'orbit-slow', 'orbit-reverse-slow'][Math.floor(Math.random() * 4)];
 
-        particles.push(
-          <div
-            key={`particle-${i}`}
-            ref={(el) => (bubbleRefs.current[i] = el)} // Store reference to each bubble
-            onClick={pushAllBubbles} // Click handler back on individual bubbles
-            className={`absolute rounded-full ${bubbleColors[i % bubbleColors.length]} 
-              animate-${animation} opacity-[0.15] dark:opacity-[0.15] cursor-pointer select-none`}
-            style={{
-              width: `${size}px`,
-              height: `${size}px`,
-              top: `${row * stepY + Math.random() * (stepY / 2)}px`,
-              left: `${col * stepX + Math.random() * (stepX / 2)}px`,
-              animationDelay: `${Math.random() * 1000}ms`,
-            }}
-          />
-        );
-      }
-      return particles;
-    };
-
-    return generateParticles(
-      particleDensity,
-      [40, 120],
-      ['float', 'pulse-fast', 'orbit-slow', 'orbit-reverse-slow']
-    );
-  }, [containerSize, particleDensity, bubbleColors, pushAllBubbles]);
+      particles.push(
+        <div
+          key={`particle-${i}`}
+          className={`absolute rounded-full ${bubbleColors[i % bubbleColors.length]} 
+            animate-${animation} opacity-[0.15] dark:opacity-[0.15]`}
+          style={{
+            width: `${size}px`,
+            height: `${size}px`,
+            top: `${row * stepY + Math.random() * (stepY / 2)}px`,
+            left: `${col * stepX + Math.random() * (stepX / 2)}px`,
+            animationDelay: `${Math.random() * 1000}ms`,
+          }}
+        />
+      );
+    }
+    return particles;
+  }, [containerSize, particleDensity, bubbleColors]);
 
   return (
     <div

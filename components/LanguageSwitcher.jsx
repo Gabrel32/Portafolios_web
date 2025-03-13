@@ -52,17 +52,18 @@ const LanguageSwitcher = () => {
 
   return (
     <div className="relative" ref={menuRef}>
+      {/* Botón principal */}
       <button
         onClick={() => (isOpen || isAnimating ? handleClose() : handleOpen())}
         type="button"
-        className="relative flex items-center justify-center btn-efecto rounded-lg gap-1 font-light bg-custom-brown text-whiteSnow py-[8px] px-1"
+        className="relative flex items-center justify-center px-1 py-2 rounded-lg gap-1 text-lg md:text-xl transition-all duration-200 ease-out hover:scale-105 active:scale-95 text-colorLetters hover:text-custom-brown dark:text-whiteSnow dark:hover:text-custom-brown"
         aria-label="Cambiar idioma"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="currentColor"
-          className="w-5 h-4"
+          className="w-5 h-5"
         >
           <path d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z" />
         </svg>
@@ -75,22 +76,23 @@ const LanguageSwitcher = () => {
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className={`w-5 h-4 transition-transform duration-300 ${isOpen ? "rotate-180" : "rotate-0"}`}
+          className={`w-5 h-5 transition-transform duration-200 ${isOpen ? "rotate-180" : "rotate-0"}`}
         >
           <path d="M6 9l6 6 6-6" />
         </svg>
       </button>
 
+      {/* Menú de idiomas */}
       {(isOpen || isAnimating) && (
         <div
-          className={`absolute right-0 mt-3 w-44 rounded-xl shadow-2xl z-[9999]
-            bg-completColor backdrop-blur-xl p-3  
+          className={`absolute right-0 mt-2 w-40 rounded-lg shadow-xl z-[9999]
+            bg-completColor backdrop-blur-lg
             ${isAnimating && isOpen ? "animate-menu-slide" : "animate-menu-slide-reverse"}`}
           onAnimationEnd={() => {
             if (!isOpen) setIsAnimating(false); // Reiniciar estado de animación después de cerrar
           }}
         >
-          <div className="space-y-1">
+          <div className="p-3 space-y-1">
             {languages.map((lang) => (
               <button
                 key={lang.id}
@@ -98,12 +100,11 @@ const LanguageSwitcher = () => {
                   changeLanguage(lang.id);
                   handleClose();
                 }}
-                className={`w-full text-sm p-1 rounded-md flex items-center justify-between
-                  transition-all duration-200
-                  ${
+                className={`w-full text-sm p-2 rounded-md flex items-center justify-between
+                  transition-all duration-200 ease-out hover:scale-105 active:scale-95 ${
                     currentLanguage === lang.id
-                      ? "bg-secondary text-whiteSnow shadow-inner"
-                      : "text-colorLetters hover:text-white hover:bg-custom-brown dark:text-whiteSnow"
+                      ? "text-custom-brown font-semibold border-b-2 border-custom-brown"
+                      : "text-gray-600 hover:text-custom-brown dark:text-gray-400 dark:hover:text-custom-brown"
                   }`}
               >
                 <div className="flex items-center gap-2">

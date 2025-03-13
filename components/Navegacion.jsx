@@ -37,16 +37,16 @@ function Navegacion({ className, ...props }) {
         {/* Título e ícono de menú móvil */}
         <div className="flex flex-row items-center gap-3 w-full sm:w-auto">
           {/* Título */}
-          <div className="flex flex-row gap-2 items-center">
+          <div className="flex flex-row gap-2 items-center justify-center">
             <div
-              className={`text-[#000000] dark:text-[#fff] text-center sm:text-left text-[24px] sm:text-[30px] md:text-[40px] leading-none w-fit flex items-center ${
+              className={`text-gray-700 dark:text-whiteSnow text-center sm:text-left text-[24px] sm:text-[30px] leading-none w-fit flex items-center ${
                 isMounted ? "animate-fadeIn" : ""
               }`}
             >
               Gabriel
             </div>
             <div
-              className={`text-custom-brown text-center sm:text-left text-[24px] sm:text-[30px] md:text-[40px] leading-none font-normal w-fit flex items-center ${
+              className={`text-custom-brown text-center sm:text-left text-[24px] sm:text-[30px] leading-none font-normal w-fit flex items-center ${
                 isMounted ? "animate-fadeIn" : ""
               }`}
             >
@@ -96,7 +96,7 @@ function Navegacion({ className, ...props }) {
         </div>
 
         {/* Vista de escritorio */}
-        <div className="hidden sm:flex flex-row gap-2 items-center justify-end">
+        <div className="hidden sm:flex flex-row gap-1 items-center justify-end">
           {buttonNavs.map((e) => (
             <ButtonNav
               key={e.name}
@@ -106,7 +106,7 @@ function Navegacion({ className, ...props }) {
               className="animate-fadeInUp text-lg hover:text-custom-brown transition-colors"
             />
           ))}
-          <div className="flex flex-row gap-2 items-center">
+          <div className="flex flex-row gap-1 items-center">
             <ThemeSwitcher />
             <LanguageSwitcher />
             <DarkModeButton />
@@ -131,6 +131,8 @@ function Navegacion({ className, ...props }) {
               >
                 &times;
               </button>
+              <DarkModeButton />
+
               {buttonNavs.map((e, index) => (
                 <ButtonNav
                   key={e.name}
@@ -142,10 +144,9 @@ function Navegacion({ className, ...props }) {
                   style={{ animationDelay: `${index * 0.1}s` }}
                 />
               ))}
-              <div className="flex flex-col gap-4 w-full px-4 justify-center items-center">
+              <div className="flex flex-row gap-4 w-full px-4 justify-center items-center">
                 <LanguageSwitcher/>
                 <ThemeSwitcher />
-                <DarkModeButton />
               </div>
             </div>
           </div>
