@@ -17,11 +17,29 @@
     "aboutTitle": "About Me",
     "contactButton": "Contact",
     "ctaTitle": "Ready to collaborate?",
-    "aboutDescription": "I’m a frontend developer passionate about turning complex ideas into engaging and functional digital experiences. With over two years of professional experience, I’ve collaborated with teams on innovative projects, such as an interactive math book, and contributed to the development of dynamic web applications using React, Node.js, and other modern technologies. My approach blends creativity, technical precision, and a mathematical touch to design interfaces that not only stand out visually but also provide practical solutions to real-world problems."
+    "aboutDescription": "I am a frontend developer passionate about turning complex ideas into engaging and functional digital experiences. With over two years of professional experience, I have collaborated with teams on innovative projects, such as an interactive math book, and participated in the development of dynamic web applications using React, Node.js, and other modern technologies. My approach integrates creativity, technical precision, and a mathematical touch to design interfaces that not only stand out visually but also provide practical solutions to real-world problems.",
+    "experienceTitle": "Professional Journey",
+    "experience": {
+      "alcarvan": {
+        "title": "Frontend Developer",
+        "description": "Development of interactive math books, focused on digitizing educational content and creating intuitive user experiences.",
+        "point1": "Implementation of Playwright for E2E testing, ensuring software quality across more than 150 interactive scenarios.",
+        "point2": "Design and development of interfaces for visualizing complex mathematical concepts, enhancing user comprehension.",
+        "point3": "Creation of a robust testing structure to ensure project stability."
+      },
+      "trigon": {
+        "title": "Frontend Developer",
+        "description": "Frontend development with React, focused on creating dynamic and responsive interfaces.",
+        "point1": "Development of reusable React components to improve code efficiency.",
+        "point2": "Implementation of frontend solutions for interactive web applications.",
+        "point3": "Collaboration in designing and developing user-centered interfaces."
+      },
+      "textVisite": "visit site"
+    }
   },
   "projectsSection": {
     "title": "My Projects",
-    "description": "Here you can explore some of my featured projects",
+    "description": "Here you can see some of my featured projects",
     "viewDetails": "View Details",
     "technologiesUsed": "Technologies Used",
     "visitProject": "Visit Project",
@@ -30,14 +48,14 @@
   "about": {
     "title": "About Me",
     "description": "Technologies I work with",
-    "alsoWorkedWith": "I’ve also worked with",
+    "alsoWorkedWith": "I have also worked with",
     "orms": "ORMs",
-    "like": "such as",
+    "like": "like",
     "andOthers": ", among others."
   },
   "contact": {
     "title": "Contact Me",
-    "formTitle": "Send Me a Message",
+    "formTitle": "Send me a message",
     "linkedinText": "Or send me a direct message via"
   },
   "contactForm": {
@@ -67,7 +85,7 @@
     "sendMessage": "Send Message",
     "successMessage": "Message sent successfully!",
     "predefinedMessages": [
-      "Hi, I’d like more information about your services.",
+      "Hello, I’d like more information about your services.",
       "I’m interested in working with you. Can we talk?",
       "I have a question about a project I’d like to discuss.",
       "I’d love to collaborate with you on a future project.",
@@ -77,10 +95,10 @@
       "I need professional advice on a specific topic.",
       "Do you offer consulting services?",
       "I’d like to schedule a virtual meeting.",
-      "Do you have references from past work?",
+      "Do you have references from previous work?",
       "I’d like to learn more about your work experience.",
       "Could you share examples of similar projects?",
-      "I’m evaluating options for my company—can we chat?",
+      "I’m evaluating options for my company—can we talk?",
       "What’s your hourly rate?"
     ]
   },
@@ -95,7 +113,7 @@
   "projects": {
     "guitars-la": {
       "name": "GuitarLA",
-      "description": "A fully functional e-commerce platform built with Next.js, featuring advanced pagination, seamless PostgreSQL integration, and a dynamic shopping cart system for an enhanced user experience."
+      "description": "A fully functional e-commerce platform built with Next.js, offering advanced pagination, seamless PostgreSQL integration, and a dynamic shopping cart system for an enhanced user experience."
     },
     "product-hunt": {
       "name": "Product Hunt Clone",
@@ -103,31 +121,31 @@
     },
     "mern-uptask": {
       "name": "MERN-Uptask",
-      "description": "A real-time task management application leveraging the MERN stack (MongoDB, Express, React, Node.js) and Socket.io for instant updates and collaborative features."
+      "description": "A real-time task management application using the MERN stack (MongoDB, Express, React, Node.js) and Socket.io for instant updates and collaborative features."
     },
     "veterinary-control": {
       "name": "Veterinary Control",
-      "description": "A comprehensive veterinary appointment management system built with React and TailwindCSS, designed to streamline clinic operations and improve scheduling efficiency."
+      "description": "A comprehensive veterinary appointment management system developed with React and TailwindCSS, designed to streamline clinical operations and improve scheduling efficiency."
     },
     "create-interactive": {
       "name": "Create Interactive",
-      "description": "An offline-first CRUD application using IndexedDB for robust local storage, ensuring a seamless and uninterrupted user experience even without an internet connection."
+      "description": "An offline-first CRUD application using IndexDB for robust local storage, ensuring a seamless and uninterrupted user experience even without an internet connection."
     },
     "expense-manager": {
       "name": "Expense Manager",
-      "description": "A personal finance tracking tool built with React and localStorage, enabling users to manage budgets effectively with persistent storage and intuitive controls."
+      "description": "A personal finance tracking tool built with React and localStorage, allowing users to manage budgets effectively with persistent storage and intuitive controls."
     },
     "drink-finder": {
       "name": "Drink Finder",
-      "description": "A cocktail discovery app integrated with an external API, utilizing React Context for efficient state management and a responsive design powered by Bootstrap."
+      "description": "A cocktail discovery app integrated with an external API, using React Context for efficient state management and a responsive design powered by Bootstrap."
     },
     "weather-app": {
       "name": "Weather App",
-      "description": "A real-time weather dashboard developed with React Context and TailwindCSS, delivering accurate global forecasts in a clean, user-friendly interface."
+      "description": "A real-time weather dashboard developed with React Context and TailwindCSS, providing accurate, up-to-date global forecasts in a clean, user-friendly interface."
     },
     "car-insurance": {
-      "name": "Car Insurance Calculator",
-      "description": "A dynamic car insurance premium calculator built with React Context and TailwindCSS, offering real-time analysis of various factors for precise insurance estimates."
+      "name": "Insurance Calculator",
+      "description": "A dynamic car insurance premium calculator built with React Context and TailwindCSS, offering real-time analysis of various factors for accurate insurance estimates."
     },
     "news-finder": {
       "name": "News Finder",
@@ -138,8 +156,8 @@
       "description": "A real-time cryptocurrency tracking platform with an integrated currency converter and advanced market analysis tools, designed for both casual users and serious investors."
     },
     "vaccine-manager": {
-      "name": "Cattle Vaccine Manager",
-      "description": "A comprehensive application for managing cattle vaccinations, built with React, Express, and MongoDB. It allows user registration, detailed vaccine information management, the creation of transporter guides, and the generation of vaccinated cattle declarations, all downloadable in PDF format. Leveraging React Router for smooth and efficient navigation, it provides a robust and user-friendly solution for tracking and controlling the vaccination process."
+      "name": "Vaccine Manager",
+      "description": "A comprehensive livestock vaccine management application developed with React, Express, and MongoDB. It allows user registration, detailed vaccine information management, guide creation for transporters, and generation of vaccinated cattle declarations, with the option to download all documents in PDF format. It uses React Router for smooth and efficient navigation, providing a robust and user-friendly solution for vaccination process tracking and control."
     }
   },
   "project": {
@@ -147,7 +165,7 @@
   },
   "layout": {
     "siteTitle": "Portfolio",
-    "siteDescription": "A web portfolio showcasing various projects and relevant information.",
+    "siteDescription": "Web portfolio where you’ll find various projects and relevant information.",
     "defaultPageTitle": "Page",
     "footerRights": "All rights reserved."
   },

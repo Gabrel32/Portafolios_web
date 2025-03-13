@@ -33,8 +33,8 @@ const NotificationModal = ({
   // Determinar el título y la descripción según el tipo
   const title = type === "success" ? successTitle : errorTitle;
   const description = type === "success" 
-    ? (successDescription ? `${message} ${successDescription}` : message) 
-    : (errorDescription ? `${message} ${errorDescription}` : message);
+    ? (successDescription ? `${message} ` : message) 
+    : (errorDescription ? `${message} ` : message);
 
   return (
     <div

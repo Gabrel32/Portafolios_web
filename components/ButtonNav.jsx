@@ -16,14 +16,14 @@ function ButtonNav({
 
   // Clase dinámica basada en si el botón está activo o no
   const buttonClass = isActive
-    ? "text-custom-brown font-semibold border-b-2 border-custom-brown scale-100" // Estilo activo
-    : "text-colorLetters hover:text-custom-brown dark:text-whiteSnow dark:hover:text-custom-brown"; // Estilo inactivo
+    ? "text-colorLetters hover:border-custom-brown hover:text-custom-brown border-b-2 border-colorLetters scale-100" // Estilo activo
+    : " text-custom-brown hover:text-colorLetters dark:text-whiteSnow dark:hover:text-custom-brown"; // Estilo inactivo
 
   return (
     <button
       onClick={() => router.push(directionPath)} // Redirecciona a la ruta
       type="button"
-      className={`flex text-center items-center justify-center px-4 py-2 rounded-lg gap-1 transition-all duration-200 ease-out hover:scale-105 active:scale-95 ${buttonClass} ${style.button ?? ""}`}
+      className={`flex text-center font-semibold items-center justify-center px-4 py-2 rounded-lg gap-1 transition-all duration-200 ease-out hover:scale-105 active:scale-95 ${buttonClass} ${style.button ?? ""}`}
     >
       {name}
       {icon.src && (

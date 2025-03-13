@@ -15,9 +15,28 @@
     "description": "Especializado en crear soluciones web innovadoras y escalables, combinando diseño moderno con tecnología de vanguardia para ofrecer experiencias de usuario excepcionales.",
     "downloadCV": "Descargar CV",
     "aboutTitle": "Sobre mí",
-    "contactButton":"Contacto",
-    "ctaTitle":"¿Listo para colaborar?",
-    "aboutDescription": "Soy un desarrollador frontend apasionado por convertir ideas complejas en experiencias digitales atractivas y funcionales. Con más de dos años de experiencia profesional, he colaborado con equipos en proyectos innovadores, como un libro interactivo de matemáticas, y he participado en el desarrollo de aplicaciones web dinámicas utilizando React, Node.js y otras tecnologías modernas. Mi enfoque integra creatividad, precisión técnica y un toque matemático para diseñar interfaces que no solo destacan visualmente, sino que también ofrecen soluciones prácticas a problemas reales."},
+    "contactButton": "Contacto",
+    "ctaTitle": "¿Listo para colaborar?",
+    "aboutDescription": "Soy un desarrollador frontend apasionado por convertir ideas complejas en experiencias digitales atractivas y funcionales. Con más de dos años de experiencia profesional, he colaborado con equipos en proyectos innovadores, como un libro interactivo de matemáticas, y he participado en el desarrollo de aplicaciones web dinámicas utilizando React, Node.js y otras tecnologías modernas. Mi enfoque integra creatividad, precisión técnica y un toque matemático para diseñar interfaces que no solo destacan visualmente, sino que también ofrecen soluciones prácticas a problemas reales.",
+    "experienceTitle": "Trayectoria Profesional",
+    "experience": {
+      "alcarvan": {
+        "title": "Desarrollador Frontend",
+        "description": "Desarrollo de libros matemáticos interactivos, enfocado en la digitalización de contenidos educativos y la creación de experiencias de usuario intuitivas.",
+        "point1": "Implementación de Playwright para pruebas E2E, asegurando la calidad del software en más de 150 escenarios interactivos.",
+        "point2": "Diseño y desarrollo de interfaces para la visualización de conceptos matemáticos complejos, mejorando la comprensión del usuario.",
+        "point3": "Creación de una estructura de testing robusta para garantizar la estabilidad del proyecto."
+      },
+      "trigon": {
+        "title": "Desarrollador Frontend",
+        "description": "Desarrollo Frontend con React, enfocado en la creación de interfaces dinámicas y responsivas.",
+        "point1": "Desarrollo de componentes reutilizables en React para mejorar la eficiencia del código.",
+        "point2": "Implementación de soluciones frontend para aplicaciones web interactivas.",
+        "point3": "Colaboración en el diseño y desarrollo de interfaces centradas en el usuario."
+      },
+      "textVisite":"visitar sitio"
+    }
+  },
   "projectsSection": {
     "title": "Mis Proyectos",
     "description": "Aquí puedes ver algunos de mis proyectos destacados",
@@ -138,7 +157,7 @@
     },
     "vaccine-manager": {
       "name": "Gestor de Vacunas",
-    "description": "Una aplicación integral para la gestión de vacunas en ganado, desarrollada con React, Express y MongoDB. Permite registrar usuarios, gestionar información detallada sobre vacunas, crear guías para transportistas y generar declaraciones de reses vacunadas, con la opción de descargar todos los documentos en formato PDF. Utiliza React Router para una navegación fluida y eficiente, ofreciendo una solución robusta y fácil de usar para el control y seguimiento del proceso de vacunación."
+      "description": "Una aplicación integral para la gestión de vacunas en ganado, desarrollada con React, Express y MongoDB. Permite registrar usuarios, gestionar información detallada sobre vacunas, crear guías para transportistas y generar declaraciones de reses vacunadas, con la opción de descargar todos los documentos en formato PDF. Utiliza React Router para una navegación fluida y eficiente, ofreciendo una solución robusta y fácil de usar para el control y seguimiento del proceso de vacunación."
     }
   },
   "project": {
