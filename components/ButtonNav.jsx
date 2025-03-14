@@ -17,7 +17,7 @@ function ButtonNav({
   // Clase dinámica basada en si el botón está activo o no
   const buttonClass = isActive
     ? "text-colorLetters hover:border-custom-brown hover:text-custom-brown border-b-2 border-colorLetters scale-100" // Estilo activo
-    : " text-custom-brown hover:text-colorLetters dark:text-whiteSnow dark:hover:text-custom-brown"; // Estilo inactivo
+    : " text-custom-brown hover:text-colorLetters dark:text-colorLetters dark:hover:text-custom-brown"; // Estilo inactivo
 
   return (
     <button

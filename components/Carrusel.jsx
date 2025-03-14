@@ -57,30 +57,50 @@ const Carousel = ({ items }) => {
     setCurrentIndex((prev) => (direction === 'next' ? prev + 1 : prev - 1));
   };
 
+  // Función para manejar el clic en un ítem
+  const handleItemClick = (index) => {
+    setTransition(true);
+    setCurrentIndex(index);
+  };
+
   // Reinicio suave del carrusel
   useEffect(() => {
+    const track = trackRef.current;
+
     if (currentIndex === extendedItems.length - 2) {
       setTimeout(() => {
-        setTransition(false);
-        setCurrentIndex(2);
+        setTransition(false); // Desactiva la transición
+        track.style.transition = 'none'; // Desactiva la transición CSS
+        track.style.transform = `translateX(${getTranslateX(2)}px)`; // Mueve el carrusel al inicio
+        setCurrentIndex(2); // Actualiza el índice
+        setTimeout(() => {
+          track.style.transition = 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)'; // Reactiva la transición
+          setTransition(true);
+        }, 50);
       }, 300);
     }
     if (currentIndex === 1) {
       setTimeout(() => {
-        setTransition(false);
-        setCurrentIndex(extendedItems.length - 3);
+        setTransition(false); // Desactiva la transición
+        track.style.transition = 'none'; // Desactiva la transición CSS
+        track.style.transform = `translateX(${getTranslateX(extendedItems.length - 3)}px)`; // Mueve el carrusel al final
+        setCurrentIndex(extendedItems.length - 3); // Actualiza el índice
+        setTimeout(() => {
+          track.style.transition = 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)'; // Reactiva la transición
+          setTransition(true);
+        }, 50);
       }, 300);
     }
   }, [currentIndex]);
 
-  const getTranslateX = () => {
+  const getTranslateX = (index = currentIndex) => {
     if (!containerRef.current) return 0;
 
     const itemTotalWidth = itemDimensions.width + itemDimensions.margin;
     const containerWidth = containerRef.current.offsetWidth - itemDimensions.containerPadding;
     const centerOffset = (containerWidth - itemDimensions.width) / 2;
 
-    return -currentIndex * itemTotalWidth + centerOffset;
+    return -index * itemTotalWidth + centerOffset;
   };
 
   if (!isLoaded) return <Spinner />;
@@ -115,6 +135,7 @@ const Carousel = ({ items }) => {
                 width: `${itemDimensions.width}px`,
                 margin: `0 ${itemDimensions.margin / 2}px`,
               }}
+              onClick={() => handleItemClick(index)} // Manejador de clic
             >
               <div
                 className={`transition-all duration-300 relative mx-5 h-full ${

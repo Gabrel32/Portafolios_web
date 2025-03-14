@@ -239,6 +239,7 @@ function PortafoliosProvider({children}){
       ]
 
     const contacto = [
+        {Nombre:"Gmail",id:4,link:"mailto:Alegabo70@gmail.com",img:"gmail.svg"},
         {Nombre:"Linkedin",id:1,link:"https://www.linkedin.com/in/gabriel-hernandez-rendiles",img:"linkedin.svg"},
         {Nombre:"Telegram",id:2,link:"https://t.me/Alegabo32",img:"telegram.svg"},
         {Nombre:"Whatsapp",id:3,link:"https://wa.link/lc9cdm",img:"whatsapp.svg"},

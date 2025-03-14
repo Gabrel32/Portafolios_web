@@ -215,10 +215,12 @@ const Home = ({ className = "", ...props }) => {
                 ref={titleRef}
                 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight mb-8"
               >
-                <span className="block text-custom-brown">{t("home.title1")}</span>
+                <span className="flex flex-row gap-0 flex-wrap md:gap-5 text-custom-brown">{t("home.title1")}
+
                 <span className="inline-block text-whiteSnow dark:text-whiteSnow mt-2 relative">
                   {t("home.title2")}
                   <span className="absolute -inset-2 bg-custom-brown rounded-[20px] -z-10 animate-pulse" />
+                </span>
                 </span>
               </h1>
 

@@ -53,7 +53,7 @@ const ThemeSwitcher = () => {
       {/* Botón principal */}
       <button
         onClick={() => (isOpen || isAnimating ? handleClose() : handleOpen())}
-        className="relative flex items-center justify-center px-1 md:px-3 py-2 rounded-lg gap-2 transition-all duration-200 ease-out hover:scale-105 active:scale-95 text-custom-brown hover:text-colorLetters dark:text-whiteSnow dark:hover:text-custom-brown"
+        className="relative flex items-center justify-center px-1 md:px-3 py-2 rounded-lg gap-2 transition-all duration-200 ease-out hover:scale-105 active:scale-95 text-custom-brown hover:text-colorLetters dark:text-colorLetters dark:hover:text-custom-brown"
         aria-label={t("themeSwitcher.ariaLabel")}
       >
         <svg

@@ -16,6 +16,7 @@ const BackBurble = dynamic(() => import("../components/BackBurble"), {
 const TechnologyCard = React.memo(({ tech, index }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false); // Para manejar errores de carga
+  const [isClicked, setIsClicked] = useState(false); // Estado para manejar el efecto de clic
 
   // Usamos useEffect para verificar la carga de la imagen de manera más robusta
   useEffect(() => {
@@ -28,11 +29,20 @@ const TechnologyCard = React.memo(({ tech, index }) => {
     };
   }, [tech.icon]);
 
+  // Manejar el efecto de clic
+  const handleClick = () => {
+    setIsClicked(true);
+    setTimeout(() => setIsClicked(false), 200); // Restablecer el estado después de 200ms
+  };
+
   return (
     <li
       key={`${tech.id}_${index}`}
-      className="group flex flex-col items-center p-3 md:p-4 backdrop-blur-xl rounded-2xl border border-custom-brown shadow-md shadow-secondary hover:shadow-custom-brown transition-all duration-500 hover:-translate-y-1 animate-cardPop"
+      className={`group flex flex-col items-center p-3 md:p-4 backdrop-blur-xl rounded-2xl border border-custom-brown shadow-md shadow-secondary hover:shadow-custom-brown transition-all duration-500 hover:-translate-y-1 animate-cardPop cursor-pointer ${
+        isClicked ? "scale-95" : "scale-100"
+      }`}
       style={{ animationDelay: `${index * 0.1}s` }}
+      onClick={handleClick}
     >
       <div className=" bg-whiteSnow p-1 md:p-2.5 rounded-full mb-2 md:mb-2 transition-transform duration-300 group-hover:scale-105">
         {isLoading && !hasError && (
@@ -71,7 +81,7 @@ function SobreMi() {
   const renderedTechnologies = useMemo(
     () =>
       tecnologias.map((tech, index) => (
-        <TechnologyCard tech={tech} index={index} />
+        <TechnologyCard tech={tech} index={index} key={tech.id} />
       )),
     [tecnologias]
   );

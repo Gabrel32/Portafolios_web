@@ -56,7 +56,7 @@ const LanguageSwitcher = () => {
       <button
         onClick={() => (isOpen || isAnimating ? handleClose() : handleOpen())}
         type="button"
-        className="relative flex items-center font-semibold justify-center px-1 py-2 rounded-lg gap-1 text-lg md:text-xl transition-all duration-200 ease-out hover:scale-105 active:scale-95 text-custom-brown hover:text-colorLetters dark:text-whiteSnow dark:hover:text-colorLetters"
+        className="relative flex items-center font-semibold justify-center px-1 py-2 rounded-lg gap-1 text-lg md:text-xl transition-all duration-200 ease-out hover:scale-105 active:scale-95 text-custom-brown hover:text-colorLetters dark:text-colorLetters dark:hover:text-custom-brown"
         aria-label="Cambiar idioma"
       >
         <svg
