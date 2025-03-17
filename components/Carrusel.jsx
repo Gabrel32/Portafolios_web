@@ -74,10 +74,16 @@ const Carousel = ({ items }) => {
     }
   }, [isLoaded, itemDimensions]);
 
+  // Función para manejar el clic en un ítem
+  const handleItemClick = (index) => {
+    setIsTransitioning(true);
+    setCurrentIndex(index);
+  };
+
   if (!isLoaded) return <Spinner />;
 
   return (
-    <div className="carousel-container w-full max-w-[1300px] mx-auto py-10" ref={containerRef}>
+    <div className="carousel-container w-full max-w-[1300px] mx-auto py-10 select-none hover:select-none" ref={containerRef}>
       <div className="item-name-container text-center mb-10 transition-opacity duration-300">
         <h2 className="text-3xl font-bold text-colorLetters">
           {items[currentIndex]?.Nombre}
@@ -106,6 +112,7 @@ const Carousel = ({ items }) => {
                 width: `${itemDimensions.width}px`,
                 margin: `0 ${itemDimensions.margin / 2}px`,
               }}
+              onClick={() => handleItemClick(realIndex)} // 🔹 Manejar el clic en el ítem
             >
               <div
                 className={`transition-all duration-300 relative mx-5 h-full shadow-slate-500 ${
@@ -127,13 +134,16 @@ const Carousel = ({ items }) => {
         <div className="controls flex justify-center gap-4 w-full">
           <button
             onClick={() => handleNavigation('prev')}
-            className="btn_base btn-efecto px-6 py-3 max-w-[120px] bg-custom-brown text-whiteSnow rounded-full shadow-lg hover:bg-custom-brown-dark transition-all duration-300"
+            style={{ WebkitTapHighlightColor: 'transparent' }}
+
+            className="btn_base btn-efecto px-6 py-3 max-w-[120px] bg-custom-brown text-whiteSnow rounded-full shadow-lg hover:bg-custom-brown-dark transition-all duration-300 "
           >
             ← Anterior
           </button>
           <button
             onClick={() => handleNavigation('next')}
-            className="btn_base btn-efecto px-6 py-3 max-w-[120px] bg-custom-brown text-whiteSnow rounded-full shadow-lg hover:bg-custom-brown-dark transition-all duration-300"
+            style={{ WebkitTapHighlightColor: 'transparent' }} 
+            className="btn_base btn-efecto px-6 py-3 max-w-[120px] bg-custom-brown text-whiteSnow rounded-full shadow-lg hover:bg-custom-brown-dark transition-all duration-300 "
           >
             Siguiente →
           </button>

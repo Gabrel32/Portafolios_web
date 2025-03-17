@@ -238,8 +238,10 @@ const Home = ({ className = "", ...props }) => {
                 <div ref={buttonContainerRef} className="relative inline-block w-40 h-16">
                   <button
                     ref={buttonRef}
-                    className="absolute px-8 py-4 bg-custom-brown text-whiteSnow rounded-full font-bold transition-all duration-300 hover:bg-efectHovercolor focus:outline-none focus:ring-2 focus:ring-custom-brown hover:scale-110"
+                    className="absolute px-8 py-4 bg-custom-brown text-whiteSnow rounded-full font-bold transition-all duration-300 hover:bg-efectHovercolor focus:outline-none"
                     aria-label={t("home.downloadCV")}
+                    style={{ WebkitTapHighlightColor: 'transparent' }} // Desactiva el resaltado
+
                   >
                     <span className="relative z-10">{t("home.downloadCV")}</span>
                   </button>
