@@ -3,105 +3,76 @@ import Proyecto from './Proyecto';
 import Spinner from './Spinner';
 
 const Carousel = ({ items }) => {
-  const [currentIndex, setCurrentIndex] = useState(2); // Índice inicial ajustado
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [transition, setTransition] = useState(true);
-  const [itemDimensions, setItemDimensions] = useState({ width: 300, margin: 8 });
+  const [isTransitioning, setIsTransitioning] = useState(true);
+  const [itemDimensions, setItemDimensions] = useState({ width: 320, margin: 8 });
   const containerRef = useRef(null);
-  const itemRef = useRef(null);
   const trackRef = useRef(null);
 
-  const extendedItems = items
-    ? [
-        { ...items[items.length - 2], id: 'clone-second-last' }, // Clon del penúltimo
-        { ...items[items.length - 1], id: 'clone-last' }, // Clon del último
-        ...items,
-        { ...items[0], id: 'clone-first' }, // Clon del primero
-        { ...items[1], id: 'clone-second' }, // Clon del segundo
-      ]
-    : [];
+  const totalItems = items.length;
+  const extendedItems = [...items, ...items, ...items]; // 🔹 Duplicamos elementos para efecto infinito
+  const virtualIndex = currentIndex + totalItems; // 🔹 Posicionamos en el centro del array extendido
 
   useEffect(() => {
-    if (items) setIsLoaded(true);
+    if (items.length) setIsLoaded(true);
   }, [items]);
 
-  // Medir dimensiones responsivas
   useEffect(() => {
     const updateDimensions = () => {
-      if (itemRef.current && containerRef.current) {
-        const containerStyle = window.getComputedStyle(containerRef.current);
-        const itemStyle = window.getComputedStyle(itemRef.current);
-        const isMobile = containerRef.current.offsetWidth < 1024;
-
-        const containerPadding = parseInt(containerStyle.paddingLeft) + parseInt(containerStyle.paddingRight);
-
+      if (containerRef.current) {
+        const containerWidth = containerRef.current.offsetWidth;
+        const isMobile = containerWidth < 1024;
         setItemDimensions({
-          width: isMobile ? 350 : 500,
-          margin: isMobile ? parseInt(itemStyle.marginLeft) + parseInt(itemStyle.marginRight) : 60, // Aumentar margen
-          containerPadding: containerPadding,
+          width: isMobile ? 350 : 320,
+          margin: isMobile ? 8 : 40,
         });
       }
     };
 
-    const timeoutId = setTimeout(updateDimensions, 50);
     window.addEventListener('resize', updateDimensions);
-
-    return () => {
-      window.removeEventListener('resize', updateDimensions);
-      clearTimeout(timeoutId);
-    };
-  }, [items]);
+    updateDimensions();
+    return () => window.removeEventListener('resize', updateDimensions);
+  }, []);
 
   const handleNavigation = (direction) => {
-    setTransition(true);
-    setCurrentIndex((prev) => (direction === 'next' ? prev + 1 : prev - 1));
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentIndex((prev) => (direction === 'next' ? prev + 1 : prev - 1));
+    }, 100);
   };
 
-  // Función para manejar el clic en un ítem
-  const handleItemClick = (index) => {
-    setTransition(true);
-    setCurrentIndex(index);
-  };
-
-  // Reinicio suave del carrusel
+  // Manejar el reinicio del carrusel con una animación más fluida
   useEffect(() => {
-    const track = trackRef.current;
+    if (currentIndex === -1 || currentIndex === totalItems) {
+      const newIndex = currentIndex === -1 ? totalItems - 1 : 0;
 
-    if (currentIndex === extendedItems.length - 2) {
       setTimeout(() => {
-        setTransition(false); // Desactiva la transición
-        track.style.transition = 'none'; // Desactiva la transición CSS
-        track.style.transform = `translateX(${getTranslateX(2)}px)`; // Mueve el carrusel al inicio
-        setCurrentIndex(2); // Actualiza el índice
-        setTimeout(() => {
-          track.style.transition = 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)'; // Reactiva la transición
-          setTransition(true);
-        }, 50);
-      }, 300);
-    }
-    if (currentIndex === 1) {
-      setTimeout(() => {
-        setTransition(false); // Desactiva la transición
-        track.style.transition = 'none'; // Desactiva la transición CSS
-        track.style.transform = `translateX(${getTranslateX(extendedItems.length - 3)}px)`; // Mueve el carrusel al final
-        setCurrentIndex(extendedItems.length - 3); // Actualiza el índice
-        setTimeout(() => {
-          track.style.transition = 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)'; // Reactiva la transición
-          setTransition(true);
-        }, 50);
-      }, 300);
-    }
-  }, [currentIndex]);
+        setIsTransitioning(false);
+        setCurrentIndex(newIndex);
 
-  const getTranslateX = (index = currentIndex) => {
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => setIsTransitioning(true));
+        });
+      }, 300); // Duración de la animación de transición normal
+    }
+  }, [currentIndex, totalItems]);
+
+  const getTranslateX = () => {
     if (!containerRef.current) return 0;
-
     const itemTotalWidth = itemDimensions.width + itemDimensions.margin;
-    const containerWidth = containerRef.current.offsetWidth - itemDimensions.containerPadding;
+    const containerWidth = containerRef.current.offsetWidth;
     const centerOffset = (containerWidth - itemDimensions.width) / 2;
-
-    return -index * itemTotalWidth + centerOffset;
+    return -virtualIndex * itemTotalWidth + centerOffset;
   };
+
+  // Asegurarnos de que el cálculo del translateX se realice después de que las dimensiones estén disponibles
+  useEffect(() => {
+    if (isLoaded && containerRef.current) {
+      const initialTranslateX = getTranslateX();
+      trackRef.current.style.transform = `translateX(${initialTranslateX}px)`;
+    }
+  }, [isLoaded, itemDimensions]);
 
   if (!isLoaded) return <Spinner />;
 
@@ -109,7 +80,7 @@ const Carousel = ({ items }) => {
     <div className="carousel-container w-full max-w-[1300px] mx-auto py-10" ref={containerRef}>
       <div className="item-name-container text-center mb-10 transition-opacity duration-300">
         <h2 className="text-3xl font-bold text-colorLetters">
-          {extendedItems[currentIndex]?.Nombre}
+          {items[currentIndex]?.Nombre}
         </h2>
       </div>
 
@@ -118,32 +89,31 @@ const Carousel = ({ items }) => {
         ref={trackRef}
         style={{
           transform: `translateX(${getTranslateX()}px)`,
-          transition: transition ? 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)' : 'none',
+          transition: isTransitioning ? 'transform 0.3s ease-in-out' : 'none',
         }}
       >
         {extendedItems.map((item, index) => {
-          const isCenter = index === currentIndex;
-          const isLeft = index === currentIndex - 1 || index === currentIndex - 2;
-          const isRight = index === currentIndex + 1 || index === currentIndex + 2;
+          const realIndex = index % totalItems; // 🔹 Calcula el índice real en el array original
+          const isCenter = realIndex === currentIndex;
+          const isLeft = realIndex === (currentIndex - 1 + totalItems) % totalItems;
+          const isRight = realIndex === (currentIndex + 1) % totalItems;
 
           return (
             <div
               key={`${item.id}-${index}`}
-              ref={index === 2 ? itemRef : null} // Referencia al elemento central
-              className="carousel-item flex-shrink-0 mx-2 lg:mx-6" // Aumentar margen
+              className="carousel-item flex-shrink-0 mx-2 lg:mx-6"
               style={{
                 width: `${itemDimensions.width}px`,
                 margin: `0 ${itemDimensions.margin / 2}px`,
               }}
-              onClick={() => handleItemClick(index)} // Manejador de clic
             >
               <div
-                className={`transition-all duration-300 relative mx-5 h-full ${
+                className={`transition-all duration-300 relative mx-5 h-full shadow-slate-500 ${
                   isCenter
-                    ? 'scale-110 opacity-100 shadow-2xl' // Elemento central más grande
+                    ? 'scale-110 opacity-100 shadow-2xl shadow-slate-500 '
                     : isLeft || isRight
-                    ? 'scale-90 opacity-75 shadow-lg' // Elementos secundarios más pequeños
-                    : 'scale-75 opacity-50 shadow-md' // Elementos más alejados
+                    ? 'scale-90 opacity-75 shadow-lg'
+                    : 'scale-75 opacity-50 shadow-md'
                 } rounded-xl transform transition-transform duration-300 hover:-translate-y-2 cursor-pointer `}
               >
                 <Proyecto e={item} />
@@ -157,13 +127,13 @@ const Carousel = ({ items }) => {
         <div className="controls flex justify-center gap-4 w-full">
           <button
             onClick={() => handleNavigation('prev')}
-            className="btn_base btn-efecto px-6 py-3 bg-custom-brown text-whiteSnow rounded-full shadow-lg hover:bg-custom-brown-dark hover:shadow-xl transition-all duration-300"
+            className="btn_base btn-efecto px-6 py-3 max-w-[120px] bg-custom-brown text-whiteSnow rounded-full shadow-lg hover:bg-custom-brown-dark transition-all duration-300"
           >
             ← Anterior
           </button>
           <button
             onClick={() => handleNavigation('next')}
-            className="btn_base btn-efecto px-6 py-3 bg-custom-brown text-whiteSnow rounded-full shadow-lg hover:bg-custom-brown-dark hover:shadow-xl transition-all duration-300"
+            className="btn_base btn-efecto px-6 py-3 max-w-[120px] bg-custom-brown text-whiteSnow rounded-full shadow-lg hover:bg-custom-brown-dark transition-all duration-300"
           >
             Siguiente →
           </button>
@@ -171,7 +141,7 @@ const Carousel = ({ items }) => {
 
         <div className="description-container text-center transition-opacity duration-300">
           <p className="text-lg text-colorLetters max-w-2xl mx-auto px-4 font-bold">
-            {extendedItems[currentIndex]?.parrafo}
+            {items[currentIndex]?.parrafo}
           </p>
         </div>
       </div>

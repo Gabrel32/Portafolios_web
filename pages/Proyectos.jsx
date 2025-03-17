@@ -21,7 +21,7 @@ const Proyectos = ({ className, ...props }) => {
   return (
     <Layout pagina={t('header.nav.projects')}>
       <BackBurble
-        particleDensity={10} // Reducir densidad de partículas
+        particleDensity={20} // Reducir densidad de partículas
         bubbleColors={['bg-custom-brown', 'bg-secundary']}
         center={true}
         showLine={false}

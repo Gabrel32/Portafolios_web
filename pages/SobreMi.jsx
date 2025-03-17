@@ -38,7 +38,7 @@ const TechnologyCard = React.memo(({ tech, index }) => {
   return (
     <li
       key={`${tech.id}_${index}`}
-      className={`group flex flex-col items-center p-3 md:p-4 backdrop-blur-xl rounded-2xl border border-custom-brown shadow-md shadow-secondary hover:shadow-custom-brown transition-all duration-500 hover:-translate-y-1 animate-cardPop cursor-pointer ${
+      className={`group flex flex-col items-center p-3 md:p-4 backdrop-blur-xl rounded-2xl border border-custom-brown shadow-md shadow-secondary hover:shadow-custom-brown transition-all duration-500 hover:-translate-y-1 animate-cardPop cursor-pointer select-none ${
         isClicked ? "scale-95" : "scale-100"
       }`}
       style={{ animationDelay: `${index * 0.1}s` }}
