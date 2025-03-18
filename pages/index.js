@@ -194,7 +194,7 @@ const Home = ({ className = "", ...props }) => {
   return (
     <Layout pagina={t("header.nav.home")}>
       <BackBurble
-        particleDensity={20}
+        particleDensity={10}
         bubbleColors={["bg-custom-brown", "bg-efectHovercolor"]}
         center={true}
         showLine={false}

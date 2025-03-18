@@ -1,0 +1,7 @@
+{
+    "presets": ["next/babel"], // Usa el preset de Next.js
+    "plugins": [
+      // Agrega plugins adicionales aquí
+      "@babel/plugin-proposal-class-properties"
+    ]
+  }

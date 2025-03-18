@@ -6,13 +6,13 @@ const Carousel = ({ items }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(true);
-  const [itemDimensions, setItemDimensions] = useState({ width: 320, margin: 8 });
+  const [itemDimensions, setItemDimensions] = useState({ width: 360, margin: 8 });
   const containerRef = useRef(null);
   const trackRef = useRef(null);
 
   const totalItems = items.length;
-  const extendedItems = [...items, ...items, ...items]; // 🔹 Duplicamos elementos para efecto infinito
-  const virtualIndex = currentIndex + totalItems; // 🔹 Posicionamos en el centro del array extendido
+  const extendedItems = [...items, ...items, ...items]; 
+  const virtualIndex = currentIndex + totalItems;
 
   useEffect(() => {
     if (items.length) setIsLoaded(true);
@@ -24,7 +24,7 @@ const Carousel = ({ items }) => {
         const containerWidth = containerRef.current.offsetWidth;
         const isMobile = containerWidth < 1024;
         setItemDimensions({
-          width: isMobile ? 350 : 320,
+          width: isMobile ? 360 : 320,
           margin: isMobile ? 8 : 40,
         });
       }

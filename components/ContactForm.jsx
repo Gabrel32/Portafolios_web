@@ -208,8 +208,8 @@ export default function ContactForm({ setSuccess, setError }) {
           className={`w-full px-4 py-3 h-32 bg-transparent border text-colorLetters  ${
             errors.message ? "border-red-500" : "border-custom-brown"
           } rounded-lg resize-none cursor-default focus:outline-none focus:border-custom-brown transition-all scrollbar-thin scrollbar-thumb-custom-brown scrollbar-track-colorLetters dark:scrollbar-track-completColor placeholder-gray-400`}
-          // disabled={loading}
-          // readOnly
+          disabled={loading}
+          readOnly
         />
         <div className="absolute -bottom-5 h-5">
           {errors.message && (
