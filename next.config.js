@@ -12,6 +12,21 @@ module.exports = {
       };
     }
 
+    // Agrega un loader para archivos PDF
+    config.module.rules.push({
+      test: /\.(pdf)$/i,
+      use: [
+        {
+          loader: 'file-loader',
+          options: {
+            name: '[path][name].[ext]',
+            publicPath: '/_next/static/files', // Ruta donde se servirán los archivos
+            outputPath: 'static/files', // Ruta donde se guardarán los archivos en la carpeta de construcción
+          },
+        },
+      ],
+    });
+
     return config; // Devuelve la configuración modificada
   },
 };
