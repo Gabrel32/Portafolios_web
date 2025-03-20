@@ -5,8 +5,8 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useEffect, useRef, useState, useCallback } from "react";
 import BackBurble from "../components/BackBurble";
 import { useRouter } from "next/router";
-import cvPdf from '../public/CV/cv.pdf'; // Ruta relativa al archivo PDF
-
+import cvPdf from '../public/CV/cv.pdf'; 
+import Image from "next/image"; 
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,16 +21,15 @@ const Home = ({ className = "", ...props }) => {
   const decorativesRef = useRef([]);
   const aboutRef = useRef(null);
   const experienceRef = useRef(null);
-  const alcarvanButtonRef = useRef(null); // Ref para el botón de Alcarván
-  const alcarvanContainerRef = useRef(null); // Ref para el contenedor de Alcarván
-  const trigonButtonRef = useRef(null); // Ref para el botón de Trigon
-  const trigonContainerRef = useRef(null); // Ref para el contenedor de Trigon
+  const alcarvanButtonRef = useRef(null);
+  const alcarvanContainerRef = useRef(null);
+  const trigonButtonRef = useRef(null);
+  const trigonContainerRef = useRef(null);
   const router = useRouter();
 
   // Animación inicial del título
   useEffect(() => {
     if (typeof window === "undefined") return;
-
     if (!titleRef.current) return;
 
     const ctx = gsap.context(() => {
@@ -218,11 +217,10 @@ const Home = ({ className = "", ...props }) => {
                 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight mb-8"
               >
                 <span className="flex flex-row gap-0 flex-wrap md:gap-5 text-custom-brown">{t("home.title1")}
-
-                <span className="inline-block text-whiteSnow dark:text-whiteSnow mt-2 relative">
-                  {t("home.title2")}
-                  <span className="absolute -inset-2 bg-custom-brown rounded-[20px] -z-10 animate-pulse" />
-                </span>
+                  <span className="inline-block text-whiteSnow dark:text-whiteSnow mt-2 relative">
+                    {t("home.title2")}
+                    <span className="absolute -inset-2 bg-custom-brown rounded-[20px] -z-10 animate-pulse" />
+                  </span>
                 </span>
               </h1>
 
@@ -238,22 +236,22 @@ const Home = ({ className = "", ...props }) => {
                 </p>
 
                 <div ref={buttonContainerRef} className="relative inline-block w-40 h-16">
-                <button
-                  ref={buttonRef}
-                  className="absolute px-8 py-4 bg-custom-brown text-whiteSnow rounded-full font-bold transition-all duration-300 hover:bg-efectHovercolor focus:outline-none"
-                  aria-label={t("home.downloadCV")}
-                  onClick={() => {
-                    const link = document.createElement('a');
-                    link.href = cvPdf; // Ruta correcta desde la carpeta public
-                    link.download = 'gabriel-hernandez.pdf'; // Nombre del archivo que se descargará
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
-                  }}
-                  style={{ WebkitTapHighlightColor: 'transparent' }}
-                >
-                  <span className="relative z-10">{t("home.downloadCV")}</span>
-                </button>
+                  <button
+                    ref={buttonRef}
+                    className="absolute px-8 py-4 bg-custom-brown text-whiteSnow rounded-full font-bold transition-all duration-300 hover:bg-efectHovercolor focus:outline-none"
+                    aria-label={t("home.downloadCV")}
+                    onClick={() => {
+                      const link = document.createElement('a');
+                      link.href = cvPdf;
+                      link.download = 'gabriel-hernandez.pdf';
+                      document.body.appendChild(link);
+                      link.click();
+                      document.body.removeChild(link);
+                    }}
+                    style={{ WebkitTapHighlightColor: 'transparent' }}
+                  >
+                    <span className="relative z-10">{t("home.downloadCV")}</span>
+                  </button>
                 </div>
               </div>
             </div>
@@ -268,10 +266,12 @@ const Home = ({ className = "", ...props }) => {
               </h2>
               <div className="flex flex-col md:flex-row items-center gap-8">
                 <div className="md:w-1/3">
-                  <img
-                    src="/tu-foto.jpg"
+                  <Image
+                    src="/Selfie/selfie.jpg" 
                     alt={t("home.aboutAlt")}
-                    className="rounded-full w-48 h-48 object-cover border-4 border-custom-brown hover:rotate-3 transition-transform"
+                    width={192} 
+                    height={192} 
+                    className="rounded-full object-cover border-4 border-custom-brown hover:rotate-3 transition-transform"
                     loading="lazy"
                   />
                 </div>
@@ -412,4 +412,3 @@ const Home = ({ className = "", ...props }) => {
 };
 
 export default Home;
-

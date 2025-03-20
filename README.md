@@ -1,34 +1,71 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Portafolio Web
 
-## Getting Started
+Bienvenido a mi **Portafolio Web**, un espacio donde muestro mis habilidades, proyectos y experiencia como desarrollador frontend. Este portafolio está diseñado para darme a conocer, destacar mis conocimientos técnicos y demostrar mi capacidad para crear aplicaciones web modernas y funcionales.
 
-First, run the development server:
+Este es un proyecto basado en [Next.js](https://nextjs.org/), creado con [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Características Principales
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+- **Diseño Moderno y Responsive**: Interfaz adaptativa que funciona en dispositivos móviles, tablets y desktop.
+- **Integración con Email.js**: Formulario de contacto funcional que permite a los visitantes enviarme mensajes directamente.
+- **Proyectos Destacados**: Sección dedicada a mostrar mis trabajos más relevantes con descripciones y enlaces.
+- **Tecnologías de Vanguardia**: Uso de herramientas y frameworks modernos para garantizar un alto rendimiento y una excelente experiencia de usuario.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+---
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Tecnologías Utilizadas
 
-## Learn More
+- **Next.js**: Framework de React para renderizado estático y dinámico.
+- **React**: Biblioteca principal para la construcción de la interfaz de usuario.
+- **Tailwind CSS**: Framework de CSS utilitario para un diseño rápido y personalizado.
+- **Babel**: Compilador de JavaScript para garantizar compatibilidad con navegadores.
+- **Email.js**: Integración para el envío de correos electrónicos desde el formulario de contacto.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Requisitos Previos
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Antes de ejecutar este proyecto, asegúrate de tener instalado:
 
-## Deploy on Vercel
+- **Node.js**: Versión 16 o superior.
+- **npm**: Gestor de paquetes de Node.js.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Instalación y Ejecución
+
+Sigue estos pasos para configurar y ejecutar el proyecto localmente:
+
+ Clona el repositorio:
+   ```bash
+    git clone https://github.com/tu-usuario/portafolio-web.git
+  
+  
+    Navega al directorio del proyecto:
+    cd portafolio-web
+
+    Instala las dependencias:
+    npm install
+
+    Ejecuta el servidor de desarrollo:
+
+
+    npm run dev
+    # o
+    yarn dev
+
+    Abre tu navegador y visita:
+    http://localhost:3000
+
+---
+## Despliegue
+
+El despliegue más sencillo para una aplicación Next.js es utilizando la plataforma Vercel, creada por los mismos desarrolladores de Next.js.
+
+Puedes visitar la versión en vivo de mi portafolio aquí:
+
+🔗 https://gabriel-hernandez.vercel.app/
+
+Para más detalles sobre el despliegue, consulta la documentación oficial de Next.js.
