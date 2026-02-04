@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import emailjs from "@emailjs/browser";
+
 import usePortafolios from "../hook/usePortafolios";
 
 const formatDateAndTime = () => {
@@ -28,7 +28,9 @@ const areArraysEqual = (arr1, arr2) => {
 
 export default function ContactForm({ setSuccess, setError }) {
   const { t } = usePortafolios();
-  const predefinedMessages = t("contactForm.predefinedMessages", { returnObjects: true });
+  const predefinedMessages = t("contactForm.predefinedMessages", {
+    returnObjects: true,
+  });
 
   const [formData, setFormData] = useState({
     from_name: "",
@@ -85,8 +87,8 @@ export default function ContactForm({ setSuccess, setError }) {
     }
 
     setLoading(true);
-    setError(""); // Reseteamos el error en el padre
-    setSuccess(false); // Reseteamos el éxito en el padre
+    setError("");
+    setSuccess(false);
 
     const { date, time } = formatDateAndTime();
     const templateParams = {
@@ -100,24 +102,27 @@ export default function ContactForm({ setSuccess, setError }) {
     };
 
     try {
-      const response = await emailjs.send(
-        "service_9fa3i7j",
-        "template_cd15fxg",
-        templateParams,
-        "eUduW7kk-a--PPfBd"
-      );
-      if (response.status === 200) {
-        setSuccess(true); // Actualizamos el estado en el padre
+      const response = await fetch("/api/mailer", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(templateParams),
+      });
+
+      if (response.ok) {
+        setSuccess(true);
         setFormData({
           from_name: "",
           from_email: "",
           message: predefinedMessages[0],
         });
       } else {
-        setError(t("contactForm.errors.sendError")); // Actualizamos el error en el padre
+        setError(t("contactForm.errors.sendError"));
       }
     } catch (err) {
-      setError(t("contactForm.errors.connectionError")); // Actualizamos el error en el padre
+      console.error(err);
+      setError(t("contactForm.errors.connectionError"));
     } finally {
       setLoading(false);
     }
@@ -151,7 +156,10 @@ export default function ContactForm({ setSuccess, setError }) {
     <form onSubmit={handleSubmit} className="mt-12 space-y-6 animate-fadeInUp">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="space-y-2 relative">
-          <label htmlFor="from_name" className="text-custom-brown font-semibold block">
+          <label
+            htmlFor="from_name"
+            className="text-custom-brown font-semibold block"
+          >
             {t("contactForm.labels.name")}
           </label>
           <input
@@ -174,7 +182,10 @@ export default function ContactForm({ setSuccess, setError }) {
         </div>
 
         <div className="space-y-2 relative">
-          <label htmlFor="from_email" className="text-custom-brown font-semibold block">
+          <label
+            htmlFor="from_email"
+            className="text-custom-brown font-semibold block"
+          >
             {t("contactForm.labels.email")}
           </label>
           <input
@@ -198,7 +209,10 @@ export default function ContactForm({ setSuccess, setError }) {
       </div>
 
       <div className="space-y-2 relative">
-        <label htmlFor="message" className="text-custom-brown font-semibold block">
+        <label
+          htmlFor="message"
+          className="text-custom-brown font-semibold block"
+        >
           {t("contactForm.labels.message")}
         </label>
         <textarea
@@ -218,53 +232,51 @@ export default function ContactForm({ setSuccess, setError }) {
         </div>
 
         <div className="relative mt-8 z-[9999]">
-  <button
-    type="button"
-    onClick={() => setShowMessages(!showMessages)}
-    style={{ WebkitTapHighlightColor: 'transparent' }} // Desactiva el resaltado
+          <button
+            type="button"
+            onClick={() => setShowMessages(!showMessages)}
+            style={{ WebkitTapHighlightColor: "transparent" }}
+            className=" btn-efecto font-bold px-4 py-2 bg-custom-brown text-whiteSnow rounded-lg text-sm hover:bg-opacity-90 transition-colors flex items-center gap-2 focus:ring-custom-brown focus:ring-offset-2"
+          >
+            {t("contactForm.selectMessage")}
+            <svg
+              className={`w-4 h-4 transform transition-transform ${showMessages ? "rotate-180" : ""}`}
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </button>
 
-    className=" btn-efecto font-bold px-4 py-2 bg-custom-brown text-whiteSnow rounded-lg text-sm hover:bg-opacity-90 transition-colors flex items-center gap-2 focus:ring-custom-brown focus:ring-offset-2"
-  >
-    {t("contactForm.selectMessage")}
-    <svg
-      className={`w-4 h-4 transform transition-transform ${showMessages ? "rotate-180" : ""}`}
-      viewBox="0 0 20 20"
-      fill="currentColor"
-    >
-      <path
-        fillRule="evenodd"
-        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-        clipRule="evenodd"
-      />
-    </svg>
-  </button>
-
-  {showMessages && (
-    <div className="absolute z-[9999] mt-2 w-full bg-beige-50 dark:bg-completColor border border-custom-brown rounded-lg shadow-lg max-h-60 overflow-y-auto left-0 min-w-[300px] transform translate-y-2">
-      {predefinedMessages.map((msg, index) => (
-        <div
-          key={index}
-          onClick={() => handlePredefinedMessage(msg)}
-          className={`px-4 py-3 cursor-pointer text-sm ${
-            formData.message === msg
-              ? "bg-completColor hover:bg-secondary"
-              : "text-colorLetters hover:bg-secondary hover:text-whiteSnow"
-          } transition-colors`}
-        >
-          {msg}
+          {showMessages && (
+            <div className="absolute z-[9999] mt-2 w-full bg-beige-50 dark:bg-completColor border border-custom-brown rounded-lg shadow-lg max-h-60 overflow-y-auto left-0 min-w-[300px] transform translate-y-2">
+              {predefinedMessages.map((msg, index) => (
+                <div
+                  key={index}
+                  onClick={() => handlePredefinedMessage(msg)}
+                  className={`px-4 py-3 cursor-pointer text-sm ${
+                    formData.message === msg
+                      ? "bg-completColor hover:bg-secondary"
+                      : "text-colorLetters hover:bg-secondary hover:text-whiteSnow"
+                  } transition-colors`}
+                >
+                  {msg}
+                </div>
+              ))}
+            </div>
+          )}
         </div>
-      ))}
-    </div>
-  )}
-</div>
       </div>
 
       <div className="flex justify-end">
         <button
           type="submit"
           disabled={loading}
-          style={{ WebkitTapHighlightColor: 'transparent' }} // Desactiva el resaltado
-
+          style={{ WebkitTapHighlightColor: "transparent" }}
           className="btn-efecto font-bold px-8 py-3 bg-gradient-to-r from-custom-brown to-efectHovercolor text-whiteSnow rounded-lg hover:opacity-90 transition-opacity duration-300 disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden group focus:outline-none focus:ring-2 focus:ring-custom-brown focus:ring-offset-2"
         >
           <span className="relative z-1 flex items-center gap-2">
@@ -275,7 +287,14 @@ export default function ContactForm({ setSuccess, setError }) {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" opacity="0.25" />
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                  opacity="0.25"
+                />
                 <path
                   d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                   fill="currentColor"

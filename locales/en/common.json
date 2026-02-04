@@ -34,6 +34,13 @@
         "point2": "Implementation of frontend solutions for interactive web applications.",
         "point3": "Collaboration in designing and developing user-centered interfaces."
       },
+      "truco": {
+        "title": "Truco Club (Full Stack Developer)",
+        "description": "Led the end-to-end development of the core game engine and systems architecture for a competitive real-time gaming platform, prioritizing scalability and low latency.",
+        "point1": "Engineered a deterministic rules engine in TypeScript, managing dynamic card hierarchies, move validation, and complex game states (Envido, Truco, Flor).",
+        "point2": "Designed a real-time bidirectional communication layer using WebSockets and NestJS, featuring advanced reconnection policies and Redis-backed state persistence.",
+        "point3": "Optimized game loop lifecycle and integrated engagement features like instant rematches within a high-performance reactive UI built with Next.js."
+      },
       "textVisite": "visit site"
     }
   },

@@ -5,8 +5,10 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useEffect, useRef, useState, useCallback } from "react";
 import BackBurble from "../components/BackBurble";
 import { useRouter } from "next/router";
-import cvPdf from '../public/CV/cv.pdf'; 
-import Image from "next/image"; 
+import cvPdf from "../public/CV/cv.pdf";
+import Image from "next/image";
+import { Globe } from "lucide-react";
+import ExperienceCard from "../components/ExperienceCard";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,11 +23,70 @@ const Home = ({ className = "", ...props }) => {
   const decorativesRef = useRef([]);
   const aboutRef = useRef(null);
   const experienceRef = useRef(null);
-  const alcarvanButtonRef = useRef(null);
-  const alcarvanContainerRef = useRef(null);
-  const trigonButtonRef = useRef(null);
-  const trigonContainerRef = useRef(null);
   const router = useRouter();
+
+  const experiences = [
+    {
+      title: t("home.experience.alcarvan.title"),
+      company: "Sistemas Tecnológicos Alcarván",
+      period: "Feb 2023 - Presente",
+      link: "https://www.alcaravan.com.ve/",
+      description: t("home.experience.alcarvan.description", {
+        defaultValue:
+          "Desarrollo de libros matemáticos interactivos, enfocado en la digitalización de contenidos educativos y la creación de experiencias de usuario intuitivas.",
+      }),
+      points: [
+        t(
+          "home.experience.alcarvan.point1",
+          "Implementación de Playwright para pruebas E2E, asegurando la calidad del software en más de 150 escenarios interactivos.",
+        ),
+        t(
+          "home.experience.alcarvan.point2",
+          "Diseño y desarrollo de interfaces para la visualización de conceptos matemáticos complejos, mejorando la comprensión del usuario.",
+        ),
+        t(
+          "home.experience.alcarvan.point3",
+          "Creación de una estructura de testing robusta para garantizar la estabilidad del proyecto.",
+        ),
+      ],
+    },
+    {
+      title: t("home.experience.trigon.title"),
+      company: "Trigan.org",
+      period: "Mar 2020 - Ene 2021",
+      link: "https://trigan.org/",
+      description: t("home.experience.trigon.description", {
+        defaultValue:
+          "Desarrollo Frontend con React, enfocado en la creación de interfaces dinámicas y responsivas.",
+      }),
+      points: [
+        t(
+          "home.experience.trigon.point1",
+          "Desarrollo de componentes reutilizables en React para mejorar la eficiencia del código.",
+        ),
+        t(
+          "home.experience.trigon.point2",
+          "Implementación de soluciones frontend para aplicaciones web interactivas.",
+        ),
+        t(
+          "home.experience.trigon.point3",
+          "Colaboración en el diseño y desarrollo de interfaces centradas en el usuario.",
+        ),
+      ],
+    },
+    {
+      title: t("home.experience.truco.title"),
+      company: "trucoclub.app",
+      period: "Ago 2025 - Feb 2026",
+      link: "https://www.trucoclub.app/",
+      description: t("home.experience.truco.description"),
+      points: [
+        t("home.experience.truco.point1"),
+        t("home.experience.truco.point2"),
+        t("home.experience.truco.point3"),
+      ],
+    },
+  ];
 
   // Animación inicial del título
   useEffect(() => {
@@ -118,8 +179,12 @@ const Home = ({ className = "", ...props }) => {
             opacity: 0,
             y: 30,
             ease: "power3.out",
-            scrollTrigger: { trigger: subtitleRef.current, start: "top 85%", once: true },
-          })
+            scrollTrigger: {
+              trigger: subtitleRef.current,
+              start: "top 85%",
+              once: true,
+            },
+          }),
         );
       }
 
@@ -131,8 +196,12 @@ const Home = ({ className = "", ...props }) => {
             y: 40,
             stagger: 0.15,
             ease: "power3.out",
-            scrollTrigger: { trigger: contentRef.current, start: "top 80%", once: true },
-          })
+            scrollTrigger: {
+              trigger: contentRef.current,
+              start: "top 80%",
+              once: true,
+            },
+          }),
         );
       }
 
@@ -146,7 +215,7 @@ const Home = ({ className = "", ...props }) => {
               y: 60,
               ease: "elastic.out(1, 0.5)",
               scrollTrigger: { trigger: el, start: "top 90%", once: true },
-            })
+            }),
           );
         }
       });
@@ -159,8 +228,12 @@ const Home = ({ className = "", ...props }) => {
             y: 50,
             stagger: 0.2,
             ease: "power3.out",
-            scrollTrigger: { trigger: aboutRef.current, start: "top 85%", once: true },
-          })
+            scrollTrigger: {
+              trigger: aboutRef.current,
+              start: "top 85%",
+              once: true,
+            },
+          }),
         );
       }
 
@@ -172,21 +245,24 @@ const Home = ({ className = "", ...props }) => {
             y: 50,
             stagger: 0.2,
             ease: "power3.out",
-            scrollTrigger: { trigger: experienceRef.current, start: "top 85%", once: true },
-          })
+            scrollTrigger: {
+              trigger: experienceRef.current,
+              start: "top 85%",
+              once: true,
+            },
+          }),
         );
       }
     });
 
-    const cleanupMainButton = setupMagneticEffect(buttonRef, buttonContainerRef);
-    const cleanupAlcarvanButton = setupMagneticEffect(alcarvanButtonRef, alcarvanContainerRef);
-    const cleanupTrigonButton = setupMagneticEffect(trigonButtonRef, trigonContainerRef);
+    const cleanupMainButton = setupMagneticEffect(
+      buttonRef,
+      buttonContainerRef,
+    );
 
     return () => {
       ctx.revert();
       cleanupMainButton();
-      cleanupAlcarvanButton();
-      cleanupTrigonButton();
     };
   }, [isMounted, setupMagneticEffect]);
 
@@ -201,7 +277,9 @@ const Home = ({ className = "", ...props }) => {
         showLine={false}
         variant="wide"
       >
-        <section className={`relative flex flex-col items-center py-12 ${className}`}>
+        <section
+          className={`relative flex flex-col items-center py-12 ${className}`}
+        >
           <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
             <div className="absolute inset-0" />
           </div>
@@ -216,7 +294,8 @@ const Home = ({ className = "", ...props }) => {
                 ref={titleRef}
                 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight mb-8"
               >
-                <span className="flex flex-row gap-0 flex-wrap md:gap-5 text-custom-brown">{t("home.title1")}
+                <span className="flex flex-row gap-0 flex-wrap md:gap-5 text-custom-brown">
+                  {t("home.title1")}
                   <span className="inline-block text-whiteSnow dark:text-whiteSnow mt-2 relative">
                     {t("home.title2")}
                     <span className="absolute -inset-2 bg-custom-brown rounded-[20px] -z-10 animate-pulse" />
@@ -235,22 +314,27 @@ const Home = ({ className = "", ...props }) => {
                   {t("home.description")}
                 </p>
 
-                <div ref={buttonContainerRef} className="relative inline-block w-40 h-16">
+                <div
+                  ref={buttonContainerRef}
+                  className="relative inline-block w-40 h-16"
+                >
                   <button
                     ref={buttonRef}
                     className="absolute px-8 py-4 bg-custom-brown text-whiteSnow rounded-full font-bold transition-all duration-300 hover:bg-efectHovercolor focus:outline-none"
                     aria-label={t("home.downloadCV")}
                     onClick={() => {
-                      const link = document.createElement('a');
+                      const link = document.createElement("a");
                       link.href = cvPdf;
-                      link.download = 'gabriel-hernandez.pdf';
+                      link.download = "gabriel-hernandez.pdf";
                       document.body.appendChild(link);
                       link.click();
                       document.body.removeChild(link);
                     }}
-                    style={{ WebkitTapHighlightColor: 'transparent' }}
+                    style={{ WebkitTapHighlightColor: "transparent" }}
                   >
-                    <span className="relative z-10">{t("home.downloadCV")}</span>
+                    <span className="relative z-10">
+                      {t("home.downloadCV")}
+                    </span>
                   </button>
                 </div>
               </div>
@@ -267,10 +351,10 @@ const Home = ({ className = "", ...props }) => {
               <div className="flex flex-col md:flex-row items-center gap-8">
                 <div className="md:w-1/3">
                   <Image
-                    src="/Selfie/selfie.jpg" 
+                    src="/Selfie/selfie.jpg"
                     alt={t("home.aboutAlt")}
-                    width={192} 
-                    height={192} 
+                    width={192}
+                    height={192}
                     className="rounded-full object-cover border-4 border-custom-brown hover:rotate-3 transition-transform"
                     loading="lazy"
                   />
@@ -278,7 +362,8 @@ const Home = ({ className = "", ...props }) => {
                 <div className="md:w-2/3">
                   <p className="text-lg md:text-xl text-custom-brown dark:text-colorLetters leading-relaxed">
                     {t("home.aboutDescription", {
-                      defaultValue: "Desarrollador Frontend especializado en crear experiencias educativas interactivas. Combino mis conocimientos en matemáticas avanzadas con desarrollo web moderno para transformar conceptos complejos en interfaces intuitivas y accesibles."
+                      defaultValue:
+                        "Desarrollador Frontend especializado en crear experiencias educativas interactivas. Combino mis conocimientos en matemáticas avanzadas con desarrollo web moderno para transformar conceptos complejos en interfaces intuitivas y accesibles.",
                     })}
                   </p>
                 </div>
@@ -290,105 +375,13 @@ const Home = ({ className = "", ...props }) => {
               ref={experienceRef}
               className="mt-16 backdrop-blur-md rounded-3xl p-8 md:p-12 lg:p-16 border border-custom-brown shadow-2xl shadow-custom-brown transition-all duration-700"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-custom-brown mb-8">
+              <h2 className="text-4xl md:text-5xl font-bold text-custom-brown mb-12">
                 {t("home.experienceTitle")}
               </h2>
               <div className="space-y-8">
-                {/* Experiencia Alcarván */}
-                <div className="flex flex-col md:flex-row gap-6">
-                  <div className="md:w-1/4">
-                    <h3 className="text-2xl font-bold text-custom-brown">
-                      {t("home.experience.alcarvan.title")}
-                    </h3>
-                    <p className="text-lg text-custom-brown">Sistemas Tecnológicos Alcarván</p>
-                    <p className="text-sm text-custom-brown">Feb 2023 - Presente</p>
-                    <div ref={alcarvanContainerRef} className="relative inline-block w-40 h-12 mt-2">
-                      <a
-                        href="https://www.alcaravan.com.ve/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        ref={alcarvanButtonRef}
-                        className="absolute inline-flex items-center gap-2 px-4 py-2 bg-custom-brown text-whiteSnow rounded-full font-bold transition-all duration-200 hover:bg-efectHovercolor focus:outline-none focus:ring-2 focus:ring-custom-brown hover:scale-110"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          className="w-5 h-5"
-                        >
-                          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V9h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
-                        </svg>
-                        <span>{t("home.experience.textVisite")}</span>                      
-                      </a>
-                    </div>
-                  </div>
-                  <div className="md:w-3/4">
-                    <p className="text-lg text-custom-brown dark:text-colorLetters">
-                      {t("home.experience.alcarvan.description", {
-                        defaultValue: "Desarrollo de libros matemáticos interactivos, enfocado en la digitalización de contenidos educativos y la creación de experiencias de usuario intuitivas."
-                      })}
-                    </p>
-                    <ul className="mt-4 space-y-2">
-                      <li className="text-custom-brown dark:text-colorLetters">
-                        - {t("home.experience.alcarvan.point1", "Implementación de Playwright para pruebas E2E, asegurando la calidad del software en más de 150 escenarios interactivos.")}
-                      </li>
-                      <li className="text-custom-brown dark:text-colorLetters">
-                        - {t("home.experience.alcarvan.point2", "Diseño y desarrollo de interfaces para la visualización de conceptos matemáticos complejos, mejorando la comprensión del usuario.")}
-                      </li>
-                      <li className="text-custom-brown dark:text-colorLetters">
-                        - {t("home.experience.alcarvan.point3", "Creación de una estructura de testing robusta para garantizar la estabilidad del proyecto.")}
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-
-                {/* Experiencia Trigon */}
-                <div className="flex flex-col md:flex-row gap-6">
-                  <div className="md:w-1/4">
-                    <h3 className="text-2xl font-bold text-custom-brown">
-                      {t("home.experience.trigon.title")}
-                    </h3>
-                    <p className="text-lg text-custom-brown">Trigan.org</p>
-                    <p className="text-sm text-custom-brown">Mar 2020 - Ene 2021</p>
-                    <div ref={trigonContainerRef} className="relative inline-block w-40 h-12 mt-2">
-                      <a
-                        href="https://trigan.org/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        ref={trigonButtonRef}
-                        className="absolute inline-flex items-center gap-2 px-4 py-2 bg-custom-brown text-whiteSnow rounded-full font-bold transition-all duration-200 hover:bg-efectHovercolor focus:outline-none focus:ring-2 focus:ring-custom-brown hover:scale-110"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          className="w-5 h-5"
-                        >
-                          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V9h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
-                        </svg>
-                        <span>{t("home.experience.textVisite")}</span>                      
-                      </a>
-                    </div>
-                  </div>
-                  <div className="md:w-3/4">
-                    <p className="text-lg text-custom-brown dark:text-colorLetters">
-                      {t("home.experience.trigon.description", {
-                        defaultValue: "Desarrollo Frontend con React, enfocado en la creación de interfaces dinámicas y responsivas."
-                      })}
-                    </p>
-                    <ul className="mt-4 space-y-2">
-                      <li className="text-custom-brown dark:text-colorLetters">
-                        - {t("home.experience.trigon.point1", "Desarrollo de componentes reutilizables en React para mejorar la eficiencia del código.")}
-                      </li>
-                      <li className="text-custom-brown dark:text-colorLetters">
-                        - {t("home.experience.trigon.point2", "Implementación de soluciones frontend para aplicaciones web interactivas.")}
-                      </li>
-                      <li className="text-custom-brown dark:text-colorLetters">
-                        - {t("home.experience.trigon.point3", "Colaboración en el diseño y desarrollo de interfaces centradas en el usuario.")}
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+                {experiences.map((exp, index) => (
+                  <ExperienceCard key={index} index={index} t={t} {...exp} />
+                ))}
               </div>
             </div>
 

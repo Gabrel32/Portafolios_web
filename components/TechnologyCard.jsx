@@ -30,7 +30,10 @@ const TechnologyCard = React.memo(({ tech, index }) => {
       className={`group flex flex-col items-center p-3 md:p-4 backdrop-blur-xl rounded-2xl border border-custom-brown shadow-md shadow-secondary hover:shadow-custom-brown transition-all duration-500 hover:-translate-y-1 animate-cardPop cursor-pointer select-none ${
         isClicked ? " scale-90" : "scale-100"
       }`}
-      style={{ animationDelay: `${index * 0.1}s`, WebkitTapHighlightColor: "transparent" }}
+      style={{
+        animationDelay: `${index * 0.1}s`,
+        WebkitTapHighlightColor: "transparent",
+      }}
       onClick={handleClick}
     >
       <div className=" bg-whiteSnow p-2.5 rounded-full mb-2 md:mb-2 transition-transform duration-300 group-hover:scale-105">

@@ -34,7 +34,15 @@
         "point2": "Implementación de soluciones frontend para aplicaciones web interactivas.",
         "point3": "Colaboración en el diseño y desarrollo de interfaces centradas en el usuario."
       },
-      "textVisite":"visitar sitio"
+      "truco": {
+        "title": "Truco Club (Full Stack Developer)",
+        "description": "Lideré el desarrollo integral del motor core y la arquitectura de sistemas para una plataforma de juego competitivo en tiempo real, enfocándome en la escalabilidad y la baja latencia.",
+        "point1": "Ingeniería de un motor de reglas determinista en TypeScript, gestionando jerarquías dinámicas de cartas, validación de jugadas y estados complejos (Envido, Truco, Flor).",
+        "point2": "Arquitectura de comunicación bidireccional mediante WebSockets y NestJS, implementando políticas de reconexión avanzada y persistencia de estado en Redis para mitigar cortes de red.",
+        "point3": "Optimización del flujo de juego e integración de sistemas de engagement como rematches instantáneos, bajo una interfaz reactiva de alto rendimiento desarrollada en Next.js."
+      },
+
+      "textVisite": "visitar sitio"
     }
   },
   "projectsSection": {
