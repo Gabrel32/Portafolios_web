@@ -7,7 +7,6 @@ const LanguageSwitcher = () => {
   const [isAnimating, setIsAnimating] = useState(false);
   const menuRef = useRef(null);
 
-  // Lista de idiomas soportados con emojis de banderas
   const languages = [
     { id: "es", name: "Español", short: "es", flag: "🇪🇸" },
     { id: "en", name: "English", short: "en", flag: "🇺🇸" },
@@ -16,10 +15,13 @@ const LanguageSwitcher = () => {
     { id: "de", name: "Deutsch", short: "de", flag: "🇩🇪" }, // Alemán
   ];
 
-  // Cerrar el menú al hacer clic fuera
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target) && (isOpen || isAnimating)) {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(event.target) &&
+        (isOpen || isAnimating)
+      ) {
         handleClose();
       }
     };
@@ -31,24 +33,22 @@ const LanguageSwitcher = () => {
     };
   }, [isOpen, isAnimating]);
 
-  // Manejar el cierre con animación
   const handleClose = () => {
     if (isOpen) {
-      setIsAnimating(false); // Iniciar animación de cierre
+      setIsAnimating(false);
       setTimeout(() => {
         setIsOpen(false);
-      }, 400); // Coincidir con la duración de la animación (0.4s)
+      }, 400);
     }
   };
 
-  // Manejar la apertura
   const handleOpen = () => {
     setIsOpen(true);
-    setIsAnimating(true); // Iniciar animación de apertura
+    setIsAnimating(true);
   };
 
-  // Obtener el código corto del idioma actual
-  const currentLanguageShort = languages.find((lang) => lang.id === currentLanguage)?.short || "en";
+  const currentLanguageShort =
+    languages.find((lang) => lang.id === currentLanguage)?.short || "en";
 
   return (
     <div className="relative" ref={menuRef}>
@@ -89,7 +89,7 @@ const LanguageSwitcher = () => {
             bg-completColor backdrop-blur-lg
             ${isAnimating && isOpen ? "animate-menu-slide" : "animate-menu-slide-reverse"}`}
           onAnimationEnd={() => {
-            if (!isOpen) setIsAnimating(false); // Reiniciar estado de animación después de cerrar
+            if (!isOpen) setIsAnimating(false);
           }}
         >
           <div className="p-3 space-y-1">
@@ -108,8 +108,8 @@ const LanguageSwitcher = () => {
                   }`}
               >
                 <div className="flex items-center gap-2">
-                  <span className="text-lg">{lang.flag}</span> {/* Bandera */}
-                  <span className="font-normal">{lang.name}</span> {/* Nombre del idioma */}
+                  <span className="text-lg">{lang.flag}</span>
+                  <span className="font-normal">{lang.name}</span>
                 </div>
                 {currentLanguage === lang.id && (
                   <svg

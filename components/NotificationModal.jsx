@@ -3,14 +3,13 @@ import { useEffect } from "react";
 const NotificationModal = ({
   isOpen,
   type,
-  message, // Mensaje principal recibido desde el componente padre
+  message,
   onClose,
-  successTitle = "¡Éxito!", // Título por defecto para éxito
-  successDescription, // Descripción adicional opcional para éxito
-  errorTitle = "¡Error!", // Título por defecto para error
-  errorDescription, // Descripción adicional opcional para error
+  successTitle = "¡Éxito!",
+  successDescription,
+  errorTitle = "¡Error!",
+  errorDescription,
 }) => {
-  // Cerrar el modal al presionar la tecla "Escape"
   useEffect(() => {
     const handleEscape = (e) => {
       if (e.key === "Escape") {
@@ -27,23 +26,26 @@ const NotificationModal = ({
     };
   }, [isOpen, onClose]);
 
-  // Si no está abierto, no renderizar nada
   if (!isOpen) return null;
 
-  // Determinar el título y la descripción según el tipo
   const title = type === "success" ? successTitle : errorTitle;
-  const description = type === "success" 
-    ? (successDescription ? `${message} ` : message) 
-    : (errorDescription ? `${message} ` : message);
+  const description =
+    type === "success"
+      ? successDescription
+        ? `${message} `
+        : message
+      : errorDescription
+        ? `${message} `
+        : message;
 
   return (
     <div
       className="fixed inset-0 z-[1000] bg-black/50 flex items-center justify-center p-4 animate-fadeIn"
-      onClick={onClose} // Cerrar al hacer clic fuera del modal
+      onClick={onClose}
     >
       <div
         className="bg-beige-50 dark:bg-completColor rounded-xl p-8 max-w-md w-full shadow-xl relative border-2 border-custom-brown animate-cardPop"
-        onClick={(e) => e.stopPropagation()} // Evitar que el clic dentro del modal lo cierre
+        onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}

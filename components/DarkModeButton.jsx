@@ -1,22 +1,22 @@
 import usePortafolios from "../hook/usePortafolios";
-import { useState, useEffect } from "react"; // Importar useEffect
+import { useState, useEffect } from "react";
 
 const DarkModeButton = () => {
-  const { isDarkMode, toggleDarkMode, isReady } = usePortafolios()
+  const { isDarkMode, toggleDarkMode, isReady } = usePortafolios();
 
-  if (!isReady) return null // Evitar renderizado inicial
+  if (!isReady) return null;
 
   return (
     <button
       onClick={toggleDarkMode}
       className={`relative w-14 h-8 rounded-full transition-colors duration-300 'bg-beige-50 border-custom-brown border`}
-      aria-label={`Cambiar a modo ${isDarkMode ? 'claro' : 'oscuro'}`}
+      aria-label={`Cambiar a modo ${isDarkMode ? "claro" : "oscuro"}`}
     >
       <div
         className={`absolute top-1 w-6 h-6 rounded-full ${
           isDarkMode
-            ? 'bg-[var(--accent)] left-7'
-            : 'bg-[var(--secondary)] left-1'
+            ? "bg-[var(--accent)] left-7"
+            : "bg-[var(--secondary)] left-1"
         } shadow-lg transition-all duration-300 flex items-center justify-center`}
       >
         {isDarkMode ? (
@@ -42,10 +42,12 @@ const DarkModeButton = () => {
           </svg>
         )}
       </div>
-      
+
       <style jsx global>{`
         @keyframes rotate {
-          to { transform: rotate(360deg); }
+          to {
+            transform: rotate(360deg);
+          }
         }
         .animate-rotate {
           animation: rotate 10s linear infinite;

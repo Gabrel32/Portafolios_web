@@ -8,19 +8,48 @@ const ThemeSwitcher = () => {
   const menuRef = useRef(null);
 
   const themes = [
-    { id: "default", name: t("themeSwitcher.themes.default"), colorClass: "bg-[#DC5F00]", color: "#DC5F00" },
-    { id: "forest", name: t("themeSwitcher.themes.forest"), colorClass: "bg-[#2D5A27]", color: "#2D5A27" },
-    { id: "ocean", name: t("themeSwitcher.themes.ocean"), colorClass: "bg-[#1A5F7A]", color: "#1A5F7A" },
-    { id: "desert", name: t("themeSwitcher.themes.desert"), colorClass: "bg-[#D2B48C]", color: "#D2B48C" },
-    { id: "sunset", name: t("themeSwitcher.themes.sunset"), colorClass: "bg-[#FF6F61]", color: "#FF6F61" },
+    {
+      id: "default",
+      name: t("themeSwitcher.themes.default"),
+      colorClass: "bg-[#DC5F00]",
+      color: "#DC5F00",
+    },
+    {
+      id: "forest",
+      name: t("themeSwitcher.themes.forest"),
+      colorClass: "bg-[#2D5A27]",
+      color: "#2D5A27",
+    },
+    {
+      id: "ocean",
+      name: t("themeSwitcher.themes.ocean"),
+      colorClass: "bg-[#1A5F7A]",
+      color: "#1A5F7A",
+    },
+    {
+      id: "desert",
+      name: t("themeSwitcher.themes.desert"),
+      colorClass: "bg-[#D2B48C]",
+      color: "#D2B48C",
+    },
+    {
+      id: "sunset",
+      name: t("themeSwitcher.themes.sunset"),
+      colorClass: "bg-[#FF6F61]",
+      color: "#FF6F61",
+    },
   ];
 
-  const currentThemeColor = themes.find((t) => t.id === currentTheme)?.color || "#DC5F00";
+  const currentThemeColor =
+    themes.find((t) => t.id === currentTheme)?.color || "#DC5F00";
 
-  // Close menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target) && (isOpen || isAnimating)) {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(event.target) &&
+        (isOpen || isAnimating)
+      ) {
         handleClose();
       }
     };
@@ -32,20 +61,18 @@ const ThemeSwitcher = () => {
     };
   }, [isOpen, isAnimating]);
 
-  // Handle closing with animation
   const handleClose = () => {
     if (isOpen) {
-      setIsAnimating(false); // Start closing animation
+      setIsAnimating(false);
       setTimeout(() => {
         setIsOpen(false);
-      }, 400); // Match the duration of menuSlide (0.4s)
+      }, 400);
     }
   };
 
-  // Handle opening
   const handleOpen = () => {
     setIsOpen(true);
-    setIsAnimating(true); // Start opening animation
+    setIsAnimating(true);
   };
 
   return (
@@ -79,7 +106,7 @@ const ThemeSwitcher = () => {
             bg-completColor backdrop-blur-lg
             ${isAnimating && isOpen ? "animate-menu-slide" : "animate-menu-slide-reverse"}`}
           onAnimationEnd={() => {
-            if (!isOpen) setIsAnimating(false); // Reset animation state after closing
+            if (!isOpen) setIsAnimating(false);
           }}
         >
           <div className="p-3 space-y-1">
@@ -97,7 +124,9 @@ const ThemeSwitcher = () => {
                       : "text-gray-600 hover:text-custom-brown dark:text-whiteSnow dark:hover:text-custom-brown"
                   }`}
               >
-                <div className={`w-4 h-4 rounded-full mr-3 ${theme.colorClass}`} />
+                <div
+                  className={`w-4 h-4 rounded-full mr-3 ${theme.colorClass}`}
+                />
                 <span>{theme.name}</span>
               </button>
             ))}

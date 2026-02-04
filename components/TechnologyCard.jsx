@@ -4,10 +4,9 @@ import Image from "next/image";
 
 const TechnologyCard = React.memo(({ tech, index }) => {
   const [isLoading, setIsLoading] = useState(true);
-  const [hasError, setHasError] = useState(false); // Para manejar errores de carga
-  const [isClicked, setIsClicked] = useState(false); // Estado para manejar el efecto de clic
+  const [hasError, setHasError] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
 
-  // Usamos useEffect para verificar la carga de la imagen de manera más robusta
   useEffect(() => {
     const img = new window.Image();
     img.src = `/img/${tech.icon}`;
@@ -18,10 +17,9 @@ const TechnologyCard = React.memo(({ tech, index }) => {
     };
   }, [tech.icon]);
 
-  // Manejar el efecto de clic
   const handleClick = () => {
     setIsClicked(true);
-    setTimeout(() => setIsClicked(false), 200); // Restablecer el estado después de 200ms
+    setTimeout(() => setIsClicked(false), 200);
   };
 
   return (
@@ -67,7 +65,6 @@ const TechnologyCard = React.memo(({ tech, index }) => {
   );
 });
 
-// Asignar un display name manualmente
 TechnologyCard.displayName = "TechnologyCard";
 
 export default TechnologyCard;

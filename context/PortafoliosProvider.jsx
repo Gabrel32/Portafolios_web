@@ -32,7 +32,7 @@ const resources = {
 
 i18n.use(initReactI18next).init({
   resources,
-  lng: "en", // idioma por defecto
+  lng: "en",
   fallbackLng: "en",
   interpolation: {
     escapeValue: false,
@@ -44,14 +44,13 @@ const PortafoliosContext = createContext();
 function PortafoliosProvider({ children }) {
   const [isReady, setIsReady] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [currentTheme, setCurrentTheme] = useState("default");
+  const [currentTheme, setCurrentTheme] = useState("sunset");
   const [currentLanguage, setCurrentLanguage] = useState("es");
 
-  // Cargar configuración desde localStorage
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    const savedTheme = localStorage.getItem("theme") || "default";
+    const savedTheme = localStorage.getItem("theme") || "sunset";
     const savedDarkMode = localStorage.getItem("darkMode") === "true";
 
     // Sincronizar estado inicial
@@ -59,21 +58,18 @@ function PortafoliosProvider({ children }) {
     setIsDarkMode(savedDarkMode);
     setIsReady(true);
 
-    // Forzar actualización del DOM
     const applyStyles = () => {
       const themeClass = `theme-${savedTheme}`;
       const darkClass = savedDarkMode ? "dark" : "";
       document.documentElement.className = `${themeClass} ${darkClass}`;
     };
 
-    // Ejecutar inmediatamente y en evento load
     applyStyles();
     window.addEventListener("load", applyStyles);
 
     return () => window.removeEventListener("load", applyStyles);
   }, []);
 
-  // Efecto para cambios posteriores
   useEffect(() => {
     if (!isReady || typeof window === "undefined") return;
 
@@ -85,7 +81,6 @@ function PortafoliosProvider({ children }) {
     localStorage.setItem("darkMode", isDarkMode.toString());
   }, [currentTheme, isDarkMode, isReady]);
 
-  // Cargar configuración de idioma desde localStorage
   useEffect(() => {
     if (typeof window === "undefined") return;
 
@@ -96,8 +91,8 @@ function PortafoliosProvider({ children }) {
 
   const changeLanguage = (lng) => {
     setCurrentLanguage(lng);
-    i18n.changeLanguage(lng); // Cambia el idioma en i18n
-    localStorage.setItem("language", lng); // Guarda el idioma en localStorage
+    i18n.changeLanguage(lng);
+    localStorage.setItem("language", lng);
   };
 
   function comprobarRuta(route, router) {
@@ -191,7 +186,6 @@ function PortafoliosProvider({ children }) {
     },
   ]);
 
-  // Efecto para cargar traducciones
   useEffect(() => {
     const updateProyectos = () => {
       const projectsData = i18n.t("projects", { returnObjects: true });
@@ -323,7 +317,7 @@ function PortafoliosProvider({ children }) {
         isReady,
         currentLanguage,
         changeLanguage,
-        t: i18n.t, // Función de traducción
+        t: i18n.t,
       }}
     >
       {children}

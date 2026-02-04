@@ -284,7 +284,7 @@ const Home = ({ className = "", ...props }) => {
             <div className="absolute inset-0" />
           </div>
 
-          <div className="relative z-10 container mx-auto px-6 md:px-12">
+          <div className="relative z-10 container mx-auto px-1 md:px-12">
             {/* Hero Section */}
             <div
               ref={contentRef}
@@ -339,6 +339,20 @@ const Home = ({ className = "", ...props }) => {
                 </div>
               </div>
             </div>
+            {/* Experience Section */}
+            <div
+              ref={experienceRef}
+              className="mt-16 backdrop-blur-md rounded-3xl p-8 md:p-12 lg:p-16 border border-custom-brown shadow-2xl shadow-custom-brown transition-all duration-700"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-custom-brown mb-12">
+                {t("home.experienceTitle")}
+              </h2>
+              <div className="space-y-8">
+                {experiences.map((exp, index) => (
+                  <ExperienceCard key={index} index={index} t={t} {...exp} />
+                ))}
+              </div>
+            </div>
 
             {/* About Section */}
             <div
@@ -367,21 +381,6 @@ const Home = ({ className = "", ...props }) => {
                     })}
                   </p>
                 </div>
-              </div>
-            </div>
-
-            {/* Experience Section */}
-            <div
-              ref={experienceRef}
-              className="mt-16 backdrop-blur-md rounded-3xl p-8 md:p-12 lg:p-16 border border-custom-brown shadow-2xl shadow-custom-brown transition-all duration-700"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-custom-brown mb-12">
-                {t("home.experienceTitle")}
-              </h2>
-              <div className="space-y-8">
-                {experiences.map((exp, index) => (
-                  <ExperienceCard key={index} index={index} t={t} {...exp} />
-                ))}
               </div>
             </div>
 

@@ -1,165 +1,167 @@
+@font-face {
+  font-family: "SN Pro";
+  src: url("./fonts/SN_Pro/SNPro-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
   --whiteSnow: #f5f5f5e2;
   --success-color: #28a745; /* Verde de éxito */
-  --error-color: #dc3545;   /* Rojo de error */
+  --error-color: #dc3545; /* Rojo de error */
   --warning-color: #ffc107; /* Amarillo de advertencia */
 }
-:root, .theme-default {
-  --custom-brown: #DC5F00;
-  --efectHovercolor: #C15507; /* Más saturado */
-  --completColor: #F5EDE6;    /* Beige más claro */
-  --beige-50: #FFFCF9;        /* Blanco más puro */
+:root,
+.theme-default {
+  --custom-brown: #dc5f00;
+  --efectHovercolor: #c15507; /* Más saturado */
+  --completColor: #f5ede6; /* Beige más claro */
+  --beige-50: #fffcf9; /* Blanco más puro */
   --primary: #dc5f00d4;
-  --secondary: #AE4D10;       /* Terracota oscuro */
-  --accent: #FF6B6B;          /* Nuevo: Coral vibrante */
-  --colorLetters: #df4605c6;       /* Amarillo suave */
-
+  --secondary: #ae4d10; /* Terracota oscuro */
+  --accent: #ff6b6b; /* Nuevo: Coral vibrante */
+  --colorLetters: #df4605c6; /* Amarillo suave */
 }
 
 .theme-default.dark {
-  --custom-brown: #DC5F00;    /* Naranja más brillante */
+  --custom-brown: #dc5f00; /* Naranja más brillante */
   --efectHovercolor: #d25a1a;
   --primary: #ce6414;
-  --completColor: #2d2828;    /* Gris oscuro */
-  --beige-50: #1A1A1A;        /* Fondo oscuro profundo */
-  --accent: #c35012;          /* Coral suavizado */
-  --colorLetters: #ffc2a8c6;       /* Amarillo suave */
-
+  --completColor: #2d2828; /* Gris oscuro */
+  --beige-50: #1a1a1a; /* Fondo oscuro profundo */
+  --accent: #c35012; /* Coral suavizado */
+  --colorLetters: #ffc2a8c6; /* Amarillo suave */
 }
 
 /* Tema Bosque Mejorado */
 .theme-forest {
-  --custom-brown: #3A7D44;    /* Verde más vibrante */
+  --custom-brown: #3a7d44; /* Verde más vibrante */
   --efectHovercolor: #285430; /* Verde bosque oscuro */
-  --completColor: #E8F5E9;    /* Verde muy claro */
-  --beige-50: #F1F8E9;        /* Beige verdoso */
-  --primary: #2E7D32;         /* Verde esmeralda */
-  --secondary: #689F38;       /* Verde lima */
-  --accent: #689F38;          /* Nuevo: Naranja brillante */
-  --colorLetters: #819e68;    
-  
+  --completColor: #e8f5e9; /* Verde muy claro */
+  --beige-50: #f1f8e9; /* Beige verdoso */
+  --primary: #2e7d32; /* Verde esmeralda */
+  --secondary: #689f38; /* Verde lima */
+  --accent: #689f38; /* Nuevo: Naranja brillante */
+  --colorLetters: #819e68;
 }
 
 .theme-forest.dark {
-  --custom-brown: #3A7D44;    /* Verde claro */
-  --efectHovercolor: #4CAF50;
-  --completColor: #303a27;    /* Gris azulado */
-  --beige-50: #1B3022;        /* Verde oscuro profundo */
-  --accent: #689F38;          /* Naranja suavizado */
-  --colorLetters: #386f07;    
+  --custom-brown: #3a7d44; /* Verde claro */
+  --efectHovercolor: #4caf50;
+  --completColor: #303a27; /* Gris azulado */
+  --beige-50: #1b3022; /* Verde oscuro profundo */
+  --accent: #689f38; /* Naranja suavizado */
+  --colorLetters: #386f07;
 }
 
 /* Tema Océano Mejorado */
 .theme-ocean {
-  --custom-brown: #1a7ccdf1;    /* Azul vibrante */
-  --efectHovercolor: #1976D2; /* Azul marino */
-  --completColor: #E3F2FD;    /* Azul muy claro */
-  --beige-50: #E1F5FE;        /* Blanco azulado */
-  --primary: #1565C0;         /* Azul profundo */
-  --secondary: #1f94a3;       /* Turquesa */
-  --accent: #1f94a3;          /* Nuevo: Rojo coral */
-  --colorLetters: #268491;    
+  --custom-brown: #1a7ccdf1; /* Azul vibrante */
+  --efectHovercolor: #1976d2; /* Azul marino */
+  --completColor: #e3f2fd; /* Azul muy claro */
+  --beige-50: #e1f5fe; /* Blanco azulado */
+  --primary: #1565c0; /* Azul profundo */
+  --secondary: #1f94a3; /* Turquesa */
+  --accent: #1f94a3; /* Nuevo: Rojo coral */
+  --colorLetters: #268491;
 }
 
 .theme-ocean.dark {
-  --custom-brown: #107bcdf1;    /* Azul claro */
-  --efectHovercolor: #42A5F5;
-  --completColor: #081a2a;    /* Azul oscuro intenso */
-  --beige-50: #021B3D;        /* Azul noche */
-  --accent: #1f94a3;          /* Coral suave */
-  --colorLetters: #97cbde;    
+  --custom-brown: #107bcdf1; /* Azul claro */
+  --efectHovercolor: #42a5f5;
+  --completColor: #081a2a; /* Azul oscuro intenso */
+  --beige-50: #021b3d; /* Azul noche */
+  --accent: #1f94a3; /* Coral suave */
+  --colorLetters: #97cbde;
 }
 /* tema desierto atardecer */
 .theme-desert {
-  --custom-brown: #8B572A;    /* Arena natural */
-  --efectHovercolor: #A67B5B; /* Marrón oscuro */
-  --completColor: #FFF8E1;    /* Beige claro */
-  --beige-50: #FFF3CD;        /* Crema suave */
-  --primary: #964B00;         /* Tierra profunda */
-  --secondary: #a38b2b;       /* Naranja brillante */
-  --accent: #a38b2b;          /* Amarillo dorado */
-  --colorLetters: #493320;    
+  --custom-brown: #8b572a; /* Arena natural */
+  --efectHovercolor: #a67b5b; /* Marrón oscuro */
+  --completColor: #fff8e1; /* Beige claro */
+  --beige-50: #fff3cd; /* Crema suave */
+  --primary: #964b00; /* Tierra profunda */
+  --secondary: #a38b2b; /* Naranja brillante */
+  --accent: #a38b2b; /* Amarillo dorado */
+  --colorLetters: #493320;
 }
 .theme-desert.dark {
-  --custom-brown: #a36128;    /* Marrón cálido oscuro */
+  --custom-brown: #a36128; /* Marrón cálido oscuro */
   --efectHovercolor: #654321; /* Chocolate profundo */
-  --completColor: #3E2723;    /* Marrón muy oscuro */
-  --beige-50: #2F221C;        /* Fondo oscuro terroso */
-  --accent: #a38b2b;          /* Naranja suavizado */
-  --colorLetters: #e59855;    
+  --completColor: #3e2723; /* Marrón muy oscuro */
+  --beige-50: #2f221c; /* Fondo oscuro terroso */
+  --accent: #a38b2b; /* Naranja suavizado */
+  --colorLetters: #e59855;
 }
 /* tema cielo atardecer */
 .theme-sunset {
-  --custom-brown: #8b4740;    /* Rosa pastel */
+  --custom-brown: #8b4740; /* Rosa pastel */
   --efectHovercolor: #be3f3f; /* Rosa más intenso */
-  --completColor: #f2e2e7;    /* Lavanda claro */
-  --beige-50: #FFE4E1;        /* Rosa muy claro */
-  --primary: #953434;         /* Naranja atardecer */
-  --secondary: #FF7F50;       /* Coral suave */
-  --accent: #ff7f5049;          /* Oro brillante */
-  --colorLetters: #b24923;    
+  --completColor: #f2e2e7; /* Lavanda claro */
+  --beige-50: #ffe4e1; /* Rosa muy claro */
+  --primary: #953434; /* Naranja atardecer */
+  --secondary: #ff7f50; /* Coral suave */
+  --accent: #ff7f5049; /* Oro brillante */
+  --colorLetters: #b24923;
 }
 .theme-sunset.dark {
-  --custom-brown: #8b4740;    /* Rosa anaranjado */
+  --custom-brown: #8b4740; /* Rosa anaranjado */
   --efectHovercolor: #be3f3f; /* Rojo tomate */
-  --completColor: #3a1818;    /* Azul noche */
-  --beige-50: #1E272C;        /* Negro azulado */
-  --accent: #9b2a13;          /* Dorado vibrante */
-  --colorLetters: #e26254;    
+  --completColor: #3a1818; /* Azul noche */
+  --beige-50: #1e272c; /* Negro azulado */
+  --accent: #9b2a13; /* Dorado vibrante */
+  --colorLetters: #e26254;
 }
 
+* {
+  font-family: "Klee One", sans-serif;
+}
 
-
-*{
-    font-family: "Klee One", sans-serif;}
-
-body{
-    font-family: "Klee One", sans-serif;
-    @apply bg-[#f5f5f5] dark:bg-zinc-950 text-gray-900 dark:text-gray-100;
-} 
+body {
+  font-family: "Klee One", sans-serif;
+  @apply bg-[#f5f5f5] dark:bg-zinc-950 text-gray-900 dark:text-gray-100;
+}
 
 /* Transiciones suaves */
 html {
   @apply transition-colors duration-500;
 }
 
-
 /* Define la base del botón */
 .btn-base {
-    @apply rounded-bl-lg bg-[--custom-brown] font-light text-white text-left text-sm sm:text-base md:text-lg leading-none relative shadow-lg;
-  }
-  
-  /* Define el efecto hover y active */
-  .btn-efecto {
-    @apply transition-all duration-500 ease-in-out transform;
-  }
-  
-  .btn-efecto:hover {
-    @apply scale-[103%] bg-efectHovercolor;
-  }
-  
-  .btn-efecto:active {
-    @apply scale-95 bg-custom-brown;
-  }
-  
-  
-  /* Para mantener las proporciones de las imágenes */
-  .proyecto-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-  
-  /* Efecto de profundidad */
-  .carousel-item:not(.active) {
-    filter: brightness(0.9);
-  }
+  @apply rounded-bl-lg bg-[--custom-brown] font-light text-white text-left text-sm sm:text-base md:text-lg leading-none relative shadow-lg;
+}
+
+/* Define el efecto hover y active */
+.btn-efecto {
+  @apply transition-all duration-500 ease-in-out transform;
+}
+
+.btn-efecto:hover {
+  @apply scale-[103%] bg-efectHovercolor;
+}
+
+.btn-efecto:active {
+  @apply scale-95 bg-custom-brown;
+}
+
+/* Para mantener las proporciones de las imágenes */
+.proyecto-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Efecto de profundidad */
+.carousel-item:not(.active) {
+  filter: brightness(0.9);
+}
 
 .carousel-container {
   perspective: 1000px;
@@ -170,7 +172,9 @@ html {
 }
 
 .carousel-item {
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
 }
 
 .controls {
@@ -178,23 +182,28 @@ html {
 }
 @media (max-width: 375px) {
   .carousel-container {
-      padding-left: 8px;
-      padding-right: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
   }
-  
+
   .carousel-item {
-      margin: 0 4px !important;
+    margin: 0 4px !important;
   }
-  
+
   .controls {
-      padding: 0 8px;
+    padding: 0 8px;
   }
 }
 
 /*  animacion de home */
 @keyframes float {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(5deg); }
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
 }
 
 .animate-float {
@@ -239,19 +248,30 @@ html {
 }
 
 @keyframes text-pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.02); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .animate-fadeIn {
   animation: fadeIn 0.8s ease-out forwards;
 }
-
 
 .menu {
   display: block; /* Ensure it’s visible by default */

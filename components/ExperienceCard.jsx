@@ -16,23 +16,21 @@ const ExperienceCard = ({
   const buttonContainerRef = useRef(null);
   const buttonRef = useRef(null);
 
-  // Efecto magnético para el botón
   useEffect(() => {
+    // El efecto magnético suele ser molesto o inexistente en móviles (touch)
+    // Solo lo activamos si el dispositivo tiene puntero (mouse)
+    const isMobile = window.matchMedia("(pointer: coarse)").matches;
+    if (isMobile) return;
+
     const button = buttonRef.current;
     const container = buttonContainerRef.current;
     if (!button || !container) return;
 
-    let isActive = true;
-
     const magneticEffect = (e) => {
-      if (!isActive) return;
-
       const buttonRect = button.getBoundingClientRect();
       const containerRect = container.getBoundingClientRect();
-
       const x = e.clientX - (buttonRect.left + buttonRect.width / 2);
       const y = e.clientY - (buttonRect.top + buttonRect.height / 2);
-
       const maxX = (containerRect.width - buttonRect.width) / 2;
       const maxY = (containerRect.height - buttonRect.height) / 2;
 
@@ -46,7 +44,6 @@ const ExperienceCard = ({
     };
 
     const resetPosition = () => {
-      if (!isActive) return;
       gsap.to(button, {
         x: 0,
         y: 0,
@@ -60,7 +57,6 @@ const ExperienceCard = ({
     container.addEventListener("mouseleave", resetPosition);
 
     return () => {
-      isActive = false;
       container.removeEventListener("mousemove", magneticEffect);
       container.removeEventListener("mouseleave", resetPosition);
     };
@@ -69,25 +65,29 @@ const ExperienceCard = ({
   return (
     <div
       ref={containerRef}
-      className={`flex flex-col md:flex-row gap-6 p-6 md:p-8 rounded-3xl border border-custom-brown/30 bg-whiteSnow/5 dark:bg-black/20 hover:bg-whiteSnow/10 dark:hover:bg-whiteSnow/5 transition-all duration-300 hover:shadow-xl hover:shadow-custom-brown/20 group`}
+      className="flex flex-col md:flex-row gap-6 p-5 md:p-8 rounded-2xl md:rounded-3xl border border-custom-brown bg-whiteSnow dark:bg-black/20 hover:bg-whiteSnow/50 transition-all duration-300 hover:shadow-xl group"
     >
-      <div className="md:w-1/4 flex flex-col items-start">
-        <h3 className="text-2xl font-bold text-custom-brown group-hover:text-efectHovercolor transition-colors duration-300">
+      <div className="w-full md:w-1/4 flex flex-col items-start">
+        <h3 className="text-xl md:text-2xl font-bold text-custom-brown group-hover:text-efectHovercolor transition-colors duration-300">
           {title}
         </h3>
-        <p className="text-lg font-medium text-custom-brown mt-1">{company}</p>
-        <p className="text-sm text-custom-brown italic mb-4">{period}</p>
+        <p className="text-base md:text-lg font-medium text-custom-brown mt-1">
+          {company}
+        </p>
+        <p className="text-xs md:text-sm text-custom-brown italic opacity-70">
+          {period}
+        </p>
 
         <div
           ref={buttonContainerRef}
-          className="relative inline-block w-40 h-12 mt-6"
+          className="relative flex items-center mt-4 md:mt-6 w-full md:w-40 h-12"
         >
           <a
             href={link}
             target="_blank"
             rel="noopener noreferrer"
             ref={buttonRef}
-            className="absolute inline-flex items-center gap-2 px-5 py-2.5 bg-custom-brown text-whiteSnow rounded-full font-bold text-sm transition-all duration-300 hover:bg-efectHovercolor shadow-lg hover:shadow-custom-brown/50 focus:outline-none focus:ring-2 focus:ring-custom-brown"
+            className="inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-custom-brown text-whiteSnow rounded-full font-bold text-sm transition-all duration-300 hover:bg-efectHovercolor shadow-md w-full md:w-auto md:absolute"
           >
             <Globe className="w-4 h-4" />
             <span>{t("home.experience.textVisite")}</span>
@@ -95,20 +95,20 @@ const ExperienceCard = ({
         </div>
       </div>
 
-      <div className="md:w-3/4 border-l-2 border-custom-brown/10 pl-6 md:pl-8 dark:border-whiteSnow/10">
-        <p className="text-lg text-custom-brown dark:text-colorLetters leading-relaxed mb-4">
+      <div className="w-full md:w-3/4 border-t-2 md:border-t-0 md:border-l-2 border-custom-brown/20 pt-6 md:pt-0 md:pl-8 dark:border-colorLetters">
+        <p className="text-base md:text-lg text-custom-brown dark:text-colorLetters leading-relaxed mb-4">
           {description}
         </p>
         <ul className="space-y-3">
           {points.map((point, i) => (
             <li
               key={i}
-              className="flex gap-3 text-custom-brown dark:text-colorLetters/90"
+              className="flex gap-3 text-sm md:text-base text-custom-brown dark:text-colorLetters"
             >
-              <span className="text-custom-brown/60 dark:text-efectHovercolor mt-1.5">
+              <span className="text-custom-brown dark:text-efectHovercolor font-bold">
                 •
               </span>
-              <span className="flex-1">{point}</span>
+              <span className="flex-1 opacity-90">{point}</span>
             </li>
           ))}
         </ul>

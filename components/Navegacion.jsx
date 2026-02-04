@@ -10,19 +10,16 @@ function Navegacion({ className, ...props }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
 
-  // Animación después del montaje
   useEffect(() => {
     setIsMounted(true);
   }, []);
 
-  // Cerrar menú al hacer clic fuera
   const closeMenu = (e) => {
     if (e.target === e.currentTarget) {
       setMenuOpen(false);
     }
   };
 
-  // Cerrar menú al cambiar de ruta
   useEffect(() => {
     setMenuOpen(false);
   }, [buttonNavs]);
@@ -32,11 +29,8 @@ function Navegacion({ className, ...props }) {
       className={`rounded-corner-small flex flex-col sm:flex-row gap-5 items-center justify-between px-4 sm:px-6 lg:px-8 py-4 relative max-w-[1300px] mx-auto ${className}`}
       {...props}
     >
-      {/* Sección del título y navegación */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between w-full gap-5">
-        {/* Título e ícono de menú móvil */}
         <div className="flex flex-row items-center gap-3 w-full sm:w-auto">
-          {/* Título */}
           <div className="flex flex-row gap-2 items-center justify-center">
             <div
               className={`text-gray-700 dark:text-whiteSnow text-center sm:text-left text-[24px] sm:text-[30px] leading-none w-fit flex items-center ${
@@ -81,7 +75,7 @@ function Navegacion({ className, ...props }) {
               viewBox="0 0 40 37"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className={`transition-transform duration-300 ${menuOpen ? 'rotate-90' : ''}`}
+              className={`transition-transform duration-300 ${menuOpen ? "rotate-90" : ""}`}
             >
               <path
                 d="M5 18.5H35M5 9.25H35M5 27.75H35"
@@ -120,9 +114,7 @@ function Navegacion({ className, ...props }) {
           className="fixed inset-0 bg-black/50 dark:bg-black/70 backdrop-blur-sm z-[9999] transition-opacity animate-fadeIn"
           onClick={closeMenu}
         >
-          <div
-            className="absolute right-0 w-[200px] h-fit rounded-md bg-beige-50 dark:bg-completColor shadow-lg transform transition-transform duration-300 ease-in-out animate-slideInUp"
-          >
+          <div className="absolute right-0 w-[200px] h-fit rounded-md bg-beige-50 dark:bg-completColor shadow-lg transform transition-transform duration-300 ease-in-out animate-slideInUp">
             <div className="flex flex-col items-center justify-center gap-4 h-full p-6 mt-10">
               <button
                 onClick={() => setMenuOpen(false)}
@@ -145,7 +137,7 @@ function Navegacion({ className, ...props }) {
                 />
               ))}
               <div className="flex flex-row gap-4 w-full px-4 justify-center items-center">
-                <LanguageSwitcher/>
+                <LanguageSwitcher />
                 <ThemeSwitcher />
               </div>
             </div>
